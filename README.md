@@ -9,5 +9,5 @@
 - The discovery module supports DApps developed on Cocos-BCX blockchain.
 - Support the transfer and trading of NHAS 1808 assets.
 
-- [User Guide](https://dev.cocosbcx.io/docs/%E9%92%B1%E5%8C%85%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E)
+- [User Guide](https://dev.cocosbcx.io/docs/111-cocos-bcx-wallet-user-guide)
 - [Download](https://fir.im/iOSWallet)
