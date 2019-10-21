@@ -10,9 +10,7 @@
 #import "CCWTransferInfoView.h"
 
 @interface CCWTransferViewController ()<UITextFieldDelegate,CCWTransferInfoViewDelegate>
-{
-    NSString *password_;
-}
+
 @property (weak, nonatomic) IBOutlet UITextField *receiveTextField;
 @property (weak, nonatomic) IBOutlet UITextField *transferNumTextField;
 @property (weak, nonatomic) IBOutlet UITextField *remakeTextField;
@@ -93,17 +91,10 @@
         [self.view makeToast:CCWLocalizable(@"请输入转账数量")];
         return;
     }
-    
-    // 输入密码
-    CCWWeakSelf
-    CCWPasswordAlert(^(UIAlertAction * _Nonnull action) {
-        // 通过数组拿到textTF的值
-        NSString *password = [[alertVc textFields] objectAtIndex:0].text;
-        [weakSelf showTransferDetail:password];
-    });
+    [self showTransferDetail];
 }
 
-- (void)showTransferDetail:(NSString *)password
+- (void)showTransferDetail
 {
     NSString *receiveAddress = self.receiveTextField.text;
     NSString *transferNumStr = self.transferNumTextField.text;
@@ -128,7 +119,6 @@
                                        @"title":CCWLocalizable(@"备注"),
                                        @"info":self.remakeTextField.text,
                                        },];
-    password_ = password;
     [self CCW_TransferInfoViewShowWithArray:transferINfoArray];
 }
 
@@ -146,21 +136,27 @@
 {
     NSString *receiveAddress = self.receiveTextField.text;
     NSString *transferNumStr = self.transferNumTextField.text;
-    CCWWeakSelf;
-    [CCWSDKRequest CCW_TransferAsset:CCWAccountName toAccount:receiveAddress password:password_ assetId:self.assetsModel.asset_id amount:transferNumStr memo:self.remakeTextField.text Success:^(id  _Nonnull responseObject) {
-        [weakSelf.view makeToast:CCWLocalizable(@"转账成功")];
-        [weakSelf.navigationController popViewControllerAnimated:YES];
-    } Error:^(NSString * _Nonnull errorAlert, NSError *error) {
-        if (error.code == 116) {
-            [weakSelf.view makeToast:CCWLocalizable(@"收款账户不存在")];
-        }else if (error.code == 107){
-            [weakSelf.view makeToast:CCWLocalizable(@"owner key不能进行转账，请导入active key")];
-        }if (error.code == 105){
-            [weakSelf.view makeToast:CCWLocalizable(@"密码错误，请重新输入")];
-        }else{
-            [weakSelf.view makeToast:CCWLocalizable(@"网络繁忙，请检查您的网络连接")];
-        }
-    }];
+    
+    // 输入密码
+    CCWWeakSelf
+    CCWPasswordAlert(^(UIAlertAction * _Nonnull action) {
+        // 通过数组拿到textTF的值
+        NSString *password = [[alertVc textFields] objectAtIndex:0].text;
+        [CCWSDKRequest CCW_TransferAsset:CCWAccountName toAccount:receiveAddress password:password assetId:self.assetsModel.asset_id amount:transferNumStr memo:self.remakeTextField.text Success:^(id  _Nonnull responseObject) {
+            [weakSelf.view makeToast:CCWLocalizable(@"转账成功")];
+            [weakSelf.navigationController popViewControllerAnimated:YES];
+        } Error:^(NSString * _Nonnull errorAlert, NSError *error) {
+            if (error.code == 116) {
+                [weakSelf.view makeToast:CCWLocalizable(@"收款账户不存在")];
+            }else if (error.code == 107){
+                [weakSelf.view makeToast:CCWLocalizable(@"owner key不能进行转账，请导入active key")];
+            }if (error.code == 105){
+                [weakSelf.view makeToast:CCWLocalizable(@"密码错误，请重新输入")];
+            }else{
+                [weakSelf.view makeToast:CCWLocalizable(@"网络繁忙，请检查您的网络连接")];
+            }
+        }];
+    });
 }
 
 #pragma mark - UITextField

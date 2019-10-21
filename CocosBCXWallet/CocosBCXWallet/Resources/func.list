@@ -4,7 +4,6 @@ CCW_AssetsOverviewViewController
 CCW_BugNHAssetOrderId
 CCW_BuyInfoViewNextButtonClick
 CCW_BuyInfoViewShowWithArray
-CCW_BuyNHAssetFeeID
 CCW_BuyNHAssetOrderID
 CCW_CallContract
 CCW_CallContractFee
@@ -84,7 +83,6 @@ CCW_SwitchViewAddAccountClick
 CCW_TransferAsset
 CCW_TransferInfoViewNextButtonClick
 CCW_TransferInfoViewShowWithArray
-CCW_TransferNHAsset
 CCW_TransferNHAssetToAccount
 CCW_WalletViewController
 CCW_actionWithTitle

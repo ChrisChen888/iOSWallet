@@ -97,7 +97,7 @@
     NSDictionary *trnhParam = param[@"params"];
     NSString *toAccount = trnhParam[@"toAccount"];
     NSArray *NHAssetIds = trnhParam[@"NHAssetIds"];
-    [CCWSDKRequest CCW_TransferNHAsset:CCWAccountName ToAccount:toAccount NHAssetID:[NHAssetIds firstObject] Password:password Success:^(id  _Nonnull responseObject) {
+    [CCWSDKRequest CCW_TransferNHAssetToAccount:toAccount NHAssetID:[NHAssetIds firstObject] Password:password Success:^(id  _Nonnull responseObject) {
         NSDictionary *jsMessage = @{
                                     @"trx_id":responseObject,
                                     };

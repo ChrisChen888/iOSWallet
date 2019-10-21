@@ -90,43 +90,28 @@
         validTime = [NSString stringWithFormat:@"%i",self.nhAssetOrderExpiration];
         self.validTimeTF.text = validTime;
     }
-    CCWWeakSelf;
-    [CCWSDKRequest CCW_SellNHAssetNHAssetId:self.nhAssetModel.ID Password:@"" Memo:self.noteTF.text SellPriceAmount:price SellAsset:self.priceModel.ID Expiration:validTime OnlyGetFee:YES Success:^(CCWAssetsModel *feesymbol) {
-        NSArray *transferINfoArray = @[@{
-                                           @"title":CCWLocalizable(@"订单信息"),
-                                           @"info":CCWLocalizable(@"出售资产"),
-                                           },
-                                       @{
-                                           @"title":CCWLocalizable(@"NH资产ID"),
-                                           @"info":weakSelf.nhAssetModel.ID,
-                                           },
-                                       @{
-                                           @"title":CCWLocalizable(@"价格"),
-                                           @"info":[NSString stringWithFormat:@"%@ %@",price,weakSelf.priceModel.symbol],
-                                           },
-                                       @{
-                                           @"title":CCWLocalizable(@"有效时间"),
-                                           @"info":[NSString stringWithFormat:@"%@ s",validTime],
-                                           },
-                                       @{
-                                           @"title":CCWLocalizable(@"旷工费"),
-                                           @"info":[NSString stringWithFormat:@"%@%@",feesymbol.amount,feesymbol.symbol],
-                                           },
-                                       @{
-                                           @"title":CCWLocalizable(@"备注"),
-                                           @"info":self.noteTF.text,
-                                           }];
-        [weakSelf CCW_TransferInfoViewShowWithArray:transferINfoArray];
-        
-    } Error:^(NSString * _Nonnull errorAlert, NSError *error) {
-        if (error.code == 107){
-            [weakSelf.view makeToast:CCWLocalizable(@"owner key不能进行转账，请导入active key")];
-        }if (error.code == 105){
-            [weakSelf.view makeToast:CCWLocalizable(@"密码错误，请重新输入")];
-        }else{
-            [weakSelf.view makeToast:CCWLocalizable(@"网络繁忙，请检查您的网络连接")];
-        }
-    }];
+    
+    NSArray *transferINfoArray = @[@{
+                                       @"title":CCWLocalizable(@"订单信息"),
+                                       @"info":CCWLocalizable(@"出售资产"),
+                                       },
+                                   @{
+                                       @"title":CCWLocalizable(@"NH资产ID"),
+                                       @"info":self.nhAssetModel.ID,
+                                       },
+                                   @{
+                                       @"title":CCWLocalizable(@"价格"),
+                                       @"info":[NSString stringWithFormat:@"%@ %@",price,self.priceModel.symbol],
+                                       },
+                                   @{
+                                       @"title":CCWLocalizable(@"有效时间"),
+                                       @"info":[NSString stringWithFormat:@"%@ s",validTime],
+                                       },
+                                   @{
+                                       @"title":CCWLocalizable(@"备注"),
+                                       @"info":self.noteTF.text,
+                                       }];
+    [self CCW_TransferInfoViewShowWithArray:transferINfoArray];
 }
 
 - (void)CCW_TransferInfoViewShowWithArray:(NSArray *)array
@@ -154,7 +139,7 @@
     NSString *price = self.priceTF.text;
     NSString *validTime = self.validTimeTF.text;
     CCWWeakSelf
-    [CCWSDKRequest CCW_SellNHAssetNHAssetId:self.nhAssetModel.ID Password:password Memo:self.noteTF.text SellPriceAmount:price SellAsset:self.priceModel.ID Expiration:validTime OnlyGetFee:NO Success:^(id  _Nonnull responseObject) {
+    [CCWSDKRequest CCW_SellNHAssetNHAssetId:self.nhAssetModel.ID Password:password Memo:self.noteTF.text SellPriceAmount:price SellAsset:self.priceModel.ID Expiration:validTime Success:^(id  _Nonnull responseObject) {
         [weakSelf.view makeToast:CCWLocalizable(@"挂单成功")];
         [weakSelf.navigationController popViewControllerAnimated:YES];
         !weakSelf.sellSuccess?:weakSelf.sellSuccess();

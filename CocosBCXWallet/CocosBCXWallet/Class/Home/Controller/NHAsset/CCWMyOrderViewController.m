@@ -136,37 +136,20 @@
     CCWNHAssetOrderModel *orderModel = self.myPropOrderArray[indexPath_.row];
     orderModel_ = orderModel;
     
-    CCWWeakSelf;
-    [CCWSDKRequest CCW_CancelSellNHAssetOrderId:orderModel.ID Password:@"" OnlyGetFee:YES Success:^(CCWAssetsModel *feesymbol) {
-        NSArray *transferINfoArray = @[@{
-                                           @"title":CCWLocalizable(@"订单信息"),
-                                           @"info":CCWLocalizable(@"取消订单"),
-                                           },
-                                       @{
-                                           @"title":CCWLocalizable(@"订单ID"),
-                                           @"info":orderModel.ID,
-                                           },
-                                       @{
-                                           @"title":CCWLocalizable(@"NH资产ID"),
-                                           @"info":orderModel.nh_asset_id,
-                                           },
-                                       @{
-                                           @"title":CCWLocalizable(@"旷工费"),
-                                           @"info":[NSString stringWithFormat:@"%@ %@",feesymbol.amount,feesymbol.symbol],
-                                           }];
-        [weakSelf CCW_TransferInfoViewShowWithArray:transferINfoArray];
-        
-    } Error:^(NSString * _Nonnull errorAlert, NSError *error) {
-        if (error.code == 1011){
-            [CCWKeyWindow makeToast:CCWLocalizable(@"订单已失效")];
-        }else if (error.code == 107){
-            [CCWKeyWindow makeToast:CCWLocalizable(@"owner key不能进行转账，请导入active key")];
-        }else if (error.code == 105){
-            [CCWKeyWindow makeToast:CCWLocalizable(@"密码错误，请重新输入")];
-        }else{
-            [CCWKeyWindow makeToast:CCWLocalizable(@"网络繁忙，请检查您的网络连接")];
-        }
-    }];
+    NSArray *transferINfoArray = @[@{
+                                       @"title":CCWLocalizable(@"订单信息"),
+                                       @"info":CCWLocalizable(@"取消订单"),
+                                       },
+                                   @{
+                                       @"title":CCWLocalizable(@"订单ID"),
+                                       @"info":orderModel.ID,
+                                       },
+                                   @{
+                                       @"title":CCWLocalizable(@"NH资产ID"),
+                                       @"info":orderModel.nh_asset_id,
+                                       }];
+    [self CCW_TransferInfoViewShowWithArray:transferINfoArray];
+    
 }
 
 - (void)CCW_TransferInfoViewShowWithArray:(NSArray *)array
@@ -192,7 +175,7 @@
 - (void)cancelBuyNHAssetWIthPassword:(NSString *)password
 {
     CCWWeakSelf
-    [CCWSDKRequest CCW_CancelSellNHAssetOrderId:orderModel_.ID Password:password OnlyGetFee:NO Success:^(id  _Nonnull responseObject) {
+    [CCWSDKRequest CCW_CancelSellNHAssetOrderId:orderModel_.ID Password:password Success:^(id  _Nonnull responseObject) {
         [CCWKeyWindow makeToast:CCWLocalizable(@"取消成功")];
         [weakSelf.myPropOrderArray removeObjectAtIndex:self->indexPath_.row];
         [weakSelf.tableView deleteRowsAtIndexPaths:@[self->indexPath_] withRowAnimation:UITableViewRowAnimationNone];

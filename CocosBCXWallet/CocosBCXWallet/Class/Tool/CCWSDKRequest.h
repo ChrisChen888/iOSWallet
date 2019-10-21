@@ -115,10 +115,6 @@ typedef void (^ErrorBlock)(NSString *errorAlert,id responseObject);// 失败回�
                      Success:(SuccessBlock)successBlock
                        Error:(ErrorBlock)errorBlock;
 
-
-
-
-
 /**
  查询账户记录
  
@@ -146,7 +142,6 @@ typedef void (^ErrorBlock)(NSString *errorAlert,id responseObject);// 失败回�
                      memo:(NSString *)memo
                   Success:(SuccessBlock)successBlock
                     Error:(ErrorBlock)errorBlock;
-
 
 /**
  查询账户拥有的所有资产列表
@@ -248,19 +243,6 @@ typedef void (^ErrorBlock)(NSString *errorAlert,id responseObject);// 失败回�
                            Page:(NSInteger)page
                         Success:(SuccessBlock)successBlock
                           Error:(ErrorBlock)errorBlock;
-// NH资产转移
-+ (void)CCW_TransferNHAsset:(NSString *)from
-                  ToAccount:(NSString *)to
-                  NHAssetID:(NSString *)NHAssetID
-                   Password:(NSString *)password
-                    Success:(SuccessBlock)successBlock
-                      Error:(ErrorBlock)errorBlock;
-// 购买NH资产手续费
-+ (void)CCW_BuyNHAssetFeeID:(NSString *)orderID
-                    Account:(NSString *)account
-             FeePayingAsset:(NSString *)feePayingAssetID
-                    Success:(SuccessBlock)successBlock
-                      Error:(ErrorBlock)errorBlock;
 /**
  购买NH资产
  */
@@ -276,7 +258,6 @@ typedef void (^ErrorBlock)(NSString *errorAlert,id responseObject);// 失败回�
                  SellPriceAmount:(NSString *)priceAmount
                        SellAsset:(NSString *)sellAsset
                       Expiration:(NSString *)expiration
-                      OnlyGetFee:(BOOL)onlyGetFee
                          Success:(SuccessBlock)successBlock
                            Error:(ErrorBlock)errorBlock;
 
@@ -290,27 +271,23 @@ typedef void (^ErrorBlock)(NSString *errorAlert,id responseObject);// 失败回�
 // 取消NH资产
 + (void)CCW_CancelSellNHAssetOrderId:(NSString *)orderId
                             Password:(NSString *)password
-                          OnlyGetFee:(BOOL)onlyGetFee
                              Success:(SuccessBlock)successBlock
                                Error:(ErrorBlock)errorBlock;
 
 // 购买NH资产
 + (void)CCW_BugNHAssetOrderId:(NSString *)orderId
                      Password:(NSString *)password
-                   OnlyGetFee:(BOOL)onlyGetFee
                       Success:(SuccessBlock)successBlock
                         Error:(ErrorBlock)errorBlock;
 // 删除NH资产
 + (void)CCW_DeleteNHAssetId:(NSString *)nhAssetId
                      Password:(NSString *)password
-                   OnlyGetFee:(BOOL)onlyGetFee
                       Success:(SuccessBlock)successBlock
                         Error:(ErrorBlock)errorBlock;
 // NH资产转移
 + (void)CCW_TransferNHAssetToAccount:(NSString *)to
                    NHAssetID:(NSString *)NHAssetID
                     Password:(NSString *)password
-                  OnlyGetFee:(BOOL)onlyGetFee
                      Success:(SuccessBlock)successBlock
                        Error:(ErrorBlock)errorBlock;
 ///**

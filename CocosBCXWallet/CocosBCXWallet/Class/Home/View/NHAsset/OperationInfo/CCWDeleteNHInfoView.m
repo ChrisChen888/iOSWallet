@@ -8,7 +8,7 @@
 #import "CCWDeleteNHInfoView.h"
 #import "CCWTransferInfoTableViewCell.h"
 
-#define containerViewH iPhone5?345:350
+#define containerViewH iPhone5?301:300
 
 @interface CCWDeleteNHInfoView ()<UITableViewDelegate,UITableViewDataSource>
 // 背后控件
@@ -119,7 +119,7 @@
 {
     if (!_tableView) {
         // 内容
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 50, CCWScreenW, iPhone5?176:200)];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 50, CCWScreenW, iPhone5?132:150)];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;

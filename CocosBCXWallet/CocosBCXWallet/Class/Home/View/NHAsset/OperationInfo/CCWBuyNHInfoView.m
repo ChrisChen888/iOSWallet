@@ -8,7 +8,7 @@
 #import "CCWBuyNHInfoView.h"
 #import "CCWTransferInfoTableViewCell.h"
 
-#define containerViewH iPhone5?385:397
+#define containerViewH iPhone5?341:347
 
 @interface CCWBuyNHInfoView ()<UITableViewDelegate,UITableViewDataSource>
 // 背后控件
@@ -105,7 +105,7 @@
 {
     if (!_tableView) {
         // 内容
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 50, CCWScreenW, iPhone5?220:250)];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 50, CCWScreenW, iPhone5?176:200)];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;

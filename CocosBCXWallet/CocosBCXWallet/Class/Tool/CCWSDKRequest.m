@@ -596,37 +596,6 @@
     }];
 }
 
-// NH资产转移
-+ (void)CCW_TransferNHAsset:(NSString *)from
-                  ToAccount:(NSString *)to
-                  NHAssetID:(NSString *)NHAssetID
-                   Password:(NSString *)password
-                    Success:(SuccessBlock)successBlock
-                      Error:(ErrorBlock)errorBlock
-{
-    [[CocosSDK shareInstance] Cocos_TransferNHAsset:from ToAccount:to NHAssetID:NHAssetID Password:password Success:successBlock Error:^(NSError *error) {
-        !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
-    }];
-}
-
-// 购买NH资产手续费
-+ (void)CCW_BuyNHAssetFeeID:(NSString *)orderID
-                      Account:(NSString *)account
-               FeePayingAsset:(NSString *)feePayingAssetID
-                      Success:(SuccessBlock)successBlock
-                        Error:(ErrorBlock)errorBlock
-{
-//    [[CocosSDK shareInstance] Cocos_BuyNHAssetFeeOrderID:orderID Account:account FeePayingAsset:feePayingAssetID Success:^(id responseObject) {
-//        CCWAssetsModel *assetAmountModel = [CCWAssetsModel mj_objectWithKeyValues:[responseObject firstObject]];
-//        [self CCW_QueryAssetInfo:feePayingAssetID Success:^(CCWAssetsModel *assetsModel) {
-//            assetsModel.amount = [[CCWDecimalTool CCW_decimalNumberWithString:[NSString stringWithFormat:@"%@",assetAmountModel.amount]] decimalNumberByMultiplyingByPowerOf10:-[assetsModel.precision integerValue]];
-//            !successBlock?:successBlock(assetsModel);
-//        } Error:errorBlock];
-//    } Error:^(NSError *error) {
-//        !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
-//    }];
-}
-
 // 购买NH资产
 + (void)CCW_BuyNHAssetOrderID:(NSString *)orderID
                       Account:(NSString *)account
@@ -646,25 +615,12 @@
               SellPriceAmount:(NSString *)priceAmount
                     SellAsset:(NSString *)sellAsset
                    Expiration:(NSString *)expiration
-                   OnlyGetFee:(BOOL)onlyGetFee
                       Success:(SuccessBlock)successBlock
                         Error:(ErrorBlock)errorBlock
 {
-    if (onlyGetFee) {
-//        [[CocosSDK shareInstance] Cocos_SellNHAssetFeeSeller:CCWAccountName NHAssetId:nhAssetid Memo:memo SellPriceAmount:priceAmount PendingFeeAmount:@"0" OperationAsset:@"1.3.0" SellAsset:sellAsset Expiration:expiration Success:^(id responseObject) {
-//            CCWAssetsModel *assetAmountModel = [CCWAssetsModel mj_objectWithKeyValues:[responseObject firstObject]];
-//            [self CCW_QueryAssetInfo:@"1.3.0" Success:^(CCWAssetsModel *assetsModel) {
-//                assetsModel.amount = [[CCWDecimalTool CCW_decimalNumberWithString:[NSString stringWithFormat:@"%@",assetAmountModel.amount]] decimalNumberByMultiplyingByPowerOf10:-[assetsModel.precision integerValue]];
-//                !successBlock?:successBlock(assetsModel);
-//            } Error:errorBlock];
-//        } Error:^(NSError *error) {
-//            !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
-//        }];
-    }else{
-        [[CocosSDK shareInstance] Cocos_SellNHAssetSeller:CCWAccountName Password:password NHAssetId:nhAssetid Memo:memo SellPriceAmount:priceAmount PendingFeeAmount:@"0" OperationAsset:@"1.3.0" SellAsset:sellAsset Expiration:expiration Success:successBlock Error:^(NSError *error) {
-            !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
-        }];
-    }
+    [[CocosSDK shareInstance] Cocos_SellNHAssetSeller:CCWAccountName Password:password NHAssetId:nhAssetid Memo:memo SellPriceAmount:priceAmount PendingFeeAmount:@"0" OperationAsset:@"1.3.0" SellAsset:sellAsset Expiration:expiration Success:successBlock Error:^(NSError *error) {
+        !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
+    }];
 }
 
 // 出售资产的最大过期时间
@@ -688,88 +644,45 @@
 // 取消NH资产
 + (void)CCW_CancelSellNHAssetOrderId:(NSString *)orderId
                             Password:(NSString *)password
-                          OnlyGetFee:(BOOL)onlyGetFee
                              Success:(SuccessBlock)successBlock
                                Error:(ErrorBlock)errorBlock
 {
-    if (onlyGetFee) {
-//        [[CocosSDK shareInstance] Cocos_CancelNHAssetFeeAccount:CCWAccountName FeePayingAsset:@"1.3.0" OrderId:orderId Success:^(id responseObject) {
-//            CCWAssetsModel *assetAmountModel = [CCWAssetsModel mj_objectWithKeyValues:[responseObject firstObject]];
-//            [self CCW_QueryAssetInfo:@"1.3.0" Success:^(CCWAssetsModel *assetsModel) {
-//                assetsModel.amount = [[CCWDecimalTool CCW_decimalNumberWithString:[NSString stringWithFormat:@"%@",assetAmountModel.amount]] decimalNumberByMultiplyingByPowerOf10:-[assetsModel.precision integerValue]];
-//                !successBlock?:successBlock(assetsModel);
-//            } Error:errorBlock];
-//        } Error:^(NSError *error) {
-//            !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
-//        }];
-    }else{
-        [[CocosSDK shareInstance] Cocos_CancelNHAssetAccount:CCWAccountName Password:password  OrderId:orderId Success:successBlock Error:^(NSError *error) {
-            !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
-        }];
-    }
+    
+    [[CocosSDK shareInstance] Cocos_CancelNHAssetAccount:CCWAccountName Password:password  OrderId:orderId Success:successBlock Error:^(NSError *error) {
+        !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
+    }];
 }
 
 // 购买NH资产
 + (void)CCW_BugNHAssetOrderId:(NSString *)orderId
                      Password:(NSString *)password
-                   OnlyGetFee:(BOOL)onlyGetFee
                       Success:(SuccessBlock)successBlock
                         Error:(ErrorBlock)errorBlock
 {
-    if (onlyGetFee) {
-//        [[CocosSDK shareInstance] Cocos_BuyNHAssetFeeOrderID:orderId Account:CCWAccountName FeePayingAsset:@"1.3.0" Success:^(id responseObject) {
-//            CCWAssetsModel *assetAmountModel = [CCWAssetsModel mj_objectWithKeyValues:[responseObject firstObject]];
-//            [self CCW_QueryAssetInfo:@"1.3.0" Success:^(CCWAssetsModel *assetsModel) {
-//                assetsModel.amount = [[CCWDecimalTool CCW_decimalNumberWithString:[NSString stringWithFormat:@"%@",assetAmountModel.amount]] decimalNumberByMultiplyingByPowerOf10:-[assetsModel.precision integerValue]];
-//                !successBlock?:successBlock(assetsModel);
-//            } Error:errorBlock];
-//        } Error:^(NSError *error) {
-//            !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
-//        }];
-    }else{
-        [[CocosSDK shareInstance] Cocos_BuyNHAssetOrderID:orderId Account:CCWAccountName Password:password Success:successBlock Error:^(NSError *error) {
-            !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
-        }];
-    }
+    [[CocosSDK shareInstance] Cocos_BuyNHAssetOrderID:orderId Account:CCWAccountName Password:password Success:successBlock Error:^(NSError *error) {
+        !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
+    }];
 }
 
 // 删除NH资产
 + (void)CCW_DeleteNHAssetId:(NSString *)nhAssetId
                    Password:(NSString *)password
-                 OnlyGetFee:(BOOL)onlyGetFee
                     Success:(SuccessBlock)successBlock
                       Error:(ErrorBlock)errorBlock
 {
-    if (onlyGetFee) {
-//        [[CocosSDK shareInstance] Cocos_DeleteNHAssetFeeAccount:CCWAccountName FeePayingAsset:@"1.3.0" nhAssetID:nhAssetId Success:^(id responseObject) {
-//            CCWAssetsModel *assetAmountModel = [CCWAssetsModel mj_objectWithKeyValues:[responseObject firstObject]];
-//            [self CCW_QueryAssetInfo:@"1.3.0" Success:^(CCWAssetsModel *assetsModel) {
-//                assetsModel.amount = [[CCWDecimalTool CCW_decimalNumberWithString:[NSString stringWithFormat:@"%@",assetAmountModel.amount]] decimalNumberByMultiplyingByPowerOf10:-[assetsModel.precision integerValue]];
-//                !successBlock?:successBlock(assetsModel);
-//            } Error:errorBlock];
-//        } Error:^(NSError *error) {
-//            !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
-//        }];
-    }else{
-        [[CocosSDK shareInstance] Cocos_DeleteNHAssetAccount:CCWAccountName Password:password  nhAssetID:nhAssetId Success:successBlock Error:^(NSError *error) {
-            !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
-        }];
-    }
+    [[CocosSDK shareInstance] Cocos_DeleteNHAssetAccount:CCWAccountName Password:password  nhAssetID:nhAssetId Success:successBlock Error:^(NSError *error) {
+        !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
+    }];
 }
 
 + (void)CCW_TransferNHAssetToAccount:(NSString *)to
                            NHAssetID:(NSString *)NHAssetID
                             Password:(NSString *)password
-                          OnlyGetFee:(BOOL)onlyGetFee
                              Success:(SuccessBlock)successBlock
                                Error:(ErrorBlock)errorBlock
 {
-    if (onlyGetFee) {
-        
-    }else{
-        [[CocosSDK shareInstance] Cocos_TransferNHAsset:CCWAccountName ToAccount:to NHAssetID:NHAssetID Password:password Success:successBlock Error:^(NSError *error) {
-            !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
-        }];
-    }
+    [[CocosSDK shareInstance] Cocos_TransferNHAsset:CCWAccountName ToAccount:to NHAssetID:NHAssetID Password:password Success:successBlock Error:^(NSError *error) {
+        !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
+    }];
 }
 @end
