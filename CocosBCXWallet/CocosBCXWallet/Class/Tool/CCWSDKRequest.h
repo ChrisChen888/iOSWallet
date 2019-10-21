@@ -131,25 +131,6 @@ typedef void (^ErrorBlock)(NSString *errorAlert,id responseObject);// 失败回�
                           Error:(ErrorBlock)errorBlock;
 
 /**
- 获取转账手续费
- @param fromAccount 来源帐号
- @param toAccount 转给目标账号
- @param assetId 资产Id 通过 getBalances先获取资产列表
- @param amount 转账数量
- @param memo 备注说明
- */
-+ (void)CCW_TransferFeeAsset:(NSString *)fromAccount
-                   toAccount:(NSString *)toAccount
-                    password:(NSString *)password
-                     assetId:(NSString *)assetId
-                  feeAssetId:(NSString *)feeAssetId
-                      amount:(NSString *)amount
-                        memo:(NSString *)memo
-                     Success:(SuccessBlock)successBlock
-                       Error:(ErrorBlock)errorBlock;
-
-
-/**
  转账 客户的可以通过获取的资产列表先校验对应资产余额是否足够
  @param fromAccount 来源帐号
  @param toAccount 转给目标账号
@@ -161,7 +142,6 @@ typedef void (^ErrorBlock)(NSString *errorAlert,id responseObject);// 失败回�
                 toAccount:(NSString *)toAccount
                  password:(NSString *)password
                   assetId:(NSString *)assetId
-               feeAssetId:(NSString *)feeAssetId
                    amount:(NSString *)amount
                      memo:(NSString *)memo
                   Success:(SuccessBlock)successBlock
@@ -228,7 +208,6 @@ typedef void (^ErrorBlock)(NSString *errorAlert,id responseObject);// 失败回�
      ContractMethodParam:(NSArray *)param
           ContractMethod:(NSString *)contractmMethod
            CallerAccount:(NSString *)accountIdOrName
-          feePayingAsset:(NSString *)feePayingAsset
                 Password:(NSString *)password
      CallContractSuccess:(SuccessBlock)successBlock
                    Error:(ErrorBlock)errorBlock;
@@ -274,7 +253,6 @@ typedef void (^ErrorBlock)(NSString *errorAlert,id responseObject);// 失败回�
                   ToAccount:(NSString *)to
                   NHAssetID:(NSString *)NHAssetID
                    Password:(NSString *)password
-             FeePayingAsset:(NSString *)feePayingAssetID
                     Success:(SuccessBlock)successBlock
                       Error:(ErrorBlock)errorBlock;
 // 购买NH资产手续费
@@ -289,7 +267,6 @@ typedef void (^ErrorBlock)(NSString *errorAlert,id responseObject);// 失败回�
 + (void)CCW_BuyNHAssetOrderID:(NSString *)orderID
                         Account:(NSString *)account
                        Password:(NSString *)password
-                 FeePayingAsset:(NSString *)feePayingAssetID
                         Success:(SuccessBlock)successBlock
                         Error:(ErrorBlock)errorBlock;
 // 出售NH资产

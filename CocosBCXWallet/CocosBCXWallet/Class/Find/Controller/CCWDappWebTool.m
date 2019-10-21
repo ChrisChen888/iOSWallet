@@ -51,29 +51,16 @@
     NSString *to = transferParam[@"toAccount"];
     NSString *amount = transferParam[@"amount"];
     NSString *assetId = transferParam[@"assetId"];
-    NSString *feeAssetId = transferParam[@"feeAssetId"];
     NSString *memo = transferParam[@"memo"];
-
-    if ([transferParam[@"onlyGetFee"] boolValue]) {
-        [CCWSDKRequest CCW_TransferFeeAsset:from toAccount:to password:password assetId:assetId feeAssetId:feeAssetId amount:amount memo:memo Success:^(CCWAssetsModel *assetsModel) {
-            NSDictionary *jsMessage = @{
-                                        @"fee_amount":assetsModel.amount,
-                                        @"fee_symbol":assetsModel.symbol,
-                                        };
-            !block?:block(@{@"data":jsMessage,@"code":@1});
-        } Error:^(NSString * _Nonnull errorAlert, NSError *error)  {
-            !block?:block([self errorBlockWithError:errorAlert ResponseObject:error]);
-        }];
-    }else{
-        [CCWSDKRequest CCW_TransferAsset:from toAccount:to password:password assetId:assetId feeAssetId:feeAssetId amount:amount memo:memo Success:^(id  _Nonnull responseObject) {
-            NSDictionary *jsMessage = @{
-                                        @"trx_id":responseObject,
-                                        };
-            !block?:block(@{@"data":@[],@"code":@1,@"trx_data":jsMessage} );
-        } Error:^(NSString * _Nonnull errorAlert, NSError *error)  {
-            !block?:block([self errorBlockWithError:errorAlert ResponseObject:error]);
-        }];
-    }
+    
+    [CCWSDKRequest CCW_TransferAsset:from toAccount:to password:password assetId:assetId  amount:amount memo:memo Success:^(id  _Nonnull responseObject) {
+        NSDictionary *jsMessage = @{
+                                    @"trx_id":responseObject,
+                                    };
+        !block?:block(@{@"data":@[],@"code":@1,@"trx_data":jsMessage} );
+    } Error:^(NSString * _Nonnull errorAlert, NSError *error)  {
+        !block?:block([self errorBlockWithError:errorAlert ResponseObject:error]);
+    }];
 }
 
 // 调用合约
@@ -84,23 +71,12 @@
     NSString *functionName = callContractParam[@"functionName"];
     NSArray *valueList = callContractParam[@"valueList"];
     
-    if ([callContractParam[@"onlyGetFee"] boolValue]) {
-        [CCWSDKRequest CCW_CallContractFee:nameOrId ContractMethodParam:valueList ContractMethod:functionName CallerAccount:CCWAccountName feePayingAsset:@"1.3.0" Password:password CallContractSuccess:^(CCWAssetsModel *assetsModel) {
-            NSDictionary *jsMessage = @{
-                                        @"fee_amount":assetsModel.amount,
-                                        @"fee_symbol":assetsModel.symbol,
-                                        };
-            !block?:block(@{@"data":jsMessage,@"code":@1});
-        } Error:^(NSString * _Nonnull errorAlert, NSError *error)  {
-            !block?:block([self errorBlockWithError:errorAlert ResponseObject:error]);
-        }];
-    }else{
-        [CCWSDKRequest CCW_CallContract:nameOrId ContractMethodParam:valueList ContractMethod:functionName CallerAccount:CCWAccountName feePayingAsset:@"1.3.0" Password:password CallContractSuccess:^(id  _Nonnull responseObject) {
-            !block?:block(responseObject);
-        } Error:^(NSString * _Nonnull errorAlert, NSError *error) {
-            !block?:block([self errorBlockWithError:errorAlert ResponseObject:error]);
-        }];
-    }
+    [CCWSDKRequest CCW_CallContract:nameOrId ContractMethodParam:valueList ContractMethod:functionName CallerAccount:CCWAccountName Password:password CallContractSuccess:^(id  _Nonnull responseObject) {
+        !block?:block(responseObject);
+    } Error:^(NSString * _Nonnull errorAlert, NSError *error) {
+        !block?:block([self errorBlockWithError:errorAlert ResponseObject:error]);
+    }];
+    
 }
 
 // 解密备注
@@ -114,13 +90,14 @@
         !block?:block([self errorBlockWithError:errorAlert ResponseObject:error]);
     }];
 }
+
 // 转移资产
 + (void)JS_TransferNHAsset:(NSDictionary *)param addPassword:(NSString *)password response:(CallbackBlock)block
 {
     NSDictionary *trnhParam = param[@"params"];
     NSString *toAccount = trnhParam[@"toAccount"];
     NSArray *NHAssetIds = trnhParam[@"NHAssetIds"];
-    [CCWSDKRequest CCW_TransferNHAsset:CCWAccountName ToAccount:toAccount NHAssetID:[NHAssetIds firstObject] Password:password FeePayingAsset:@"1.3.0" Success:^(id  _Nonnull responseObject) {
+    [CCWSDKRequest CCW_TransferNHAsset:CCWAccountName ToAccount:toAccount NHAssetID:[NHAssetIds firstObject] Password:password Success:^(id  _Nonnull responseObject) {
         NSDictionary *jsMessage = @{
                                     @"trx_id":responseObject,
                                     };
@@ -136,26 +113,15 @@
     NSDictionary *nhassetParam = param[@"params"];
     NSString *orderId = nhassetParam[@"orderId"];
     
-    if ([nhassetParam[@"onlyGetFee"] boolValue]) {
-        [CCWSDKRequest CCW_BuyNHAssetFeeID:orderId Account:CCWAccountName FeePayingAsset:@"1.3.0" Success:^(CCWAssetsModel *assetsModel) {
-            NSDictionary *jsMessage = @{
-                                        @"fee_amount":assetsModel.amount,
-                                        @"fee_symbol":assetsModel.symbol,
-                                        };
-            !block?:block(@{@"data":jsMessage,@"code":@1});
-        } Error:^(NSString * _Nonnull errorAlert, NSError *error)  {
-            !block?:block([self errorBlockWithError:errorAlert ResponseObject:error]);
-        }];
-    }else{
-        [CCWSDKRequest CCW_BuyNHAssetOrderID:orderId Account:CCWAccountName Password:password FeePayingAsset:@"1.3.0" Success:^(id  _Nonnull responseObject) {
-            NSDictionary *jsMessage = @{
-                                        @"trx_id":responseObject,
-                                        };
-            !block?:block(@{@"data":@[],@"code":@1,@"trx_data":jsMessage});
-        } Error:^(NSString * _Nonnull errorAlert, NSError *error)  {
-            !block?:block([self errorBlockWithError:errorAlert ResponseObject:error]);
-        }];
-    }
+
+    [CCWSDKRequest CCW_BuyNHAssetOrderID:orderId Account:CCWAccountName Password:password Success:^(id  _Nonnull responseObject) {
+        NSDictionary *jsMessage = @{
+                                    @"trx_id":responseObject,
+                                    };
+        !block?:block(@{@"data":@[],@"code":@1,@"trx_data":jsMessage});
+    } Error:^(NSString * _Nonnull errorAlert, NSError *error)  {
+        !block?:block([self errorBlockWithError:errorAlert ResponseObject:error]);
+    }];
 }
 
 // 所有错误处理

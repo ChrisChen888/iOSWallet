@@ -16,6 +16,5 @@ typedef NS_ENUM(NSInteger,WebsocketBlockChainApi) {
 typedef NS_ENUM(NSInteger,WebsocketConnectStatus) {
     WebsocketConnectStatusClosed,       // Block chain nodes are not linked
     WebsocketConnectStatusConnecting,   // Block Chain Nodes Connecting
-    WebsocketConnectStatusConnected ,    // Block chain nodes are connected
-    WebsocketConnectStatusChange     // Block chain nodes will change
+    WebsocketConnectStatusConnected     // Block chain nodes are connected
 };

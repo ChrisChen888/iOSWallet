@@ -139,16 +139,6 @@
 		317948D1221E4B7800F4EA69 /* UIImageView+CCWImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 317948CF221E4B7800F4EA69 /* UIImageView+CCWImageView.m */; };
 		317948D6221E4BC000F4EA69 /* CCWContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 317948D3221E4BC000F4EA69 /* CCWContactTableViewCell.xib */; };
 		317948D7221E4BC000F4EA69 /* CCWContactTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 317948D5221E4BC000F4EA69 /* CCWContactTableViewCell.m */; };
-		317D2D4422DEFBBF00559A7C /* CocosTransferOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 317D2D3122DEFBBF00559A7C /* CocosTransferOperation.m */; };
-		317D2D4522DEFBBF00559A7C /* CocosUpgradeMemberOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 317D2D3322DEFBBF00559A7C /* CocosUpgradeMemberOperation.m */; };
-		317D2D4622DEFBBF00559A7C /* CocosSellNHAssetOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 317D2D3422DEFBBF00559A7C /* CocosSellNHAssetOperation.m */; };
-		317D2D4722DEFBBF00559A7C /* CocosTransferNHOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 317D2D3622DEFBBF00559A7C /* CocosTransferNHOperation.m */; };
-		317D2D4822DEFBBF00559A7C /* CocosDeleteNHOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 317D2D3922DEFBBF00559A7C /* CocosDeleteNHOperation.m */; };
-		317D2D4922DEFBBF00559A7C /* CocosOperationContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 317D2D3A22DEFBBF00559A7C /* CocosOperationContent.m */; };
-		317D2D4A22DEFBBF00559A7C /* CocosSellNHAssetCancelOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 317D2D3C22DEFBBF00559A7C /* CocosSellNHAssetCancelOperation.m */; };
-		317D2D4B22DEFBBF00559A7C /* CocosBuyNHOrderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 317D2D3F22DEFBBF00559A7C /* CocosBuyNHOrderOperation.m */; };
-		317D2D4C22DEFBBF00559A7C /* CocosBaseOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 317D2D4222DEFBBF00559A7C /* CocosBaseOperation.m */; };
-		317D2D4D22DEFBBF00559A7C /* CocosCallContractOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 317D2D4322DEFBBF00559A7C /* CocosCallContractOperation.m */; };
 		317D2D5122E0428E00559A7C /* CCWPropAssetsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 317D2D4F22E0428E00559A7C /* CCWPropAssetsTableViewCell.m */; };
 		317D2D5222E0428E00559A7C /* CCWPropAssetsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 317D2D5022E0428E00559A7C /* CCWPropAssetsTableViewCell.xib */; };
 		317D2D5522E04CF700559A7C /* CCWNHAssetsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 317D2D5422E04CF700559A7C /* CCWNHAssetsModel.m */; };
@@ -171,7 +161,6 @@
 		31881F5D2216692E006C31A2 /* CCWCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31881F5B2216692E006C31A2 /* CCWCreateViewController.m */; };
 		31881F5E2216692E006C31A2 /* CCWCreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31881F5C2216692E006C31A2 /* CCWCreateViewController.xib */; };
 		318A67E222893D23001D0157 /* CCWDappWebTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 318A67E122893D23001D0157 /* CCWDappWebTool.m */; };
-		318A67EC228948AE001D0157 /* ChainNHAssetOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 318A67EB228948AE001D0157 /* ChainNHAssetOrder.m */; };
 		318A67EE22896642001D0157 /* cocos.js in Resources */ = {isa = PBXBuildFile; fileRef = 318A67ED22896642001D0157 /* cocos.js */; };
 		318FF5DD221510EC00AB5696 /* CCWTransRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 318FF5DC221510EC00AB5696 /* CCWTransRecordViewController.m */; };
 		318FF5E12215143D00AB5696 /* CCWTransferRecordHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 318FF5E02215143D00AB5696 /* CCWTransferRecordHeader.m */; };
@@ -187,69 +176,6 @@
 		318FF6002215794A00AB5696 /* CCWButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 318FF5FF2215794A00AB5696 /* CCWButton.m */; };
 		318FF604221580D900AB5696 /* CCWImportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 318FF602221580D900AB5696 /* CCWImportViewController.m */; };
 		318FF605221580D900AB5696 /* CCWImportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 318FF603221580D900AB5696 /* CCWImportViewController.xib */; };
-		3191A08C225C6DE2003AB263 /* Cocos_Key_Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 31919FE9225C6DE2003AB263 /* Cocos_Key_Account.m */; };
-		3191A08D225C6DE2003AB263 /* base58.c in Sources */ = {isa = PBXBuildFile; fileRef = 31919FEB225C6DE2003AB263 /* base58.c */; };
-		3191A08E225C6DE2003AB263 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 31919FED225C6DE2003AB263 /* Base64.m */; };
-		3191A08F225C6DE2003AB263 /* PBKDF2.m in Sources */ = {isa = PBXBuildFile; fileRef = 31919FF0225C6DE2003AB263 /* PBKDF2.m */; };
-		3191A090225C6DE2003AB263 /* rmd160.c in Sources */ = {isa = PBXBuildFile; fileRef = 31919FF1225C6DE2003AB263 /* rmd160.c */; };
-		3191A091225C6DE2003AB263 /* sha2.c in Sources */ = {isa = PBXBuildFile; fileRef = 31919FF3225C6DE2003AB263 /* sha2.c */; };
-		3191A092225C6DE2003AB263 /* Sha256.m in Sources */ = {isa = PBXBuildFile; fileRef = 31919FF6225C6DE2003AB263 /* Sha256.m */; };
-		3191A093225C6DE2003AB263 /* uECC.c in Sources */ = {isa = PBXBuildFile; fileRef = 31919FF7225C6DE2003AB263 /* uECC.c */; };
-		3191A094225C6DE2003AB263 /* WordList.m in Sources */ = {isa = PBXBuildFile; fileRef = 31919FFA225C6DE2003AB263 /* WordList.m */; };
-		3191A095225C6DE2003AB263 /* CocosBase58Object.m in Sources */ = {isa = PBXBuildFile; fileRef = 31919FFE225C6DE2003AB263 /* CocosBase58Object.m */; };
-		3191A096225C6DE2003AB263 /* CocosPackData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A001225C6DE2003AB263 /* CocosPackData.m */; };
-		3191A097225C6DE2003AB263 /* NSObject+DataToObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A003225C6DE2003AB263 /* NSObject+DataToObject.m */; };
-		3191A098225C6DE2003AB263 /* Diggest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A006225C6DE2003AB263 /* Diggest.m */; };
-		3191A099225C6DE2003AB263 /* RIPEMD160Diggest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A009225C6DE2003AB263 /* RIPEMD160Diggest.m */; };
-		3191A09A225C6DE2003AB263 /* SHA256Diggest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A00C225C6DE2003AB263 /* SHA256Diggest.m */; };
-		3191A09B225C6DE2003AB263 /* NSData+CopyWithRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A00F225C6DE2003AB263 /* NSData+CopyWithRange.m */; };
-		3191A09C225C6DE2003AB263 /* NSData+Base16.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A012225C6DE2003AB263 /* NSData+Base16.m */; };
-		3191A09D225C6DE2003AB263 /* NSData+HashData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A014225C6DE2003AB263 /* NSData+HashData.m */; };
-		3191A09E225C6DE2003AB263 /* NSDate+UTCDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A017225C6DE2003AB263 /* NSDate+UTCDate.m */; };
-		3191A09F225C6DE2003AB263 /* CocosSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A01A225C6DE2003AB263 /* CocosSDK.m */; };
-		3191A0A0225C6DE2003AB263 /* CocosDataBase+Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A01D225C6DE2003AB263 /* CocosDataBase+Account.m */; };
-		3191A0A1225C6DE2003AB263 /* CocosDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A01F225C6DE2003AB263 /* CocosDataBase.m */; };
-		3191A0A2225C6DE2003AB263 /* CocosDBAccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A021225C6DE2003AB263 /* CocosDBAccountModel.m */; };
-		3191A0A3225C6DE2003AB263 /* CocosHTTPManager+CreateAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A024225C6DE2003AB263 /* CocosHTTPManager+CreateAccount.m */; };
-		3191A0A4225C6DE2003AB263 /* CocosHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A026225C6DE2003AB263 /* CocosHTTPManager.m */; };
-		3191A0A5225C6DE2003AB263 /* KeystoneFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A029225C6DE2003AB263 /* KeystoneFile.m */; };
-		3191A0A6225C6DE2003AB263 /* PlainKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A02B225C6DE2003AB263 /* PlainKey.m */; };
-		3191A0A7225C6DE2003AB263 /* WalletExtraKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A02D225C6DE2003AB263 /* WalletExtraKey.m */; };
-		3191A0AC225C6DE2003AB263 /* AccountAuthoriyObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A03B225C6DE2003AB263 /* AccountAuthoriyObject.m */; };
-		3191A0AD225C6DE2003AB263 /* AuthorityObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A03D225C6DE2003AB263 /* AuthorityObject.m */; };
-		3191A0AE225C6DE2003AB263 /* BitAddressAuthorityObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A03F225C6DE2003AB263 /* BitAddressAuthorityObject.m */; };
-		3191A0AF225C6DE2003AB263 /* PublicKeyAuthorityObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A041225C6DE2003AB263 /* PublicKeyAuthorityObject.m */; };
-		3191A0B0225C6DE2003AB263 /* SpecialAuthorityObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A043225C6DE2003AB263 /* SpecialAuthorityObject.m */; };
-		3191A0B1225C6DE2003AB263 /* ChainAccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A045225C6DE2003AB263 /* ChainAccountModel.m */; };
-		3191A0B2225C6DE2003AB263 /* AccountOptionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A048225C6DE2003AB263 /* AccountOptionObject.m */; };
-		3191A0B3225C6DE2003AB263 /* VoteIdObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A04A225C6DE2003AB263 /* VoteIdObject.m */; };
-		3191A0B4225C6DE2003AB263 /* ChainAssetOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A04E225C6DE2003AB263 /* ChainAssetOption.m */; };
-		3191A0B5225C6DE2003AB263 /* ChainAssetPermissionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A050225C6DE2003AB263 /* ChainAssetPermissionObject.m */; };
-		3191A0B6225C6DE2003AB263 /* ChainAssetObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A052225C6DE2003AB263 /* ChainAssetObject.m */; };
-		3191A0B7225C6DE2003AB263 /* ChainAccountHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A054225C6DE2003AB263 /* ChainAccountHistory.m */; };
-		3191A0B8225C6DE2003AB263 /* ChainAssetAmountObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A056225C6DE2003AB263 /* ChainAssetAmountObject.m */; };
-		3191A0B9225C6DE2003AB263 /* ChainDynamicGlobalProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A058225C6DE2003AB263 /* ChainDynamicGlobalProperties.m */; };
-		3191A0BA225C6DE2003AB263 /* ChainMemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A05A225C6DE2003AB263 /* ChainMemo.m */; };
-		3191A0BB225C6DE2003AB263 /* ChainObjectId.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A05C225C6DE2003AB263 /* ChainObjectId.m */; };
-		3191A0BC225C6DE2003AB263 /* ChainPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A05E225C6DE2003AB263 /* ChainPrice.m */; };
-		3191A0BD225C6DE2003AB263 /* CocosBitAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A061225C6DE2003AB263 /* CocosBitAddress.m */; };
-		3191A0BE225C6DE2003AB263 /* CocosPrivateKey.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3191A063225C6DE2003AB263 /* CocosPrivateKey.mm */; };
-		3191A0BF225C6DE2003AB263 /* CocosPublicKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A065225C6DE2003AB263 /* CocosPublicKey.m */; };
-		3191A0C0225C6DE2003AB263 /* libsecp256k1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3191A06A225C6DE2003AB263 /* libsecp256k1.a */; };
-		3191A0C1225C6DE2003AB263 /* libsecp256k1_arm64.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3191A06B225C6DE2003AB263 /* libsecp256k1_arm64.a */; };
-		3191A0C2225C6DE2003AB263 /* libsecp256k1_armv7.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3191A06C225C6DE2003AB263 /* libsecp256k1_armv7.a */; };
-		3191A0C3225C6DE2003AB263 /* libsecp256k1_i386.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3191A06D225C6DE2003AB263 /* libsecp256k1_i386.a */; };
-		3191A0C4225C6DE2003AB263 /* CocosConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A070225C6DE2003AB263 /* CocosConfig.m */; };
-		3191A0C5225C6DE2003AB263 /* CocosConstkey.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A072225C6DE2003AB263 /* CocosConstkey.m */; };
-		3191A0C6225C6DE2003AB263 /* CocosSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A074225C6DE2003AB263 /* CocosSetting.m */; };
-		3191A0C7225C6DE2003AB263 /* SignedTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A077225C6DE2003AB263 /* SignedTransaction.m */; };
-		3191A0C8225C6DE2003AB263 /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A079225C6DE2003AB263 /* Transaction.m */; };
-		3191A0C9225C6DE2003AB263 /* CallBackModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A07D225C6DE2003AB263 /* CallBackModel.m */; };
-		3191A0CA225C6DE2003AB263 /* UploadBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A081225C6DE2003AB263 /* UploadBaseModel.m */; };
-		3191A0CB225C6DE2003AB263 /* UploadParams.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A083225C6DE2003AB263 /* UploadParams.m */; };
-		3191A0CC225C6DE2003AB263 /* WebsocketClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A086225C6DE2003AB263 /* WebsocketClient.m */; };
-		3191A0CD225C6DE2003AB263 /* WebsocketResultErrorParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A089225C6DE2003AB263 /* WebsocketResultErrorParse.m */; };
-		3191A0CE225C6DE2003AB263 /* WebsocketResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A08B225C6DE2003AB263 /* WebsocketResultModel.m */; };
 		3191A0D2225C8A09003AB263 /* CCWRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A0D0225C8A09003AB263 /* CCWRegisterViewController.m */; };
 		3191A0D7225DDFC3003AB263 /* CCWRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3191A0D6225DDFC3003AB263 /* CCWRegisterViewController.xib */; };
 		3191A0DA225E11F8003AB263 /* CCWSelectCoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A0D9225E11F7003AB263 /* CCWSelectCoinViewController.m */; };
@@ -258,6 +184,87 @@
 		3191A0E8225F1D41003AB263 /* CCWWalletAccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A0E7225F1D41003AB263 /* CCWWalletAccountModel.m */; };
 		319D45C1221BAB3600D1E6D2 /* CCWFindModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 319D45BF221BAB3500D1E6D2 /* CCWFindModel.m */; };
 		319D45E2221C0FFA00D1E6D2 /* CCWWalletAccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 319D45E1221C0FFA00D1E6D2 /* CCWWalletAccountTool.m */; };
+		31B1AF59235D58080080BC2E /* SignedTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AE98235D58080080BC2E /* SignedTransaction.m */; };
+		31B1AF5A235D58080080BC2E /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AE99235D58080080BC2E /* Transaction.m */; };
+		31B1AF5B235D58080080BC2E /* CocosDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AE9D235D58080080BC2E /* CocosDataBase.m */; };
+		31B1AF5C235D58080080BC2E /* CocosDBAccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AE9F235D58080080BC2E /* CocosDBAccountModel.m */; };
+		31B1AF5D235D58080080BC2E /* CocosDataBase+Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AEA1235D58080080BC2E /* CocosDataBase+Account.m */; };
+		31B1AF5E235D58080080BC2E /* CallBackModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AEA5235D58080080BC2E /* CallBackModel.m */; };
+		31B1AF5F235D58080080BC2E /* WebsocketClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AEA8235D58080080BC2E /* WebsocketClient.m */; };
+		31B1AF60235D58080080BC2E /* WebsocketResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AEAA235D58080080BC2E /* WebsocketResultModel.m */; };
+		31B1AF61235D58080080BC2E /* WebsocketResultErrorParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AEAD235D58080080BC2E /* WebsocketResultErrorParse.m */; };
+		31B1AF62235D58080080BC2E /* UploadParams.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AEB1235D58080080BC2E /* UploadParams.m */; };
+		31B1AF63235D58080080BC2E /* UploadBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AEB2235D58080080BC2E /* UploadBaseModel.m */; };
+		31B1AF64235D58080080BC2E /* RIPEMD160Diggest.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AEB9235D58080080BC2E /* RIPEMD160Diggest.m */; };
+		31B1AF65235D58080080BC2E /* SHA256Diggest.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AEBD235D58080080BC2E /* SHA256Diggest.m */; };
+		31B1AF66235D58080080BC2E /* Diggest.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AEBE235D58080080BC2E /* Diggest.m */; };
+		31B1AF67235D58080080BC2E /* NSObject+DataToObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AEC0235D58080080BC2E /* NSObject+DataToObject.m */; };
+		31B1AF68235D58080080BC2E /* CocosPackData.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AEC3235D58080080BC2E /* CocosPackData.m */; };
+		31B1AF69235D58080080BC2E /* NSDate+UTCDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AEC6235D58080080BC2E /* NSDate+UTCDate.m */; };
+		31B1AF6A235D58080080BC2E /* NSData+CopyWithRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AEC8235D58080080BC2E /* NSData+CopyWithRange.m */; };
+		31B1AF6B235D58080080BC2E /* CocosBase58Object.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AECB235D58080080BC2E /* CocosBase58Object.m */; };
+		31B1AF6C235D58080080BC2E /* NSData+HashData.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AECE235D58080080BC2E /* NSData+HashData.m */; };
+		31B1AF6D235D58080080BC2E /* NSData+Base16.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AED0235D58080080BC2E /* NSData+Base16.m */; };
+		31B1AF6E235D58080080BC2E /* CocosSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AED2235D58080080BC2E /* CocosSDK.m */; };
+		31B1AF6F235D58080080BC2E /* ChainDynamicGlobalProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AED4235D58080080BC2E /* ChainDynamicGlobalProperties.m */; };
+		31B1AF70235D58080080BC2E /* ChainAccountHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AED5235D58080080BC2E /* ChainAccountHistory.m */; };
+		31B1AF71235D58080080BC2E /* ChainAssetObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AED9235D58080080BC2E /* ChainAssetObject.m */; };
+		31B1AF72235D58080080BC2E /* ChainAssetOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AEDB235D58080080BC2E /* ChainAssetOption.m */; };
+		31B1AF73235D58080080BC2E /* ChainAssetPermissionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AEDD235D58080080BC2E /* ChainAssetPermissionObject.m */; };
+		31B1AF74235D58080080BC2E /* CocosBitAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AEE1235D58080080BC2E /* CocosBitAddress.m */; };
+		31B1AF75235D58080080BC2E /* CocosPrivateKey.mm in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AEE4235D58080080BC2E /* CocosPrivateKey.mm */; };
+		31B1AF76235D58080080BC2E /* CocosPublicKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AEE6235D58080080BC2E /* CocosPublicKey.m */; };
+		31B1AF77235D58080080BC2E /* ChainMemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AEE9235D58080080BC2E /* ChainMemo.m */; };
+		31B1AF78235D58080080BC2E /* ChainAssetAmountObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AEEB235D58080080BC2E /* ChainAssetAmountObject.m */; };
+		31B1AF79235D58080080BC2E /* ChainNHAssetOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AEED235D58080080BC2E /* ChainNHAssetOrder.m */; };
+		31B1AF7A235D58080080BC2E /* ChainObjectId.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AEF1235D58080080BC2E /* ChainObjectId.m */; };
+		31B1AF7B235D58080080BC2E /* ChainPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AEF2235D58080080BC2E /* ChainPrice.m */; };
+		31B1AF7C235D58080080BC2E /* ChainContract.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AEF3235D58080080BC2E /* ChainContract.m */; };
+		31B1AF7D235D58080080BC2E /* ChainVestingBalancePolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AEF4235D58080080BC2E /* ChainVestingBalancePolicy.m */; };
+		31B1AF7E235D58080080BC2E /* VoteIdObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AEF8235D58080080BC2E /* VoteIdObject.m */; };
+		31B1AF7F235D58080080BC2E /* AccountOptionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AEF9235D58080080BC2E /* AccountOptionObject.m */; };
+		31B1AF80235D58080080BC2E /* VoteOptionsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AEFD235D58080080BC2E /* VoteOptionsObject.m */; };
+		31B1AF81235D58080080BC2E /* PublicKeyAuthorityObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AF00235D58080080BC2E /* PublicKeyAuthorityObject.m */; };
+		31B1AF82235D58080080BC2E /* AccountAuthoriyObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AF02235D58080080BC2E /* AccountAuthoriyObject.m */; };
+		31B1AF83235D58080080BC2E /* SpecialAuthorityObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AF03235D58080080BC2E /* SpecialAuthorityObject.m */; };
+		31B1AF84235D58080080BC2E /* BitAddressAuthorityObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AF04235D58080080BC2E /* BitAddressAuthorityObject.m */; };
+		31B1AF85235D58080080BC2E /* AuthorityObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AF07235D58080080BC2E /* AuthorityObject.m */; };
+		31B1AF86235D58080080BC2E /* ChainAccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AF0A235D58080080BC2E /* ChainAccountModel.m */; };
+		31B1AF87235D58080080BC2E /* ChainVestingBalance.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AF0C235D58080080BC2E /* ChainVestingBalance.m */; };
+		31B1AF88235D58080080BC2E /* PlainKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AF11235D58080080BC2E /* PlainKey.m */; };
+		31B1AF89235D58080080BC2E /* KeystoneFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AF12235D58080080BC2E /* KeystoneFile.m */; };
+		31B1AF8A235D58080080BC2E /* WalletExtraKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AF13235D58080080BC2E /* WalletExtraKey.m */; };
+		31B1AF8B235D58080080BC2E /* CocosTransferOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AF18235D58080080BC2E /* CocosTransferOperation.m */; };
+		31B1AF8C235D58080080BC2E /* CocosUpgradeMemberOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AF1A235D58080080BC2E /* CocosUpgradeMemberOperation.m */; };
+		31B1AF8D235D58080080BC2E /* CocosSellNHAssetOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AF1B235D58080080BC2E /* CocosSellNHAssetOperation.m */; };
+		31B1AF8E235D58080080BC2E /* CocosTransferNHOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AF1D235D58080080BC2E /* CocosTransferNHOperation.m */; };
+		31B1AF8F235D58080080BC2E /* CocosDeleteNHOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AF21235D58080080BC2E /* CocosDeleteNHOperation.m */; };
+		31B1AF90235D58080080BC2E /* CocosVoteOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AF22235D58080080BC2E /* CocosVoteOperation.m */; };
+		31B1AF91235D58080080BC2E /* CocosClaimVestingBalanceOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AF23235D58080080BC2E /* CocosClaimVestingBalanceOperation.m */; };
+		31B1AF92235D58080080BC2E /* CocosOperationContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AF24235D58080080BC2E /* CocosOperationContent.m */; };
+		31B1AF93235D58080080BC2E /* CocosSellNHAssetCancelOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AF26235D58080080BC2E /* CocosSellNHAssetCancelOperation.m */; };
+		31B1AF94235D58080080BC2E /* CocosBuyNHOrderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AF29235D58080080BC2E /* CocosBuyNHOrderOperation.m */; };
+		31B1AF95235D58080080BC2E /* CocosBaseOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AF2C235D58080080BC2E /* CocosBaseOperation.m */; };
+		31B1AF96235D58080080BC2E /* CocosMortgageGasOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AF2D235D58080080BC2E /* CocosMortgageGasOperation.m */; };
+		31B1AF97235D58080080BC2E /* CocosCallContractOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AF2E235D58080080BC2E /* CocosCallContractOperation.m */; };
+		31B1AF98235D58080080BC2E /* CocosHTTPManager+CreateAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AF32235D58080080BC2E /* CocosHTTPManager+CreateAccount.m */; };
+		31B1AF99235D58080080BC2E /* CocosHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AF33235D58080080BC2E /* CocosHTTPManager.m */; };
+		31B1AF9A235D58080080BC2E /* libsecp256k1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31B1AF37235D58080080BC2E /* libsecp256k1.a */; };
+		31B1AF9B235D58080080BC2E /* libsecp256k1_armv7.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31B1AF3A235D58080080BC2E /* libsecp256k1_armv7.a */; };
+		31B1AF9C235D58080080BC2E /* libsecp256k1_i386.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31B1AF3B235D58080080BC2E /* libsecp256k1_i386.a */; };
+		31B1AF9D235D58080080BC2E /* libsecp256k1_arm64.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31B1AF3C235D58080080BC2E /* libsecp256k1_arm64.a */; };
+		31B1AF9E235D58080080BC2E /* sha2.c in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AF40235D58080080BC2E /* sha2.c */; };
+		31B1AF9F235D58080080BC2E /* uECC.c in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AF48235D58080080BC2E /* uECC.c */; };
+		31B1AFA0235D58080080BC2E /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AF49235D58080080BC2E /* Base64.m */; };
+		31B1AFA1235D58080080BC2E /* WordList.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AF4A235D58080080BC2E /* WordList.m */; };
+		31B1AFA2235D58080080BC2E /* Sha256.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AF4B235D58080080BC2E /* Sha256.m */; };
+		31B1AFA3235D58080080BC2E /* base58.c in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AF4C235D58080080BC2E /* base58.c */; };
+		31B1AFA4235D58080080BC2E /* rmd160.c in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AF4D235D58080080BC2E /* rmd160.c */; };
+		31B1AFA5235D58080080BC2E /* PBKDF2.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AF4E235D58080080BC2E /* PBKDF2.m */; };
+		31B1AFA6235D58080080BC2E /* Cocos_Key_Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AF50235D58080080BC2E /* Cocos_Key_Account.m */; };
+		31B1AFA7235D58080080BC2E /* CocosSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AF52235D58080080BC2E /* CocosSetting.m */; };
+		31B1AFA8235D58080080BC2E /* CocosConstkey.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AF53235D58080080BC2E /* CocosConstkey.m */; };
+		31B1AFA9235D58080080BC2E /* CocosConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1AF57235D58080080BC2E /* CocosConfig.m */; };
 		31B540B6229FEC17002FA33B /* CCWNodeAlertSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B540B2229FEC17002FA33B /* CCWNodeAlertSheetView.m */; };
 		31C35A49221E489E00E8B455 /* CCWDataBase+CCWContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C35A48221E489D00E8B455 /* CCWDataBase+CCWContact.m */; };
 		31C35A4D221E491900E8B455 /* CCWContactModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C35A4C221E491900E8B455 /* CCWContactModel.m */; };
@@ -283,7 +290,6 @@
 		31E4338922EAAB4C00CAFDCA /* CCWAddNodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31E4338422EAAB4C00CAFDCA /* CCWAddNodeViewController.xib */; };
 		31E4338A22EAAB4C00CAFDCA /* CCWSystemSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E4338622EAAB4C00CAFDCA /* CCWSystemSetViewController.m */; };
 		31E4338C22EAB05B00CAFDCA /* MJRefresh+Localize.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E4338B22EAB05B00CAFDCA /* MJRefresh+Localize.m */; };
-		31F331C42265A97A00EC7496 /* ChainContract.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F331C32265A97A00EC7496 /* ChainContract.m */; };
 		31FC8D2D2213C82B0036C8F8 /* CCWWalletHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FC8D2C2213C82B0036C8F8 /* CCWWalletHeaderView.m */; };
 		31FC8D312213C9320036C8F8 /* CCWWalletTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FC8D2F2213C9320036C8F8 /* CCWWalletTableViewCell.m */; };
 		31FC8D322213C9320036C8F8 /* CCWWalletTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31FC8D302213C9320036C8F8 /* CCWWalletTableViewCell.xib */; };
@@ -555,26 +561,6 @@
 		317948D3221E4BC000F4EA69 /* CCWContactTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCWContactTableViewCell.xib; sourceTree = "<group>"; };
 		317948D4221E4BC000F4EA69 /* CCWContactTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCWContactTableViewCell.h; sourceTree = "<group>"; };
 		317948D5221E4BC000F4EA69 /* CCWContactTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCWContactTableViewCell.m; sourceTree = "<group>"; };
-		317D2D3022DEFBBF00559A7C /* CocosBuyNHOrderOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosBuyNHOrderOperation.h; sourceTree = "<group>"; };
-		317D2D3122DEFBBF00559A7C /* CocosTransferOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosTransferOperation.m; sourceTree = "<group>"; };
-		317D2D3222DEFBBF00559A7C /* CocosSellNHAssetCancelOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosSellNHAssetCancelOperation.h; sourceTree = "<group>"; };
-		317D2D3322DEFBBF00559A7C /* CocosUpgradeMemberOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosUpgradeMemberOperation.m; sourceTree = "<group>"; };
-		317D2D3422DEFBBF00559A7C /* CocosSellNHAssetOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosSellNHAssetOperation.m; sourceTree = "<group>"; };
-		317D2D3522DEFBBF00559A7C /* CocosOperationContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosOperationContent.h; sourceTree = "<group>"; };
-		317D2D3622DEFBBF00559A7C /* CocosTransferNHOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosTransferNHOperation.m; sourceTree = "<group>"; };
-		317D2D3722DEFBBF00559A7C /* CocosCallContractOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosCallContractOperation.h; sourceTree = "<group>"; };
-		317D2D3822DEFBBF00559A7C /* CocosBaseOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosBaseOperation.h; sourceTree = "<group>"; };
-		317D2D3922DEFBBF00559A7C /* CocosDeleteNHOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosDeleteNHOperation.m; sourceTree = "<group>"; };
-		317D2D3A22DEFBBF00559A7C /* CocosOperationContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosOperationContent.m; sourceTree = "<group>"; };
-		317D2D3B22DEFBBF00559A7C /* CocosSellNHAssetOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosSellNHAssetOperation.h; sourceTree = "<group>"; };
-		317D2D3C22DEFBBF00559A7C /* CocosSellNHAssetCancelOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosSellNHAssetCancelOperation.m; sourceTree = "<group>"; };
-		317D2D3D22DEFBBF00559A7C /* CocosUpgradeMemberOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosUpgradeMemberOperation.h; sourceTree = "<group>"; };
-		317D2D3E22DEFBBF00559A7C /* CocosTransferOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosTransferOperation.h; sourceTree = "<group>"; };
-		317D2D3F22DEFBBF00559A7C /* CocosBuyNHOrderOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosBuyNHOrderOperation.m; sourceTree = "<group>"; };
-		317D2D4022DEFBBF00559A7C /* CocosTransferNHOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosTransferNHOperation.h; sourceTree = "<group>"; };
-		317D2D4122DEFBBF00559A7C /* CocosDeleteNHOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosDeleteNHOperation.h; sourceTree = "<group>"; };
-		317D2D4222DEFBBF00559A7C /* CocosBaseOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosBaseOperation.m; sourceTree = "<group>"; };
-		317D2D4322DEFBBF00559A7C /* CocosCallContractOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosCallContractOperation.m; sourceTree = "<group>"; };
 		317D2D4E22E0428E00559A7C /* CCWPropAssetsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCWPropAssetsTableViewCell.h; sourceTree = "<group>"; };
 		317D2D4F22E0428E00559A7C /* CCWPropAssetsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCWPropAssetsTableViewCell.m; sourceTree = "<group>"; };
 		317D2D5022E0428E00559A7C /* CCWPropAssetsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCWPropAssetsTableViewCell.xib; sourceTree = "<group>"; };
@@ -614,8 +600,6 @@
 		31881F5C2216692E006C31A2 /* CCWCreateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCWCreateViewController.xib; sourceTree = "<group>"; };
 		318A67E022893D23001D0157 /* CCWDappWebTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCWDappWebTool.h; sourceTree = "<group>"; };
 		318A67E122893D23001D0157 /* CCWDappWebTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCWDappWebTool.m; sourceTree = "<group>"; };
-		318A67EA228948AE001D0157 /* ChainNHAssetOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainNHAssetOrder.h; sourceTree = "<group>"; };
-		318A67EB228948AE001D0157 /* ChainNHAssetOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainNHAssetOrder.m; sourceTree = "<group>"; };
 		318A67ED22896642001D0157 /* cocos.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = cocos.js; sourceTree = "<group>"; };
 		318FF5DB221510EC00AB5696 /* CCWTransRecordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCWTransRecordViewController.h; sourceTree = "<group>"; };
 		318FF5DC221510EC00AB5696 /* CCWTransRecordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCWTransRecordViewController.m; sourceTree = "<group>"; };
@@ -641,133 +625,6 @@
 		318FF601221580D900AB5696 /* CCWImportViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCWImportViewController.h; sourceTree = "<group>"; };
 		318FF602221580D900AB5696 /* CCWImportViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCWImportViewController.m; sourceTree = "<group>"; };
 		318FF603221580D900AB5696 /* CCWImportViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCWImportViewController.xib; sourceTree = "<group>"; };
-		31919FE8225C6DE2003AB263 /* Cocos_Key_Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cocos_Key_Account.h; sourceTree = "<group>"; };
-		31919FE9225C6DE2003AB263 /* Cocos_Key_Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cocos_Key_Account.m; sourceTree = "<group>"; };
-		31919FEB225C6DE2003AB263 /* base58.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base58.c; sourceTree = "<group>"; };
-		31919FEC225C6DE2003AB263 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
-		31919FED225C6DE2003AB263 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
-		31919FEE225C6DE2003AB263 /* libbase58.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libbase58.h; sourceTree = "<group>"; };
-		31919FEF225C6DE2003AB263 /* PBKDF2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBKDF2.h; sourceTree = "<group>"; };
-		31919FF0225C6DE2003AB263 /* PBKDF2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBKDF2.m; sourceTree = "<group>"; };
-		31919FF1225C6DE2003AB263 /* rmd160.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rmd160.c; sourceTree = "<group>"; };
-		31919FF2225C6DE2003AB263 /* rmd160.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rmd160.h; sourceTree = "<group>"; };
-		31919FF3225C6DE2003AB263 /* sha2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sha2.c; sourceTree = "<group>"; };
-		31919FF4225C6DE2003AB263 /* sha2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha2.h; sourceTree = "<group>"; };
-		31919FF5225C6DE2003AB263 /* Sha256.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sha256.h; sourceTree = "<group>"; };
-		31919FF6225C6DE2003AB263 /* Sha256.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sha256.m; sourceTree = "<group>"; };
-		31919FF7225C6DE2003AB263 /* uECC.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = uECC.c; sourceTree = "<group>"; };
-		31919FF8225C6DE2003AB263 /* uECC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uECC.h; sourceTree = "<group>"; };
-		31919FF9225C6DE2003AB263 /* WordList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordList.h; sourceTree = "<group>"; };
-		31919FFA225C6DE2003AB263 /* WordList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordList.m; sourceTree = "<group>"; };
-		31919FFD225C6DE2003AB263 /* CocosBase58Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosBase58Object.h; sourceTree = "<group>"; };
-		31919FFE225C6DE2003AB263 /* CocosBase58Object.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosBase58Object.m; sourceTree = "<group>"; };
-		3191A000225C6DE2003AB263 /* CocosPackData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosPackData.h; sourceTree = "<group>"; };
-		3191A001225C6DE2003AB263 /* CocosPackData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosPackData.m; sourceTree = "<group>"; };
-		3191A002225C6DE2003AB263 /* NSObject+DataToObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DataToObject.h"; sourceTree = "<group>"; };
-		3191A003225C6DE2003AB263 /* NSObject+DataToObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DataToObject.m"; sourceTree = "<group>"; };
-		3191A005225C6DE2003AB263 /* Diggest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Diggest.h; sourceTree = "<group>"; };
-		3191A006225C6DE2003AB263 /* Diggest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Diggest.m; sourceTree = "<group>"; };
-		3191A008225C6DE2003AB263 /* RIPEMD160Diggest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RIPEMD160Diggest.h; sourceTree = "<group>"; };
-		3191A009225C6DE2003AB263 /* RIPEMD160Diggest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RIPEMD160Diggest.m; sourceTree = "<group>"; };
-		3191A00B225C6DE2003AB263 /* SHA256Diggest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHA256Diggest.h; sourceTree = "<group>"; };
-		3191A00C225C6DE2003AB263 /* SHA256Diggest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHA256Diggest.m; sourceTree = "<group>"; };
-		3191A00E225C6DE2003AB263 /* NSData+CopyWithRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CopyWithRange.h"; sourceTree = "<group>"; };
-		3191A00F225C6DE2003AB263 /* NSData+CopyWithRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CopyWithRange.m"; sourceTree = "<group>"; };
-		3191A011225C6DE2003AB263 /* NSData+Base16.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base16.h"; sourceTree = "<group>"; };
-		3191A012225C6DE2003AB263 /* NSData+Base16.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base16.m"; sourceTree = "<group>"; };
-		3191A013225C6DE2003AB263 /* NSData+HashData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+HashData.h"; sourceTree = "<group>"; };
-		3191A014225C6DE2003AB263 /* NSData+HashData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+HashData.m"; sourceTree = "<group>"; };
-		3191A016225C6DE2003AB263 /* NSDate+UTCDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+UTCDate.h"; sourceTree = "<group>"; };
-		3191A017225C6DE2003AB263 /* NSDate+UTCDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+UTCDate.m"; sourceTree = "<group>"; };
-		3191A018225C6DE2003AB263 /* CocosPCH.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosPCH.h; sourceTree = "<group>"; };
-		3191A019225C6DE2003AB263 /* CocosSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosSDK.h; sourceTree = "<group>"; };
-		3191A01A225C6DE2003AB263 /* CocosSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosSDK.m; sourceTree = "<group>"; };
-		3191A01C225C6DE2003AB263 /* CocosDataBase+Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CocosDataBase+Account.h"; sourceTree = "<group>"; };
-		3191A01D225C6DE2003AB263 /* CocosDataBase+Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CocosDataBase+Account.m"; sourceTree = "<group>"; };
-		3191A01E225C6DE2003AB263 /* CocosDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosDataBase.h; sourceTree = "<group>"; };
-		3191A01F225C6DE2003AB263 /* CocosDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosDataBase.m; sourceTree = "<group>"; };
-		3191A020225C6DE2003AB263 /* CocosDBAccountModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosDBAccountModel.h; sourceTree = "<group>"; };
-		3191A021225C6DE2003AB263 /* CocosDBAccountModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosDBAccountModel.m; sourceTree = "<group>"; };
-		3191A023225C6DE2003AB263 /* CocosHTTPManager+CreateAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CocosHTTPManager+CreateAccount.h"; sourceTree = "<group>"; };
-		3191A024225C6DE2003AB263 /* CocosHTTPManager+CreateAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CocosHTTPManager+CreateAccount.m"; sourceTree = "<group>"; };
-		3191A025225C6DE2003AB263 /* CocosHTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosHTTPManager.h; sourceTree = "<group>"; };
-		3191A026225C6DE2003AB263 /* CocosHTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosHTTPManager.m; sourceTree = "<group>"; };
-		3191A028225C6DE2003AB263 /* KeystoneFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeystoneFile.h; sourceTree = "<group>"; };
-		3191A029225C6DE2003AB263 /* KeystoneFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeystoneFile.m; sourceTree = "<group>"; };
-		3191A02A225C6DE2003AB263 /* PlainKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlainKey.h; sourceTree = "<group>"; };
-		3191A02B225C6DE2003AB263 /* PlainKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlainKey.m; sourceTree = "<group>"; };
-		3191A02C225C6DE2003AB263 /* WalletExtraKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalletExtraKey.h; sourceTree = "<group>"; };
-		3191A02D225C6DE2003AB263 /* WalletExtraKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalletExtraKey.m; sourceTree = "<group>"; };
-		3191A03A225C6DE2003AB263 /* AccountAuthoriyObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountAuthoriyObject.h; sourceTree = "<group>"; };
-		3191A03B225C6DE2003AB263 /* AccountAuthoriyObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountAuthoriyObject.m; sourceTree = "<group>"; };
-		3191A03C225C6DE2003AB263 /* AuthorityObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthorityObject.h; sourceTree = "<group>"; };
-		3191A03D225C6DE2003AB263 /* AuthorityObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthorityObject.m; sourceTree = "<group>"; };
-		3191A03E225C6DE2003AB263 /* BitAddressAuthorityObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BitAddressAuthorityObject.h; sourceTree = "<group>"; };
-		3191A03F225C6DE2003AB263 /* BitAddressAuthorityObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BitAddressAuthorityObject.m; sourceTree = "<group>"; };
-		3191A040225C6DE2003AB263 /* PublicKeyAuthorityObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicKeyAuthorityObject.h; sourceTree = "<group>"; };
-		3191A041225C6DE2003AB263 /* PublicKeyAuthorityObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicKeyAuthorityObject.m; sourceTree = "<group>"; };
-		3191A042225C6DE2003AB263 /* SpecialAuthorityObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialAuthorityObject.h; sourceTree = "<group>"; };
-		3191A043225C6DE2003AB263 /* SpecialAuthorityObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialAuthorityObject.m; sourceTree = "<group>"; };
-		3191A044225C6DE2003AB263 /* ChainAccountModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainAccountModel.h; sourceTree = "<group>"; };
-		3191A045225C6DE2003AB263 /* ChainAccountModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainAccountModel.m; sourceTree = "<group>"; };
-		3191A047225C6DE2003AB263 /* AccountOptionObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountOptionObject.h; sourceTree = "<group>"; };
-		3191A048225C6DE2003AB263 /* AccountOptionObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountOptionObject.m; sourceTree = "<group>"; };
-		3191A049225C6DE2003AB263 /* VoteIdObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoteIdObject.h; sourceTree = "<group>"; };
-		3191A04A225C6DE2003AB263 /* VoteIdObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoteIdObject.m; sourceTree = "<group>"; };
-		3191A04D225C6DE2003AB263 /* ChainAssetOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainAssetOption.h; sourceTree = "<group>"; };
-		3191A04E225C6DE2003AB263 /* ChainAssetOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainAssetOption.m; sourceTree = "<group>"; };
-		3191A04F225C6DE2003AB263 /* ChainAssetPermissionObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainAssetPermissionObject.h; sourceTree = "<group>"; };
-		3191A050225C6DE2003AB263 /* ChainAssetPermissionObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainAssetPermissionObject.m; sourceTree = "<group>"; };
-		3191A051225C6DE2003AB263 /* ChainAssetObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainAssetObject.h; sourceTree = "<group>"; };
-		3191A052225C6DE2003AB263 /* ChainAssetObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainAssetObject.m; sourceTree = "<group>"; };
-		3191A053225C6DE2003AB263 /* ChainAccountHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainAccountHistory.h; sourceTree = "<group>"; };
-		3191A054225C6DE2003AB263 /* ChainAccountHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainAccountHistory.m; sourceTree = "<group>"; };
-		3191A055225C6DE2003AB263 /* ChainAssetAmountObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainAssetAmountObject.h; sourceTree = "<group>"; };
-		3191A056225C6DE2003AB263 /* ChainAssetAmountObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainAssetAmountObject.m; sourceTree = "<group>"; };
-		3191A057225C6DE2003AB263 /* ChainDynamicGlobalProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainDynamicGlobalProperties.h; sourceTree = "<group>"; };
-		3191A058225C6DE2003AB263 /* ChainDynamicGlobalProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainDynamicGlobalProperties.m; sourceTree = "<group>"; };
-		3191A059225C6DE2003AB263 /* ChainMemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainMemo.h; sourceTree = "<group>"; };
-		3191A05A225C6DE2003AB263 /* ChainMemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainMemo.m; sourceTree = "<group>"; };
-		3191A05B225C6DE2003AB263 /* ChainObjectId.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainObjectId.h; sourceTree = "<group>"; };
-		3191A05C225C6DE2003AB263 /* ChainObjectId.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainObjectId.m; sourceTree = "<group>"; };
-		3191A05D225C6DE2003AB263 /* ChainPrice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainPrice.h; sourceTree = "<group>"; };
-		3191A05E225C6DE2003AB263 /* ChainPrice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainPrice.m; sourceTree = "<group>"; };
-		3191A060225C6DE2003AB263 /* CocosBitAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosBitAddress.h; sourceTree = "<group>"; };
-		3191A061225C6DE2003AB263 /* CocosBitAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosBitAddress.m; sourceTree = "<group>"; };
-		3191A062225C6DE2003AB263 /* CocosPrivateKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosPrivateKey.h; sourceTree = "<group>"; };
-		3191A063225C6DE2003AB263 /* CocosPrivateKey.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CocosPrivateKey.mm; sourceTree = "<group>"; };
-		3191A064225C6DE2003AB263 /* CocosPublicKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosPublicKey.h; sourceTree = "<group>"; };
-		3191A065225C6DE2003AB263 /* CocosPublicKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosPublicKey.m; sourceTree = "<group>"; };
-		3191A066225C6DE2003AB263 /* ObjectToDataProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectToDataProtocol.h; sourceTree = "<group>"; };
-		3191A069225C6DE2003AB263 /* secp256k1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = secp256k1.h; sourceTree = "<group>"; };
-		3191A06A225C6DE2003AB263 /* libsecp256k1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libsecp256k1.a; sourceTree = "<group>"; };
-		3191A06B225C6DE2003AB263 /* libsecp256k1_arm64.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libsecp256k1_arm64.a; sourceTree = "<group>"; };
-		3191A06C225C6DE2003AB263 /* libsecp256k1_armv7.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libsecp256k1_armv7.a; sourceTree = "<group>"; };
-		3191A06D225C6DE2003AB263 /* libsecp256k1_i386.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libsecp256k1_i386.a; sourceTree = "<group>"; };
-		3191A06F225C6DE2003AB263 /* CocosConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosConfig.h; sourceTree = "<group>"; };
-		3191A070225C6DE2003AB263 /* CocosConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosConfig.m; sourceTree = "<group>"; };
-		3191A071225C6DE2003AB263 /* CocosConstkey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosConstkey.h; sourceTree = "<group>"; };
-		3191A072225C6DE2003AB263 /* CocosConstkey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosConstkey.m; sourceTree = "<group>"; };
-		3191A073225C6DE2003AB263 /* CocosSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosSetting.h; sourceTree = "<group>"; };
-		3191A074225C6DE2003AB263 /* CocosSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosSetting.m; sourceTree = "<group>"; };
-		3191A076225C6DE2003AB263 /* SignedTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignedTransaction.h; sourceTree = "<group>"; };
-		3191A077225C6DE2003AB263 /* SignedTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignedTransaction.m; sourceTree = "<group>"; };
-		3191A078225C6DE2003AB263 /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
-		3191A079225C6DE2003AB263 /* Transaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transaction.m; sourceTree = "<group>"; };
-		3191A07C225C6DE2003AB263 /* CallBackModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallBackModel.h; sourceTree = "<group>"; };
-		3191A07D225C6DE2003AB263 /* CallBackModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallBackModel.m; sourceTree = "<group>"; };
-		3191A07E225C6DE2003AB263 /* CocosSDKError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosSDKError.h; sourceTree = "<group>"; };
-		3191A080225C6DE2003AB263 /* UploadBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadBaseModel.h; sourceTree = "<group>"; };
-		3191A081225C6DE2003AB263 /* UploadBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadBaseModel.m; sourceTree = "<group>"; };
-		3191A082225C6DE2003AB263 /* UploadParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadParams.h; sourceTree = "<group>"; };
-		3191A083225C6DE2003AB263 /* UploadParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadParams.m; sourceTree = "<group>"; };
-		3191A084225C6DE2003AB263 /* WebsocketBlockChainApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebsocketBlockChainApi.h; sourceTree = "<group>"; };
-		3191A085225C6DE2003AB263 /* WebsocketClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebsocketClient.h; sourceTree = "<group>"; };
-		3191A086225C6DE2003AB263 /* WebsocketClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebsocketClient.m; sourceTree = "<group>"; };
-		3191A088225C6DE2003AB263 /* WebsocketResultErrorParse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebsocketResultErrorParse.h; sourceTree = "<group>"; };
-		3191A089225C6DE2003AB263 /* WebsocketResultErrorParse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebsocketResultErrorParse.m; sourceTree = "<group>"; };
-		3191A08A225C6DE2003AB263 /* WebsocketResultModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebsocketResultModel.h; sourceTree = "<group>"; };
-		3191A08B225C6DE2003AB263 /* WebsocketResultModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebsocketResultModel.m; sourceTree = "<group>"; };
 		3191A0CF225C8A09003AB263 /* CCWRegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCWRegisterViewController.h; sourceTree = "<group>"; };
 		3191A0D0225C8A09003AB263 /* CCWRegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCWRegisterViewController.m; sourceTree = "<group>"; };
 		3191A0D6225DDFC3003AB263 /* CCWRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCWRegisterViewController.xib; sourceTree = "<group>"; };
@@ -783,6 +640,169 @@
 		319D45DB221BF95E00D1E6D2 /* AppNilOrNull.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppNilOrNull.h; sourceTree = "<group>"; };
 		319D45E0221C0FFA00D1E6D2 /* CCWWalletAccountTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCWWalletAccountTool.h; sourceTree = "<group>"; };
 		319D45E1221C0FFA00D1E6D2 /* CCWWalletAccountTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCWWalletAccountTool.m; sourceTree = "<group>"; };
+		31B1AE98235D58080080BC2E /* SignedTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignedTransaction.m; sourceTree = "<group>"; };
+		31B1AE99235D58080080BC2E /* Transaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transaction.m; sourceTree = "<group>"; };
+		31B1AE9A235D58080080BC2E /* SignedTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignedTransaction.h; sourceTree = "<group>"; };
+		31B1AE9B235D58080080BC2E /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
+		31B1AE9D235D58080080BC2E /* CocosDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosDataBase.m; sourceTree = "<group>"; };
+		31B1AE9E235D58080080BC2E /* CocosDataBase+Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CocosDataBase+Account.h"; sourceTree = "<group>"; };
+		31B1AE9F235D58080080BC2E /* CocosDBAccountModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosDBAccountModel.m; sourceTree = "<group>"; };
+		31B1AEA0235D58080080BC2E /* CocosDBAccountModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosDBAccountModel.h; sourceTree = "<group>"; };
+		31B1AEA1235D58080080BC2E /* CocosDataBase+Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CocosDataBase+Account.m"; sourceTree = "<group>"; };
+		31B1AEA2235D58080080BC2E /* CocosDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosDataBase.h; sourceTree = "<group>"; };
+		31B1AEA5235D58080080BC2E /* CallBackModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallBackModel.m; sourceTree = "<group>"; };
+		31B1AEA6235D58080080BC2E /* CallBackModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallBackModel.h; sourceTree = "<group>"; };
+		31B1AEA7235D58080080BC2E /* CocosSDKError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosSDKError.h; sourceTree = "<group>"; };
+		31B1AEA8235D58080080BC2E /* WebsocketClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebsocketClient.m; sourceTree = "<group>"; };
+		31B1AEAA235D58080080BC2E /* WebsocketResultModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebsocketResultModel.m; sourceTree = "<group>"; };
+		31B1AEAB235D58080080BC2E /* WebsocketResultErrorParse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebsocketResultErrorParse.h; sourceTree = "<group>"; };
+		31B1AEAC235D58080080BC2E /* WebsocketResultModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebsocketResultModel.h; sourceTree = "<group>"; };
+		31B1AEAD235D58080080BC2E /* WebsocketResultErrorParse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebsocketResultErrorParse.m; sourceTree = "<group>"; };
+		31B1AEAE235D58080080BC2E /* WebsocketBlockChainApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebsocketBlockChainApi.h; sourceTree = "<group>"; };
+		31B1AEB0235D58080080BC2E /* UploadBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadBaseModel.h; sourceTree = "<group>"; };
+		31B1AEB1235D58080080BC2E /* UploadParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadParams.m; sourceTree = "<group>"; };
+		31B1AEB2235D58080080BC2E /* UploadBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadBaseModel.m; sourceTree = "<group>"; };
+		31B1AEB3235D58080080BC2E /* UploadParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadParams.h; sourceTree = "<group>"; };
+		31B1AEB4235D58080080BC2E /* WebsocketClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebsocketClient.h; sourceTree = "<group>"; };
+		31B1AEB8235D58080080BC2E /* RIPEMD160Diggest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RIPEMD160Diggest.h; sourceTree = "<group>"; };
+		31B1AEB9235D58080080BC2E /* RIPEMD160Diggest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RIPEMD160Diggest.m; sourceTree = "<group>"; };
+		31B1AEBA235D58080080BC2E /* Diggest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Diggest.h; sourceTree = "<group>"; };
+		31B1AEBC235D58080080BC2E /* SHA256Diggest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHA256Diggest.h; sourceTree = "<group>"; };
+		31B1AEBD235D58080080BC2E /* SHA256Diggest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHA256Diggest.m; sourceTree = "<group>"; };
+		31B1AEBE235D58080080BC2E /* Diggest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Diggest.m; sourceTree = "<group>"; };
+		31B1AEC0235D58080080BC2E /* NSObject+DataToObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DataToObject.m"; sourceTree = "<group>"; };
+		31B1AEC1235D58080080BC2E /* CocosPackData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosPackData.h; sourceTree = "<group>"; };
+		31B1AEC2235D58080080BC2E /* NSObject+DataToObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DataToObject.h"; sourceTree = "<group>"; };
+		31B1AEC3235D58080080BC2E /* CocosPackData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosPackData.m; sourceTree = "<group>"; };
+		31B1AEC5235D58080080BC2E /* NSDate+UTCDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+UTCDate.h"; sourceTree = "<group>"; };
+		31B1AEC6235D58080080BC2E /* NSDate+UTCDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+UTCDate.m"; sourceTree = "<group>"; };
+		31B1AEC8235D58080080BC2E /* NSData+CopyWithRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CopyWithRange.m"; sourceTree = "<group>"; };
+		31B1AEC9235D58080080BC2E /* NSData+CopyWithRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CopyWithRange.h"; sourceTree = "<group>"; };
+		31B1AECB235D58080080BC2E /* CocosBase58Object.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosBase58Object.m; sourceTree = "<group>"; };
+		31B1AECC235D58080080BC2E /* CocosBase58Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosBase58Object.h; sourceTree = "<group>"; };
+		31B1AECE235D58080080BC2E /* NSData+HashData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+HashData.m"; sourceTree = "<group>"; };
+		31B1AECF235D58080080BC2E /* NSData+Base16.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base16.h"; sourceTree = "<group>"; };
+		31B1AED0235D58080080BC2E /* NSData+Base16.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base16.m"; sourceTree = "<group>"; };
+		31B1AED1235D58080080BC2E /* NSData+HashData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+HashData.h"; sourceTree = "<group>"; };
+		31B1AED2235D58080080BC2E /* CocosSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosSDK.m; sourceTree = "<group>"; };
+		31B1AED4235D58080080BC2E /* ChainDynamicGlobalProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainDynamicGlobalProperties.m; sourceTree = "<group>"; };
+		31B1AED5235D58080080BC2E /* ChainAccountHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainAccountHistory.m; sourceTree = "<group>"; };
+		31B1AED6235D58080080BC2E /* ChainPrice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainPrice.h; sourceTree = "<group>"; };
+		31B1AED7235D58080080BC2E /* ChainObjectId.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainObjectId.h; sourceTree = "<group>"; };
+		31B1AED9235D58080080BC2E /* ChainAssetObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainAssetObject.m; sourceTree = "<group>"; };
+		31B1AEDB235D58080080BC2E /* ChainAssetOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainAssetOption.m; sourceTree = "<group>"; };
+		31B1AEDC235D58080080BC2E /* ChainAssetPermissionObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainAssetPermissionObject.h; sourceTree = "<group>"; };
+		31B1AEDD235D58080080BC2E /* ChainAssetPermissionObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainAssetPermissionObject.m; sourceTree = "<group>"; };
+		31B1AEDE235D58080080BC2E /* ChainAssetOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainAssetOption.h; sourceTree = "<group>"; };
+		31B1AEDF235D58080080BC2E /* ChainAssetObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainAssetObject.h; sourceTree = "<group>"; };
+		31B1AEE1235D58080080BC2E /* CocosBitAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosBitAddress.m; sourceTree = "<group>"; };
+		31B1AEE2235D58080080BC2E /* CocosPrivateKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosPrivateKey.h; sourceTree = "<group>"; };
+		31B1AEE3235D58080080BC2E /* CocosPublicKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosPublicKey.h; sourceTree = "<group>"; };
+		31B1AEE4235D58080080BC2E /* CocosPrivateKey.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CocosPrivateKey.mm; sourceTree = "<group>"; };
+		31B1AEE5235D58080080BC2E /* CocosBitAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosBitAddress.h; sourceTree = "<group>"; };
+		31B1AEE6235D58080080BC2E /* CocosPublicKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosPublicKey.m; sourceTree = "<group>"; };
+		31B1AEE7235D58080080BC2E /* ChainVestingBalancePolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainVestingBalancePolicy.h; sourceTree = "<group>"; };
+		31B1AEE8235D58080080BC2E /* ChainContract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainContract.h; sourceTree = "<group>"; };
+		31B1AEE9235D58080080BC2E /* ChainMemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainMemo.m; sourceTree = "<group>"; };
+		31B1AEEA235D58080080BC2E /* ChainVestingBalance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainVestingBalance.h; sourceTree = "<group>"; };
+		31B1AEEB235D58080080BC2E /* ChainAssetAmountObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainAssetAmountObject.m; sourceTree = "<group>"; };
+		31B1AEED235D58080080BC2E /* ChainNHAssetOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainNHAssetOrder.m; sourceTree = "<group>"; };
+		31B1AEEE235D58080080BC2E /* ChainNHAssetOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainNHAssetOrder.h; sourceTree = "<group>"; };
+		31B1AEEF235D58080080BC2E /* ChainAccountHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainAccountHistory.h; sourceTree = "<group>"; };
+		31B1AEF0235D58080080BC2E /* ChainDynamicGlobalProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainDynamicGlobalProperties.h; sourceTree = "<group>"; };
+		31B1AEF1235D58080080BC2E /* ChainObjectId.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainObjectId.m; sourceTree = "<group>"; };
+		31B1AEF2235D58080080BC2E /* ChainPrice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainPrice.m; sourceTree = "<group>"; };
+		31B1AEF3235D58080080BC2E /* ChainContract.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainContract.m; sourceTree = "<group>"; };
+		31B1AEF4235D58080080BC2E /* ChainVestingBalancePolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainVestingBalancePolicy.m; sourceTree = "<group>"; };
+		31B1AEF5235D58080080BC2E /* ObjectToDataProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectToDataProtocol.h; sourceTree = "<group>"; };
+		31B1AEF8235D58080080BC2E /* VoteIdObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoteIdObject.m; sourceTree = "<group>"; };
+		31B1AEF9235D58080080BC2E /* AccountOptionObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountOptionObject.m; sourceTree = "<group>"; };
+		31B1AEFA235D58080080BC2E /* VoteOptionsObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoteOptionsObject.h; sourceTree = "<group>"; };
+		31B1AEFB235D58080080BC2E /* AccountOptionObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountOptionObject.h; sourceTree = "<group>"; };
+		31B1AEFC235D58080080BC2E /* VoteIdObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoteIdObject.h; sourceTree = "<group>"; };
+		31B1AEFD235D58080080BC2E /* VoteOptionsObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoteOptionsObject.m; sourceTree = "<group>"; };
+		31B1AEFE235D58080080BC2E /* ChainAccountModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainAccountModel.h; sourceTree = "<group>"; };
+		31B1AF00235D58080080BC2E /* PublicKeyAuthorityObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicKeyAuthorityObject.m; sourceTree = "<group>"; };
+		31B1AF01235D58080080BC2E /* AuthorityObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthorityObject.h; sourceTree = "<group>"; };
+		31B1AF02235D58080080BC2E /* AccountAuthoriyObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountAuthoriyObject.m; sourceTree = "<group>"; };
+		31B1AF03235D58080080BC2E /* SpecialAuthorityObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialAuthorityObject.m; sourceTree = "<group>"; };
+		31B1AF04235D58080080BC2E /* BitAddressAuthorityObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BitAddressAuthorityObject.m; sourceTree = "<group>"; };
+		31B1AF05235D58080080BC2E /* PublicKeyAuthorityObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicKeyAuthorityObject.h; sourceTree = "<group>"; };
+		31B1AF06235D58080080BC2E /* AccountAuthoriyObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountAuthoriyObject.h; sourceTree = "<group>"; };
+		31B1AF07235D58080080BC2E /* AuthorityObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthorityObject.m; sourceTree = "<group>"; };
+		31B1AF08235D58080080BC2E /* BitAddressAuthorityObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BitAddressAuthorityObject.h; sourceTree = "<group>"; };
+		31B1AF09235D58080080BC2E /* SpecialAuthorityObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialAuthorityObject.h; sourceTree = "<group>"; };
+		31B1AF0A235D58080080BC2E /* ChainAccountModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainAccountModel.m; sourceTree = "<group>"; };
+		31B1AF0B235D58080080BC2E /* ChainAssetAmountObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainAssetAmountObject.h; sourceTree = "<group>"; };
+		31B1AF0C235D58080080BC2E /* ChainVestingBalance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainVestingBalance.m; sourceTree = "<group>"; };
+		31B1AF0D235D58080080BC2E /* ChainMemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainMemo.h; sourceTree = "<group>"; };
+		31B1AF0F235D58080080BC2E /* WalletExtraKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalletExtraKey.h; sourceTree = "<group>"; };
+		31B1AF10235D58080080BC2E /* KeystoneFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeystoneFile.h; sourceTree = "<group>"; };
+		31B1AF11235D58080080BC2E /* PlainKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlainKey.m; sourceTree = "<group>"; };
+		31B1AF12235D58080080BC2E /* KeystoneFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeystoneFile.m; sourceTree = "<group>"; };
+		31B1AF13235D58080080BC2E /* WalletExtraKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalletExtraKey.m; sourceTree = "<group>"; };
+		31B1AF14235D58080080BC2E /* PlainKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlainKey.h; sourceTree = "<group>"; };
+		31B1AF15235D58080080BC2E /* CocosPCH.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosPCH.h; sourceTree = "<group>"; };
+		31B1AF17235D58080080BC2E /* CocosBuyNHOrderOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosBuyNHOrderOperation.h; sourceTree = "<group>"; };
+		31B1AF18235D58080080BC2E /* CocosTransferOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosTransferOperation.m; sourceTree = "<group>"; };
+		31B1AF19235D58080080BC2E /* CocosSellNHAssetCancelOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosSellNHAssetCancelOperation.h; sourceTree = "<group>"; };
+		31B1AF1A235D58080080BC2E /* CocosUpgradeMemberOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosUpgradeMemberOperation.m; sourceTree = "<group>"; };
+		31B1AF1B235D58080080BC2E /* CocosSellNHAssetOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosSellNHAssetOperation.m; sourceTree = "<group>"; };
+		31B1AF1C235D58080080BC2E /* CocosOperationContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosOperationContent.h; sourceTree = "<group>"; };
+		31B1AF1D235D58080080BC2E /* CocosTransferNHOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosTransferNHOperation.m; sourceTree = "<group>"; };
+		31B1AF1E235D58080080BC2E /* CocosCallContractOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosCallContractOperation.h; sourceTree = "<group>"; };
+		31B1AF1F235D58080080BC2E /* CocosMortgageGasOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosMortgageGasOperation.h; sourceTree = "<group>"; };
+		31B1AF20235D58080080BC2E /* CocosBaseOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosBaseOperation.h; sourceTree = "<group>"; };
+		31B1AF21235D58080080BC2E /* CocosDeleteNHOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosDeleteNHOperation.m; sourceTree = "<group>"; };
+		31B1AF22235D58080080BC2E /* CocosVoteOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosVoteOperation.m; sourceTree = "<group>"; };
+		31B1AF23235D58080080BC2E /* CocosClaimVestingBalanceOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosClaimVestingBalanceOperation.m; sourceTree = "<group>"; };
+		31B1AF24235D58080080BC2E /* CocosOperationContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosOperationContent.m; sourceTree = "<group>"; };
+		31B1AF25235D58080080BC2E /* CocosSellNHAssetOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosSellNHAssetOperation.h; sourceTree = "<group>"; };
+		31B1AF26235D58080080BC2E /* CocosSellNHAssetCancelOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosSellNHAssetCancelOperation.m; sourceTree = "<group>"; };
+		31B1AF27235D58080080BC2E /* CocosUpgradeMemberOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosUpgradeMemberOperation.h; sourceTree = "<group>"; };
+		31B1AF28235D58080080BC2E /* CocosTransferOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosTransferOperation.h; sourceTree = "<group>"; };
+		31B1AF29235D58080080BC2E /* CocosBuyNHOrderOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosBuyNHOrderOperation.m; sourceTree = "<group>"; };
+		31B1AF2A235D58080080BC2E /* CocosTransferNHOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosTransferNHOperation.h; sourceTree = "<group>"; };
+		31B1AF2B235D58080080BC2E /* CocosDeleteNHOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosDeleteNHOperation.h; sourceTree = "<group>"; };
+		31B1AF2C235D58080080BC2E /* CocosBaseOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosBaseOperation.m; sourceTree = "<group>"; };
+		31B1AF2D235D58080080BC2E /* CocosMortgageGasOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosMortgageGasOperation.m; sourceTree = "<group>"; };
+		31B1AF2E235D58080080BC2E /* CocosCallContractOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosCallContractOperation.m; sourceTree = "<group>"; };
+		31B1AF2F235D58080080BC2E /* CocosClaimVestingBalanceOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosClaimVestingBalanceOperation.h; sourceTree = "<group>"; };
+		31B1AF30235D58080080BC2E /* CocosVoteOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosVoteOperation.h; sourceTree = "<group>"; };
+		31B1AF32235D58080080BC2E /* CocosHTTPManager+CreateAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CocosHTTPManager+CreateAccount.m"; sourceTree = "<group>"; };
+		31B1AF33235D58080080BC2E /* CocosHTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosHTTPManager.m; sourceTree = "<group>"; };
+		31B1AF34235D58080080BC2E /* CocosHTTPManager+CreateAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CocosHTTPManager+CreateAccount.h"; sourceTree = "<group>"; };
+		31B1AF35235D58080080BC2E /* CocosHTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosHTTPManager.h; sourceTree = "<group>"; };
+		31B1AF37235D58080080BC2E /* libsecp256k1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libsecp256k1.a; sourceTree = "<group>"; };
+		31B1AF39235D58080080BC2E /* secp256k1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = secp256k1.h; sourceTree = "<group>"; };
+		31B1AF3A235D58080080BC2E /* libsecp256k1_armv7.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libsecp256k1_armv7.a; sourceTree = "<group>"; };
+		31B1AF3B235D58080080BC2E /* libsecp256k1_i386.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libsecp256k1_i386.a; sourceTree = "<group>"; };
+		31B1AF3C235D58080080BC2E /* libsecp256k1_arm64.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libsecp256k1_arm64.a; sourceTree = "<group>"; };
+		31B1AF3F235D58080080BC2E /* uECC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uECC.h; sourceTree = "<group>"; };
+		31B1AF40235D58080080BC2E /* sha2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sha2.c; sourceTree = "<group>"; };
+		31B1AF41235D58080080BC2E /* WordList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordList.h; sourceTree = "<group>"; };
+		31B1AF42235D58080080BC2E /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
+		31B1AF43235D58080080BC2E /* libbase58.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libbase58.h; sourceTree = "<group>"; };
+		31B1AF44235D58080080BC2E /* Sha256.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sha256.h; sourceTree = "<group>"; };
+		31B1AF45235D58080080BC2E /* rmd160.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rmd160.h; sourceTree = "<group>"; };
+		31B1AF46235D58080080BC2E /* PBKDF2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBKDF2.h; sourceTree = "<group>"; };
+		31B1AF47235D58080080BC2E /* sha2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha2.h; sourceTree = "<group>"; };
+		31B1AF48235D58080080BC2E /* uECC.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = uECC.c; sourceTree = "<group>"; };
+		31B1AF49235D58080080BC2E /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
+		31B1AF4A235D58080080BC2E /* WordList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordList.m; sourceTree = "<group>"; };
+		31B1AF4B235D58080080BC2E /* Sha256.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sha256.m; sourceTree = "<group>"; };
+		31B1AF4C235D58080080BC2E /* base58.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base58.c; sourceTree = "<group>"; };
+		31B1AF4D235D58080080BC2E /* rmd160.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rmd160.c; sourceTree = "<group>"; };
+		31B1AF4E235D58080080BC2E /* PBKDF2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBKDF2.m; sourceTree = "<group>"; };
+		31B1AF4F235D58080080BC2E /* Cocos_Key_Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cocos_Key_Account.h; sourceTree = "<group>"; };
+		31B1AF50235D58080080BC2E /* Cocos_Key_Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cocos_Key_Account.m; sourceTree = "<group>"; };
+		31B1AF52235D58080080BC2E /* CocosSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosSetting.m; sourceTree = "<group>"; };
+		31B1AF53235D58080080BC2E /* CocosConstkey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosConstkey.m; sourceTree = "<group>"; };
+		31B1AF54235D58080080BC2E /* CocosConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosConfig.h; sourceTree = "<group>"; };
+		31B1AF55235D58080080BC2E /* CocosSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosSetting.h; sourceTree = "<group>"; };
+		31B1AF56235D58080080BC2E /* CocosConstkey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosConstkey.h; sourceTree = "<group>"; };
+		31B1AF57235D58080080BC2E /* CocosConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosConfig.m; sourceTree = "<group>"; };
+		31B1AF58235D58080080BC2E /* CocosSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosSDK.h; sourceTree = "<group>"; };
 		31B540B1229FEC17002FA33B /* CCWNodeAlertSheetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCWNodeAlertSheetView.h; sourceTree = "<group>"; };
 		31B540B2229FEC17002FA33B /* CCWNodeAlertSheetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCWNodeAlertSheetView.m; sourceTree = "<group>"; };
 		31BAEECF222550F50086AEAC /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -827,8 +847,6 @@
 		31E4338522EAAB4C00CAFDCA /* CCWAddNodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCWAddNodeViewController.h; sourceTree = "<group>"; };
 		31E4338622EAAB4C00CAFDCA /* CCWSystemSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCWSystemSetViewController.m; sourceTree = "<group>"; };
 		31E4338B22EAB05B00CAFDCA /* MJRefresh+Localize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MJRefresh+Localize.m"; sourceTree = "<group>"; };
-		31F331C22265A97A00EC7496 /* ChainContract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainContract.h; sourceTree = "<group>"; };
-		31F331C32265A97A00EC7496 /* ChainContract.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainContract.m; sourceTree = "<group>"; };
 		31FC8D2B2213C82B0036C8F8 /* CCWWalletHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCWWalletHeaderView.h; sourceTree = "<group>"; };
 		31FC8D2C2213C82B0036C8F8 /* CCWWalletHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCWWalletHeaderView.m; sourceTree = "<group>"; };
 		31FC8D2E2213C9320036C8F8 /* CCWWalletTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCWWalletTableViewCell.h; sourceTree = "<group>"; };
@@ -845,11 +863,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3191A0C1225C6DE2003AB263 /* libsecp256k1_arm64.a in Frameworks */,
-				3191A0C0225C6DE2003AB263 /* libsecp256k1.a in Frameworks */,
-				3191A0C2225C6DE2003AB263 /* libsecp256k1_armv7.a in Frameworks */,
+				31B1AF9D235D58080080BC2E /* libsecp256k1_arm64.a in Frameworks */,
+				31B1AF9A235D58080080BC2E /* libsecp256k1.a in Frameworks */,
+				31B1AF9B235D58080080BC2E /* libsecp256k1_armv7.a in Frameworks */,
+				31B1AF9C235D58080080BC2E /* libsecp256k1_i386.a in Frameworks */,
 				4AF94853168082DB6D4DBC53 /* libPods-CocosBCXWallet.a in Frameworks */,
-				3191A0C3225C6DE2003AB263 /* libsecp256k1_i386.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1357,18 +1375,18 @@
 		3176CEBB22E58FE00022B408 /* About */ = {
 			isa = PBXGroup;
 			children = (
-				3176CEBC22E58FE00022B408 /* CCWAboutUsViewController.h */,
-				3176CEBD22E58FE00022B408 /* CCWPrivacyViewController.m */,
 				3176CEBE22E58FE00022B408 /* CCWJoinUsViewController.xib */,
-				3176CEBF22E58FE00022B408 /* CCWTermsViewController.h */,
-				3176CEC022E58FE00022B408 /* CCWVersionViewController.m */,
+				3176CEC622E58FE00022B408 /* CCWJoinUsViewController.h */,
 				3176CEC122E58FE00022B408 /* CCWJoinUsViewController.m */,
 				3176CEC222E58FE00022B408 /* CCWAboutUsViewController.xib */,
+				3176CEBC22E58FE00022B408 /* CCWAboutUsViewController.h */,
 				3176CEC322E58FE00022B408 /* CCWAboutUsViewController.m */,
 				3176CEC422E58FE00022B408 /* CCWPrivacyViewController.h */,
+				3176CEBD22E58FE00022B408 /* CCWPrivacyViewController.m */,
+				3176CEBF22E58FE00022B408 /* CCWTermsViewController.h */,
 				3176CEC522E58FE00022B408 /* CCWTermsViewController.m */,
-				3176CEC622E58FE00022B408 /* CCWJoinUsViewController.h */,
 				3176CEC722E58FE00022B408 /* CCWVersionViewController.h */,
+				3176CEC022E58FE00022B408 /* CCWVersionViewController.m */,
 			);
 			path = About;
 			sourceTree = "<group>";
@@ -1472,33 +1490,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		317D2D2F22DEFBBF00559A7C /* Operations */ = {
-			isa = PBXGroup;
-			children = (
-				317D2D3822DEFBBF00559A7C /* CocosBaseOperation.h */,
-				317D2D4222DEFBBF00559A7C /* CocosBaseOperation.m */,
-				317D2D3B22DEFBBF00559A7C /* CocosSellNHAssetOperation.h */,
-				317D2D3422DEFBBF00559A7C /* CocosSellNHAssetOperation.m */,
-				317D2D3E22DEFBBF00559A7C /* CocosTransferOperation.h */,
-				317D2D3122DEFBBF00559A7C /* CocosTransferOperation.m */,
-				317D2D3022DEFBBF00559A7C /* CocosBuyNHOrderOperation.h */,
-				317D2D3F22DEFBBF00559A7C /* CocosBuyNHOrderOperation.m */,
-				317D2D3522DEFBBF00559A7C /* CocosOperationContent.h */,
-				317D2D3A22DEFBBF00559A7C /* CocosOperationContent.m */,
-				317D2D4022DEFBBF00559A7C /* CocosTransferNHOperation.h */,
-				317D2D3622DEFBBF00559A7C /* CocosTransferNHOperation.m */,
-				317D2D3222DEFBBF00559A7C /* CocosSellNHAssetCancelOperation.h */,
-				317D2D3322DEFBBF00559A7C /* CocosUpgradeMemberOperation.m */,
-				317D2D4122DEFBBF00559A7C /* CocosDeleteNHOperation.h */,
-				317D2D3922DEFBBF00559A7C /* CocosDeleteNHOperation.m */,
-				317D2D3C22DEFBBF00559A7C /* CocosSellNHAssetCancelOperation.m */,
-				317D2D3D22DEFBBF00559A7C /* CocosUpgradeMemberOperation.h */,
-				317D2D3722DEFBBF00559A7C /* CocosCallContractOperation.h */,
-				317D2D4322DEFBBF00559A7C /* CocosCallContractOperation.m */,
-			);
-			path = Operations;
-			sourceTree = "<group>";
-		};
 		3186E7F62293A08200A269C6 /* CCWAlertView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1526,15 +1517,6 @@
 				3186E7FF2293A08200A269C6 /* CCWPresentationController.m */,
 			);
 			path = CCWAlertViewController;
-			sourceTree = "<group>";
-		};
-		318A67E9228948AE001D0157 /* NHAsset */ = {
-			isa = PBXGroup;
-			children = (
-				318A67EA228948AE001D0157 /* ChainNHAssetOrder.h */,
-				318A67EB228948AE001D0157 /* ChainNHAssetOrder.m */,
-			);
-			path = NHAsset;
 			sourceTree = "<group>";
 		};
 		318FF5F122156C2D00AB5696 /* InitWallet */ = {
@@ -1582,376 +1564,6 @@
 			path = Module;
 			sourceTree = "<group>";
 		};
-		31919FE6225C6DE2003AB263 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				31919FE7225C6DE2003AB263 /* Account */,
-				31919FFB225C6DE2003AB263 /* CocosFoundation */,
-				3191A018225C6DE2003AB263 /* CocosPCH.h */,
-				3191A019225C6DE2003AB263 /* CocosSDK.h */,
-				3191A01A225C6DE2003AB263 /* CocosSDK.m */,
-				3191A01B225C6DE2003AB263 /* DataBase */,
-				3191A022225C6DE2003AB263 /* HttpRequest */,
-				3191A027225C6DE2003AB263 /* Keystone */,
-				317D2D2F22DEFBBF00559A7C /* Operations */,
-				3191A037225C6DE2003AB263 /* SDKModel */,
-				3191A067225C6DE2003AB263 /* secp256k1 */,
-				3191A06E225C6DE2003AB263 /* Setting */,
-				3191A075225C6DE2003AB263 /* Transaction */,
-				3191A07A225C6DE2003AB263 /* Websocket */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		31919FE7225C6DE2003AB263 /* Account */ = {
-			isa = PBXGroup;
-			children = (
-				31919FE8225C6DE2003AB263 /* Cocos_Key_Account.h */,
-				31919FE9225C6DE2003AB263 /* Cocos_Key_Account.m */,
-				31919FEA225C6DE2003AB263 /* Crypto */,
-			);
-			path = Account;
-			sourceTree = "<group>";
-		};
-		31919FEA225C6DE2003AB263 /* Crypto */ = {
-			isa = PBXGroup;
-			children = (
-				31919FEB225C6DE2003AB263 /* base58.c */,
-				31919FEC225C6DE2003AB263 /* Base64.h */,
-				31919FED225C6DE2003AB263 /* Base64.m */,
-				31919FEE225C6DE2003AB263 /* libbase58.h */,
-				31919FEF225C6DE2003AB263 /* PBKDF2.h */,
-				31919FF0225C6DE2003AB263 /* PBKDF2.m */,
-				31919FF1225C6DE2003AB263 /* rmd160.c */,
-				31919FF2225C6DE2003AB263 /* rmd160.h */,
-				31919FF3225C6DE2003AB263 /* sha2.c */,
-				31919FF4225C6DE2003AB263 /* sha2.h */,
-				31919FF5225C6DE2003AB263 /* Sha256.h */,
-				31919FF6225C6DE2003AB263 /* Sha256.m */,
-				31919FF7225C6DE2003AB263 /* uECC.c */,
-				31919FF8225C6DE2003AB263 /* uECC.h */,
-				31919FF9225C6DE2003AB263 /* WordList.h */,
-				31919FFA225C6DE2003AB263 /* WordList.m */,
-			);
-			path = Crypto;
-			sourceTree = "<group>";
-		};
-		31919FFB225C6DE2003AB263 /* CocosFoundation */ = {
-			isa = PBXGroup;
-			children = (
-				31919FFC225C6DE2003AB263 /* Base58 */,
-				31919FFF225C6DE2003AB263 /* CocosPackData */,
-				3191A004225C6DE2003AB263 /* Diggest */,
-				3191A00D225C6DE2003AB263 /* NSData+CopyWithRange */,
-				3191A010225C6DE2003AB263 /* NSData+HashData */,
-				3191A015225C6DE2003AB263 /* NSDate+UTCDate */,
-			);
-			path = CocosFoundation;
-			sourceTree = "<group>";
-		};
-		31919FFC225C6DE2003AB263 /* Base58 */ = {
-			isa = PBXGroup;
-			children = (
-				31919FFD225C6DE2003AB263 /* CocosBase58Object.h */,
-				31919FFE225C6DE2003AB263 /* CocosBase58Object.m */,
-			);
-			path = Base58;
-			sourceTree = "<group>";
-		};
-		31919FFF225C6DE2003AB263 /* CocosPackData */ = {
-			isa = PBXGroup;
-			children = (
-				3191A000225C6DE2003AB263 /* CocosPackData.h */,
-				3191A001225C6DE2003AB263 /* CocosPackData.m */,
-				3191A002225C6DE2003AB263 /* NSObject+DataToObject.h */,
-				3191A003225C6DE2003AB263 /* NSObject+DataToObject.m */,
-			);
-			path = CocosPackData;
-			sourceTree = "<group>";
-		};
-		3191A004225C6DE2003AB263 /* Diggest */ = {
-			isa = PBXGroup;
-			children = (
-				3191A005225C6DE2003AB263 /* Diggest.h */,
-				3191A006225C6DE2003AB263 /* Diggest.m */,
-				3191A007225C6DE2003AB263 /* RIPEMD160Diggest */,
-				3191A00A225C6DE2003AB263 /* Sha256Diggest */,
-			);
-			path = Diggest;
-			sourceTree = "<group>";
-		};
-		3191A007225C6DE2003AB263 /* RIPEMD160Diggest */ = {
-			isa = PBXGroup;
-			children = (
-				3191A008225C6DE2003AB263 /* RIPEMD160Diggest.h */,
-				3191A009225C6DE2003AB263 /* RIPEMD160Diggest.m */,
-			);
-			path = RIPEMD160Diggest;
-			sourceTree = "<group>";
-		};
-		3191A00A225C6DE2003AB263 /* Sha256Diggest */ = {
-			isa = PBXGroup;
-			children = (
-				3191A00B225C6DE2003AB263 /* SHA256Diggest.h */,
-				3191A00C225C6DE2003AB263 /* SHA256Diggest.m */,
-			);
-			path = Sha256Diggest;
-			sourceTree = "<group>";
-		};
-		3191A00D225C6DE2003AB263 /* NSData+CopyWithRange */ = {
-			isa = PBXGroup;
-			children = (
-				3191A00E225C6DE2003AB263 /* NSData+CopyWithRange.h */,
-				3191A00F225C6DE2003AB263 /* NSData+CopyWithRange.m */,
-			);
-			path = "NSData+CopyWithRange";
-			sourceTree = "<group>";
-		};
-		3191A010225C6DE2003AB263 /* NSData+HashData */ = {
-			isa = PBXGroup;
-			children = (
-				3191A011225C6DE2003AB263 /* NSData+Base16.h */,
-				3191A012225C6DE2003AB263 /* NSData+Base16.m */,
-				3191A013225C6DE2003AB263 /* NSData+HashData.h */,
-				3191A014225C6DE2003AB263 /* NSData+HashData.m */,
-			);
-			path = "NSData+HashData";
-			sourceTree = "<group>";
-		};
-		3191A015225C6DE2003AB263 /* NSDate+UTCDate */ = {
-			isa = PBXGroup;
-			children = (
-				3191A016225C6DE2003AB263 /* NSDate+UTCDate.h */,
-				3191A017225C6DE2003AB263 /* NSDate+UTCDate.m */,
-			);
-			path = "NSDate+UTCDate";
-			sourceTree = "<group>";
-		};
-		3191A01B225C6DE2003AB263 /* DataBase */ = {
-			isa = PBXGroup;
-			children = (
-				3191A01C225C6DE2003AB263 /* CocosDataBase+Account.h */,
-				3191A01D225C6DE2003AB263 /* CocosDataBase+Account.m */,
-				3191A01E225C6DE2003AB263 /* CocosDataBase.h */,
-				3191A01F225C6DE2003AB263 /* CocosDataBase.m */,
-				3191A020225C6DE2003AB263 /* CocosDBAccountModel.h */,
-				3191A021225C6DE2003AB263 /* CocosDBAccountModel.m */,
-			);
-			path = DataBase;
-			sourceTree = "<group>";
-		};
-		3191A022225C6DE2003AB263 /* HttpRequest */ = {
-			isa = PBXGroup;
-			children = (
-				3191A023225C6DE2003AB263 /* CocosHTTPManager+CreateAccount.h */,
-				3191A024225C6DE2003AB263 /* CocosHTTPManager+CreateAccount.m */,
-				3191A025225C6DE2003AB263 /* CocosHTTPManager.h */,
-				3191A026225C6DE2003AB263 /* CocosHTTPManager.m */,
-			);
-			path = HttpRequest;
-			sourceTree = "<group>";
-		};
-		3191A027225C6DE2003AB263 /* Keystone */ = {
-			isa = PBXGroup;
-			children = (
-				3191A028225C6DE2003AB263 /* KeystoneFile.h */,
-				3191A029225C6DE2003AB263 /* KeystoneFile.m */,
-				3191A02A225C6DE2003AB263 /* PlainKey.h */,
-				3191A02B225C6DE2003AB263 /* PlainKey.m */,
-				3191A02C225C6DE2003AB263 /* WalletExtraKey.h */,
-				3191A02D225C6DE2003AB263 /* WalletExtraKey.m */,
-			);
-			path = Keystone;
-			sourceTree = "<group>";
-		};
-		3191A037225C6DE2003AB263 /* SDKModel */ = {
-			isa = PBXGroup;
-			children = (
-				318A67E9228948AE001D0157 /* NHAsset */,
-				3191A038225C6DE2003AB263 /* Account */,
-				3191A04B225C6DE2003AB263 /* Asset */,
-				3191A053225C6DE2003AB263 /* ChainAccountHistory.h */,
-				3191A054225C6DE2003AB263 /* ChainAccountHistory.m */,
-				3191A055225C6DE2003AB263 /* ChainAssetAmountObject.h */,
-				3191A056225C6DE2003AB263 /* ChainAssetAmountObject.m */,
-				3191A057225C6DE2003AB263 /* ChainDynamicGlobalProperties.h */,
-				3191A058225C6DE2003AB263 /* ChainDynamicGlobalProperties.m */,
-				3191A059225C6DE2003AB263 /* ChainMemo.h */,
-				3191A05A225C6DE2003AB263 /* ChainMemo.m */,
-				31F331C22265A97A00EC7496 /* ChainContract.h */,
-				31F331C32265A97A00EC7496 /* ChainContract.m */,
-				3191A05B225C6DE2003AB263 /* ChainObjectId.h */,
-				3191A05C225C6DE2003AB263 /* ChainObjectId.m */,
-				3191A05D225C6DE2003AB263 /* ChainPrice.h */,
-				3191A05E225C6DE2003AB263 /* ChainPrice.m */,
-				3191A05F225C6DE2003AB263 /* CocosKeyType */,
-				3191A066225C6DE2003AB263 /* ObjectToDataProtocol.h */,
-			);
-			path = SDKModel;
-			sourceTree = "<group>";
-		};
-		3191A038225C6DE2003AB263 /* Account */ = {
-			isa = PBXGroup;
-			children = (
-				3191A039225C6DE2003AB263 /* Authority */,
-				3191A044225C6DE2003AB263 /* ChainAccountModel.h */,
-				3191A045225C6DE2003AB263 /* ChainAccountModel.m */,
-				3191A046225C6DE2003AB263 /* Option */,
-			);
-			path = Account;
-			sourceTree = "<group>";
-		};
-		3191A039225C6DE2003AB263 /* Authority */ = {
-			isa = PBXGroup;
-			children = (
-				3191A03A225C6DE2003AB263 /* AccountAuthoriyObject.h */,
-				3191A03B225C6DE2003AB263 /* AccountAuthoriyObject.m */,
-				3191A03C225C6DE2003AB263 /* AuthorityObject.h */,
-				3191A03D225C6DE2003AB263 /* AuthorityObject.m */,
-				3191A03E225C6DE2003AB263 /* BitAddressAuthorityObject.h */,
-				3191A03F225C6DE2003AB263 /* BitAddressAuthorityObject.m */,
-				3191A040225C6DE2003AB263 /* PublicKeyAuthorityObject.h */,
-				3191A041225C6DE2003AB263 /* PublicKeyAuthorityObject.m */,
-				3191A042225C6DE2003AB263 /* SpecialAuthorityObject.h */,
-				3191A043225C6DE2003AB263 /* SpecialAuthorityObject.m */,
-			);
-			path = Authority;
-			sourceTree = "<group>";
-		};
-		3191A046225C6DE2003AB263 /* Option */ = {
-			isa = PBXGroup;
-			children = (
-				3191A047225C6DE2003AB263 /* AccountOptionObject.h */,
-				3191A048225C6DE2003AB263 /* AccountOptionObject.m */,
-				3191A049225C6DE2003AB263 /* VoteIdObject.h */,
-				3191A04A225C6DE2003AB263 /* VoteIdObject.m */,
-			);
-			path = Option;
-			sourceTree = "<group>";
-		};
-		3191A04B225C6DE2003AB263 /* Asset */ = {
-			isa = PBXGroup;
-			children = (
-				3191A04C225C6DE2003AB263 /* AssetOptions */,
-				3191A051225C6DE2003AB263 /* ChainAssetObject.h */,
-				3191A052225C6DE2003AB263 /* ChainAssetObject.m */,
-			);
-			path = Asset;
-			sourceTree = "<group>";
-		};
-		3191A04C225C6DE2003AB263 /* AssetOptions */ = {
-			isa = PBXGroup;
-			children = (
-				3191A04D225C6DE2003AB263 /* ChainAssetOption.h */,
-				3191A04E225C6DE2003AB263 /* ChainAssetOption.m */,
-				3191A04F225C6DE2003AB263 /* ChainAssetPermissionObject.h */,
-				3191A050225C6DE2003AB263 /* ChainAssetPermissionObject.m */,
-			);
-			path = AssetOptions;
-			sourceTree = "<group>";
-		};
-		3191A05F225C6DE2003AB263 /* CocosKeyType */ = {
-			isa = PBXGroup;
-			children = (
-				3191A060225C6DE2003AB263 /* CocosBitAddress.h */,
-				3191A061225C6DE2003AB263 /* CocosBitAddress.m */,
-				3191A062225C6DE2003AB263 /* CocosPrivateKey.h */,
-				3191A063225C6DE2003AB263 /* CocosPrivateKey.mm */,
-				3191A064225C6DE2003AB263 /* CocosPublicKey.h */,
-				3191A065225C6DE2003AB263 /* CocosPublicKey.m */,
-			);
-			path = CocosKeyType;
-			sourceTree = "<group>";
-		};
-		3191A067225C6DE2003AB263 /* secp256k1 */ = {
-			isa = PBXGroup;
-			children = (
-				3191A068225C6DE2003AB263 /* include */,
-				3191A06A225C6DE2003AB263 /* libsecp256k1.a */,
-				3191A06B225C6DE2003AB263 /* libsecp256k1_arm64.a */,
-				3191A06C225C6DE2003AB263 /* libsecp256k1_armv7.a */,
-				3191A06D225C6DE2003AB263 /* libsecp256k1_i386.a */,
-			);
-			path = secp256k1;
-			sourceTree = "<group>";
-		};
-		3191A068225C6DE2003AB263 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				3191A069225C6DE2003AB263 /* secp256k1.h */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		3191A06E225C6DE2003AB263 /* Setting */ = {
-			isa = PBXGroup;
-			children = (
-				3191A06F225C6DE2003AB263 /* CocosConfig.h */,
-				3191A070225C6DE2003AB263 /* CocosConfig.m */,
-				3191A071225C6DE2003AB263 /* CocosConstkey.h */,
-				3191A072225C6DE2003AB263 /* CocosConstkey.m */,
-				3191A073225C6DE2003AB263 /* CocosSetting.h */,
-				3191A074225C6DE2003AB263 /* CocosSetting.m */,
-			);
-			path = Setting;
-			sourceTree = "<group>";
-		};
-		3191A075225C6DE2003AB263 /* Transaction */ = {
-			isa = PBXGroup;
-			children = (
-				3191A076225C6DE2003AB263 /* SignedTransaction.h */,
-				3191A077225C6DE2003AB263 /* SignedTransaction.m */,
-				3191A078225C6DE2003AB263 /* Transaction.h */,
-				3191A079225C6DE2003AB263 /* Transaction.m */,
-			);
-			path = Transaction;
-			sourceTree = "<group>";
-		};
-		3191A07A225C6DE2003AB263 /* Websocket */ = {
-			isa = PBXGroup;
-			children = (
-				3191A07B225C6DE2003AB263 /* CallBackModel */,
-				3191A07E225C6DE2003AB263 /* CocosSDKError.h */,
-				3191A07F225C6DE2003AB263 /* UploadBaseModel */,
-				3191A084225C6DE2003AB263 /* WebsocketBlockChainApi.h */,
-				3191A085225C6DE2003AB263 /* WebsocketClient.h */,
-				3191A086225C6DE2003AB263 /* WebsocketClient.m */,
-				3191A087225C6DE2003AB263 /* WebsocketResultModel */,
-			);
-			path = Websocket;
-			sourceTree = "<group>";
-		};
-		3191A07B225C6DE2003AB263 /* CallBackModel */ = {
-			isa = PBXGroup;
-			children = (
-				3191A07C225C6DE2003AB263 /* CallBackModel.h */,
-				3191A07D225C6DE2003AB263 /* CallBackModel.m */,
-			);
-			path = CallBackModel;
-			sourceTree = "<group>";
-		};
-		3191A07F225C6DE2003AB263 /* UploadBaseModel */ = {
-			isa = PBXGroup;
-			children = (
-				3191A080225C6DE2003AB263 /* UploadBaseModel.h */,
-				3191A081225C6DE2003AB263 /* UploadBaseModel.m */,
-				3191A082225C6DE2003AB263 /* UploadParams.h */,
-				3191A083225C6DE2003AB263 /* UploadParams.m */,
-			);
-			path = UploadBaseModel;
-			sourceTree = "<group>";
-		};
-		3191A087225C6DE2003AB263 /* WebsocketResultModel */ = {
-			isa = PBXGroup;
-			children = (
-				3191A088225C6DE2003AB263 /* WebsocketResultErrorParse.h */,
-				3191A089225C6DE2003AB263 /* WebsocketResultErrorParse.m */,
-				3191A08A225C6DE2003AB263 /* WebsocketResultModel.h */,
-				3191A08B225C6DE2003AB263 /* WebsocketResultModel.m */,
-			);
-			path = WebsocketResultModel;
-			sourceTree = "<group>";
-		};
 		319D45C2221BADE700D1E6D2 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
@@ -1965,6 +1577,424 @@
 				3149E6002227AC5800EAF5B4 /* CCWSDKErrorHandle.m */,
 			);
 			path = Tool;
+			sourceTree = "<group>";
+		};
+		31B1AE96235D58080080BC2E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				31B1AE97235D58080080BC2E /* Transaction */,
+				31B1AE9C235D58080080BC2E /* DataBase */,
+				31B1AEA3235D58080080BC2E /* Websocket */,
+				31B1AEB5235D58080080BC2E /* CocosFoundation */,
+				31B1AF58235D58080080BC2E /* CocosSDK.h */,
+				31B1AED2235D58080080BC2E /* CocosSDK.m */,
+				31B1AED3235D58080080BC2E /* SDKModel */,
+				31B1AF0E235D58080080BC2E /* Keystone */,
+				31B1AF15235D58080080BC2E /* CocosPCH.h */,
+				31B1AF16235D58080080BC2E /* Operations */,
+				31B1AF31235D58080080BC2E /* HttpRequest */,
+				31B1AF36235D58080080BC2E /* secp256k1 */,
+				31B1AF3D235D58080080BC2E /* Account */,
+				31B1AF51235D58080080BC2E /* Setting */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		31B1AE97235D58080080BC2E /* Transaction */ = {
+			isa = PBXGroup;
+			children = (
+				31B1AE98235D58080080BC2E /* SignedTransaction.m */,
+				31B1AE99235D58080080BC2E /* Transaction.m */,
+				31B1AE9A235D58080080BC2E /* SignedTransaction.h */,
+				31B1AE9B235D58080080BC2E /* Transaction.h */,
+			);
+			path = Transaction;
+			sourceTree = "<group>";
+		};
+		31B1AE9C235D58080080BC2E /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				31B1AE9D235D58080080BC2E /* CocosDataBase.m */,
+				31B1AE9E235D58080080BC2E /* CocosDataBase+Account.h */,
+				31B1AE9F235D58080080BC2E /* CocosDBAccountModel.m */,
+				31B1AEA0235D58080080BC2E /* CocosDBAccountModel.h */,
+				31B1AEA1235D58080080BC2E /* CocosDataBase+Account.m */,
+				31B1AEA2235D58080080BC2E /* CocosDataBase.h */,
+			);
+			path = DataBase;
+			sourceTree = "<group>";
+		};
+		31B1AEA3235D58080080BC2E /* Websocket */ = {
+			isa = PBXGroup;
+			children = (
+				31B1AEA4235D58080080BC2E /* CallBackModel */,
+				31B1AEA7235D58080080BC2E /* CocosSDKError.h */,
+				31B1AEA8235D58080080BC2E /* WebsocketClient.m */,
+				31B1AEA9235D58080080BC2E /* WebsocketResultModel */,
+				31B1AEAE235D58080080BC2E /* WebsocketBlockChainApi.h */,
+				31B1AEAF235D58080080BC2E /* UploadBaseModel */,
+				31B1AEB4235D58080080BC2E /* WebsocketClient.h */,
+			);
+			path = Websocket;
+			sourceTree = "<group>";
+		};
+		31B1AEA4235D58080080BC2E /* CallBackModel */ = {
+			isa = PBXGroup;
+			children = (
+				31B1AEA5235D58080080BC2E /* CallBackModel.m */,
+				31B1AEA6235D58080080BC2E /* CallBackModel.h */,
+			);
+			path = CallBackModel;
+			sourceTree = "<group>";
+		};
+		31B1AEA9235D58080080BC2E /* WebsocketResultModel */ = {
+			isa = PBXGroup;
+			children = (
+				31B1AEAA235D58080080BC2E /* WebsocketResultModel.m */,
+				31B1AEAB235D58080080BC2E /* WebsocketResultErrorParse.h */,
+				31B1AEAC235D58080080BC2E /* WebsocketResultModel.h */,
+				31B1AEAD235D58080080BC2E /* WebsocketResultErrorParse.m */,
+			);
+			path = WebsocketResultModel;
+			sourceTree = "<group>";
+		};
+		31B1AEAF235D58080080BC2E /* UploadBaseModel */ = {
+			isa = PBXGroup;
+			children = (
+				31B1AEB0235D58080080BC2E /* UploadBaseModel.h */,
+				31B1AEB1235D58080080BC2E /* UploadParams.m */,
+				31B1AEB2235D58080080BC2E /* UploadBaseModel.m */,
+				31B1AEB3235D58080080BC2E /* UploadParams.h */,
+			);
+			path = UploadBaseModel;
+			sourceTree = "<group>";
+		};
+		31B1AEB5235D58080080BC2E /* CocosFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				31B1AEB6235D58080080BC2E /* Diggest */,
+				31B1AEBF235D58080080BC2E /* CocosPackData */,
+				31B1AEC4235D58080080BC2E /* NSDate+UTCDate */,
+				31B1AEC7235D58080080BC2E /* NSData+CopyWithRange */,
+				31B1AECA235D58080080BC2E /* Base58 */,
+				31B1AECD235D58080080BC2E /* NSData+HashData */,
+			);
+			path = CocosFoundation;
+			sourceTree = "<group>";
+		};
+		31B1AEB6235D58080080BC2E /* Diggest */ = {
+			isa = PBXGroup;
+			children = (
+				31B1AEB7235D58080080BC2E /* RIPEMD160Diggest */,
+				31B1AEBA235D58080080BC2E /* Diggest.h */,
+				31B1AEBB235D58080080BC2E /* Sha256Diggest */,
+				31B1AEBE235D58080080BC2E /* Diggest.m */,
+			);
+			path = Diggest;
+			sourceTree = "<group>";
+		};
+		31B1AEB7235D58080080BC2E /* RIPEMD160Diggest */ = {
+			isa = PBXGroup;
+			children = (
+				31B1AEB8235D58080080BC2E /* RIPEMD160Diggest.h */,
+				31B1AEB9235D58080080BC2E /* RIPEMD160Diggest.m */,
+			);
+			path = RIPEMD160Diggest;
+			sourceTree = "<group>";
+		};
+		31B1AEBB235D58080080BC2E /* Sha256Diggest */ = {
+			isa = PBXGroup;
+			children = (
+				31B1AEBC235D58080080BC2E /* SHA256Diggest.h */,
+				31B1AEBD235D58080080BC2E /* SHA256Diggest.m */,
+			);
+			path = Sha256Diggest;
+			sourceTree = "<group>";
+		};
+		31B1AEBF235D58080080BC2E /* CocosPackData */ = {
+			isa = PBXGroup;
+			children = (
+				31B1AEC0235D58080080BC2E /* NSObject+DataToObject.m */,
+				31B1AEC1235D58080080BC2E /* CocosPackData.h */,
+				31B1AEC2235D58080080BC2E /* NSObject+DataToObject.h */,
+				31B1AEC3235D58080080BC2E /* CocosPackData.m */,
+			);
+			path = CocosPackData;
+			sourceTree = "<group>";
+		};
+		31B1AEC4235D58080080BC2E /* NSDate+UTCDate */ = {
+			isa = PBXGroup;
+			children = (
+				31B1AEC5235D58080080BC2E /* NSDate+UTCDate.h */,
+				31B1AEC6235D58080080BC2E /* NSDate+UTCDate.m */,
+			);
+			path = "NSDate+UTCDate";
+			sourceTree = "<group>";
+		};
+		31B1AEC7235D58080080BC2E /* NSData+CopyWithRange */ = {
+			isa = PBXGroup;
+			children = (
+				31B1AEC8235D58080080BC2E /* NSData+CopyWithRange.m */,
+				31B1AEC9235D58080080BC2E /* NSData+CopyWithRange.h */,
+			);
+			path = "NSData+CopyWithRange";
+			sourceTree = "<group>";
+		};
+		31B1AECA235D58080080BC2E /* Base58 */ = {
+			isa = PBXGroup;
+			children = (
+				31B1AECB235D58080080BC2E /* CocosBase58Object.m */,
+				31B1AECC235D58080080BC2E /* CocosBase58Object.h */,
+			);
+			path = Base58;
+			sourceTree = "<group>";
+		};
+		31B1AECD235D58080080BC2E /* NSData+HashData */ = {
+			isa = PBXGroup;
+			children = (
+				31B1AECE235D58080080BC2E /* NSData+HashData.m */,
+				31B1AECF235D58080080BC2E /* NSData+Base16.h */,
+				31B1AED0235D58080080BC2E /* NSData+Base16.m */,
+				31B1AED1235D58080080BC2E /* NSData+HashData.h */,
+			);
+			path = "NSData+HashData";
+			sourceTree = "<group>";
+		};
+		31B1AED3235D58080080BC2E /* SDKModel */ = {
+			isa = PBXGroup;
+			children = (
+				31B1AED4235D58080080BC2E /* ChainDynamicGlobalProperties.m */,
+				31B1AED5235D58080080BC2E /* ChainAccountHistory.m */,
+				31B1AED6235D58080080BC2E /* ChainPrice.h */,
+				31B1AED7235D58080080BC2E /* ChainObjectId.h */,
+				31B1AED8235D58080080BC2E /* Asset */,
+				31B1AEE0235D58080080BC2E /* CocosKeyType */,
+				31B1AEE7235D58080080BC2E /* ChainVestingBalancePolicy.h */,
+				31B1AEE8235D58080080BC2E /* ChainContract.h */,
+				31B1AEE9235D58080080BC2E /* ChainMemo.m */,
+				31B1AEEA235D58080080BC2E /* ChainVestingBalance.h */,
+				31B1AEEB235D58080080BC2E /* ChainAssetAmountObject.m */,
+				31B1AEEC235D58080080BC2E /* NHAsset */,
+				31B1AEEF235D58080080BC2E /* ChainAccountHistory.h */,
+				31B1AEF0235D58080080BC2E /* ChainDynamicGlobalProperties.h */,
+				31B1AEF1235D58080080BC2E /* ChainObjectId.m */,
+				31B1AEF2235D58080080BC2E /* ChainPrice.m */,
+				31B1AEF3235D58080080BC2E /* ChainContract.m */,
+				31B1AEF4235D58080080BC2E /* ChainVestingBalancePolicy.m */,
+				31B1AEF5235D58080080BC2E /* ObjectToDataProtocol.h */,
+				31B1AEF6235D58080080BC2E /* Account */,
+				31B1AF0B235D58080080BC2E /* ChainAssetAmountObject.h */,
+				31B1AF0C235D58080080BC2E /* ChainVestingBalance.m */,
+				31B1AF0D235D58080080BC2E /* ChainMemo.h */,
+			);
+			path = SDKModel;
+			sourceTree = "<group>";
+		};
+		31B1AED8235D58080080BC2E /* Asset */ = {
+			isa = PBXGroup;
+			children = (
+				31B1AED9235D58080080BC2E /* ChainAssetObject.m */,
+				31B1AEDA235D58080080BC2E /* AssetOptions */,
+				31B1AEDF235D58080080BC2E /* ChainAssetObject.h */,
+			);
+			path = Asset;
+			sourceTree = "<group>";
+		};
+		31B1AEDA235D58080080BC2E /* AssetOptions */ = {
+			isa = PBXGroup;
+			children = (
+				31B1AEDB235D58080080BC2E /* ChainAssetOption.m */,
+				31B1AEDC235D58080080BC2E /* ChainAssetPermissionObject.h */,
+				31B1AEDD235D58080080BC2E /* ChainAssetPermissionObject.m */,
+				31B1AEDE235D58080080BC2E /* ChainAssetOption.h */,
+			);
+			path = AssetOptions;
+			sourceTree = "<group>";
+		};
+		31B1AEE0235D58080080BC2E /* CocosKeyType */ = {
+			isa = PBXGroup;
+			children = (
+				31B1AEE1235D58080080BC2E /* CocosBitAddress.m */,
+				31B1AEE2235D58080080BC2E /* CocosPrivateKey.h */,
+				31B1AEE3235D58080080BC2E /* CocosPublicKey.h */,
+				31B1AEE4235D58080080BC2E /* CocosPrivateKey.mm */,
+				31B1AEE5235D58080080BC2E /* CocosBitAddress.h */,
+				31B1AEE6235D58080080BC2E /* CocosPublicKey.m */,
+			);
+			path = CocosKeyType;
+			sourceTree = "<group>";
+		};
+		31B1AEEC235D58080080BC2E /* NHAsset */ = {
+			isa = PBXGroup;
+			children = (
+				31B1AEED235D58080080BC2E /* ChainNHAssetOrder.m */,
+				31B1AEEE235D58080080BC2E /* ChainNHAssetOrder.h */,
+			);
+			path = NHAsset;
+			sourceTree = "<group>";
+		};
+		31B1AEF6235D58080080BC2E /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				31B1AEF7235D58080080BC2E /* Option */,
+				31B1AEFE235D58080080BC2E /* ChainAccountModel.h */,
+				31B1AEFF235D58080080BC2E /* Authority */,
+				31B1AF0A235D58080080BC2E /* ChainAccountModel.m */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		31B1AEF7235D58080080BC2E /* Option */ = {
+			isa = PBXGroup;
+			children = (
+				31B1AEF8235D58080080BC2E /* VoteIdObject.m */,
+				31B1AEF9235D58080080BC2E /* AccountOptionObject.m */,
+				31B1AEFA235D58080080BC2E /* VoteOptionsObject.h */,
+				31B1AEFB235D58080080BC2E /* AccountOptionObject.h */,
+				31B1AEFC235D58080080BC2E /* VoteIdObject.h */,
+				31B1AEFD235D58080080BC2E /* VoteOptionsObject.m */,
+			);
+			path = Option;
+			sourceTree = "<group>";
+		};
+		31B1AEFF235D58080080BC2E /* Authority */ = {
+			isa = PBXGroup;
+			children = (
+				31B1AF00235D58080080BC2E /* PublicKeyAuthorityObject.m */,
+				31B1AF01235D58080080BC2E /* AuthorityObject.h */,
+				31B1AF02235D58080080BC2E /* AccountAuthoriyObject.m */,
+				31B1AF03235D58080080BC2E /* SpecialAuthorityObject.m */,
+				31B1AF04235D58080080BC2E /* BitAddressAuthorityObject.m */,
+				31B1AF05235D58080080BC2E /* PublicKeyAuthorityObject.h */,
+				31B1AF06235D58080080BC2E /* AccountAuthoriyObject.h */,
+				31B1AF07235D58080080BC2E /* AuthorityObject.m */,
+				31B1AF08235D58080080BC2E /* BitAddressAuthorityObject.h */,
+				31B1AF09235D58080080BC2E /* SpecialAuthorityObject.h */,
+			);
+			path = Authority;
+			sourceTree = "<group>";
+		};
+		31B1AF0E235D58080080BC2E /* Keystone */ = {
+			isa = PBXGroup;
+			children = (
+				31B1AF0F235D58080080BC2E /* WalletExtraKey.h */,
+				31B1AF10235D58080080BC2E /* KeystoneFile.h */,
+				31B1AF11235D58080080BC2E /* PlainKey.m */,
+				31B1AF12235D58080080BC2E /* KeystoneFile.m */,
+				31B1AF13235D58080080BC2E /* WalletExtraKey.m */,
+				31B1AF14235D58080080BC2E /* PlainKey.h */,
+			);
+			path = Keystone;
+			sourceTree = "<group>";
+		};
+		31B1AF16235D58080080BC2E /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				31B1AF17235D58080080BC2E /* CocosBuyNHOrderOperation.h */,
+				31B1AF18235D58080080BC2E /* CocosTransferOperation.m */,
+				31B1AF19235D58080080BC2E /* CocosSellNHAssetCancelOperation.h */,
+				31B1AF1A235D58080080BC2E /* CocosUpgradeMemberOperation.m */,
+				31B1AF1B235D58080080BC2E /* CocosSellNHAssetOperation.m */,
+				31B1AF1C235D58080080BC2E /* CocosOperationContent.h */,
+				31B1AF1D235D58080080BC2E /* CocosTransferNHOperation.m */,
+				31B1AF1E235D58080080BC2E /* CocosCallContractOperation.h */,
+				31B1AF1F235D58080080BC2E /* CocosMortgageGasOperation.h */,
+				31B1AF20235D58080080BC2E /* CocosBaseOperation.h */,
+				31B1AF21235D58080080BC2E /* CocosDeleteNHOperation.m */,
+				31B1AF22235D58080080BC2E /* CocosVoteOperation.m */,
+				31B1AF23235D58080080BC2E /* CocosClaimVestingBalanceOperation.m */,
+				31B1AF24235D58080080BC2E /* CocosOperationContent.m */,
+				31B1AF25235D58080080BC2E /* CocosSellNHAssetOperation.h */,
+				31B1AF26235D58080080BC2E /* CocosSellNHAssetCancelOperation.m */,
+				31B1AF27235D58080080BC2E /* CocosUpgradeMemberOperation.h */,
+				31B1AF28235D58080080BC2E /* CocosTransferOperation.h */,
+				31B1AF29235D58080080BC2E /* CocosBuyNHOrderOperation.m */,
+				31B1AF2A235D58080080BC2E /* CocosTransferNHOperation.h */,
+				31B1AF2B235D58080080BC2E /* CocosDeleteNHOperation.h */,
+				31B1AF2C235D58080080BC2E /* CocosBaseOperation.m */,
+				31B1AF2D235D58080080BC2E /* CocosMortgageGasOperation.m */,
+				31B1AF2E235D58080080BC2E /* CocosCallContractOperation.m */,
+				31B1AF2F235D58080080BC2E /* CocosClaimVestingBalanceOperation.h */,
+				31B1AF30235D58080080BC2E /* CocosVoteOperation.h */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		31B1AF31235D58080080BC2E /* HttpRequest */ = {
+			isa = PBXGroup;
+			children = (
+				31B1AF32235D58080080BC2E /* CocosHTTPManager+CreateAccount.m */,
+				31B1AF33235D58080080BC2E /* CocosHTTPManager.m */,
+				31B1AF34235D58080080BC2E /* CocosHTTPManager+CreateAccount.h */,
+				31B1AF35235D58080080BC2E /* CocosHTTPManager.h */,
+			);
+			path = HttpRequest;
+			sourceTree = "<group>";
+		};
+		31B1AF36235D58080080BC2E /* secp256k1 */ = {
+			isa = PBXGroup;
+			children = (
+				31B1AF37235D58080080BC2E /* libsecp256k1.a */,
+				31B1AF38235D58080080BC2E /* include */,
+				31B1AF3A235D58080080BC2E /* libsecp256k1_armv7.a */,
+				31B1AF3B235D58080080BC2E /* libsecp256k1_i386.a */,
+				31B1AF3C235D58080080BC2E /* libsecp256k1_arm64.a */,
+			);
+			path = secp256k1;
+			sourceTree = "<group>";
+		};
+		31B1AF38235D58080080BC2E /* include */ = {
+			isa = PBXGroup;
+			children = (
+				31B1AF39235D58080080BC2E /* secp256k1.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		31B1AF3D235D58080080BC2E /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				31B1AF3E235D58080080BC2E /* Crypto */,
+				31B1AF4F235D58080080BC2E /* Cocos_Key_Account.h */,
+				31B1AF50235D58080080BC2E /* Cocos_Key_Account.m */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		31B1AF3E235D58080080BC2E /* Crypto */ = {
+			isa = PBXGroup;
+			children = (
+				31B1AF3F235D58080080BC2E /* uECC.h */,
+				31B1AF40235D58080080BC2E /* sha2.c */,
+				31B1AF41235D58080080BC2E /* WordList.h */,
+				31B1AF42235D58080080BC2E /* Base64.h */,
+				31B1AF43235D58080080BC2E /* libbase58.h */,
+				31B1AF44235D58080080BC2E /* Sha256.h */,
+				31B1AF45235D58080080BC2E /* rmd160.h */,
+				31B1AF46235D58080080BC2E /* PBKDF2.h */,
+				31B1AF47235D58080080BC2E /* sha2.h */,
+				31B1AF48235D58080080BC2E /* uECC.c */,
+				31B1AF49235D58080080BC2E /* Base64.m */,
+				31B1AF4A235D58080080BC2E /* WordList.m */,
+				31B1AF4B235D58080080BC2E /* Sha256.m */,
+				31B1AF4C235D58080080BC2E /* base58.c */,
+				31B1AF4D235D58080080BC2E /* rmd160.c */,
+				31B1AF4E235D58080080BC2E /* PBKDF2.m */,
+			);
+			path = Crypto;
+			sourceTree = "<group>";
+		};
+		31B1AF51235D58080080BC2E /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				31B1AF52235D58080080BC2E /* CocosSetting.m */,
+				31B1AF53235D58080080BC2E /* CocosConstkey.m */,
+				31B1AF54235D58080080BC2E /* CocosConfig.h */,
+				31B1AF55235D58080080BC2E /* CocosSetting.h */,
+				31B1AF56235D58080080BC2E /* CocosConstkey.h */,
+				31B1AF57235D58080080BC2E /* CocosConfig.m */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		31B540B0229FEC17002FA33B /* CCWNodeAlertSheetView */ = {
@@ -1998,11 +2028,11 @@
 		31CDB7E5222531AA00D377B2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				31B1AE96235D58080080BC2E /* Classes */,
 				3144D09322003D6500CDA62A /* CocosBCXWallet.pch */,
 				317784EB2200486100525237 /* AppMacro.h */,
 				31CDB7E9222531DC00D377B2 /* confuse.sh */,
 				319D45DB221BF95E00D1E6D2 /* AppNilOrNull.h */,
-				31919FE6225C6DE2003AB263 /* Classes */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -2057,12 +2087,12 @@
 		31E4338022EAAB4C00CAFDCA /* Set */ = {
 			isa = PBXGroup;
 			children = (
-				31E4338122EAAB4C00CAFDCA /* CCWAddNodeViewController.m */,
-				31E4338222EAAB4C00CAFDCA /* CCWSystemSetViewController.xib */,
 				31E4338322EAAB4C00CAFDCA /* CCWSystemSetViewController.h */,
+				31E4338622EAAB4C00CAFDCA /* CCWSystemSetViewController.m */,
+				31E4338222EAAB4C00CAFDCA /* CCWSystemSetViewController.xib */,
 				31E4338422EAAB4C00CAFDCA /* CCWAddNodeViewController.xib */,
 				31E4338522EAAB4C00CAFDCA /* CCWAddNodeViewController.h */,
-				31E4338622EAAB4C00CAFDCA /* CCWSystemSetViewController.m */,
+				31E4338122EAAB4C00CAFDCA /* CCWAddNodeViewController.m */,
 			);
 			path = Set;
 			sourceTree = "<group>";
@@ -2293,234 +2323,240 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31B1AFA7235D58080080BC2E /* CocosSetting.m in Sources */,
 				31288E9B221D57DD002EE5EA /* CCWAssetsModel.m in Sources */,
 				3144D05F22003BE700CDA62A /* NSString+CCWHash.m in Sources */,
 				3144D05322003BE700CDA62A /* CCWAES.m in Sources */,
 				31E198CC221FFAA80076A822 /* CCWTransferRecordTableView.m in Sources */,
 				318FF5F02215654E00AB5696 /* CCWLabel.m in Sources */,
+				31B1AF9E235D58080080BC2E /* sha2.c in Sources */,
+				31B1AF7D235D58080080BC2E /* ChainVestingBalancePolicy.m in Sources */,
 				3144D07022003BE700CDA62A /* CCWPassWordUtil.m in Sources */,
 				3149E6012227AC5800EAF5B4 /* CCWSDKErrorHandle.m in Sources */,
-				3191A0BF225C6DE2003AB263 /* CocosPublicKey.m in Sources */,
+				31B1AF5C235D58080080BC2E /* CocosDBAccountModel.m in Sources */,
+				31B1AF8D235D58080080BC2E /* CocosSellNHAssetOperation.m in Sources */,
+				31B1AF73235D58080080BC2E /* ChainAssetPermissionObject.m in Sources */,
 				31E19880221E7BCF0076A822 /* CCWConstkey.m in Sources */,
 				3144D05A22003BE700CDA62A /* CCWRSAUtill.m in Sources */,
 				3176CECE22E58FE00022B408 /* CCWExportViewController.m in Sources */,
 				31E4338722EAAB4C00CAFDCA /* CCWAddNodeViewController.m in Sources */,
-				3191A0A1225C6DE2003AB263 /* CocosDataBase.m in Sources */,
 				3144D06922003BE700CDA62A /* UILabel+YSAdd.m in Sources */,
 				3186E8062293A08200A269C6 /* CCWCheckVisionAlert.m in Sources */,
-				3191A0C5225C6DE2003AB263 /* CocosConstkey.m in Sources */,
 				313FD4AC22A4BE660058A8A2 /* CCWDataBase+CCWNodeINfo.m in Sources */,
-				3191A0A3225C6DE2003AB263 /* CocosHTTPManager+CreateAccount.m in Sources */,
 				318FF6002215794A00AB5696 /* CCWButton.m in Sources */,
-				3191A0B6225C6DE2003AB263 /* ChainAssetObject.m in Sources */,
+				31B1AF7A235D58080080BC2E /* ChainObjectId.m in Sources */,
+				31B1AF91235D58080080BC2E /* CocosClaimVestingBalanceOperation.m in Sources */,
+				31B1AF94235D58080080BC2E /* CocosBuyNHOrderOperation.m in Sources */,
 				31881F5822165EB7006C31A2 /* CCWBackupsPrivateController.m in Sources */,
 				3176CEDA22E58FE00022B408 /* CCWJoinUsViewController.m in Sources */,
+				31B1AF6B235D58080080BC2E /* CocosBase58Object.m in Sources */,
 				31E198B4221FA1260076A822 /* CCWMySheetTableViewCell.m in Sources */,
+				31B1AF7E235D58080080BC2E /* VoteIdObject.m in Sources */,
+				31B1AF59235D58080080BC2E /* SignedTransaction.m in Sources */,
+				31B1AF74235D58080080BC2E /* CocosBitAddress.m in Sources */,
 				317D2D6522E0713900559A7C /* CCWNHAssetOrderTableViewCell.m in Sources */,
+				31B1AF7B235D58080080BC2E /* ChainPrice.m in Sources */,
 				317948C7221E4B5F00F4EA69 /* YBPopupMenu.m in Sources */,
 				3129ED3322E7FB660028A1CA /* CCWOrderDetailViewController.m in Sources */,
+				31B1AF89235D58080080BC2E /* KeystoneFile.m in Sources */,
 				3176CED722E58FE00022B408 /* CCWPrivacyViewController.m in Sources */,
 				3144D05822003BE700CDA62A /* NSData+GTMBase64.m in Sources */,
+				31B1AF8A235D58080080BC2E /* WalletExtraKey.m in Sources */,
 				3144D06A22003BE700CDA62A /* UITextView+CCWPlaceHolder.m in Sources */,
 				3144D09222003CBD00CDA62A /* CCWFindViewController.m in Sources */,
 				3165106B22266BAA00F573F9 /* CCWDappViewController.m in Sources */,
-				3191A0AF225C6DE2003AB263 /* PublicKeyAuthorityObject.m in Sources */,
+				31B1AF81235D58080080BC2E /* PublicKeyAuthorityObject.m in Sources */,
 				317784E72200473800525237 /* CCWMediator.m in Sources */,
-				3191A0C8225C6DE2003AB263 /* Transaction.m in Sources */,
 				3144D06222003BE700CDA62A /* NSString+YSAdd.m in Sources */,
 				31E4338C22EAB05B00CAFDCA /* MJRefresh+Localize.m in Sources */,
+				31B1AF6F235D58080080BC2E /* ChainDynamicGlobalProperties.m in Sources */,
+				31B1AF66235D58080080BC2E /* Diggest.m in Sources */,
 				3144D06D22003BE700CDA62A /* UIView+YSAdd.m in Sources */,
-				3191A0C7225C6DE2003AB263 /* SignedTransaction.m in Sources */,
 				318FF5DD221510EC00AB5696 /* CCWTransRecordViewController.m in Sources */,
-				3191A0B0225C6DE2003AB263 /* SpecialAuthorityObject.m in Sources */,
-				3191A091225C6DE2003AB263 /* sha2.c in Sources */,
+				31B1AF86235D58080080BC2E /* ChainAccountModel.m in Sources */,
 				3110369622CC7D7200DE14DD /* CCWPwdContent.m in Sources */,
 				3144D06822003BE700CDA62A /* UIImage+YSAdd.m in Sources */,
 				3176CED122E58FE00022B408 /* CCWAssetsOverviewViewController.m in Sources */,
-				3191A090225C6DE2003AB263 /* rmd160.c in Sources */,
-				3191A0CD225C6DE2003AB263 /* WebsocketResultErrorParse.m in Sources */,
-				3191A0B8225C6DE2003AB263 /* ChainAssetAmountObject.m in Sources */,
-				3191A096225C6DE2003AB263 /* CocosPackData.m in Sources */,
 				3144D06522003BE700CDA62A /* CCWPageControl.m in Sources */,
 				31E4338A22EAAB4C00CAFDCA /* CCWSystemSetViewController.m in Sources */,
+				31B1AF8E235D58080080BC2E /* CocosTransferNHOperation.m in Sources */,
 				3144D06022003BE700CDA62A /* NSString+CCWNumber.m in Sources */,
 				3144D09622003E5300CDA62A /* CCWLocalizableTool.m in Sources */,
+				31B1AF5F235D58080080BC2E /* WebsocketClient.m in Sources */,
+				31B1AF8C235D58080080BC2E /* CocosUpgradeMemberOperation.m in Sources */,
+				31B1AF5E235D58080080BC2E /* CallBackModel.m in Sources */,
+				31B1AF6C235D58080080BC2E /* NSData+HashData.m in Sources */,
 				3144D05E22003BE700CDA62A /* NSObject+YSAdd.m in Sources */,
 				3144D0A02200401900CDA62A /* CCWLocalizableConst.m in Sources */,
 				317D2D5B22E0613F00559A7C /* CCWMyOrderViewController.m in Sources */,
+				31B1AF87235D58080080BC2E /* ChainVestingBalance.m in Sources */,
 				3144D06622003BE700CDA62A /* CCWPlaceholderTextView.m in Sources */,
 				3176CEDD22E58FE00022B408 /* CCWTermsViewController.m in Sources */,
 				3186E8052293A08200A269C6 /* CCWPresentationController.m in Sources */,
 				3144D06F22003BE700CDA62A /* CCWCheckJailbreak.m in Sources */,
+				31B1AF9F235D58080080BC2E /* uECC.c in Sources */,
+				31B1AFA1235D58080080BC2E /* WordList.m in Sources */,
 				313FD4AF22A4BE9F0058A8A2 /* CCWNodeInfoModel.m in Sources */,
+				31B1AF6D235D58080080BC2E /* NSData+Base16.m in Sources */,
+				31B1AF95235D58080080BC2E /* CocosBaseOperation.m in Sources */,
 				316739A0221AB2E0008D85C4 /* CCWWalletAccount.m in Sources */,
-				3191A0B3225C6DE2003AB263 /* VoteIdObject.m in Sources */,
 				318FF604221580D900AB5696 /* CCWImportViewController.m in Sources */,
 				313AAB0D22E9A859003E0B5B /* CCWDeleteNHInfoView.m in Sources */,
 				3144D05D22003BE700CDA62A /* NSMutableAttributedString+Helper.m in Sources */,
 				318FF5EB22155A8000AB5696 /* CCWTransferDetailViewController.m in Sources */,
-				3191A0C6225C6DE2003AB263 /* CocosSetting.m in Sources */,
 				3144D07122003BE700CDA62A /* CCWPrivacyPermissionsManager.m in Sources */,
+				31B1AFA6235D58080080BC2E /* Cocos_Key_Account.m in Sources */,
+				31B1AF64235D58080080BC2E /* RIPEMD160Diggest.m in Sources */,
 				3176CED222E58FE00022B408 /* CCWPropAssetsTableViewController.m in Sources */,
-				3191A08C225C6DE2003AB263 /* Cocos_Key_Account.m in Sources */,
-				3191A092225C6DE2003AB263 /* Sha256.m in Sources */,
-				3191A0C9225C6DE2003AB263 /* CallBackModel.m in Sources */,
 				316739AD221AD8F3008D85C4 /* CCWDappModel.m in Sources */,
 				318FF5F622156CA800AB5696 /* CCWLoginViewController.m in Sources */,
-				317D2D4622DEFBBF00559A7C /* CocosSellNHAssetOperation.m in Sources */,
-				3191A08D225C6DE2003AB263 /* base58.c in Sources */,
 				31E19887221E84270076A822 /* CCWSwitchAccountCell.m in Sources */,
 				31E198B3221FA1260076A822 /* CCWMyAlertSheetView.m in Sources */,
+				31B1AF75235D58080080BC2E /* CocosPrivateKey.mm in Sources */,
 				318FF5FB22156D5A00AB5696 /* CCWInitWalletModule.m in Sources */,
 				317D2D5822E05BB600559A7C /* CCWNHOrderListViewController.m in Sources */,
 				3110368222CC48F100DE14DD /* CCWPasswordAlertView.m in Sources */,
 				3165106E22266C9300F573F9 /* UIView+EmptyView.m in Sources */,
 				3176CED922E58FE00022B408 /* CCWVersionViewController.m in Sources */,
-				3191A0B5225C6DE2003AB263 /* ChainAssetPermissionObject.m in Sources */,
 				317948C9221E4B5F00F4EA69 /* YBRectConst.m in Sources */,
 				3149E5FE2227AAE400EAF5B4 /* CCWSDKRequest.m in Sources */,
-				3191A0BD225C6DE2003AB263 /* CocosBitAddress.m in Sources */,
 				318A67E222893D23001D0157 /* CCWDappWebTool.m in Sources */,
+				31B1AF6E235D58080080BC2E /* CocosSDK.m in Sources */,
 				317784F322004A0F00525237 /* CCWFindModule.m in Sources */,
-				3191A0B7225C6DE2003AB263 /* ChainAccountHistory.m in Sources */,
 				317948D7221E4BC000F4EA69 /* CCWContactTableViewCell.m in Sources */,
-				317D2D4D22DEFBBF00559A7C /* CocosCallContractOperation.m in Sources */,
+				31B1AF8F235D58080080BC2E /* CocosDeleteNHOperation.m in Sources */,
 				3144D05B22003BE700CDA62A /* NSData+YLBase64.m in Sources */,
 				317948D1221E4B7800F4EA69 /* UIImageView+CCWImageView.m in Sources */,
-				317D2D4B22DEFBBF00559A7C /* CocosBuyNHOrderOperation.m in Sources */,
 				3144D06122003BE700CDA62A /* NSString+YLBase64.m in Sources */,
-				31F331C42265A97A00EC7496 /* ChainContract.m in Sources */,
 				31673992221AA59B008D85C4 /* CCWDataBase+CCWWalletAccount.m in Sources */,
 				31881F532216593D006C31A2 /* CCWTipScreenShotViewController.m in Sources */,
 				3144D05922003BE700CDA62A /* CCWEncryptTool.m in Sources */,
 				316739A8221AD84B008D85C4 /* CCWFindTableViewCell.m in Sources */,
 				3176CEE122E591F40022B408 /* CCWPropDetailViewController.m in Sources */,
-				3191A0AC225C6DE2003AB263 /* AccountAuthoriyObject.m in Sources */,
-				317D2D4C22DEFBBF00559A7C /* CocosBaseOperation.m in Sources */,
+				31B1AF7F235D58080080BC2E /* AccountOptionObject.m in Sources */,
 				316739BA221AD9C3008D85C4 /* CCWFindButton.m in Sources */,
-				3191A0CA225C6DE2003AB263 /* UploadBaseModel.m in Sources */,
 				3191A0E4225F15CB003AB263 /* CCWMyWalletTableViewCell.m in Sources */,
-				3191A0A4225C6DE2003AB263 /* CocosHTTPManager.m in Sources */,
+				31B1AF98235D58080080BC2E /* CocosHTTPManager+CreateAccount.m in Sources */,
+				31B1AF5A235D58080080BC2E /* Transaction.m in Sources */,
 				319D45C1221BAB3600D1E6D2 /* CCWFindModel.m in Sources */,
-				317D2D4822DEFBBF00559A7C /* CocosDeleteNHOperation.m in Sources */,
 				3167398F221AA536008D85C4 /* CCWDataBase.m in Sources */,
-				3191A098225C6DE2003AB263 /* Diggest.m in Sources */,
+				31B1AF80235D58080080BC2E /* VoteOptionsObject.m in Sources */,
 				3123E22922B0ED0A00874CBF /* CCWSearchDAppViewController.m in Sources */,
 				316739A9221AD84B008D85C4 /* CCWFindFirstTableViewCell.m in Sources */,
-				3191A0B4225C6DE2003AB263 /* ChainAssetOption.m in Sources */,
-				3191A0BB225C6DE2003AB263 /* ChainObjectId.m in Sources */,
-				3191A0A0225C6DE2003AB263 /* CocosDataBase+Account.m in Sources */,
 				3144D07222003BE700CDA62A /* CCWSaveTool.m in Sources */,
-				3191A09B225C6DE2003AB263 /* NSData+CopyWithRange.m in Sources */,
 				3176CED622E58FE00022B408 /* CCWContactViewController.m in Sources */,
 				31881F5D2216692E006C31A2 /* CCWCreateViewController.m in Sources */,
-				3191A0BA225C6DE2003AB263 /* ChainMemo.m in Sources */,
 				3176CECF22E58FE00022B408 /* CCWDigitalAssetsViewController.m in Sources */,
-				3191A0A5225C6DE2003AB263 /* KeystoneFile.m in Sources */,
-				3191A08E225C6DE2003AB263 /* Base64.m in Sources */,
 				3144D08C22003C9200CDA62A /* CCWMyViewController.m in Sources */,
+				31B1AF92235D58080080BC2E /* CocosOperationContent.m in Sources */,
 				31C35A49221E489E00E8B455 /* CCWDataBase+CCWContact.m in Sources */,
 				313FD4B322A4D6CB0058A8A2 /* CCWNodeAlertTableViewCell.m in Sources */,
 				31FC8D312213C9320036C8F8 /* CCWWalletTableViewCell.m in Sources */,
+				31B1AFA0235D58080080BC2E /* Base64.m in Sources */,
 				3144D08F22003CAB00CDA62A /* CCWWalletViewController.m in Sources */,
+				31B1AF77235D58080080BC2E /* ChainMemo.m in Sources */,
+				31B1AF5D235D58080080BC2E /* CocosDataBase+Account.m in Sources */,
 				31288E97221D4726002EE5EA /* Foundation Log.m in Sources */,
+				31B1AF84235D58080080BC2E /* BitAddressAuthorityObject.m in Sources */,
+				31B1AF82235D58080080BC2E /* AccountAuthoriyObject.m in Sources */,
 				31C819E7222791980083D74D /* CCWInitBaseViewController.m in Sources */,
+				31B1AF88235D58080080BC2E /* PlainKey.m in Sources */,
 				31288E9F221D728C002EE5EA /* CCWTransRecordModel.m in Sources */,
-				317D2D4522DEFBBF00559A7C /* CocosUpgradeMemberOperation.m in Sources */,
 				31FC8D5A2213FBB90036C8F8 /* CCWWalletNavButton.m in Sources */,
 				31E19898221E90880076A822 /* CCWTransferInfoView.m in Sources */,
 				3154F3DA2223CF2700511FA8 /* MBProgressHUD.m in Sources */,
 				3129ED4F22E990320028A1CA /* CCWBuyNHInfoView.m in Sources */,
 				317D2D5522E04CF700559A7C /* CCWNHAssetsModel.m in Sources */,
 				317D2D5122E0428E00559A7C /* CCWPropAssetsTableViewCell.m in Sources */,
-				3191A0B2225C6DE2003AB263 /* AccountOptionObject.m in Sources */,
 				318FF5E12215143D00AB5696 /* CCWTransferRecordHeader.m in Sources */,
-				3191A0CC225C6DE2003AB263 /* WebsocketClient.m in Sources */,
 				31E19889221E84270076A822 /* CCWSwitchAccountView.m in Sources */,
+				31B1AF85235D58080080BC2E /* AuthorityObject.m in Sources */,
 				3144D06422003BE700CDA62A /* YCNSDateFormatter.m in Sources */,
 				3191A0DA225E11F8003AB263 /* CCWSelectCoinViewController.m in Sources */,
-				3191A09C225C6DE2003AB263 /* NSData+Base16.m in Sources */,
 				3144D06322003BE700CDA62A /* NSTimer+CCWTimer.m in Sources */,
-				3191A0BC225C6DE2003AB263 /* ChainPrice.m in Sources */,
 				3154F3DD2223CFB400511FA8 /* MBProgressHUD+YSAdd.m in Sources */,
-				3191A0BE225C6DE2003AB263 /* CocosPrivateKey.mm in Sources */,
 				31B540B6229FEC17002FA33B /* CCWNodeAlertSheetView.m in Sources */,
+				31B1AF83235D58080080BC2E /* SpecialAuthorityObject.m in Sources */,
+				31B1AF90235D58080080BC2E /* CocosVoteOperation.m in Sources */,
+				31B1AFA4235D58080080BC2E /* rmd160.c in Sources */,
+				31B1AF5B235D58080080BC2E /* CocosDataBase.m in Sources */,
+				31B1AF61235D58080080BC2E /* WebsocketResultErrorParse.m in Sources */,
+				31B1AF71235D58080080BC2E /* ChainAssetObject.m in Sources */,
+				31B1AF62235D58080080BC2E /* UploadParams.m in Sources */,
 				31C819ED222794F00083D74D /* CCWWalletBaseViewController.m in Sources */,
+				31B1AFA3235D58080080BC2E /* base58.c in Sources */,
 				3176CECD22E58FE00022B408 /* CCWFixPWDViewController.m in Sources */,
 				3129ED3C22E875CC0028A1CA /* CCWSelectSellCoinViewController.m in Sources */,
+				31B1AFA2235D58080080BC2E /* Sha256.m in Sources */,
+				31B1AF96235D58080080BC2E /* CocosMortgageGasOperation.m in Sources */,
 				3167399B221AB2CE008D85C4 /* CCWNavigation.m in Sources */,
-				3191A099225C6DE2003AB263 /* RIPEMD160Diggest.m in Sources */,
-				3191A097225C6DE2003AB263 /* NSObject+DataToObject.m in Sources */,
 				3191A0E8225F1D41003AB263 /* CCWWalletAccountModel.m in Sources */,
 				317948C8221E4B5F00F4EA69 /* YBPopupMenuPath.m in Sources */,
 				3144D05522003BE700CDA62A /* NSData+CommonCrypto.m in Sources */,
-				317D2D4922DEFBBF00559A7C /* CocosOperationContent.m in Sources */,
 				3110369722CC7D7200DE14DD /* CCWPwdAlertView.m in Sources */,
 				3144D05422003BE700CDA62A /* NSData+Base64.m in Sources */,
+				31B1AF65235D58080080BC2E /* SHA256Diggest.m in Sources */,
 				31E198BE221FE2FC0076A822 /* CCWAssetsOverviewCollectionViewCell.m in Sources */,
+				31B1AF8B235D58080080BC2E /* CocosTransferOperation.m in Sources */,
+				31B1AFA8235D58080080BC2E /* CocosConstkey.m in Sources */,
 				3167399D221AB2CE008D85C4 /* CCWTabViewController.m in Sources */,
 				3144D06C22003BE700CDA62A /* UIView+Visuals.m in Sources */,
-				3191A0AE225C6DE2003AB263 /* BitAddressAuthorityObject.m in Sources */,
 				317784EF2200492400525237 /* CCWWalletModule.m in Sources */,
 				3165861E22169CB70039B439 /* CCWTransferViewController.m in Sources */,
+				31B1AF93235D58080080BC2E /* CocosSellNHAssetCancelOperation.m in Sources */,
 				317D2D6122E06F4900559A7C /* CCWNHAssetOrderModel.m in Sources */,
+				31B1AF69235D58080080BC2E /* NSDate+UTCDate.m in Sources */,
 				3144D05722003BE700CDA62A /* NSData+AES128.m in Sources */,
-				3191A095225C6DE2003AB263 /* CocosBase58Object.m in Sources */,
-				3191A0AD225C6DE2003AB263 /* AuthorityObject.m in Sources */,
-				3191A0B9225C6DE2003AB263 /* ChainDynamicGlobalProperties.m in Sources */,
 				319D45E2221C0FFA00D1E6D2 /* CCWWalletAccountTool.m in Sources */,
-				3191A09A225C6DE2003AB263 /* SHA256Diggest.m in Sources */,
 				31725B9B21FEB02B005962C6 /* main.m in Sources */,
 				3144D05C22003BE700CDA62A /* NSDate+YCExtension.m in Sources */,
 				317948D0221E4B7800F4EA69 /* UIButton+CCWButton.m in Sources */,
-				317D2D4422DEFBBF00559A7C /* CocosTransferOperation.m in Sources */,
 				3129ED3822E82F240028A1CA /* CCWSellNHAssetViewController.m in Sources */,
-				3191A0A2225C6DE2003AB263 /* CocosDBAccountModel.m in Sources */,
+				31B1AF63235D58080080BC2E /* UploadBaseModel.m in Sources */,
 				3144D06B22003BE700CDA62A /* UIView+Frame.m in Sources */,
-				317D2D4A22DEFBBF00559A7C /* CocosSellNHAssetCancelOperation.m in Sources */,
 				3129ED4122E8781F0028A1CA /* CCWSellCoinTypeTableViewCell.m in Sources */,
 				317784F722004AC300525237 /* CCWMyModule.m in Sources */,
 				313AAB1122EA95D7003E0B5B /* CCWTransferNhAssetViewController.m in Sources */,
 				31FC8D2D2213C82B0036C8F8 /* CCWWalletHeaderView.m in Sources */,
 				3186E8022293A08200A269C6 /* CCWAlertController.m in Sources */,
+				31B1AF72235D58080080BC2E /* ChainAssetOption.m in Sources */,
 				3129ED4B22E950220028A1CA /* CCWCancelSellNHInfoView.m in Sources */,
 				3144D06E22003BE700CDA62A /* UIViewController+LYVisible.m in Sources */,
+				31B1AF97235D58080080BC2E /* CocosCallContractOperation.m in Sources */,
 				31658619221689190039B439 /* CCWReceiveViewController.m in Sources */,
 				3176CEDC22E58FE00022B408 /* CCWAboutUsViewController.m in Sources */,
 				31725B8D21FEB02A005962C6 /* AppDelegate.m in Sources */,
+				31B1AF7C235D58080080BC2E /* ChainContract.m in Sources */,
+				31B1AF76235D58080080BC2E /* CocosPublicKey.m in Sources */,
+				31B1AFA5235D58080080BC2E /* PBKDF2.m in Sources */,
 				31C35A4D221E491900E8B455 /* CCWContactModel.m in Sources */,
 				3176CED422E58FE00022B408 /* CCWScanQRCodeViewController.m in Sources */,
-				3191A0CB225C6DE2003AB263 /* UploadParams.m in Sources */,
-				317D2D4722DEFBBF00559A7C /* CocosTransferNHOperation.m in Sources */,
-				3191A094225C6DE2003AB263 /* WordList.m in Sources */,
 				31E198A1221E90C00076A822 /* CCWTransferInfoTableViewCell.m in Sources */,
 				316739B4221AD952008D85C4 /* XRCarouselView.m in Sources */,
-				3191A093225C6DE2003AB263 /* uECC.c in Sources */,
-				3191A08F225C6DE2003AB263 /* PBKDF2.m in Sources */,
 				316C57A822980D5500F8AE33 /* CCWLogOutAlert.m in Sources */,
+				31B1AF67235D58080080BC2E /* NSObject+DataToObject.m in Sources */,
 				31E1987D221E7A4E0076A822 /* CCWDecimalTool.m in Sources */,
 				3176CED322E58FE00022B408 /* CCWEditContactViewController.m in Sources */,
 				3186E8042293A08200A269C6 /* CCWBaseAlert.m in Sources */,
 				31881F4F221657B6006C31A2 /* UIView+Toast.m in Sources */,
-				3191A0C4225C6DE2003AB263 /* CocosConfig.m in Sources */,
 				317D2D5E22E0614B00559A7C /* CCWAllOrderViewController.m in Sources */,
-				3191A0A6225C6DE2003AB263 /* PlainKey.m in Sources */,
-				3191A09D225C6DE2003AB263 /* NSData+HashData.m in Sources */,
+				31B1AF78235D58080080BC2E /* ChainAssetAmountObject.m in Sources */,
 				3167399C221AB2CE008D85C4 /* CCWNavigationController.m in Sources */,
 				3144D05622003BE700CDA62A /* NSString+Base64.m in Sources */,
-				318A67EC228948AE001D0157 /* ChainNHAssetOrder.m in Sources */,
-				3191A0CE225C6DE2003AB263 /* WebsocketResultModel.m in Sources */,
 				3144D06722003BE700CDA62A /* UIColor+YSAdd.m in Sources */,
 				3176CEC922E58FE00022B408 /* CCWWalletListViewController.m in Sources */,
-				3191A09E225C6DE2003AB263 /* NSDate+UTCDate.m in Sources */,
+				31B1AF79235D58080080BC2E /* ChainNHAssetOrder.m in Sources */,
 				3186E8032293A08200A269C6 /* CCWAnimator.m in Sources */,
 				3191A0D2225C8A09003AB263 /* CCWRegisterViewController.m in Sources */,
-				3191A0A7225C6DE2003AB263 /* WalletExtraKey.m in Sources */,
-				3191A0B1225C6DE2003AB263 /* ChainAccountModel.m in Sources */,
-				3191A09F225C6DE2003AB263 /* CocosSDK.m in Sources */,
 				3176CEC822E58FE00022B408 /* CCWWalletManagerViewController.m in Sources */,
 				318FF5E72215518800AB5696 /* CCWTransRecordTableViewCell.m in Sources */,
+				31B1AF6A235D58080080BC2E /* NSData+CopyWithRange.m in Sources */,
+				31B1AF99235D58080080BC2E /* CocosHTTPManager.m in Sources */,
+				31B1AFA9235D58080080BC2E /* CocosConfig.m in Sources */,
 				31E198CF221FFBC10076A822 /* CCWWalletTableView.m in Sources */,
+				31B1AF70235D58080080BC2E /* ChainAccountHistory.m in Sources */,
+				31B1AF60235D58080080BC2E /* WebsocketResultModel.m in Sources */,
+				31B1AF68235D58080080BC2E /* CocosPackData.m in Sources */,
 				31288E95221D1BC7002EE5EA /* CCWTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2660,8 +2696,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 835CGYZJP6;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2695,9 +2731,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 8497T2NJ7P;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 835CGYZJP6;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2719,7 +2755,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.io.cocosbcx.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = pp_cocos;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 arm64e armv7s";
 			};

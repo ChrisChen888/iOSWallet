@@ -82,7 +82,6 @@ CCW_ShowWithDataArray
 CCW_SwitchAccountView
 CCW_SwitchViewAddAccountClick
 CCW_TransferAsset
-CCW_TransferFeeAsset
 CCW_TransferInfoViewNextButtonClick
 CCW_TransferInfoViewShowWithArray
 CCW_TransferNHAsset
