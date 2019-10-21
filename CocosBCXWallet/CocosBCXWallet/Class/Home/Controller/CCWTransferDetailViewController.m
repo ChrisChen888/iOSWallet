@@ -110,12 +110,24 @@
         }
     }
     CCWWeakSelf;
-    [CCWSDKRequest CCW_QueryAssetInfo:self.transRecordModel.operation.fee.asset_id Success:^(CCWAssetsModel *assetsModel) {
-        NSNumber *amount = [[CCWDecimalTool CCW_decimalNumberWithString:[NSString stringWithFormat:@"%@",weakSelf.transRecordModel.operation.fee.amount]] decimalNumberByMultiplyingByPowerOf10:-[assetsModel.precision integerValue]];
-        weakSelf.transferFeeLabel.text = [NSString stringWithFormat:@"%@ %@",amount,assetsModel.symbol];;
-    } Error:^(NSString * _Nonnull errorAlert, id  _Nonnull responseObject) {
-        [weakSelf.view makeToast:CCWLocalizable(@"网络繁忙，请检查您的网络连接")];
-    }];
+    CCWAmountFee *fee = nil;
+    for (CCWAmountFee *assetModel in self.transRecordModel.fees) {
+        if ([assetModel.asset_id isEqualToString:@"1.3.0"]) {
+            fee = assetModel;
+            break;
+        }
+    }
+    
+    if (fee) {
+        [CCWSDKRequest CCW_QueryAssetInfo:fee.asset_id Success:^(CCWAssetsModel *assetsModel) {
+            NSNumber *amount = [[CCWDecimalTool CCW_decimalNumberWithString:[NSString stringWithFormat:@"%@",fee.amount]] decimalNumberByMultiplyingByPowerOf10:-[assetsModel.precision integerValue]];
+            weakSelf.transferFeeLabel.text = [NSString stringWithFormat:@"%@ %@",amount,assetsModel.symbol];;
+        } Error:^(NSString * _Nonnull errorAlert, id  _Nonnull responseObject) {
+            [weakSelf.view makeToast:CCWLocalizable(@"网络繁忙，请检查您的网络连接")];
+        }];
+    }else{
+        self.transferFeeLabel.text = @"0 COCOS";
+    }
     self.blockHeightLabel.text = [NSString stringWithFormat:@"%@",self.transRecordModel.block_num];
     self.transferTimeLabel.text = self.transRecordModel.timestamp;
     self.transferHashLabel.text = self.transRecordModel.ID;

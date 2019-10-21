@@ -39,6 +39,7 @@
                 Success:(SuccessBlock)successBlock
                   Error:(ErrorBlock)errorBlock
 {
+//    [[CocosSDK shareInstance] Cocos_OpenLog:YES];
     [[CocosSDK shareInstance] Cocos_ConnectWithNodeUrl:url Fauceturl:faucetUrl TimeOut:5 CoreAsset:core_asset ChainId:chainId ConnectedStatus:^(WebsocketConnectStatus connectStatus) {
         if (connectStatus == WebsocketConnectStatusConnected) {
             !successBlock?:successBlock(@"connect success");
@@ -216,9 +217,11 @@
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
             dispatch_semaphore_t disp = dispatch_semaphore_create(0);
             for (CCWTransRecordModel * transRecordModel in transRecordModelArray) {
+                NSDictionary *resultDic = [transRecordModel.result lastObject];
+                transRecordModel.fees = [CCWAmountFee mj_objectArrayWithKeyValuesArray:resultDic[@"fees"]];
                 NSNumber *operationType = [transRecordModel.op firstObject];
                 __block CCWOperation *operation = [CCWOperation mj_objectWithKeyValues:[transRecordModel.op lastObject]];
-                if ([operationType integerValue] == 0 || [operationType integerValue] == 51) {
+                if ([operationType integerValue] == 0 || [operationType integerValue] == 42) {
                     transRecordModel.oprationType = [operationType integerValue];
                     // 用ID 查用户名
                     NSString *transferID = @"";
@@ -256,22 +259,8 @@
                             !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
                         }];
 
-//                        // 查询转账币种信息
-//                        [self CCW_QueryAssetInfo:operation.amount.asset_id Success:^(CCWAssetsModel *assetsModel) {
-//                            operation.amount.symbol = assetsModel.symbol;
-//                            operation.amount.precision = assetsModel.precision;
-//                            operation.amount.amount = [[CCWDecimalTool CCW_decimalNumberWithString:[NSString stringWithFormat:@"%@",operation.amount.amount]] decimalNumberByMultiplyingByPowerOf10:-[assetsModel.precision integerValue]];
-//                            transRecordModel.operation = operation;
-//
-//                            [[CocosSDK shareInstance] Cocos_GetBlockHeaderWithBlockNum:transRecordModel.block_num Success:^(id responseObject) {
-//                                transRecordModel.timestamp = responseObject[@"timestamp"];
-//                                dispatch_semaphore_signal(disp);
-//                            } Error:^(NSError *error) {
-//                                !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
-//                            }];
-//                        } Error:errorBlock];
                     } Error:errorBlock];
-                }else if ([operationType integerValue] == 44) {
+                }else if ([operationType integerValue] == 35) {
                     
                     transRecordModel.operation = operation;
                     transRecordModel.oprationType = CCWOpTypeCallContract;

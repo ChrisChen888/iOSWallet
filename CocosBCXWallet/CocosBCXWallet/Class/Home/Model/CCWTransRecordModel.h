@@ -13,8 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 typedef NS_ENUM(NSInteger, CCWOpType) {
     CCWOpTypeNoKnow = -1,          // 未做
     CCWOpTypeTransition = 0,          // 转账
-    CCWOpTypeCallContract = 44,        // 合约
-    CCWOpTypeNHTransfer = 51,        // NH资产转账
+    CCWOpTypeCallContract = 35,        // 合约
+    CCWOpTypeNHTransfer = 42,        // NH资产转账
 };
 
 @interface CCWContractInfo : NSObject
@@ -57,7 +57,7 @@ typedef NS_ENUM(NSInteger, CCWOpType) {
 @property (nonatomic, copy) NSString *from;
 @property (nonatomic, copy) NSString *to;
 @property (nonatomic, strong) CCWMemo *memo;
-@property (nonatomic, strong) CCWAmountFee *fee;
+
 @property (nonatomic, strong) CCWAmountFee *amount;
 
 // 合约交易
@@ -89,7 +89,13 @@ typedef NS_ENUM(NSInteger, CCWOpType) {
 // 交易方式
 @property (nonatomic, assign) CCWOpType oprationType;
 @property (nonatomic, strong) CCWOperation *operation;
+
+@property (nonatomic, strong) NSArray<CCWAmountFee *> *fees;
+
 @property (nonatomic, copy) NSString *timestamp;
+
+@property (nonatomic, strong) NSArray *result;
+
 
 @end
 
