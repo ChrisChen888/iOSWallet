@@ -117,7 +117,6 @@
             break;
         }
     }
-    
     if (fee) {
         [CCWSDKRequest CCW_QueryAssetInfo:fee.asset_id Success:^(CCWAssetsModel *assetsModel) {
             NSNumber *amount = [[CCWDecimalTool CCW_decimalNumberWithString:[NSString stringWithFormat:@"%@",fee.amount]] decimalNumberByMultiplyingByPowerOf10:-[assetsModel.precision integerValue]];

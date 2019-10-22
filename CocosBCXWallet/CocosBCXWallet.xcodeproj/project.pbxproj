@@ -1323,17 +1323,17 @@
 		3176CE9F22E58FE00022B408 /* WalletManager */ = {
 			isa = PBXGroup;
 			children = (
-				3176CEA022E58FE00022B408 /* CCWExportViewController.h */,
-				3176CEA122E58FE00022B408 /* CCWFixPWDViewController.h */,
-				3176CEA222E58FE00022B408 /* CCWWalletManagerViewController.m */,
-				3176CEA322E58FE00022B408 /* CCWWalletListViewController.m */,
-				3176CEA422E58FE00022B408 /* CCWWalletManagerViewController.xib */,
-				3176CEA522E58FE00022B408 /* CCWFixPWDViewController.xib */,
-				3176CEA622E58FE00022B408 /* CCWExportViewController.xib */,
-				3176CEA722E58FE00022B408 /* CCWFixPWDViewController.m */,
-				3176CEA822E58FE00022B408 /* CCWExportViewController.m */,
-				3176CEA922E58FE00022B408 /* CCWWalletListViewController.h */,
 				3176CEAA22E58FE00022B408 /* CCWWalletManagerViewController.h */,
+				3176CEA222E58FE00022B408 /* CCWWalletManagerViewController.m */,
+				3176CEA422E58FE00022B408 /* CCWWalletManagerViewController.xib */,
+				3176CEA022E58FE00022B408 /* CCWExportViewController.h */,
+				3176CEA822E58FE00022B408 /* CCWExportViewController.m */,
+				3176CEA622E58FE00022B408 /* CCWExportViewController.xib */,
+				3176CEA122E58FE00022B408 /* CCWFixPWDViewController.h */,
+				3176CEA722E58FE00022B408 /* CCWFixPWDViewController.m */,
+				3176CEA522E58FE00022B408 /* CCWFixPWDViewController.xib */,
+				3176CEA922E58FE00022B408 /* CCWWalletListViewController.h */,
+				3176CEA322E58FE00022B408 /* CCWWalletListViewController.m */,
 			);
 			path = WalletManager;
 			sourceTree = "<group>";
@@ -2090,9 +2090,9 @@
 				31E4338322EAAB4C00CAFDCA /* CCWSystemSetViewController.h */,
 				31E4338622EAAB4C00CAFDCA /* CCWSystemSetViewController.m */,
 				31E4338222EAAB4C00CAFDCA /* CCWSystemSetViewController.xib */,
-				31E4338422EAAB4C00CAFDCA /* CCWAddNodeViewController.xib */,
 				31E4338522EAAB4C00CAFDCA /* CCWAddNodeViewController.h */,
 				31E4338122EAAB4C00CAFDCA /* CCWAddNodeViewController.m */,
+				31E4338422EAAB4C00CAFDCA /* CCWAddNodeViewController.xib */,
 			);
 			path = Set;
 			sourceTree = "<group>";
