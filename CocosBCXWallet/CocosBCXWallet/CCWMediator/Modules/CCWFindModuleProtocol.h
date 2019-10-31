@@ -13,4 +13,6 @@
 // 发现模块
 - (UIViewController *)CCW_FindViewController;
 
+// 发现跳转到网页浏览
+- (UIViewController *)CCW_FindWebViewControllerWithTitle:(NSString *)title loadDappURLString:(NSString *)url;
 @end

@@ -29,10 +29,17 @@
         [self JS_TransferNHAsset:body addPassword:password response:block];
     }else if([body[@"methodName"] isEqualToString:JS_METHOD_fillNHAssetOrder]) {
         [self JS_fillNHAssetOrder:body addPassword:password response:block];
+    }else if([body[@"methodName"] isEqualToString:JS_METHOD_publishVotes]) {
+        [self JS_publishVotes:body addPassword:password response:block];
     }
 }
 
 #pragma mark - Action
++ (void)JS_publishVotes:(NSDictionary *)param addPassword:(NSString *)password response:(CallbackBlock)block {
+    NSLog(@"-----\n%@\n%@\n-----",param,password);
+    
+}
+
 // 获取账号信息
 + (void)js_getCocosAccount:(NSDictionary *)param response:(CallbackBlock)block{
     NSDictionary *jsMessage = @{

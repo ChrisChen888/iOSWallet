@@ -329,6 +329,8 @@
         return YES;
     }else if([body[@"methodName"] isEqualToString:JS_METHOD_fillNHAssetOrder]) {
         return YES;
+    }else if ([body[@"methodName"] isEqualToString:JS_METHOD_publishVotes]) {
+        return YES;
     }
     return NO;
 }

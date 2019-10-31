@@ -76,7 +76,7 @@
 //    @"ws://182.92.164.121:8021";
 //    @"9aab2f1b44ffd6649985629a18154e713f7036f668e458d7568bbf7c01eed26d";
     
-    [CCWSDKRequest CCW_InitWithUrl:@"ws://182.92.164.121:8021" Core_Asset:@"COCOS" Faucet_url:nodeInfo.faucetUrl ChainId:@"9aab2f1b44ffd6649985629a18154e713f7036f668e458d7568bbf7c01eed26d" Success:^(id  _Nonnull responseObject) {
+    [CCWSDKRequest CCW_InitWithUrl:@"ws://182.92.164.121:8021" Core_Asset:@"COCOS" Faucet_url:nodeInfo.faucetUrl ChainId:@"0feb05b09945f0e17d022eee831873c867e30cbc2fe9bb040a91caff12713424" Success:^(id  _Nonnull responseObject) {
         // 记录已连接的数据
         CCWSETNodeInfo([nodeInfo mj_keyValues]);
         // 发个通知

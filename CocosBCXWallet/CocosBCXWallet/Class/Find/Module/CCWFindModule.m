@@ -8,6 +8,7 @@
 
 #import "CCWFindModule.h"
 #import "CCWFindViewController.h"
+#import "CCWDappViewController.h"
 
 @implementation CCWFindModule
 
@@ -17,5 +18,11 @@
     return viewController;
 }
 
+// 发现跳转到网页浏览
+- (UIViewController *)CCW_FindWebViewControllerWithTitle:(NSString *)title loadDappURLString:(NSString *)url
+{
+    CCWDappViewController *dappVC = [[CCWDappViewController alloc] initWithTitle:title loadDappURLString:url];
+    return dappVC;
+}
 @end
 

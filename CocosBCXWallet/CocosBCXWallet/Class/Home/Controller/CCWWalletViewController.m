@@ -194,14 +194,16 @@
             break;
         case 2:
         {
-            id<CCWMyModuleProtocol> myModule = [[CCWMediator sharedInstance] moduleForProtocol:@protocol(CCWMyModuleProtocol)];
-            UIViewController *viewController = [myModule CCW_AssetsOverviewViewController];
+            id<CCWFindModuleProtocol> findModule = [[CCWMediator sharedInstance] moduleForProtocol:@protocol(CCWFindModuleProtocol)];
+            UIViewController *viewController = [findModule CCW_FindWebViewControllerWithTitle:CCWLocalizable(@"资源") loadDappURLString:@""];
             [self.navigationController pushViewController:viewController animated:YES];
         }
             break;
         case 3:
         {
-            [self.navigationController pushViewController:[NSClassFromString(@"CCWNHOrderListViewController") new] animated:YES];
+            id<CCWFindModuleProtocol> findModule = [[CCWMediator sharedInstance] moduleForProtocol:@protocol(CCWFindModuleProtocol)];
+            UIViewController *viewController = [findModule CCW_FindWebViewControllerWithTitle:CCWLocalizable(@"投票") loadDappURLString:@"http://192.168.15.39:8081/"];
+            [self.navigationController pushViewController:viewController animated:YES];
         }
             break;
 
@@ -262,4 +264,5 @@
 {
     return NO;
 }
+
 @end

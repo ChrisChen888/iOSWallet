@@ -16,6 +16,7 @@
 #define JS_METHOD_decodeMemo            @"decodeMemo"
 #define JS_METHOD_transferNH            @"transferNHAsset"
 #define JS_METHOD_fillNHAssetOrder      @"fillNHAssetOrder"
+#define JS_METHOD_publishVotes          @"publishVotes"
 
 //#define JS_METHOD_getAccountBalances    @"getAccountBalances"
 //#define JS_METHOD_queryContra           @"queryContract"

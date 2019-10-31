@@ -77,7 +77,6 @@
     CGFloat buttonX = padding + index * (magin + buttonW);
     CCWWalletNavButton *button = [[CCWWalletNavButton alloc] init];
     [self.navButtonView addSubview:button];
-    CCWWeakSelf
     [button mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.offset(0);
         make.height.offset(103);
@@ -127,7 +126,7 @@
 - (NSArray *)buttonTitleArray
 {
     if (!_buttonTitleArray) {
-        _buttonTitleArray = @[CCWLocalizable(@"转账"),CCWLocalizable(@"收款"),CCWLocalizable(@"资产管理"),CCWLocalizable(@"订单管理")];
+        _buttonTitleArray = @[CCWLocalizable(@"转账"),CCWLocalizable(@"收款"),CCWLocalizable(@"资源"),CCWLocalizable(@"投票")];
     }
     return _buttonTitleArray;
 }
@@ -135,7 +134,7 @@
 - (NSArray *)buttonTitleImageArray
 {
     if (!_buttonTitleImageArray) {
-        _buttonTitleImageArray = @[@"transferOut",@"transferIn",@"propAssets",@"messageCenter"];
+        _buttonTitleImageArray = @[@"transferOut",@"transferIn",@"source",@"vote_icon"];
     }
     return _buttonTitleImageArray;
 }
