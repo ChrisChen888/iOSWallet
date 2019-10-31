@@ -179,11 +179,6 @@
     }];
 }
 
-+ (void)CCW_
-{
-//    getKeyReferences
-}
-
 /**
  查询账户信息
  @param account 帐号
@@ -671,6 +666,19 @@
                                Error:(ErrorBlock)errorBlock
 {
     [[CocosSDK shareInstance] Cocos_TransferNHAsset:CCWAccountName ToAccount:to NHAssetID:NHAssetID Password:password Success:successBlock Error:^(NSError *error) {
+        !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
+    }];
+}
+
++ (void)CCW_PublishVotes:(NSString *)accountName
+            CommitteeIds:(NSArray *)committeeIds
+            WitnessesIds:(NSArray *)witnessesIds
+                Password:(NSString *)password
+                   Votes:(NSString *)votes
+                 Success:(SuccessBlock)successBlock
+                   Error:(ErrorBlock)errorBlock
+{
+    [[CocosSDK shareInstance] Cocos_PublishVotes:accountName CommitteeIds:committeeIds WitnessesIds:witnessesIds Password:password Votes:votes Success:successBlock Error:^(NSError *error) {
         !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
     }];
 }

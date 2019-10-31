@@ -553,18 +553,21 @@ NS_ASSUME_NONNULL_BEGIN
                                     Error:(Error)errorBlock;
 /**
  Votes : CommitteeMember Witness
-
+ 
  @param accountName accountName
+ @param committeeIds committeeIds
+ @param witnessesIds witnessesIds
  @param password password
- @param voteids CommitteeMember Or Witness's vote_id
  @param votes votes
  */
 - (void)Cocos_PublishVotes:(NSString *)accountName
-                     Password:(NSString *)password
-                     VoteIds:(NSArray *)voteids
+              CommitteeIds:(NSArray *)committeeIds
+              WitnessesIds:(NSArray *)witnessesIds
+                  Password:(NSString *)password
                      Votes:(NSString *)votes
                    Success:(SuccessBlock)successBlock
                      Error:(Error)errorBlock;
+
 /** Get global variable parameter(latest blocks news etc.) */
 - (void)Cocos_GetDynamicGlobalPropertiesWithSuccess:(SuccessBlock)successBlock Error:(Error)errorBlock;
 

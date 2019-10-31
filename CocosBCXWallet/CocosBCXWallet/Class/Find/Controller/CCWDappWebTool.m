@@ -36,8 +36,26 @@
 
 #pragma mark - Action
 + (void)JS_publishVotes:(NSDictionary *)param addPassword:(NSString *)password response:(CallbackBlock)block {
-    NSLog(@"-----\n%@\n%@\n-----",param,password);
+    NSDictionary *publishParam = param[@"params"];
     
+    NSArray *committeeIds = publishParam[@"committee_ids"];
+    NSArray *witnessesIds = publishParam[@"witnessesIds"];
+    if (IsArrEmpty(committeeIds)) {
+        committeeIds = @[];
+    }
+    if (IsArrEmpty(witnessesIds)) {
+        committeeIds = @[];
+    }
+    NSString *votes = [NSString stringWithFormat:@"%@",publishParam[@"votes"]];
+    
+    [CCWSDKRequest CCW_PublishVotes:CCWAccountName CommitteeIds:committeeIds WitnessesIds:witnessesIds Password:password Votes:votes Success:^(id  _Nonnull responseObject) {
+        NSDictionary *jsMessage = @{
+                                    @"trx_id":responseObject,
+                                    };
+        !block?:block(@{@"data":@[],@"code":@1,@"trx_data":jsMessage} );
+    } Error:^(NSString * _Nonnull errorAlert, NSError *error)  {
+        !block?:block([self errorBlockWithError:errorAlert ResponseObject:error]);
+    }];
 }
 
 // 获取账号信息

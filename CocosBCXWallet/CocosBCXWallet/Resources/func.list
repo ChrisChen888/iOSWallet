@@ -1,4 +1,3 @@
-CCW_
 CCW_AddAccountClick
 CCW_AssetsOverviewViewController
 CCW_BugNHAssetOrderId
@@ -46,6 +45,7 @@ CCW_NodeAlertSheetViewAddCustomNode
 CCW_POST
 CCW_PasswordLogin
 CCW_PrivateKeyLogin
+CCW_PublishVotes
 CCW_PushDappViewControllerWithDapp
 CCW_QueryAccountAllBalances
 CCW_QueryAccountBalances
