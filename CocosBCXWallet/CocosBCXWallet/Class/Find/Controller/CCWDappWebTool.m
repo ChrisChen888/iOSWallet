@@ -44,7 +44,7 @@
         committeeIds = @[];
     }
     if (IsArrEmpty(witnessesIds)) {
-        committeeIds = @[];
+        witnessesIds = @[];
     }
     NSString *votes = [NSString stringWithFormat:@"%@",publishParam[@"votes"]];
     

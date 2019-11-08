@@ -171,9 +171,7 @@
                   Success:(SuccessBlock)successBlock
                     Error:(ErrorBlock)errorBlock
 {
-//    [[CocosSDK shareInstance] Cocos_GetPrivateWithName:accountName Password:password Success:successBlock Error:^(NSError *error) {
-//        !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
-//    }];
+
     [[CocosSDK shareInstance] validateAccount:accountName Password:password Success:successBlock Error:^(NSError *error) {
         !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
     }];
@@ -678,8 +676,8 @@
                  Success:(SuccessBlock)successBlock
                    Error:(ErrorBlock)errorBlock
 {
-    [[CocosSDK shareInstance] Cocos_PublishVotes:accountName CommitteeIds:committeeIds WitnessesIds:witnessesIds Password:password Votes:votes Success:successBlock Error:^(NSError *error) {
-        !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
-    }];
+//    [[CocosSDK shareInstance] Cocos_PublishVotes:accountName CommitteeIds:committeeIds WitnessesIds:witnessesIds Password:password Votes:votes Success:successBlock Error:^(NSError *error) {
+//        !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
+//    }];
 }
 @end
