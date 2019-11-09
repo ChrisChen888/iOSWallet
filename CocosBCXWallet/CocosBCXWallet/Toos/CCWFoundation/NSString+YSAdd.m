@@ -391,6 +391,36 @@ finish:
 {
     return  [[NSNumber numberWithLongLong:[[NSDate date] timeIntervalSince1970]] stringValue];
 }
+
+// 零时区时间戳
++ (NSString *)zone0currentTimestamp
+{
+    NSDate *date = [NSDate date];
+    NSTimeZone *zone = [NSTimeZone systemTimeZone];
+    NSInteger interval = [zone secondsFromGMTForDate:date];
+    NSDate *zoneDate = [date dateByAddingTimeInterval:-interval];
+    return [[NSNumber numberWithLongLong:[zoneDate timeIntervalSince1970]] stringValue];
+}
+
+// 当前时区与零时区的间隔秒数
++ (NSInteger)currentZoneSeconds
+{
+    NSTimeZone *localzone = [NSTimeZone localTimeZone];
+    NSInteger seconds = [localzone secondsFromGMT];
+    return seconds;
+}
+
+#pragma mark - 将某个时间转化成 时间戳
++ (NSInteger)timeSwitchTimestamp:(NSString *)formatTime
+{
+
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSDate* date = [formatter dateFromString:formatTime];
+    //时间转时间戳的方法:
+    NSInteger timeSp = [[NSNumber numberWithDouble:[date timeIntervalSince1970]] integerValue];
+    return timeSp;
+}
 // 十六进制字符串转数字
 - (NSInteger)hexStringToHexNumber
 {

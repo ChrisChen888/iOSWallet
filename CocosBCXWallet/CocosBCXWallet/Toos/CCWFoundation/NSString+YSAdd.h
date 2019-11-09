@@ -116,6 +116,17 @@
  */
 + (NSString *)currentTimestamp;
 
+/**
+ 零时区时间戳
+ */
++ (NSString *)zone0currentTimestamp;
+
+// 当前时区与零时区的间隔秒数
++ (NSInteger)currentZoneSeconds;
+
+#pragma mark - 将某个时间转化成 时间戳
++ (NSInteger)timeSwitchTimestamp:(NSString *)formatTime;
+
 // 十六进制字符串转数字
 - (NSInteger)hexStringToHexNumber;
 
