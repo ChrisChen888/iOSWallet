@@ -153,15 +153,18 @@
 //加载完成
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
     CCWLog(@"加载完成");
+    
     // 初始化节点
-    CCWNodeInfoModel *saveNodelInfo = [CCWNodeInfoModel mj_objectWithKeyValues:CCWNodeInfo];
-    NSString *jsStr = [NSString stringWithFormat:@"BcxWeb.initConnect('%@', '%@','%@','%@')",saveNodelInfo.ws, saveNodelInfo.coreAsset, saveNodelInfo.faucetUrl, saveNodelInfo.chainId];
+//    CCWNodeInfoModel *saveNodelInfo = [CCWNodeInfoModel mj_objectWithKeyValues:CCWNodeInfo];
+//    NSString *jsStr = [NSString stringWithFormat:@"BcxWeb.initConnect('%@', '%@','%@','%@')",saveNodelInfo.ws, saveNodelInfo.coreAsset, saveNodelInfo.faucetUrl, saveNodelInfo.chainId];
+//    [self.wkWebView evaluateJavaScript:jsStr completionHandler:nil];
+    
+    NSString *jsStr = [NSString stringWithFormat:@"BcxWeb.initConnect('%@', '%@','%@','%@')",@"ws://123.57.19.148:9049", @"COCOS", @"", @"9e0ef9444fc780fa91aaef2e63c18532634ad67dcc436a4b4915d3adeef62c62"];
     [self.wkWebView evaluateJavaScript:jsStr completionHandler:nil];
     
     //加载完成后隐藏progressView
     //    self.progressView.hidden = YES;
     [self.view configWithHasData:YES noDataImage:nil noDataTitle:nil hasError:NO reloadBlock:^(id sender) {
-        
     }];
 }
 
@@ -330,6 +333,10 @@
     }else if([body[@"methodName"] isEqualToString:JS_METHOD_fillNHAssetOrder]) {
         return YES;
     }else if ([body[@"methodName"] isEqualToString:JS_METHOD_publishVotes]) {
+        return YES;
+    }else if ([body[@"methodName"] isEqualToString:JS_METHOD_claimVestingBalance]) {
+        return YES;
+    }else if ([body[@"methodName"] isEqualToString:JS_METHOD_updateCollateralForGas]) {
         return YES;
     }
     return NO;

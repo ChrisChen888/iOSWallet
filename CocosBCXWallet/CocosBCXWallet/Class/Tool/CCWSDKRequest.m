@@ -668,16 +668,30 @@
     }];
 }
 
+// 投票
 + (void)CCW_PublishVotes:(NSString *)accountName
-            CommitteeIds:(NSArray *)committeeIds
-            WitnessesIds:(NSArray *)witnessesIds
                 Password:(NSString *)password
+                VoteType:(int)voteType
+                 VoteIds:(NSArray *)voteIds
                    Votes:(NSString *)votes
                  Success:(SuccessBlock)successBlock
                    Error:(ErrorBlock)errorBlock
 {
-//    [[CocosSDK shareInstance] Cocos_PublishVotes:accountName CommitteeIds:committeeIds WitnessesIds:witnessesIds Password:password Votes:votes Success:successBlock Error:^(NSError *error) {
-//        !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
-//    }];
+    [[CocosSDK shareInstance] Cocos_PublishVotes:accountName Password:password Type:voteType VoteIds:voteIds Votes:votes Success:successBlock Error:^(NSError *error) {
+        !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
+    }];
+}
+
+// 抵押 Gas
++ (void)CCW_GasWithMortgager:(NSString *)mortgagerAccount
+                 Beneficiary:(NSString *)beneficiaryAccount
+                  Collateral:(long)collateral
+                    Password:(NSString *)password
+                     Success:(SuccessBlock)successBlock
+                       Error:(ErrorBlock)errorBlock
+{
+    [[CocosSDK shareInstance] Cocos_GasWithMortgager:mortgagerAccount Beneficiary:beneficiaryAccount Collateral:collateral Password:password Success:successBlock Error:^(NSError *error) {
+        !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
+    }];
 }
 @end

@@ -31,29 +31,53 @@
         [self JS_fillNHAssetOrder:body addPassword:password response:block];
     }else if([body[@"methodName"] isEqualToString:JS_METHOD_publishVotes]) {
         [self JS_publishVotes:body addPassword:password response:block];
-    }
+    }else if([body[@"methodName"] isEqualToString:JS_METHOD_claimVestingBalance]) {
+        [self JS_ClaimVestingBalance:body addPassword:password response:block];
+    }else if([body[@"methodName"] isEqualToString:JS_METHOD_updateCollateralForGas]) {
+        [self JS_updateCollateralForGas:body addPassword:password response:block];
+        }
 }
 
 #pragma mark - Action
-+ (void)JS_publishVotes:(NSDictionary *)param addPassword:(NSString *)password response:(CallbackBlock)block {
-    NSDictionary *publishParam = param[@"params"];
++ (void)JS_updateCollateralForGas:(NSDictionary *)param addPassword:(NSString *)password response:(CallbackBlock)block {
+    NSDictionary *updateGasParam = param[@"params"];
     
-    NSArray *committeeIds = publishParam[@"committee_ids"];
-    NSArray *witnessesIds = publishParam[@"witnessesIds"];
-    if (IsArrEmpty(committeeIds)) {
-        committeeIds = @[];
-    }
-    if (IsArrEmpty(witnessesIds)) {
-        witnessesIds = @[];
-    }
-    NSString *votes = [NSString stringWithFormat:@"%@",publishParam[@"votes"]];
+    NSString *mortgager = updateGasParam[@"mortgager"];
+    NSString *beneficiary = updateGasParam[@"beneficiary"];
+    NSNumber *amount = updateGasParam[@"amount"];
     
-    [CCWSDKRequest CCW_PublishVotes:CCWAccountName CommitteeIds:committeeIds WitnessesIds:witnessesIds Password:password Votes:votes Success:^(id  _Nonnull responseObject) {
+    [CCWSDKRequest CCW_GasWithMortgager:mortgager Beneficiary:beneficiary Collateral:[amount longValue] Password:password Success:^(id  _Nonnull responseObject) {
         NSDictionary *jsMessage = @{
                                     @"trx_id":responseObject,
                                     };
         !block?:block(@{@"data":@[],@"code":@1,@"trx_data":jsMessage} );
-    } Error:^(NSString * _Nonnull errorAlert, NSError *error)  {
+    } Error:^(NSString * _Nonnull errorAlert, NSError *error) {
+        !block?:block([self errorBlockWithError:errorAlert ResponseObject:error]);
+    }];
+}
+
++ (void)JS_ClaimVestingBalance:(NSDictionary *)param addPassword:(NSString *)password response:(CallbackBlock)block {
+//    NSDictionary *publishParam = param[@"params"];
+
+//    NSNumber *voteType = publishParam[@"type"];
+//    NSArray *voteIds = publishParam[@"vote_ids"];
+//    NSString *votes = [NSString stringWithFormat:@"%@",publishParam[@"votes"]];
+    
+}
+
++ (void)JS_publishVotes:(NSDictionary *)param addPassword:(NSString *)password response:(CallbackBlock)block {
+    NSDictionary *publishParam = param[@"params"];
+    
+    NSNumber *voteType = publishParam[@"type"];
+    NSArray *voteIds = publishParam[@"vote_ids"];
+    NSString *votes = [NSString stringWithFormat:@"%@",publishParam[@"votes"]];
+    
+    [CCWSDKRequest CCW_PublishVotes:CCWAccountName Password:password VoteType:[voteType intValue] VoteIds:voteIds Votes:votes Success:^(id  _Nonnull responseObject) {
+        NSDictionary *jsMessage = @{
+                                    @"trx_id":responseObject,
+                                    };
+        !block?:block(@{@"data":@[],@"code":@1,@"trx_data":jsMessage} );
+    } Error:^(NSString * _Nonnull errorAlert, NSError *error) {
         !block?:block([self errorBlockWithError:errorAlert ResponseObject:error]);
     }];
 }

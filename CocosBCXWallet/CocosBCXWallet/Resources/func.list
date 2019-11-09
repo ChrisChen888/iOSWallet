@@ -27,6 +27,7 @@ CCW_FindFirstCellClickNavButtonWithTableViewCell
 CCW_FindViewController
 CCW_FindWebViewControllerWithTitle
 CCW_GET
+CCW_GasWithMortgager
 CCW_GetPrivateKey
 CCW_GoBackAction
 CCW_HomeNavbuttonClick

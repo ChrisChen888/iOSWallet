@@ -1256,7 +1256,7 @@
 {
     UploadParams *uploadParams = [[UploadParams alloc] init];
     uploadParams.methodName = kCocosListNHbyCreator;
-    uploadParams.totalParams = @[accountID,@(pageSize),@(page)];
+    uploadParams.totalParams = @[accountID,@"",@(pageSize),@(page)];
     CallBackModel *callBackModel = [[CallBackModel alloc] init];
     callBackModel.successResult = successBlock;
     callBackModel.errorResult = errorBlock;

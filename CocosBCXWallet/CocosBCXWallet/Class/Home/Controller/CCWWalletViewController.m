@@ -202,7 +202,7 @@
         case 3:
         {
             id<CCWFindModuleProtocol> findModule = [[CCWMediator sharedInstance] moduleForProtocol:@protocol(CCWFindModuleProtocol)];
-            UIViewController *viewController = [findModule CCW_FindWebViewControllerWithTitle:CCWLocalizable(@"投票") loadDappURLString:@"http://192.168.15.39:8081/"];
+            UIViewController *viewController = [findModule CCW_FindWebViewControllerWithTitle:CCWLocalizable(@"投票") loadDappURLString:@"http://192.168.2.17:8080"];
             [self.navigationController pushViewController:viewController animated:YES];
         }
             break;
