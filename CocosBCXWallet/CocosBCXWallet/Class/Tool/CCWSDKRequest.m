@@ -694,4 +694,16 @@
         !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
     }];
 }
+
+// 领取奖励
++ (void)CCW_ClaimVestingBalance:(NSString *)account
+                       Password:(NSString *)password
+                      VestingID:(NSString *)vesting_id
+                        Success:(SuccessBlock)successBlock
+                          Error:(ErrorBlock)errorBlock
+{
+    [[CocosSDK shareInstance] Cocos_ClaimVestingBalance:account Password:password VestingID:vesting_id Success:successBlock Error:^(NSError *error) {
+        !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
+    }];
+}
 @end

@@ -57,22 +57,34 @@
 }
 
 + (void)JS_ClaimVestingBalance:(NSDictionary *)param addPassword:(NSString *)password response:(CallbackBlock)block {
-//    NSDictionary *publishParam = param[@"params"];
-
-//    NSNumber *voteType = publishParam[@"type"];
-//    NSArray *voteIds = publishParam[@"vote_ids"];
-//    NSString *votes = [NSString stringWithFormat:@"%@",publishParam[@"votes"]];
+    NSDictionary *publishParam = param[@"params"];
+    NSString *vestingid = publishParam[@"id"];
     
+    [CCWSDKRequest CCW_ClaimVestingBalance:CCWAccountName Password:password VestingID:vestingid Success:^(id  _Nonnull responseObject) {
+        NSDictionary *jsMessage = @{
+                                    @"trx_id":responseObject,
+                                    };
+        !block?:block(@{@"data":@[],@"code":@1,@"trx_data":jsMessage} );
+    } Error:^(NSString * _Nonnull errorAlert, NSError *error) {
+        !block?:block([self errorBlockWithError:errorAlert ResponseObject:error]);
+    }];
 }
 
 + (void)JS_publishVotes:(NSDictionary *)param addPassword:(NSString *)password response:(CallbackBlock)block {
     NSDictionary *publishParam = param[@"params"];
     
-    NSNumber *voteType = publishParam[@"type"];
+    NSString *voteStrType = publishParam[@"type"];
     NSArray *voteIds = publishParam[@"vote_ids"];
     NSString *votes = [NSString stringWithFormat:@"%@",publishParam[@"votes"]];
     
-    [CCWSDKRequest CCW_PublishVotes:CCWAccountName Password:password VoteType:[voteType intValue] VoteIds:voteIds Votes:votes Success:^(id  _Nonnull responseObject) {
+    int voteType = 1;
+    if ([voteStrType isEqualToString:@"witnesses"]) {
+        voteType = 1;
+    }else if([voteStrType isEqualToString:@"committee"]) {
+        voteType = 0;
+    }
+    
+    [CCWSDKRequest CCW_PublishVotes:CCWAccountName Password:password VoteType:voteType VoteIds:voteIds Votes:votes Success:^(id  _Nonnull responseObject) {
         NSDictionary *jsMessage = @{
                                     @"trx_id":responseObject,
                                     };

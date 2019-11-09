@@ -526,14 +526,15 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)Cocos_QueryVestingBalance:(NSString *)account
                          Success:(SuccessBlock)successBlock
                            Error:(Error)errorBlock;
-
 /**
  claim vesting balance
  @param account account
  @param password password
+ @param vesting_id vestingid
  */
 - (void)Cocos_ClaimVestingBalance:(NSString *)account
                          Password:(NSString *)password
+                        VestingID:(NSString *)vesting_id
                           Success:(SuccessBlock)successBlock
                             Error:(Error)errorBlock;
 
