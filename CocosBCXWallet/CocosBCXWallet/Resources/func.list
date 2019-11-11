@@ -31,6 +31,7 @@ CCW_GET
 CCW_GasWithMortgager
 CCW_GetPrivateKey
 CCW_GoBackAction
+CCW_HomeClickToswitchAccount
 CCW_HomeNavbuttonClick
 CCW_InitWithUrl
 CCW_KeyBoardSetting

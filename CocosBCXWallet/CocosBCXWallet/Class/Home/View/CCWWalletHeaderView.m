@@ -48,6 +48,8 @@
 
 - (void)setupView {
     
+    [self addSubview:self.accountLabel];
+    
     [self addSubview:self.assetsTitleLabel];
     [self addSubview:self.assetsLabel];
     [self addSubview:self.lineView];
@@ -100,6 +102,20 @@
         _assetsTitleLabel.textColor = [UIColor whiteColor];
     }
     return _assetsTitleLabel;
+}
+
+- (UILabel *)accountLabel
+{
+    if (!_accountLabel) {
+        _accountLabel = [[UILabel alloc] init];
+        _accountLabel.text = @"account";
+        _accountLabel.textAlignment = NSTextAlignmentRight;
+        _accountLabel.textColor = [UIColor whiteColor];
+        _accountLabel.userInteractionEnabled = YES;
+        UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickToSwitchAccount)];
+        [_accountLabel addGestureRecognizer:recognizer];
+    }
+    return _accountLabel;
 }
 
 - (UILabel *)assetsLabel
@@ -186,6 +202,13 @@
         make.top.offset(APP_Navgationbar_Height + 14);
     }];
     
+    [self.accountLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.offset(APP_Navgationbar_Height/2+10);
+        make.right.offset(-15);
+        make.width.offset(170);
+        make.height.offset(20);
+    }];
+    
     CCWWeakSelf;
     [self.assetsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(weakSelf.assetsTitleLabel);
@@ -210,6 +233,20 @@
         make.left.right.equalTo(weakSelf);
         make.height.offset(75);
     }];
+}
+
+
+- (void)setAccount:(NSString *)account
+{
+    _account = account;
+    self.accountLabel.text = account;
+}
+
+- (void)clickToSwitchAccount
+{
+    if ([self.delegate respondsToSelector:@selector(CCW_HomeClickToswitchAccount:)]) {
+        [self.delegate CCW_HomeClickToswitchAccount:self];
+    }
 }
 
 @end

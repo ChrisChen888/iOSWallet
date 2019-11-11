@@ -28,6 +28,9 @@
 
 /** <#视图#> */
 @property (nonatomic, strong) CCWSwitchAccountView *switchAccountView;
+
+/** 头部 */
+@property (nonatomic, weak) CCWWalletHeaderView *headerView;
 @end
 
 @implementation CCWWalletViewController
@@ -85,12 +88,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    NSString *accountName = CCWAccountName;
-    if (accountName.length > 13) {
-        accountName = [accountName substringToIndex:13];//截取掉下标5之前的字符串
-        accountName = [NSString stringWithFormat:@"%@...",accountName];
-    }
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"%@ >",accountName] style:UIBarButtonItemStylePlain target:self action:@selector(switchAccountClick)];
     [self connectSuccess];
 }
 
@@ -119,15 +116,22 @@
     
     // 设置导航
     [self ccw_setNavBarTintColor:[UIColor whiteColor]];
-    [self ccw_setNavBarBackgroundAlpha:0];
+    [self ccw_setNavBarHidden:YES];
     [self ccw_setStatusBarStyle:UIStatusBarStyleLightContent];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(connectSuccess) name:@"CCWNetConnectNetworkKey" object:nil];
+    
+    NSString *accountName = CCWAccountName;
+    if (accountName.length > 13) {
+        accountName = [accountName substringToIndex:13];//截取掉下标5之前的字符串
+        accountName = [NSString stringWithFormat:@"%@...",accountName];
+    }
     
     CCWWalletHeaderView *headerView = [[CCWWalletHeaderView alloc] init];
     headerView.width = CCWScreenW;
     headerView.height = 269 + (IPHONE_X?APP_StatusBar_Height-10:0) + 75;
     headerView.delegate = self;
-    
+    headerView.account = [NSString stringWithFormat:@"%@ >",accountName];
+    self.headerView = headerView;
     CCWWalletTableView *tableView = ({
         CCWWalletTableView *tableView = [[CCWWalletTableView alloc] initWithFrame:self.view.bounds];
         tableView.height = self.view.height - APP_Tabbar_Height;
@@ -172,6 +176,18 @@
     [self.navigationController pushViewController:transRecordViewController animated:YES];
 }
 
+// 切换账号
+- (void)CCW_HomeClickToswitchAccount:(CCWWalletHeaderView *)walletHeaderView
+{
+    // 获取账户列表
+    self.switchAccountView.dataSource = [CCWSDKRequest CCW_QueryAccountList];
+    if (self.switchAccountView.isShow) {
+        [self.switchAccountView CCW_Close];
+    }else{
+        [self.switchAccountView CCW_Show];
+    }
+}
+
 // 按钮点击
 - (void)CCW_HomeNavbuttonClick:(CCWWalletHeaderView *)walletHeaderView button:(UIButton *)button
 {
@@ -212,18 +228,6 @@
     }
 }
 
-// 切换账号
-- (void)switchAccountClick
-{
-    // 获取账户列表
-    self.switchAccountView.dataSource = [CCWSDKRequest CCW_QueryAccountList];
-    if (self.switchAccountView.isShow) {
-        [self.switchAccountView CCW_Close];
-    }else{
-        [self.switchAccountView CCW_Show];
-    }
-}
-
 - (void)CCW_SwitchAccountView:(CCWSwitchAccountView *)switchAccountView didSelectDBAccountModel:(CocosDBAccountModel *)dbAccountModel
 {
     CCWSETAccountId(dbAccountModel.ID);
@@ -231,10 +235,11 @@
     [self connectSuccess];
     NSString *accountName = CCWAccountName;
     if (accountName.length > 13) {
-        accountName = [accountName substringToIndex:13];//截取掉下标5之前的字符串
+        accountName = [accountName substringToIndex:13];//截取掉13位
         accountName = [NSString stringWithFormat:@"%@...",accountName];
     }
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"%@ >",accountName] style:UIBarButtonItemStylePlain target:self action:@selector(switchAccountClick)];
+    
+    self.headerView.account = [NSString stringWithFormat:@"%@ >",accountName];
 }
 
 - (void)CCW_SwitchViewAddAccountClick:(CCWSwitchAccountView *)switchAccountView

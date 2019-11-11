@@ -18,6 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)CCW_HomeNavbuttonClick:(CCWWalletHeaderView *)walletHeaderView button:(UIButton *)button;
 
+/// 切换登录按钮点击
+- (void)CCW_HomeClickToswitchAccount:(CCWWalletHeaderView *)walletHeaderView;
+
 @end
 
 @interface CCWWalletHeaderView : UIImageView
@@ -26,6 +29,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** 总资产 */
 @property (nonatomic, strong) NSNumber *assetsNum;
+
+/** 账户名 */
+@property (nonatomic, copy) NSString *account;
 @end
 
 NS_ASSUME_NONNULL_END

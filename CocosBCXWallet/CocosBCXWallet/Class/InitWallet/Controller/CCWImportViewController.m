@@ -27,7 +27,7 @@
     self.privateTextView.placeHoldString = CCWLocalizable(@"请输入明文私钥");
     self.privateTextView.placeHoldColor = [UIColor getColor:@"A5A9B1"];
     self.privateTextView.placeHoldFont = CCWFont(14);
-    [self.pwdTextField setValue:[UIColor getColor:@"A5A9B1"] forKeyPath:@"_placeholderLabel.textColor"];
+//    [self.pwdTextField setValue:[UIColor getColor:@"A5A9B1"] forKeyPath:@"_placeholderLabel.textColor"];
     if (CCWAccountName) {
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:CCWLocalizable(@"登录") style:UIBarButtonItemStylePlain target:self action:@selector(loginClick)];
     }

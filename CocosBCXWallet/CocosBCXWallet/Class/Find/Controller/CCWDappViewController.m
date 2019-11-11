@@ -159,7 +159,7 @@
 //    NSString *jsStr = [NSString stringWithFormat:@"BcxWeb.initConnect('%@', '%@','%@','%@')",saveNodelInfo.ws, saveNodelInfo.coreAsset, saveNodelInfo.faucetUrl, saveNodelInfo.chainId];
 //    [self.wkWebView evaluateJavaScript:jsStr completionHandler:nil];
     
-    NSString *jsStr = [NSString stringWithFormat:@"BcxWeb.initConnect('%@', '%@','%@','%@')",@"ws://123.57.19.148:9049", @"COCOS", @"", @"9e0ef9444fc780fa91aaef2e63c18532634ad67dcc436a4b4915d3adeef62c62"];
+    NSString *jsStr = [NSString stringWithFormat:@"BcxWeb.initConnect('%@', '%@','%@','%@')",@"ws://test.cocosbcx.net", @"COCOS", @"http://test-faucet.cocosbcx.net", @"c1ac4bb7bd7d94874a1cb98b39a8a582421d03d022dfa4be8c70567076e03ad0"];
     [self.wkWebView evaluateJavaScript:jsStr completionHandler:nil];
     
     //加载完成后隐藏progressView

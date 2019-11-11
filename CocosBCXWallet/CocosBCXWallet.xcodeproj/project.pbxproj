@@ -2717,7 +2717,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/CocosBCXWallet/Resources/Classes/secp256k1",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.io.cocosbcx.www;
+				PRODUCT_BUNDLE_IDENTIFIER = com.io.cocosbcx.wwwx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2753,7 +2753,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/CocosBCXWallet/Resources/Classes/secp256k1",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.io.cocosbcx.www;
+				PRODUCT_BUNDLE_IDENTIFIER = com.io.cocosbcx.wwwx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;

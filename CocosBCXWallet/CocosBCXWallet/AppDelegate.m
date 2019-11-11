@@ -73,7 +73,7 @@
     CCWWeakSelf
     // 最新新节点
     
-    [CCWSDKRequest CCW_InitWithUrl:@"ws://123.57.19.148:9049" Core_Asset:@"COCOS" Faucet_url:nodeInfo.faucetUrl ChainId:@"9e0ef9444fc780fa91aaef2e63c18532634ad67dcc436a4b4915d3adeef62c62" Success:^(id  _Nonnull responseObject) {
+    [CCWSDKRequest CCW_InitWithUrl:@"ws://test.cocosbcx.net" Core_Asset:@"COCOS" Faucet_url:@"http://test-faucet.cocosbcx.net" ChainId:@"c1ac4bb7bd7d94874a1cb98b39a8a582421d03d022dfa4be8c70567076e03ad0" Success:^(id  _Nonnull responseObject) {
         // 记录已连接的数据
         CCWSETNodeInfo([nodeInfo mj_keyValues]);
         // 发个通知
