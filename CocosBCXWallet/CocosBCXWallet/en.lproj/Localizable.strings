@@ -65,7 +65,8 @@
 "复制成功" = "Copied";
 "您正在跳转至第三方DAPP，确认即同意第三方DAPP的用户协议与隐私政策，由其直接并单独向您承担责任。" = "You're jumping to a  third-party DAPP, which will be directly and solely liable to you once you confirm to agree to its user agreement and privacy policy.";
 "确认" = "Confirm";
-
+"资源" = "Resources";
+"投票" = "Vote";
 
 // 交易记录详情
 "交易记录" = "Transaction History";

@@ -23,6 +23,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    // 清空信息
+    BOOL haveStart = [CCWSaveTool boolForKey:@"haveUpdateStart"];
+    CCWNodeInfoModel *nodeInfo = [[CCWNodeInfoModel alloc] init];
+    if (CCWNodeInfo) {
+        nodeInfo = [CCWNodeInfoModel mj_objectWithKeyValues:CCWNodeInfo];
+    }
+    if (!haveStart && ![nodeInfo.chainId isEqualToString:@"c1ac4bb7bd7d94874a1cb98b39a8a582421d03d022dfa4be8c70567076e03ad0"]) {
+        [CCWSaveTool setBool:YES forKey:@"haveUpdateStart"];  // 写
+        CCWSETAccountName(nil);
+        CCWSETAccountId(nil);
+        CCWSETNodeInfo(nil);
+    }
+    
+    
     CCWWeakSelf;
     // 请求连接节点
     [CCWSDKRequest CCW_RequestNodeSuccess:^(id  _Nonnull responseObject) {
@@ -72,8 +86,7 @@
     }
     CCWWeakSelf
     // 最新新节点
-    
-    [CCWSDKRequest CCW_InitWithUrl:@"ws://test.cocosbcx.net" Core_Asset:@"COCOS" Faucet_url:@"http://test-faucet.cocosbcx.net" ChainId:@"c1ac4bb7bd7d94874a1cb98b39a8a582421d03d022dfa4be8c70567076e03ad0" Success:^(id  _Nonnull responseObject) {
+    [CCWSDKRequest CCW_InitWithUrl:nodeInfo.ws Core_Asset:nodeInfo.coreAsset Faucet_url:nodeInfo.faucetUrl ChainId:nodeInfo.chainId Success:^(id  _Nonnull responseObject) {
         // 记录已连接的数据
         CCWSETNodeInfo([nodeInfo mj_keyValues]);
         // 发个通知

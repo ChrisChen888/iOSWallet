@@ -108,7 +108,7 @@ static NSString *const AssetsCollectionCell = @"AssetsCollectionCell";
     self.assetsBgView.backgroundColor = [UIColor gradientColorFromColors:@[[UIColor getColor:@"507BF0"],[UIColor getColor:@"779EF9"]] gradientType:CCWGradientTypeLeftToRight colorSize:CGSizeMake(CCWScreenW, 130)];
     [self ccw_setNavBackgroundColor:[UIColor getColor:@"D2D9F3"]];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:CCWLocalizable(@"订单") style:UIBarButtonItemStylePlain target:self action:@selector(rightItemClick)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:CCWLocalizable(@"订单管理") style:UIBarButtonItemStylePlain target:self action:@selector(rightItemClick)];
     
     // 设置滚动导航的标签栏
     [self setupTitlesView];

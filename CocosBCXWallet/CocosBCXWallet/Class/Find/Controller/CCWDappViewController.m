@@ -155,11 +155,8 @@
     CCWLog(@"加载完成");
     
     // 初始化节点
-//    CCWNodeInfoModel *saveNodelInfo = [CCWNodeInfoModel mj_objectWithKeyValues:CCWNodeInfo];
-//    NSString *jsStr = [NSString stringWithFormat:@"BcxWeb.initConnect('%@', '%@','%@','%@')",saveNodelInfo.ws, saveNodelInfo.coreAsset, saveNodelInfo.faucetUrl, saveNodelInfo.chainId];
-//    [self.wkWebView evaluateJavaScript:jsStr completionHandler:nil];
-    
-    NSString *jsStr = [NSString stringWithFormat:@"BcxWeb.initConnect('%@', '%@','%@','%@')",@"ws://test.cocosbcx.net", @"COCOS", @"http://test-faucet.cocosbcx.net", @"c1ac4bb7bd7d94874a1cb98b39a8a582421d03d022dfa4be8c70567076e03ad0"];
+    CCWNodeInfoModel *saveNodelInfo = [CCWNodeInfoModel mj_objectWithKeyValues:CCWNodeInfo];
+    NSString *jsStr = [NSString stringWithFormat:@"BcxWeb.initConnect('%@', '%@','%@','%@')",saveNodelInfo.ws, saveNodelInfo.coreAsset, saveNodelInfo.faucetUrl, saveNodelInfo.chainId];
     [self.wkWebView evaluateJavaScript:jsStr completionHandler:nil];
     
     //加载完成后隐藏progressView
