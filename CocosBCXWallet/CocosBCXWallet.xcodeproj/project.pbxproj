@@ -32,6 +32,7 @@
 		313AAB0D22E9A859003E0B5B /* CCWDeleteNHInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 313AAB0C22E9A859003E0B5B /* CCWDeleteNHInfoView.m */; };
 		313AAB1122EA95D7003E0B5B /* CCWTransferNhAssetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 313AAB0F22EA95D7003E0B5B /* CCWTransferNhAssetViewController.m */; };
 		313AAB1222EA95D7003E0B5B /* CCWTransferNhAssetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 313AAB1022EA95D7003E0B5B /* CCWTransferNhAssetViewController.xib */; };
+		313D8B53237AB8F000A2BBCC /* CCWMenuTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 313D8B52237AB8F000A2BBCC /* CCWMenuTextField.m */; };
 		313FD4AC22A4BE660058A8A2 /* CCWDataBase+CCWNodeINfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 313FD4AB22A4BE660058A8A2 /* CCWDataBase+CCWNodeINfo.m */; };
 		313FD4AF22A4BE9F0058A8A2 /* CCWNodeInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 313FD4AE22A4BE9F0058A8A2 /* CCWNodeInfoModel.m */; };
 		313FD4B322A4D6CB0058A8A2 /* CCWNodeAlertTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 313FD4B122A4D6CB0058A8A2 /* CCWNodeAlertTableViewCell.m */; };
@@ -352,6 +353,8 @@
 		313AAB0E22EA95D7003E0B5B /* CCWTransferNhAssetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCWTransferNhAssetViewController.h; sourceTree = "<group>"; };
 		313AAB0F22EA95D7003E0B5B /* CCWTransferNhAssetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCWTransferNhAssetViewController.m; sourceTree = "<group>"; };
 		313AAB1022EA95D7003E0B5B /* CCWTransferNhAssetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCWTransferNhAssetViewController.xib; sourceTree = "<group>"; };
+		313D8B51237AB8F000A2BBCC /* CCWMenuTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCWMenuTextField.h; sourceTree = "<group>"; };
+		313D8B52237AB8F000A2BBCC /* CCWMenuTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCWMenuTextField.m; sourceTree = "<group>"; };
 		313FD4AA22A4BE660058A8A2 /* CCWDataBase+CCWNodeINfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CCWDataBase+CCWNodeINfo.h"; sourceTree = "<group>"; };
 		313FD4AB22A4BE660058A8A2 /* CCWDataBase+CCWNodeINfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CCWDataBase+CCWNodeINfo.m"; sourceTree = "<group>"; };
 		313FD4AD22A4BE9F0058A8A2 /* CCWNodeInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCWNodeInfoModel.h; sourceTree = "<group>"; };
@@ -1053,6 +1056,8 @@
 				318FF5FF2215794A00AB5696 /* CCWButton.m */,
 				31288E93221D1BC7002EE5EA /* CCWTextField.h */,
 				31288E94221D1BC7002EE5EA /* CCWTextField.m */,
+				313D8B51237AB8F000A2BBCC /* CCWMenuTextField.h */,
+				313D8B52237AB8F000A2BBCC /* CCWMenuTextField.m */,
 			);
 			path = CCWKit;
 			sourceTree = "<group>";
@@ -2339,6 +2344,7 @@
 				31E19880221E7BCF0076A822 /* CCWConstkey.m in Sources */,
 				3144D05A22003BE700CDA62A /* CCWRSAUtill.m in Sources */,
 				3176CECE22E58FE00022B408 /* CCWExportViewController.m in Sources */,
+				313D8B53237AB8F000A2BBCC /* CCWMenuTextField.m in Sources */,
 				31E4338722EAAB4C00CAFDCA /* CCWAddNodeViewController.m in Sources */,
 				3144D06922003BE700CDA62A /* UILabel+YSAdd.m in Sources */,
 				3186E8062293A08200A269C6 /* CCWCheckVisionAlert.m in Sources */,
