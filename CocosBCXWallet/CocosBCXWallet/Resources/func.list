@@ -59,6 +59,7 @@ CCW_QueryAccountNHAsset
 CCW_QueryAllNHAssetOrder
 CCW_QueryAssetInfo
 CCW_QueryChainListLimit
+CCW_QueryCurrentChainID
 CCW_QueryFindDappListSuccess
 CCW_QueryMyContactComplete
 CCW_QueryUserOperations

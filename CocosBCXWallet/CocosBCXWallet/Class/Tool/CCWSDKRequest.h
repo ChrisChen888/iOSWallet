@@ -34,6 +34,10 @@ typedef void (^ErrorBlock)(NSString *errorAlert,id responseObject);// 失败回�
             Success:(SuccessBlock)successBlock
               Error:(ErrorBlock)errorBlock;
 
+/** 查询当前连接链的 ChainId */
++ (void)CCW_QueryCurrentChainID:(SuccessBlock)successBlock
+                          Error:(ErrorBlock)errorBlock;
+
 /** 查询版本信息 */
 + (void)CCW_QueryVersionInfoSuccess:(SuccessBlock)successBlock Error:(ErrorBlock)errorBlock;
 

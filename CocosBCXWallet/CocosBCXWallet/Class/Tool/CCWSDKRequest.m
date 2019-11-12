@@ -49,6 +49,15 @@
     }];
 }
 
+// 查询ChainID
++ (void)CCW_QueryCurrentChainID:(SuccessBlock)successBlock
+                          Error:(ErrorBlock)errorBlock
+{
+    [[CocosSDK shareInstance] Cocos_QueryCurrentChainID:successBlock Error:^(NSError *error) {
+        !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
+    }];
+}
+
 /** 查询版本信息 */
 + (void)CCW_QueryVersionInfoSuccess:(SuccessBlock)successBlock Error:(ErrorBlock)errorBlock;
 {

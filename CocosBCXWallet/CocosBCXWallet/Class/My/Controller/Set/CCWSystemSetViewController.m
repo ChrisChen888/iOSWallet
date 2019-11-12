@@ -72,25 +72,46 @@
     // 最新新节点
     CCWWeakSelf;
     [CCWSDKRequest CCW_InitWithUrl:nodeInfo.ws Core_Asset:nodeInfo.coreAsset Faucet_url:nodeInfo.faucetUrl ChainId:nodeInfo.chainId Success:^(id  _Nonnull responseObject) {
-        // 记录已连接的数据
-        CCWSETNodeInfo([nodeInfo mj_keyValues]);
-        // 判断当前链是否已经有账户
-        NSArray *accountArray = [CCWSDKRequest CCW_QueryAccountList];
-        if (accountArray.count > 0) {
-            CocosDBAccountModel *dbAccountModel = [accountArray firstObject];
-            CCWSETAccountName(dbAccountModel.name);
-            CCWSETAccountId(dbAccountModel.ID);
-            // 发个通知
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"CCWNetConnectNetworkKey" object:nil];
-            });
-        }else{
-            CCWSETAccountName(nil);
-            CCWSETAccountId(nil);
-            id<CCWInitModuleProtocol> registerModule = [[CCWMediator sharedInstance] moduleForProtocol:@protocol(CCWInitModuleProtocol)];
-            CCWNavigationController *registerController = [[CCWNavigationController alloc] initWithRootViewController:[registerModule CCW_LoginRegisterWalletViewController]];
-            CCWKeyWindow.rootViewController = registerController;
-        }
+        
+        // 查询节点的chainid 是否相等
+        [CCWSDKRequest CCW_QueryCurrentChainID:^(id  _Nonnull responseObject) {
+            if ([nodeInfo.chainId isEqualToString:responseObject]) {
+                // 记录已连接的数据
+                CCWSETNodeInfo([nodeInfo mj_keyValues]);
+                // 判断当前链是否已经有账户
+                NSArray *accountArray = [CCWSDKRequest CCW_QueryAccountList];
+                if (accountArray.count > 0) {
+                    CocosDBAccountModel *dbAccountModel = [accountArray firstObject];
+                    CCWSETAccountName(dbAccountModel.name);
+                    CCWSETAccountId(dbAccountModel.ID);
+                    // 发个通知
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        [[NSNotificationCenter defaultCenter] postNotificationName:@"CCWNetConnectNetworkKey" object:nil];
+                    });
+                }else{
+                    CCWSETAccountName(nil);
+                    CCWSETAccountId(nil);
+                    id<CCWInitModuleProtocol> registerModule = [[CCWMediator sharedInstance] moduleForProtocol:@protocol(CCWInitModuleProtocol)];
+                    CCWNavigationController *registerController = [[CCWNavigationController alloc] initWithRootViewController:[registerModule CCW_LoginRegisterWalletViewController]];
+                    CCWKeyWindow.rootViewController = registerController;
+                }
+            }else{
+                [weakSelf.view makeToast:CCWLocalizable(@"切换失败")];
+                CCWNodeInfoModel *nodeInfo = [CCWNodeInfoModel mj_objectWithKeyValues:CCWNodeInfo];
+                // 最新新节点
+                [CCWSDKRequest CCW_InitWithUrl:nodeInfo.ws Core_Asset:nodeInfo.coreAsset Faucet_url:nodeInfo.faucetUrl ChainId:nodeInfo.chainId Success:^(id  _Nonnull responseObject) {
+                    // 发个通知
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        [[NSNotificationCenter defaultCenter] postNotificationName:@"CCWNetConnectNetworkKey" object:nil];
+                    });
+                } Error:^(NSString * _Nonnull errorAlert, id  _Nonnull responseObject) {
+                    
+                }];
+            }
+        } Error:^(NSString * _Nonnull errorAlert, id  _Nonnull responseObject) {
+            
+        }];
+        
     } Error:^(NSString * _Nonnull errorAlert, id  _Nonnull responseObject) {
         [weakSelf.view makeToast:CCWLocalizable(@"切换失败")];
         CCWNodeInfoModel *nodeInfo = [CCWNodeInfoModel mj_objectWithKeyValues:CCWNodeInfo];

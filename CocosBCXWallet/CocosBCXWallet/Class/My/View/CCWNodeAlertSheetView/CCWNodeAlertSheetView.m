@@ -50,7 +50,7 @@
 {
     self.dataSource = dataArray;
     CGFloat cellH = 58;
-    CGFloat cellNum = self.dataSource.count;
+    CGFloat cellNum = self.dataSource.count+1;
     if (self.dataSource.count > 5) {
         cellNum = 5;
     }
