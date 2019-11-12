@@ -35,7 +35,7 @@
 /** Get SDK's version */
 - (NSString *)Cocos_SdkCurentVersion
 {
-    return @"1.0.2";
+    return @"2.0.0";
 }
 
 /** Open debug log */
@@ -45,7 +45,6 @@
 }
 
 #pragma mark - Init Method
-
 /** Initialize SDK */
 - (void)Cocos_ConnectWithNodeUrl:(NSString *)url
                        Fauceturl:(NSString *)faucetUrl
@@ -79,6 +78,21 @@
     }
 }
 
+/**
+ Query Current Chain ID
+ */
+- (void)Cocos_QueryCurrentChainID:(SuccessBlock)successBlock
+                            Error:(Error)errorBlock
+{
+    // 1. Request account information with all wallet account IDs
+    UploadParams *uploadParams = [[UploadParams alloc] init];
+    uploadParams.methodName = kCocosGetChainId;
+    uploadParams.totalParams = @[];
+    CallBackModel *callBackModel = [[CallBackModel alloc] init];
+    callBackModel.successResult = successBlock;
+    callBackModel.errorResult = errorBlock;
+    [self sendWithChainApi:WebsocketBlockChainApiDataBase method:(WebsocketBlockChainMethodApiCall) params:uploadParams callBack:callBackModel];
+}
 #pragma mark - Create account
 /** Create account */
 - (void)Cocos_CreateAccountWalletMode:(CocosWalletMode)walletMode
