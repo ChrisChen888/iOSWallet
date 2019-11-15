@@ -61,7 +61,7 @@
                 self.transferCountLabel.text = [NSString stringWithFormat:@"+%@ %@",operation.amount.amount,operation.amount.symbol];
             }
         }
-        self.tipLabel.text = CCWLocalizable(@"(测试)");
+        self.tipLabel.text = CCWLocalizable(CCWCoinTypeString);
     }else if (transRecordModel.oprationType == CCWOpTypeCallContract) {
         self.transferAccountNameLabel.text = transRecordModel.caller;
         self.transferTypeImageView.image = [UIImage imageNamed:@"trx_contract"];

@@ -16,8 +16,11 @@
 @property (weak, nonatomic) IBOutlet UITextField *remakeTextField;
 @property (weak, nonatomic) IBOutlet UIButton *nextButton;
 @property (weak, nonatomic) IBOutlet UILabel *accountLabel;
+
+
 /** 转账信息 */
 @property (nonatomic, strong) CCWTransferInfoView *transferInfoView;
+
 @end
 
 @implementation CCWTransferViewController

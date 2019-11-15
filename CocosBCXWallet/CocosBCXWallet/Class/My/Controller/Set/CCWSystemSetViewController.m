@@ -76,6 +76,8 @@
         // 查询节点的chainid 是否相等
         [CCWSDKRequest CCW_QueryCurrentChainID:^(id  _Nonnull responseObject) {
             if ([nodeInfo.chainId isEqualToString:responseObject]) {
+                // 节点类型
+                CCWNetNotesType = nodeInfo.type;
                 // 记录已连接的数据
                 CCWSETNodeInfo([nodeInfo mj_keyValues]);
                 // 判断当前链是否已经有账户

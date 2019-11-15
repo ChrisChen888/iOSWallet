@@ -55,7 +55,7 @@
         _titleLabel = [UILabel new];
         _titleLabel.textColor = [UIColor getColor:@"4f5051"];
         _titleLabel.font = [UIFont boldSystemFontOfSize:15];
-        _titleLabel.text = [NSString stringWithFormat:@"COCOS%@",CCWLocalizable(@"(测试)")];
+        _titleLabel.text = [NSString stringWithFormat:@"COCOS%@",CCWLocalizable(CCWCoinTypeString)];
         [_titleLabel sizeToFit];
     }
     return _titleLabel;

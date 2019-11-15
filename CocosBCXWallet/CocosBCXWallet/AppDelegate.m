@@ -84,6 +84,10 @@
     if (CCWNodeInfo) {
         nodeInfo = [CCWNodeInfoModel mj_objectWithKeyValues:CCWNodeInfo];
     }
+    
+    // 节点类型
+    CCWNetNotesType = nodeInfo.type;
+    
     CCWWeakSelf
     // 最新新节点
     [CCWSDKRequest CCW_InitWithUrl:nodeInfo.ws Core_Asset:nodeInfo.coreAsset Faucet_url:nodeInfo.faucetUrl ChainId:nodeInfo.chainId Success:^(id  _Nonnull responseObject) {

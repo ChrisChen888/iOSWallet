@@ -138,9 +138,9 @@
     BOOL canSelect = YES;
     CCWNodeInfoModel *nodeInfo = self.dataSource[indexPath.row];
     CCWNodeInfoModel *saveNodelInfo = [CCWNodeInfoModel mj_objectWithKeyValues:CCWNodeInfo];
-    if ([saveNodelInfo.ws isEqualToString:nodeInfo.ws] && [saveNodelInfo.chainId isEqualToString:nodeInfo.chainId] && [saveNodelInfo.faucetUrl isEqualToString:nodeInfo.faucetUrl] && [saveNodelInfo.coreAsset isEqualToString:nodeInfo.coreAsset]) {
-        canSelect = NO;
-    }
+//    if ([saveNodelInfo.ws isEqualToString:nodeInfo.ws] && [saveNodelInfo.chainId isEqualToString:nodeInfo.chainId] && [saveNodelInfo.faucetUrl isEqualToString:nodeInfo.faucetUrl] && [saveNodelInfo.coreAsset isEqualToString:nodeInfo.coreAsset]) {
+//        canSelect = NO;
+//    }
     if (canSelect) {
         if ([self.delegate respondsToSelector:@selector(CCW_NodeAlertSheetView:didSelectRowAtIndexPath:)]) {
             [self.delegate CCW_NodeAlertSheetView:self didSelectRowAtIndexPath:indexPath];

@@ -16,6 +16,9 @@ NSString * CCWNewAppDownloadurl;//!< 新App的下载链接
 NSString * CCWNewAppUpdateNotes;//!< 新App的更新内容
 NSString * CCWNewAppUpdateEnNotes;//!< 新App的更新内容,英文
 
+#pragma mark - 节点类型
+BOOL CCWNetNotesType;//!< 节点类型，测试网，主网
+
 #pragma mark - 汇率
 NSString * const CCWCurrencyType = @"CCWCurrencyType";//(YES是USD,NO是CNY)
 NSString * const CCWCurrencyValueKey = @"CCWCurrencyValueKey";//!< 缓存汇率的值

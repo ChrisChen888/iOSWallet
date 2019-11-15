@@ -35,7 +35,13 @@
         [self JS_ClaimVestingBalance:body addPassword:password response:block];
     }else if([body[@"methodName"] isEqualToString:JS_METHOD_updateCollateralForGas]) {
         [self JS_updateCollateralForGas:body addPassword:password response:block];
+    }else if([body[@"methodName"] isEqualToString:JS_METHOD_walletLanguage]) {
+        if ([[CCWLocalizableTool userLanguage] isEqualToString:CCWLanzh]) {// 中文
+            !block?:block(@{@"data":@"cn",@"code":@(1)} );
+        }else{
+            !block?:block(@{@"data":@"en",@"code":@(1)} );
         }
+    }
 }
 
 #pragma mark - Action
@@ -82,6 +88,11 @@
         voteType = 1;
     }else if([voteStrType isEqualToString:@"committee"]) {
         voteType = 0;
+    }
+    
+    // 投 0 票数组传@[]
+    if ([votes isEqualToString:@"0"]) {
+        voteIds = @[];
     }
     
     [CCWSDKRequest CCW_PublishVotes:CCWAccountName Password:password VoteType:voteType VoteIds:voteIds Votes:votes Success:^(id  _Nonnull responseObject) {

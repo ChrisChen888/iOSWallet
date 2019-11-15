@@ -68,5 +68,8 @@
 #define CCWSETNodeInfo(object) [CCWSaveTool setObject:object forKey:@"node_info"]  // 写
 #define CCWNodeInfo [CCWSaveTool objectForKey:@"node_info"]
 
+
+#define CCWCoinTypeString CCWNetNotesType?@"":@"(测试)"
+
 #endif /* CocosBCXWallet_pch */
 

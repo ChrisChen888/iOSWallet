@@ -77,8 +77,23 @@
     }
     nodeInfo.ws = _nodeTextField.text;
     nodeInfo.isSelfSave = YES;
-    [[CCWDataBase CCW_shareDatabase] CCW_SaveNodeInfo:nodeInfo];
-    [self.navigationController popViewControllerAnimated:YES];
+    
+    NSMutableArray *nodeArray = [[CCWDataBase CCW_shareDatabase] CCW_QueryNodeInfo];
+    CCWWeakSelf
+    [nodeArray enumerateObjectsUsingBlock:^(CCWNodeInfoModel *  _Nonnull nodeinfoModel, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        if ([nodeinfoModel.ws isEqualToString:nodeInfo.ws]) {
+            [self.view makeToast:CCWLocalizable(@"此节点已存在")];
+            *stop = YES;
+            return;
+        }
+        
+        if (idx + 1 == nodeArray.count) {
+            // 刷新
+            [[CCWDataBase CCW_shareDatabase] CCW_SaveNodeInfo:nodeInfo];
+            [weakSelf.navigationController popViewControllerAnimated:YES];
+        }
+    }];
 }
 
 
