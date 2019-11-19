@@ -1527,7 +1527,7 @@
                     CocosMortgageGasOperation *operation = [[CocosMortgageGasOperation alloc] init];
                     operation.mortgager = mortgager.identifier;
                     operation.beneficiary = beneficiary.identifier;
-                    operation.collateral = collateral;
+                    operation.collateral = collateral*100000;
                     operation.requiredAuthority = mortgager.active.publicKeys;
                     CocosOperationContent *content = [[CocosOperationContent alloc] initWithOperation:operation];
                     SignedTransaction *signedTran = [[SignedTransaction alloc] init];
