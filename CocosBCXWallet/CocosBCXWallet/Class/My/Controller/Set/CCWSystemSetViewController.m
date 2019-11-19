@@ -28,6 +28,9 @@
     
     self.title = CCWLocalizable(@"系统设置");
     self.currentLanguageLabel.text = [CCWLocalizableTool userLanguageString];
+    
+    CCWNodeInfoModel *nodeInfo = [CCWNodeInfoModel mj_objectWithKeyValues:CCWNodeInfo];
+    self.netLabel.text = nodeInfo.type?CCWLocalizable(@"主网"):CCWLocalizable(@"测试网");
 }
 
 - (IBAction)CCW_SetViewdidSelectIndexPath:(UIButton *)button
@@ -78,6 +81,7 @@
             if ([nodeInfo.chainId isEqualToString:responseObject]) {
                 // 节点类型
                 CCWNetNotesType = nodeInfo.type;
+                weakSelf.netLabel.text = nodeInfo.type?CCWLocalizable(@"主网"):CCWLocalizable(@"测试网");
                 // 记录已连接的数据
                 CCWSETNodeInfo([nodeInfo mj_keyValues]);
                 // 判断当前链是否已经有账户
