@@ -22,21 +22,6 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-//    // 清空信息
-//    BOOL haveStart = [CCWSaveTool boolForKey:@"haveUpdateStart"];
-//    CCWNodeInfoModel *nodeInfo = [[CCWNodeInfoModel alloc] init];
-//    if (CCWNodeInfo) {
-//        nodeInfo = [CCWNodeInfoModel mj_objectWithKeyValues:CCWNodeInfo];
-//    }
-//    if (!haveStart && ![nodeInfo.chainId isEqualToString:@"c1ac4bb7bd7d94874a1cb98b39a8a582421d03d022dfa4be8c70567076e03ad0"]) {
-//        [CCWSaveTool setBool:YES forKey:@"haveUpdateStart"];  // 写
-//        CCWSETAccountName(nil);
-//        CCWSETAccountId(nil);
-//        CCWSETNodeInfo(nil);
-//    }
-//    
-    
     CCWWeakSelf;
     // 请求连接节点
     [CCWSDKRequest CCW_RequestNodeSuccess:^(id  _Nonnull responseObject) {
