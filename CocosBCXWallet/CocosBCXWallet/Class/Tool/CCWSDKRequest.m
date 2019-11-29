@@ -314,7 +314,7 @@
                   Success:(SuccessBlock)successBlock
                     Error:(ErrorBlock)errorBlock
 {
-    [[CocosSDK shareInstance] Cocos_TransferFromAccount:fromAccount ToAccount:toAccount Password:password TransferAsset:assetId AssetAmount:amount Memo:memo Success:successBlock Error:^(NSError *error) {
+    [[CocosSDK shareInstance] Cocos_TransferFromAccount:fromAccount ToAccount:toAccount Password:password TransferAsset:assetId AssetAmount:amount IsEncryptionMemo:NO Memo:memo Success:successBlock Error:^(NSError *error) {
         !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
     }];
 }

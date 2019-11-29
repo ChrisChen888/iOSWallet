@@ -100,10 +100,13 @@
             self.remarkTitle.text = CCWLocalizable(@"NH资产ID:");
             self.remarkLabel.text = self.transRecordModel.operation.nh_asset;
         }else{
-            UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(decodeMemoTap:)];
-            [self.remarkLabel addGestureRecognizer:tapGes];
             
-            if (self.transRecordModel.operation.memo) {
+            NSInteger memoType = [self.transRecordModel.operation.memo.firstObject integerValue];
+            if (memoType == 0) {
+                self.remarkLabel.text = self.transRecordModel.operation.memo.lastObject;
+            }else{
+                UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(decodeMemoTap:)];
+                [self.remarkLabel addGestureRecognizer:tapGes];
                 self.remarkLabel.text = CCWLocalizable(@"使用密码解锁备注");
                 self.remarkLabel.textColor = [UIColor getColor:@"4868DC"];
             }
@@ -138,7 +141,8 @@
     CCWPasswordAlert(^(UIAlertAction * _Nonnull action) {
         // 通过数组拿到textTF的值
         NSString *password = [[alertVc textFields] objectAtIndex:0].text;
-        [CCWSDKRequest CCW_DecodeMemo:[self.transRecordModel.operation.memo mj_keyValues] Password:password Success:^(id  _Nonnull responseObject) {
+        
+        [CCWSDKRequest CCW_DecodeMemo:self.transRecordModel.operation.memo.lastObject Password:password Success:^(id  _Nonnull responseObject) {
             weakSelf.remarkLabel.userInteractionEnabled = NO;
             weakSelf.remarkLabel.text = responseObject;
             weakSelf.remarkLabel.textColor = [UIColor getColor:@"262A33"];

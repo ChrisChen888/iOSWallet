@@ -11,7 +11,7 @@
 #import "CocosDataBase+Account.h"
 #import "UploadBaseModel.h"
 
-@class CallBackModel,ChainAccountModel,ChainAssetObject,ChainMemo,CocosBaseOperation,CocosCallContractOperation;
+@class CallBackModel,ChainAccountModel,ChainAssetObject,ChainEncryptionMemo,CocosBaseOperation,CocosCallContractOperation;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -241,7 +241,20 @@ NS_ASSUME_NONNULL_BEGIN
                           password:(NSString *)password
                            Success:(SuccessBlock)successBlock
                              Error:(Error)errorBlock;
+/**
+ CreateSonAccount
 
+ @param newAccountName SonAccount
+ @param newPassword SonPassword
+ @param account account
+ @param password password
+ */
+- (void)Cocos_CreateSonAccount:(NSString *)newAccountName
+                   newPassword:(NSString *)newPassword
+                     Registrar:(NSString *)account
+                      password:(NSString *)password
+                       Success:(SuccessBlock)successBlock
+                         Error:(Error)errorBlock;
 #pragma mark - Asset query operation
 /**
  Get blockchain assets list
@@ -280,6 +293,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param password        Password
  @param transferAsset   Asset's name(eg. COCOS)
  @param assetAmount     assetAmount Transfer amount
+ @param encryption      encryption memo
  @param memo            Memo String
  */
 - (void)Cocos_TransferFromAccount:(NSString *)fromName
@@ -287,6 +301,7 @@ NS_ASSUME_NONNULL_BEGIN
                          Password:(NSString *)password
                     TransferAsset:(NSString *)transferAsset
                       AssetAmount:(NSString *)assetAmount
+                 IsEncryptionMemo:(BOOL)encryption
                              Memo:(NSString *)memo
                           Success:(SuccessBlock)successBlock
                             Error:(Error)errorBlock;
@@ -531,6 +546,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)Cocos_QueryVestingBalance:(NSString *)account
                          Success:(SuccessBlock)successBlock
                            Error:(Error)errorBlock;
+
 /**
  claim vesting balance
  @param account account

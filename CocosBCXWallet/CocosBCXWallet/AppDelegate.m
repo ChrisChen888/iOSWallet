@@ -65,23 +65,44 @@
 // 连接节点
 - (void)connectNodeWithNodeArray:(NSArray *)nodeArray
 {
-    CCWNodeInfoModel *nodeInfo = [nodeArray firstObject];
+    
+    CCWNodeInfoModel  *nodeInfo = [nodeArray firstObject];
     if (CCWNodeInfo) {
         nodeInfo = [CCWNodeInfoModel mj_objectWithKeyValues:CCWNodeInfo];
+    }
+    for (CCWNodeInfoModel *enumNodeInfo in nodeArray) {
+        if (nodeInfo.isForce) {
+            nodeInfo = enumNodeInfo;
+            break;
+        }
     }
     
     // 节点类型
     CCWNetNotesType = nodeInfo.type;
+//    {
+//        nodeInfo.ws = @"ws://192.168.90.46:8149";
+//        nodeInfo.chainId = @"dc57c58b0366a06b33615a10fb624c380557f3642278d51910580ade3ab487fe";
+////        nodeInfo.ws = @"ws://test.cocosbcx.net";
+////        nodeInfo.chainId = @"c1ac4bb7bd7d94874a1cb98b39a8a582421d03d022dfa4be8c70567076e03ad0";
+//    }
     
     CCWWeakSelf
     // 最新新节点
     [CCWSDKRequest CCW_InitWithUrl:nodeInfo.ws Core_Asset:nodeInfo.coreAsset Faucet_url:nodeInfo.faucetUrl ChainId:nodeInfo.chainId Success:^(id  _Nonnull responseObject) {
         // 记录已连接的数据
         CCWSETNodeInfo([nodeInfo mj_keyValues]);
+        // 判断当前链是否已经有账户
+        NSArray *accountArray = [CCWSDKRequest CCW_QueryAccountList];
+        if (accountArray.count > 0) {
+            CocosDBAccountModel *dbAccountModel = [accountArray firstObject];
+            CCWSETAccountName(dbAccountModel.name);
+            CCWSETAccountId(dbAccountModel.ID);
+        }else{
+            CCWSETAccountName(nil);
+            CCWSETAccountId(nil);
+        }
         // 发个通知
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"CCWNetConnectNetworkKey" object:nil];
-        });
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"CCWNetConnectNetworkKey" object:nil];
         [CocosSDK shareInstance].connectStatusChange = ^(WebsocketConnectStatus status) {
             if (status == WebsocketConnectStatusClosed) {
                 [weakSelf connectNodeWithNodeArray:nodeArray];

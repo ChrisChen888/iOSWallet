@@ -35,7 +35,7 @@
     return @{
              @"fee": [CCWAmountFee class],
              @"amount": [CCWAmountFee class],
-             @"memo": [CCWMemo class]
+//             @"memo": [CCWMemo class]
              };
 }
 

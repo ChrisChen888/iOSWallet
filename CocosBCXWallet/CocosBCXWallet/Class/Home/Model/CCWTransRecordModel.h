@@ -56,7 +56,8 @@ typedef NS_ENUM(NSInteger, CCWOpType) {
 // 转账的操作
 @property (nonatomic, copy) NSString *from;
 @property (nonatomic, copy) NSString *to;
-@property (nonatomic, strong) CCWMemo *memo;
+//@property (nonatomic, strong) CCWMemo *memo;
+@property (nonatomic, strong) NSArray *memo;
 
 @property (nonatomic, strong) CCWAmountFee *amount;
 

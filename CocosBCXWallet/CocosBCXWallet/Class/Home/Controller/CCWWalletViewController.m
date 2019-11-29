@@ -15,6 +15,7 @@
 #import "CCWWalletTableView.h"
 #import "CCWSelectCoinViewController.h"
 #import "CCWCheckVisionAlert.h"
+#import "CCWNavigationController.h"
 
 @interface CCWWalletViewController ()<UITableViewDelegate,UITableViewDataSource,CCWWalletHeaderDelegate,CCWSwitchAccountViewDelegate,DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
 
@@ -94,13 +95,30 @@
 - (void)connectSuccess
 {
     CCWWeakSelf
-    // 查询资产
-    [CCWSDKRequest CCW_QueryAccountAllBalances:CCWAccountId Success:^(id  _Nonnull responseObject) {
-        weakSelf.assetsModelArray = responseObject;
-        [weakSelf.tableView reloadData];
-    } Error:^(NSString * _Nonnull errorAlert, id  _Nonnull responseObject) {
-//        [weakSelf.view makeToast:CCWLocalizable(@"网络繁忙，请检查您的网络连接")];
-    }];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (!CCWAccountId) {
+            id<CCWInitModuleProtocol> registerModule = [[CCWMediator sharedInstance] moduleForProtocol:@protocol(CCWInitModuleProtocol)];
+            CCWNavigationController *registerController = [[CCWNavigationController alloc] initWithRootViewController:[registerModule CCW_LoginRegisterWalletViewController]];
+            CCWKeyWindow.rootViewController = registerController;
+        }else{
+            
+            NSString *accountName = CCWAccountName;
+            if (accountName.length > 13) {
+                accountName = [accountName substringToIndex:13];//截取掉下标5之前的字符串
+                accountName = [NSString stringWithFormat:@"%@...",accountName];
+            }
+            self.headerView.account = [NSString stringWithFormat:@"%@ >",accountName];
+            
+            // 查询资产
+            [CCWSDKRequest CCW_QueryAccountAllBalances:CCWAccountId Success:^(id  _Nonnull responseObject) {
+                weakSelf.assetsModelArray = responseObject;
+                [weakSelf.tableView reloadData];
+            } Error:^(NSString * _Nonnull errorAlert, id  _Nonnull responseObject) {
+                //        [weakSelf.view makeToast:CCWLocalizable(@"网络繁忙，请检查您的网络连接")];
+            }];
+        }
+    });
 }
 
 - (void)dealloc
