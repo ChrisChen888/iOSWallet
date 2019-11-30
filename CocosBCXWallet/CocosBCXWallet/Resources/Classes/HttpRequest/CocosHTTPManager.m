@@ -51,7 +51,8 @@ static CocosHTTPManager *_shareHTTPManager = nil;
     [self.requestSerializer setValue:@"YnVmZW5nQDIwMThidWZlbmc=" forHTTPHeaderField:@"Authorization"];
     [self POST:url parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if ([responseObject[@"code"] integerValue] == SDKErrorCodeCreateAccountExists) {
-            NSError *error = [NSError errorWithDomain:@"Account exists" code:SDKErrorCodeCreateAccountExists userInfo:responseObject];
+//            NSError *error = [NSError errorWithDomain:@"Account exists" code:SDKErrorCodeCreateAccountExists userInfo:responseObject];
+            NSError *error = [NSError errorWithDomain:responseObject[@"msg"] code:SDKErrorCodeCreateAccountExists userInfo:responseObject];
             !errorBlock ?:errorBlock(error);
         }else{
             !successBlock?:successBlock(responseObject);

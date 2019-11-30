@@ -127,7 +127,8 @@
                 [MobClick event:@"register" attributes:nil];
             } Error:^(NSString * _Nonnull errorAlert, NSError * _Nonnull error) {
                 [MBProgressHUD hideHUD];
-                [weakSelf.view makeToast:CCWLocalizable(@"网络繁忙，请检查您的网络连接")];
+//                [weakSelf.view makeToast:CCWLocalizable(@"网络繁忙，请检查您的网络连接")];
+                [weakSelf.view makeToast:error.domain.description];
             }];
         }else{
             [weakSelf.view makeToast:CCWLocalizable(@"网络繁忙，请检查您的网络连接")];

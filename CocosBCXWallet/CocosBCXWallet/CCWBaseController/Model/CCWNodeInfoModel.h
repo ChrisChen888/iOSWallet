@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, assign) BOOL type;
 @property (nonatomic, copy) NSString *ws;
-@property (nonatomic, assign) BOOL *isForce;
+@property (nonatomic, assign) BOOL isForce;
 
 // 是否是手动添加
 @property (nonatomic, assign) BOOL isSelfSave;

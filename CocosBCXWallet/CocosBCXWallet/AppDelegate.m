@@ -65,13 +65,12 @@
 // 连接节点
 - (void)connectNodeWithNodeArray:(NSArray *)nodeArray
 {
-    
     CCWNodeInfoModel  *nodeInfo = [nodeArray firstObject];
     if (CCWNodeInfo) {
         nodeInfo = [CCWNodeInfoModel mj_objectWithKeyValues:CCWNodeInfo];
     }
     for (CCWNodeInfoModel *enumNodeInfo in nodeArray) {
-        if (nodeInfo.isForce) {
+        if (enumNodeInfo.isForce) {
             nodeInfo = enumNodeInfo;
             break;
         }
@@ -79,12 +78,13 @@
     
     // 节点类型
     CCWNetNotesType = nodeInfo.type;
-//    {
-//        nodeInfo.ws = @"ws://192.168.90.46:8149";
-//        nodeInfo.chainId = @"dc57c58b0366a06b33615a10fb624c380557f3642278d51910580ade3ab487fe";
-////        nodeInfo.ws = @"ws://test.cocosbcx.net";
-////        nodeInfo.chainId = @"c1ac4bb7bd7d94874a1cb98b39a8a582421d03d022dfa4be8c70567076e03ad0";
-//    }
+    {
+//        nodeInfo.ws = @"wss://api.cocosbcx.net";
+//        nodeInfo.chainId = @"6057d856c398875cac2650fe33caef3d5f6b403d184c5154abbff526ec1143c4";
+//        nodeInfo.faucetUrl = @"https://faucet.cocosbcx.net";
+//        nodeInfo.ws = @"ws://test.cocosbcx.net";
+//        nodeInfo.chainId = @"c1ac4bb7bd7d94874a1cb98b39a8a582421d03d022dfa4be8c70567076e03ad0";
+    }
     
     CCWWeakSelf
     // 最新新节点
