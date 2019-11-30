@@ -65,9 +65,11 @@
 // 连接节点
 - (void)connectNodeWithNodeArray:(NSArray *)nodeArray
 {
+    NSString *perConnectChainId = @"";
     CCWNodeInfoModel  *nodeInfo = [nodeArray firstObject];
     if (CCWNodeInfo) {
         nodeInfo = [CCWNodeInfoModel mj_objectWithKeyValues:CCWNodeInfo];
+        perConnectChainId = nodeInfo.chainId;
     }
     for (CCWNodeInfoModel *enumNodeInfo in nodeArray) {
         if (enumNodeInfo.isForce) {
@@ -78,28 +80,25 @@
     
     // 节点类型
     CCWNetNotesType = nodeInfo.type;
-    {
-//        nodeInfo.ws = @"wss://api.cocosbcx.net";
-//        nodeInfo.chainId = @"6057d856c398875cac2650fe33caef3d5f6b403d184c5154abbff526ec1143c4";
-//        nodeInfo.faucetUrl = @"https://faucet.cocosbcx.net";
-//        nodeInfo.ws = @"ws://test.cocosbcx.net";
-//        nodeInfo.chainId = @"c1ac4bb7bd7d94874a1cb98b39a8a582421d03d022dfa4be8c70567076e03ad0";
-    }
     
     CCWWeakSelf
     // 最新新节点
     [CCWSDKRequest CCW_InitWithUrl:nodeInfo.ws Core_Asset:nodeInfo.coreAsset Faucet_url:nodeInfo.faucetUrl ChainId:nodeInfo.chainId Success:^(id  _Nonnull responseObject) {
         // 记录已连接的数据
         CCWSETNodeInfo([nodeInfo mj_keyValues]);
-        // 判断当前链是否已经有账户
-        NSArray *accountArray = [CCWSDKRequest CCW_QueryAccountList];
-        if (accountArray.count > 0) {
-            CocosDBAccountModel *dbAccountModel = [accountArray firstObject];
-            CCWSETAccountName(dbAccountModel.name);
-            CCWSETAccountId(dbAccountModel.ID);
-        }else{
-            CCWSETAccountName(nil);
-            CCWSETAccountId(nil);
+        
+        // 上次连的链接和本次连得不一样判断
+        if (![perConnectChainId isEqualToString:nodeInfo.chainId]) {
+            // 判断当前链是否已经有账户
+            NSArray *accountArray = [CCWSDKRequest CCW_QueryAccountList];
+            if (accountArray.count > 0) {
+                CocosDBAccountModel *dbAccountModel = [accountArray firstObject];
+                CCWSETAccountName(dbAccountModel.name);
+                CCWSETAccountId(dbAccountModel.ID);
+            }else{
+                CCWSETAccountName(nil);
+                CCWSETAccountId(nil);
+            }
         }
         // 发个通知
         [[NSNotificationCenter defaultCenter] postNotificationName:@"CCWNetConnectNetworkKey" object:nil];
