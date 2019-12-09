@@ -666,6 +666,7 @@
     }];
 }
 
+// 转移NH资产
 + (void)CCW_TransferNHAssetToAccount:(NSString *)to
                            NHAssetID:(NSString *)NHAssetID
                             Password:(NSString *)password

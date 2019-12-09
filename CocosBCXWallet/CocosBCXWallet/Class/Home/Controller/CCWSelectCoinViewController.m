@@ -21,12 +21,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    if (self.selectCoinStyle == CCWSelectCoinStyleTransfer) {
-        self.title = CCWLocalizable(@"选择转账币种");
-    }else{
-        self.title = CCWLocalizable(@"选择收款币种");
-    }
-    
     UITableView *tableView = ({
         UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
         tableView.height = self.view.height - APP_Tabbar_Height;
@@ -44,6 +38,25 @@
         tableView;
     });
     self.tableView = tableView;
+    
+    if (self.selectCoinStyle == CCWSelectCoinStyleTransfer) {
+        self.title = CCWLocalizable(@"选择转账币种");
+    }else{
+        self.title = CCWLocalizable(@"选择收款币种");
+        CCWWeakSelf;
+        [CCWSDKRequest CCW_QueryChainListLimit:100 Success:^(id  _Nonnull responseObject) {
+            [weakSelf.assetsModelArray removeAllObjects];
+            NSMutableArray *assArray = [CCWAssetsModel mj_objectArrayWithKeyValuesArray:responseObject];
+            for (CCWAssetsModel *assetsModel in assArray) {
+                if (![assetsModel.symbol isEqualToString:@"GAS"]) {
+                    [weakSelf.assetsModelArray addObject:assetsModel];
+                }
+            }
+            [weakSelf.tableView reloadData];
+        } Error:^(NSString * _Nonnull errorAlert, id  _Nonnull responseObject) {
+            [weakSelf.view makeToast:CCWLocalizable(@"网络繁忙，请检查您的网络连接")];
+        }];
+    }
 }
 
 #pragma mark - tableViewDataSource
@@ -55,7 +68,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CCWWalletTableViewCell *cell = [CCWWalletTableViewCell cellWithTableView:tableView WithIdentifier:@"WalletTableViewCell"];
-    cell.assetsModel = self.assetsModelArray[indexPath.row];
+    if (self.selectCoinStyle == CCWSelectCoinStyleTransfer) {
+        cell.assetsModel = self.assetsModelArray[indexPath.row];
+    }else{
+        cell.receiveAssetsModel = self.assetsModelArray[indexPath.row];
+    }
+    
     return cell;
 }
 

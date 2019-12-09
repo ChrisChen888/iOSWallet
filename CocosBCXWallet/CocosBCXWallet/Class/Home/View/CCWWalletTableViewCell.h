@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** 资产模型 */
 @property (nonatomic, strong) CCWAssetsModel *assetsModel;
+
+@property (nonatomic, strong) CCWAssetsModel *receiveAssetsModel;
 @end
 
 NS_ASSUME_NONNULL_END

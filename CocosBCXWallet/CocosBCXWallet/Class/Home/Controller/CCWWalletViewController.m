@@ -111,8 +111,13 @@
             self.headerView.account = [NSString stringWithFormat:@"%@ >",accountName];
             
             // 查询资产
-            [CCWSDKRequest CCW_QueryAccountAllBalances:CCWAccountId Success:^(id  _Nonnull responseObject) {
-                weakSelf.assetsModelArray = responseObject;
+            [CCWSDKRequest CCW_QueryAccountAllBalances:CCWAccountId Success:^(NSMutableArray *responseObject) {
+                [weakSelf.assetsModelArray removeAllObjects];
+                for (CCWAssetsModel *assetsModel in responseObject) {
+                    if (![assetsModel.asset_id isEqualToString:@"1.3.1"]) {
+                        [weakSelf.assetsModelArray addObject:assetsModel];
+                    }
+                }
                 [weakSelf.tableView reloadData];
             } Error:^(NSString * _Nonnull errorAlert, id  _Nonnull responseObject) {
                 //        [weakSelf.view makeToast:CCWLocalizable(@"网络繁忙，请检查您的网络连接")];
@@ -229,14 +234,14 @@
         case 2:
         {
             id<CCWFindModuleProtocol> findModule = [[CCWMediator sharedInstance] moduleForProtocol:@protocol(CCWFindModuleProtocol)];
-            UIViewController *viewController = [findModule CCW_FindWebViewControllerWithTitle:CCWLocalizable(@"资源") loadDappURLString:@"http://gas.test.cocosbcx.net/"];
+            UIViewController *viewController = [findModule CCW_FindWebViewControllerWithTitle:CCWLocalizable(@"资源") loadDappURLString:@"http://gas.cocosbcx.net/"];
             [self.navigationController pushViewController:viewController animated:YES];
         }
             break;
         case 3:
         {
             id<CCWFindModuleProtocol> findModule = [[CCWMediator sharedInstance] moduleForProtocol:@protocol(CCWFindModuleProtocol)];
-            UIViewController *viewController = [findModule CCW_FindWebViewControllerWithTitle:CCWLocalizable(@"投票") loadDappURLString:@"http://vote.test.cocosbcx.net/"];
+            UIViewController *viewController = [findModule CCW_FindWebViewControllerWithTitle:CCWLocalizable(@"投票") loadDappURLString:@"http://vote.cocosbcx.net/"];
             [self.navigationController pushViewController:viewController animated:YES];
         }
             break;

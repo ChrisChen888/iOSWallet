@@ -36,4 +36,11 @@
     self.coinNameLabel.text = [NSString stringWithFormat:@"%@",assetsModel.symbol];
 }
 
+- (void)setReceiveAssetsModel:(CCWAssetsModel *)receiveAssetsModel
+{
+    _receiveAssetsModel = receiveAssetsModel;
+    self.accountLabel.hidden = YES;
+    self.priceLabel.hidden = YES;
+    self.coinNameLabel.text = [NSString stringWithFormat:@"%@",receiveAssetsModel.symbol];
+}
 @end
