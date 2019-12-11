@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,8 +26,11 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="COl-kT-Amd" userLabel="资产总览">
                             <rect key="frame" x="0.0" y="0.0" width="345" height="60"/>
                             <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="my_asset" translatesAutoresizingMaskIntoConstraints="NO" id="dYI-hl-gyQ">
+                                    <rect key="frame" x="15" y="20.5" width="17" height="19"/>
+                                </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="资产总览" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ttw-Fy-L2p" customClass="CCWLabel">
-                                    <rect key="frame" x="15" y="21" width="61.5" height="18"/>
+                                    <rect key="frame" x="45" y="21" width="61.5" height="18"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="textColor" red="0.14901960784313725" green="0.16470588235294117" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -51,25 +54,30 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
+                                <constraint firstItem="Ttw-Fy-L2p" firstAttribute="leading" secondItem="dYI-hl-gyQ" secondAttribute="trailing" constant="13" id="B7k-tX-YG4"/>
                                 <constraint firstAttribute="bottom" secondItem="yro-Go-8Mt" secondAttribute="bottom" id="DfV-8E-zuW"/>
                                 <constraint firstItem="IW6-xC-3nH" firstAttribute="centerY" secondItem="COl-kT-Amd" secondAttribute="centerY" id="GpK-dc-G9l"/>
                                 <constraint firstAttribute="trailing" secondItem="yro-Go-8Mt" secondAttribute="trailing" constant="15" id="O4P-UN-sFA"/>
+                                <constraint firstItem="yro-Go-8Mt" firstAttribute="leading" secondItem="dYI-hl-gyQ" secondAttribute="leading" id="Ohh-No-MHj"/>
                                 <constraint firstItem="kYq-kR-dk1" firstAttribute="top" secondItem="COl-kT-Amd" secondAttribute="top" id="WNV-XX-rem"/>
                                 <constraint firstItem="Ttw-Fy-L2p" firstAttribute="centerY" secondItem="COl-kT-Amd" secondAttribute="centerY" id="bZD-eG-LVA"/>
                                 <constraint firstAttribute="height" constant="60" id="ezw-X2-xJS"/>
                                 <constraint firstAttribute="trailing" secondItem="kYq-kR-dk1" secondAttribute="trailing" id="g1v-GP-qtn"/>
+                                <constraint firstItem="dYI-hl-gyQ" firstAttribute="centerY" secondItem="kYq-kR-dk1" secondAttribute="centerY" id="kok-co-pTZ"/>
                                 <constraint firstItem="yro-Go-8Mt" firstAttribute="leading" secondItem="COl-kT-Amd" secondAttribute="leading" constant="15" id="nOn-Kh-URn"/>
                                 <constraint firstAttribute="trailing" secondItem="IW6-xC-3nH" secondAttribute="trailing" constant="15" id="seS-av-5Gx"/>
                                 <constraint firstItem="yro-Go-8Mt" firstAttribute="top" secondItem="kYq-kR-dk1" secondAttribute="bottom" id="ukQ-K8-YYG"/>
                                 <constraint firstItem="kYq-kR-dk1" firstAttribute="leading" secondItem="COl-kT-Amd" secondAttribute="leading" id="xPl-rT-Oso"/>
-                                <constraint firstItem="Ttw-Fy-L2p" firstAttribute="leading" secondItem="COl-kT-Amd" secondAttribute="leading" constant="15" id="xSc-hz-oar"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="inr-R7-gcG" userLabel="钱包管理">
                             <rect key="frame" x="0.0" y="60" width="345" height="60"/>
                             <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="my_wallet" translatesAutoresizingMaskIntoConstraints="NO" id="Ch6-JI-m3U">
+                                    <rect key="frame" x="15" y="22" width="17" height="16"/>
+                                </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="钱包管理" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JRj-iZ-zwx" customClass="CCWLabel">
-                                    <rect key="frame" x="15" y="21" width="61.5" height="18"/>
+                                    <rect key="frame" x="45" y="21" width="61.5" height="18"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="textColor" red="0.14901960780000001" green="0.1647058824" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -94,6 +102,8 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
+                                <constraint firstItem="Ch6-JI-m3U" firstAttribute="centerY" secondItem="JRj-iZ-zwx" secondAttribute="centerY" id="2dt-i9-KqE"/>
+                                <constraint firstItem="JRj-iZ-zwx" firstAttribute="leading" secondItem="Ch6-JI-m3U" secondAttribute="trailing" constant="13" id="J8C-Cc-bFD"/>
                                 <constraint firstItem="JRj-iZ-zwx" firstAttribute="centerY" secondItem="inr-R7-gcG" secondAttribute="centerY" id="MKS-rK-IDo"/>
                                 <constraint firstAttribute="trailing" secondItem="oMP-cp-hoS" secondAttribute="trailing" id="ONd-K3-QyG"/>
                                 <constraint firstAttribute="height" constant="60" id="PtB-sx-Fv9"/>
@@ -104,15 +114,18 @@
                                 <constraint firstItem="oMP-cp-hoS" firstAttribute="top" secondItem="inr-R7-gcG" secondAttribute="top" id="dXO-Vz-RwU"/>
                                 <constraint firstItem="qiD-Td-SGo" firstAttribute="leading" secondItem="inr-R7-gcG" secondAttribute="leading" constant="15" id="ejj-4h-7tx"/>
                                 <constraint firstAttribute="bottom" secondItem="qiD-Td-SGo" secondAttribute="bottom" id="jaH-S2-rvJ"/>
-                                <constraint firstItem="JRj-iZ-zwx" firstAttribute="leading" secondItem="inr-R7-gcG" secondAttribute="leading" constant="15" id="k6d-8W-6hB"/>
+                                <constraint firstItem="Ch6-JI-m3U" firstAttribute="leading" secondItem="qiD-Td-SGo" secondAttribute="leading" id="pOa-CH-Nd6"/>
                                 <constraint firstItem="qiD-Td-SGo" firstAttribute="top" secondItem="oMP-cp-hoS" secondAttribute="bottom" id="zT5-8t-UJw"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="82w-pR-1AT" userLabel="系统设置">
                             <rect key="frame" x="0.0" y="120" width="345" height="60"/>
                             <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="my_setting" translatesAutoresizingMaskIntoConstraints="NO" id="Z5t-2k-tw8">
+                                    <rect key="frame" x="15" y="20.5" width="20" height="19"/>
+                                </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="系统设置" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awM-Vp-q7q" userLabel="系统设置" customClass="CCWLabel">
-                                    <rect key="frame" x="15" y="21" width="61.5" height="18"/>
+                                    <rect key="frame" x="48" y="21" width="61.5" height="18"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="textColor" red="0.14901960780000001" green="0.1647058824" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -138,11 +151,13 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="5qI-qh-7Ah" secondAttribute="trailing" constant="15" id="DMq-xh-oU8"/>
+                                <constraint firstItem="awM-Vp-q7q" firstAttribute="leading" secondItem="Z5t-2k-tw8" secondAttribute="trailing" constant="13" id="Gai-OE-q7R"/>
                                 <constraint firstAttribute="bottom" secondItem="5qI-qh-7Ah" secondAttribute="bottom" id="JpM-FM-thE"/>
                                 <constraint firstItem="awM-Vp-q7q" firstAttribute="centerY" secondItem="82w-pR-1AT" secondAttribute="centerY" id="KbZ-uo-6fd"/>
+                                <constraint firstItem="Z5t-2k-tw8" firstAttribute="leading" secondItem="5qI-qh-7Ah" secondAttribute="leading" id="Llv-nB-KGU"/>
+                                <constraint firstItem="Z5t-2k-tw8" firstAttribute="centerY" secondItem="awM-Vp-q7q" secondAttribute="centerY" id="Mno-m6-U3V"/>
                                 <constraint firstItem="5qI-qh-7Ah" firstAttribute="top" secondItem="BDr-xi-MBh" secondAttribute="bottom" id="OBJ-HW-78c"/>
                                 <constraint firstItem="BDr-xi-MBh" firstAttribute="top" secondItem="82w-pR-1AT" secondAttribute="top" id="ZGl-bI-tsq"/>
-                                <constraint firstItem="awM-Vp-q7q" firstAttribute="leading" secondItem="82w-pR-1AT" secondAttribute="leading" constant="15" id="dsz-c7-jQi"/>
                                 <constraint firstAttribute="trailing" secondItem="gmG-9U-5Vj" secondAttribute="trailing" constant="15" id="hZg-4h-bPa"/>
                                 <constraint firstItem="5qI-qh-7Ah" firstAttribute="leading" secondItem="82w-pR-1AT" secondAttribute="leading" constant="15" id="hxg-pz-T1j"/>
                                 <constraint firstItem="BDr-xi-MBh" firstAttribute="leading" secondItem="82w-pR-1AT" secondAttribute="leading" id="lZS-lq-08h"/>
@@ -154,8 +169,11 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zsR-gu-gck" userLabel="联系人">
                             <rect key="frame" x="0.0" y="180" width="345" height="60"/>
                             <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="my_contract" translatesAutoresizingMaskIntoConstraints="NO" id="Xd5-zB-lAU">
+                                    <rect key="frame" x="15" y="21" width="18" height="18"/>
+                                </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="联系人" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UwD-8K-X0e" customClass="CCWLabel">
-                                    <rect key="frame" x="15" y="21" width="46" height="18"/>
+                                    <rect key="frame" x="46" y="21" width="46" height="18"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="textColor" red="0.14901960780000001" green="0.1647058824" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -181,11 +199,13 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="oB7-Qp-W02" secondAttribute="trailing" constant="15" id="4bA-ZQ-9G6"/>
+                                <constraint firstItem="Xd5-zB-lAU" firstAttribute="centerY" secondItem="UwD-8K-X0e" secondAttribute="centerY" id="BSh-Ot-R2s"/>
+                                <constraint firstItem="UwD-8K-X0e" firstAttribute="leading" secondItem="Xd5-zB-lAU" secondAttribute="trailing" constant="13" id="Kuz-Gx-Wh2"/>
                                 <constraint firstItem="UwD-8K-X0e" firstAttribute="centerY" secondItem="zsR-gu-gck" secondAttribute="centerY" id="MyX-Vf-lVC"/>
                                 <constraint firstItem="cQn-L2-vHg" firstAttribute="leading" secondItem="zsR-gu-gck" secondAttribute="leading" id="PMH-ze-RFw"/>
+                                <constraint firstItem="Xd5-zB-lAU" firstAttribute="leading" secondItem="oB7-Qp-W02" secondAttribute="leading" id="Z57-HK-R24"/>
                                 <constraint firstItem="oB7-Qp-W02" firstAttribute="leading" secondItem="zsR-gu-gck" secondAttribute="leading" constant="15" id="adk-Q1-OG1"/>
                                 <constraint firstAttribute="bottom" secondItem="oB7-Qp-W02" secondAttribute="bottom" id="d3B-Dv-cRN"/>
-                                <constraint firstItem="UwD-8K-X0e" firstAttribute="leading" secondItem="zsR-gu-gck" secondAttribute="leading" constant="15" id="eri-ft-vvC"/>
                                 <constraint firstItem="bhZ-a7-PU5" firstAttribute="centerY" secondItem="zsR-gu-gck" secondAttribute="centerY" id="iXa-C0-OPe"/>
                                 <constraint firstAttribute="height" constant="60" id="kdI-E3-NM7"/>
                                 <constraint firstItem="oB7-Qp-W02" firstAttribute="top" secondItem="cQn-L2-vHg" secondAttribute="bottom" id="ruK-PS-w72"/>
@@ -197,8 +217,11 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W1d-ss-Q4M" userLabel="关于我们">
                             <rect key="frame" x="0.0" y="240" width="345" height="60"/>
                             <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="my_abount" translatesAutoresizingMaskIntoConstraints="NO" id="nPw-0b-nRv">
+                                    <rect key="frame" x="15" y="22" width="18" height="16"/>
+                                </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关于我们" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H42-Xm-2f9" customClass="CCWLabel">
-                                    <rect key="frame" x="15" y="21" width="61.5" height="18"/>
+                                    <rect key="frame" x="46" y="21" width="61.5" height="18"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="textColor" red="0.14901960780000001" green="0.1647058824" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -217,11 +240,14 @@
                             <constraints>
                                 <constraint firstItem="H42-Xm-2f9" firstAttribute="centerY" secondItem="W1d-ss-Q4M" secondAttribute="centerY" id="4Yc-Rp-6ts"/>
                                 <constraint firstAttribute="trailing" secondItem="M6q-FW-IVx" secondAttribute="trailing" constant="15" id="Add-ka-T3f"/>
-                                <constraint firstItem="H42-Xm-2f9" firstAttribute="leading" secondItem="W1d-ss-Q4M" secondAttribute="leading" constant="15" id="F8C-lJ-9iP"/>
+                                <constraint firstItem="H42-Xm-2f9" firstAttribute="leading" secondItem="nPw-0b-nRv" secondAttribute="trailing" constant="13" id="EBT-tQ-NbQ"/>
                                 <constraint firstItem="lD1-Np-dvc" firstAttribute="top" secondItem="W1d-ss-Q4M" secondAttribute="top" id="Gp5-dd-8q6"/>
                                 <constraint firstAttribute="bottom" secondItem="lD1-Np-dvc" secondAttribute="bottom" id="LkG-0T-FD8"/>
+                                <constraint firstItem="nPw-0b-nRv" firstAttribute="centerY" secondItem="H42-Xm-2f9" secondAttribute="centerY" id="NW3-ub-jyV"/>
                                 <constraint firstAttribute="height" constant="60" id="UGn-iL-Bwq"/>
                                 <constraint firstItem="M6q-FW-IVx" firstAttribute="centerY" secondItem="W1d-ss-Q4M" secondAttribute="centerY" id="Uj8-kh-rCM"/>
+                                <constraint firstItem="nPw-0b-nRv" firstAttribute="leading" secondItem="W1d-ss-Q4M" secondAttribute="leading" constant="15" id="aDQ-qa-zkR"/>
+                                <constraint firstItem="H42-Xm-2f9" firstAttribute="centerY" secondItem="nPw-0b-nRv" secondAttribute="centerY" id="bej-1N-oxj"/>
                                 <constraint firstAttribute="trailing" secondItem="lD1-Np-dvc" secondAttribute="trailing" id="gNG-nl-Ci0"/>
                                 <constraint firstItem="lD1-Np-dvc" firstAttribute="leading" secondItem="W1d-ss-Q4M" secondAttribute="leading" id="sxw-rg-lxy"/>
                             </constraints>
@@ -266,6 +292,11 @@
         </view>
     </objects>
     <resources>
+        <image name="my_abount" width="18" height="16"/>
+        <image name="my_asset" width="17" height="19"/>
+        <image name="my_contract" width="18" height="18"/>
+        <image name="my_setting" width="20" height="19"/>
+        <image name="my_wallet" width="17" height="16"/>
         <image name="rightItem" width="8" height="14"/>
     </resources>
 </document>

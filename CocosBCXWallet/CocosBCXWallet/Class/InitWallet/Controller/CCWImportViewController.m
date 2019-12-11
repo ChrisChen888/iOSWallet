@@ -50,7 +50,7 @@
         return;
     }
     CCWWeakSelf
-    [MBProgressHUD showLoadingMessage:@""];
+    [MBProgressHUD showLoadingMessage:nil];
     [CCWSDKRequest CCW_PrivateKeyLogin:privateKeyStr password:pwdStr Success:^(id  _Nonnull responseObject) {
         [MBProgressHUD hideHUD];
         CCWSETAccountName(responseObject[@"account"]);
@@ -65,7 +65,6 @@
             [weakSelf.view makeToast:CCWLocalizable(@"网络繁忙，请检查您的网络连接")];
         }
     }];
-  
 }
 
 @end

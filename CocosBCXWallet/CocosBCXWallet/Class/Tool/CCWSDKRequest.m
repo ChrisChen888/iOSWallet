@@ -18,7 +18,7 @@
 /** 查询后台配置节点信息 */
 + (void)CCW_RequestNodeSuccess:(SuccessBlock)successBlock Error:(ErrorBlock)errorBlock
 {
-    [[CocosHTTPManager CCW_shareHTTPManager] CCW_GET:@"http://backend.test.cocosbcx.net/getParams" Param:nil Success:successBlock Error:^(NSError *error) {
+    [[CocosHTTPManager CCW_shareHTTPManager] CCW_GET:@"https://api-cocosbcx.cocosbcx.net/backend/getParams" Param:nil Success:successBlock Error:^(NSError *error) {
         !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
     }];
 
@@ -61,7 +61,7 @@
 /** 查询版本信息 */
 + (void)CCW_QueryVersionInfoSuccess:(SuccessBlock)successBlock Error:(ErrorBlock)errorBlock;
 {
-    [[CocosHTTPManager CCW_shareHTTPManager] CCW_GET:@"http://backend.test.cocosbcx.net/getPolicyUrl?channel=1001&platform=iOS" Param:nil Success:successBlock Error:^(NSError *error) {
+    [[CocosHTTPManager CCW_shareHTTPManager] CCW_GET:@"https://api-cocosbcx.cocosbcx.net/backend/getPolicyUrl?channel=1001&platform=iOS" Param:nil Success:successBlock Error:^(NSError *error) {
         !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
     }];
 }
@@ -69,7 +69,7 @@
 /** 查询发现页 */
 + (void)CCW_QueryFindDappListSuccess:(SuccessBlock)successBlock Error:(ErrorBlock)errorBlock
 {
-    [[CocosHTTPManager CCW_shareHTTPManager] CCW_GET:@"http://backend.test.cocosbcx.net/getBanInfo" Param:nil Success:successBlock Error:^(NSError *error) {
+    [[CocosHTTPManager CCW_shareHTTPManager] CCW_GET:@"https://api-cocosbcx.cocosbcx.net/backend/getBanInfo" Param:nil Success:successBlock Error:^(NSError *error) {
         !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
     }];
 }

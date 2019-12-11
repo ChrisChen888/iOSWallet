@@ -17,7 +17,7 @@
 "登录" = "Log In";
 "注册" = "Register";
 "账户名称" = "Account Name";
-"5-63位小写字母开头+数字" = "Begin with 5-63 lowercase letters+numbers";
+"5-63位小写字母开头" = "Begin with 5-63 lowercase letters";
 "账户密码" = "Account Passcode";
 "8-12位数字、字母、和特殊符号任两种" = "8-12 digits from two of number/letter/special character";
 "登录钱包" = "Log in to wallet";
@@ -47,6 +47,12 @@
 "私钥无效，请重新输入" = "Invalid password, enter again";
 "请设置临时密码" = "Please set temporary passcode";
 "导入成功" = "Imported";
+"创建账户需符合要求" = "Account creation required";
+"账户需满足·含有数字"; = "Creating  free account required";
+"该账户已存在" = "The account already exists";
+"没有权限" = "No authority";
+"今日你不能再创建账户" = "You can't create any more accounts today";
+"今日已经没有免费账户" = "No free account today";
 
 // 首页
 "切换失败" = "Handover failure";

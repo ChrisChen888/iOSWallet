@@ -237,6 +237,24 @@
         case 169:// Method does not exist
             errorString = @"API方法不存在";
             break;
+        case 400001:// Account creation required
+            errorString = @"创建账户需符合要求";
+            break;
+        case 400002:// Creating  free account required
+            errorString = @"账户需满足·含有数字";
+            break;
+        case 400003:// The account already exists
+            errorString = @"该账户已存在";
+            break;
+        case 401001:// No authority
+            errorString = @"没有权限";
+            break;
+        case 401002:// You can't create any more accounts today
+            errorString = @"今日你不能再创建账户";
+            break;
+        case 401003:// No free account today
+            errorString = @"今日已经没有免费账户";
+            break;
         default:
             
             break;

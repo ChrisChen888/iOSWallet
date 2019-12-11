@@ -73,7 +73,7 @@
 -(void)textFieldTextChange:(UITextField *)textField{
     NSString *account = textField.text;
     if (![account ys_regexValidate:@"^[a-z][a-z0-9.-]{4,62}$"]) {
-        self.remindLabel.text = CCWLocalizable(@"5-63位小写字母开头+数字");
+        self.remindLabel.text = CCWLocalizable(@"5-63位小写字母开头");
     }else{
         self.remindLabel.text = @"";
     }
@@ -127,8 +127,8 @@
                 [MobClick event:@"register" attributes:nil];
             } Error:^(NSString * _Nonnull errorAlert, NSError * _Nonnull error) {
                 [MBProgressHUD hideHUD];
-//                [weakSelf.view makeToast:CCWLocalizable(@"网络繁忙，请检查您的网络连接")];
-                [weakSelf.view makeToast:error.domain.description];
+                [weakSelf.view makeToast:CCWLocalizable(errorAlert)];
+                
             }];
         }else{
             [weakSelf.view makeToast:CCWLocalizable(@"网络繁忙，请检查您的网络连接")];
