@@ -16,6 +16,7 @@
 #import "CCWSelectCoinViewController.h"
 #import "CCWCheckVisionAlert.h"
 #import "CCWNavigationController.h"
+#import "CCWRegisterTableViewCell.h"
 
 @interface CCWWalletViewController ()<UITableViewDelegate,UITableViewDataSource,CCWWalletHeaderDelegate,CCWSwitchAccountViewDelegate,DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
 
@@ -97,11 +98,9 @@
     CCWWeakSelf
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         if (!CCWAccountId) {
-            id<CCWInitModuleProtocol> registerModule = [[CCWMediator sharedInstance] moduleForProtocol:@protocol(CCWInitModuleProtocol)];
-            CCWNavigationController *registerController = [[CCWNavigationController alloc] initWithRootViewController:[registerModule CCW_LoginRegisterWalletViewController]];
-            CCWKeyWindow.rootViewController = registerController;
+            self.headerView.account = @"";
+            [weakSelf.tableView reloadData];
         }else{
-            
             NSString *accountName = CCWAccountName;
             if (accountName.length > 13) {
                 accountName = [accountName substringToIndex:13];//截取掉下标5之前的字符串
@@ -178,24 +177,45 @@
 }
 
 #pragma mark - tableViewDataSource
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath
+{
+    if (!CCWAccountId) {
+        return 70;
+    }
+    return 82;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if (!CCWAccountId) {
+        return 1;
+    }
     return self.assetsModelArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CCWWalletTableViewCell *cell = [CCWWalletTableViewCell cellWithTableView:tableView WithIdentifier:@"WalletTableViewCell"];
-    cell.assetsModel = self.assetsModelArray[indexPath.row];
-    return cell;
+    if (!CCWAccountId) {
+        CCWRegisterTableViewCell *cell = [CCWRegisterTableViewCell cellWithTableView:tableView WithIdentifier:@"RegisterCell"];
+        return cell;
+    }else{
+        CCWWalletTableViewCell *cell = [CCWWalletTableViewCell cellWithTableView:tableView WithIdentifier:@"WalletTableViewCell"];
+        cell.assetsModel = self.assetsModelArray[indexPath.row];
+        return cell;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    CCWTransRecordViewController *transRecordViewController = [[CCWTransRecordViewController alloc] init];
-    transRecordViewController.assetsModel = self.assetsModelArray[indexPath.row];
-    [self.navigationController pushViewController:transRecordViewController animated:YES];
+    if (!CCWAccountId) {
+        id<CCWInitModuleProtocol> initModule  = [[CCWMediator sharedInstance] moduleForProtocol:@protocol(CCWInitModuleProtocol)];
+        [self.navigationController pushViewController:[initModule CCW_CreateWalletViewController] animated:YES];
+    }else{
+        CCWTransRecordViewController *transRecordViewController = [[CCWTransRecordViewController alloc] init];
+        transRecordViewController.assetsModel = self.assetsModelArray[indexPath.row];
+        [self.navigationController pushViewController:transRecordViewController animated:YES];
+    }
 }
 
 // 切换账号
@@ -260,7 +280,6 @@
         accountName = [accountName substringToIndex:13];//截取掉13位
         accountName = [NSString stringWithFormat:@"%@...",accountName];
     }
-    
     self.headerView.account = [NSString stringWithFormat:@"%@ >",accountName];
 }
 

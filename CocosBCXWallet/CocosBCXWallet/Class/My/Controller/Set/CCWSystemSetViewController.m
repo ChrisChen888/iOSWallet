@@ -92,14 +92,15 @@
                     CCWSETAccountId(dbAccountModel.ID);
                     // 发个通知
                     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        CCWTabViewController *tabBarController = [[CCWTabViewController alloc] init];
+                        CCWKeyWindow.rootViewController = tabBarController;
                         [[NSNotificationCenter defaultCenter] postNotificationName:@"CCWNetConnectNetworkKey" object:nil];
                     });
                 }else{
                     CCWSETAccountName(nil);
                     CCWSETAccountId(nil);
-                    id<CCWInitModuleProtocol> registerModule = [[CCWMediator sharedInstance] moduleForProtocol:@protocol(CCWInitModuleProtocol)];
-                    CCWNavigationController *registerController = [[CCWNavigationController alloc] initWithRootViewController:[registerModule CCW_LoginRegisterWalletViewController]];
-                    CCWKeyWindow.rootViewController = registerController;
+                    CCWTabViewController *tabBarController = [[CCWTabViewController alloc] init];
+                    CCWKeyWindow.rootViewController = tabBarController;
                 }
             }else{
                 [weakSelf.view makeToast:CCWLocalizable(@"切换失败")];

@@ -11,6 +11,8 @@
 		3110369622CC7D7200DE14DD /* CCWPwdContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 3110369122CC7D7200DE14DD /* CCWPwdContent.m */; };
 		3110369722CC7D7200DE14DD /* CCWPwdAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3110369222CC7D7200DE14DD /* CCWPwdAlertView.m */; };
 		3110369822CC7D7200DE14DD /* CCWPwdContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3110369522CC7D7200DE14DD /* CCWPwdContent.xib */; };
+		3111277523A104330082DC21 /* CCWRegisterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3111277323A104330082DC21 /* CCWRegisterTableViewCell.m */; };
+		3111277623A104330082DC21 /* CCWRegisterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3111277423A104330082DC21 /* CCWRegisterTableViewCell.xib */; };
 		3123E22222B0DD7500874CBF /* Terms of Service.html in Resources */ = {isa = PBXBuildFile; fileRef = 3123E22022B0DD7500874CBF /* Terms of Service.html */; };
 		3123E22322B0DD7500874CBF /* PRIVACY POLICY.html in Resources */ = {isa = PBXBuildFile; fileRef = 3123E22122B0DD7500874CBF /* PRIVACY POLICY.html */; };
 		3123E22522B0DDDD00874CBF /* VersionLog.html in Resources */ = {isa = PBXBuildFile; fileRef = 3123E22422B0DDDD00874CBF /* VersionLog.html */; };
@@ -322,6 +324,9 @@
 		3110369322CC7D7200DE14DD /* CCWPwdContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCWPwdContent.h; sourceTree = "<group>"; };
 		3110369422CC7D7200DE14DD /* CCWPwdAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCWPwdAlertView.h; sourceTree = "<group>"; };
 		3110369522CC7D7200DE14DD /* CCWPwdContent.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCWPwdContent.xib; sourceTree = "<group>"; };
+		3111277223A104330082DC21 /* CCWRegisterTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCWRegisterTableViewCell.h; sourceTree = "<group>"; };
+		3111277323A104330082DC21 /* CCWRegisterTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCWRegisterTableViewCell.m; sourceTree = "<group>"; };
+		3111277423A104330082DC21 /* CCWRegisterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCWRegisterTableViewCell.xib; sourceTree = "<group>"; };
 		3123E22022B0DD7500874CBF /* Terms of Service.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Terms of Service.html"; sourceTree = "<group>"; };
 		3123E22122B0DD7500874CBF /* PRIVACY POLICY.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "PRIVACY POLICY.html"; sourceTree = "<group>"; };
 		3123E22422B0DDDD00874CBF /* VersionLog.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = VersionLog.html; sourceTree = "<group>"; };
@@ -2132,6 +2137,9 @@
 				318FF5E42215518800AB5696 /* CCWTransRecordTableViewCell.h */,
 				318FF5E52215518800AB5696 /* CCWTransRecordTableViewCell.m */,
 				318FF5E62215518800AB5696 /* CCWTransRecordTableViewCell.xib */,
+				3111277223A104330082DC21 /* CCWRegisterTableViewCell.h */,
+				3111277323A104330082DC21 /* CCWRegisterTableViewCell.m */,
+				3111277423A104330082DC21 /* CCWRegisterTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2274,6 +2282,7 @@
 				3129ED3922E82F240028A1CA /* CCWSellNHAssetViewController.xib in Resources */,
 				318FF5E322153FB400AB5696 /* CCWTransferRecordHeader.xib in Resources */,
 				3123E22222B0DD7500874CBF /* Terms of Service.html in Resources */,
+				3111277623A104330082DC21 /* CCWRegisterTableViewCell.xib in Resources */,
 				3165861A221689190039B439 /* CCWReceiveViewController.xib in Resources */,
 				3176CEE222E591F40022B408 /* CCWPropDetailViewController.xib in Resources */,
 				31725B9521FEB02B005962C6 /* Assets.xcassets in Resources */,
@@ -2560,6 +2569,7 @@
 				3186E8042293A08200A269C6 /* CCWBaseAlert.m in Sources */,
 				3178D48D2390C15900CFB83B /* CocosHTTPManager+CreateAccount.m in Sources */,
 				31881F4F221657B6006C31A2 /* UIView+Toast.m in Sources */,
+				3111277523A104330082DC21 /* CCWRegisterTableViewCell.m in Sources */,
 				317D2D5E22E0614B00559A7C /* CCWAllOrderViewController.m in Sources */,
 				3178D4592390C15900CFB83B /* SHA256Diggest.m in Sources */,
 				3167399C221AB2CE008D85C4 /* CCWNavigationController.m in Sources */,

@@ -56,7 +56,7 @@
     // 设置主窗口,并设置根控制器
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     // 设置跟控制器
-    self.window.rootViewController = [self CCW_RootViewController];
+    self.window.rootViewController = [NSClassFromString(@"CCWTabViewController") new];
     [self.window makeKeyAndVisible];
     
     return YES;
@@ -110,18 +110,6 @@
     } Error:^(NSString * _Nonnull errorAlert, id  _Nonnull responseObject) {
         
     }];
-}
-
-// 跟控制器
-- (UIViewController *)CCW_RootViewController
-{
-    if (CCWAccountName) {
-        return [NSClassFromString(@"CCWTabViewController") new];
-    }else{
-        id<CCWInitModuleProtocol> registerModule = [[CCWMediator sharedInstance] moduleForProtocol:@protocol(CCWInitModuleProtocol)];
-        CCWNavigationController *registerController = [[CCWNavigationController alloc] initWithRootViewController:[registerModule CCW_LoginRegisterWalletViewController]];
-        return registerController;
-    }
 }
 
 // 键盘设置
