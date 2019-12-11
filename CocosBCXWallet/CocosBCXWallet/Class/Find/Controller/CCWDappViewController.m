@@ -216,13 +216,19 @@
                                           };
                 [weakSelf responseToJsWithJSMethodName:JS_METHODNAME_CALLBACKRESULT SerialNumber:messagebody[@"serialNumber"] andMessage:[message mj_JSONString]];
             } confirmClick:^(NSString *pwd, BOOL isIgnoreConfirm) {
-                [CCWDappWebTool JSHandle_ReceiveMessageBody:messagebody password:pwd response:^(NSDictionary * _Nonnull response) {
-                    if (([response[@"code"] integerValue] == 1) && isIgnoreConfirm == YES) {
+                
+                // 加一层验证密码的
+                [CCWSDKRequest CCW_ValidateAccount:CCWAccountName password:pwd Success:^(id  _Nonnull responseObject) {
+                    if (isIgnoreConfirm == YES) {
                         weakSelf.viewpassword = pwd;
                     }
-                    NSString *jsString = [response mj_JSONString];
-                    jsString = [jsString stringByReplacingOccurrencesOfString:@"\\" withString:@"\\\\"];
-                    [weakSelf responseToJsWithJSMethodName:JS_METHODNAME_CALLBACKRESULT SerialNumber:messagebody[@"serialNumber"]  andMessage:jsString];
+                    [CCWDappWebTool JSHandle_ReceiveMessageBody:messagebody password:pwd response:^(NSDictionary * _Nonnull response) {
+                        NSString *jsString = [response mj_JSONString];
+                        jsString = [jsString stringByReplacingOccurrencesOfString:@"\\" withString:@"\\\\"];
+                        [weakSelf responseToJsWithJSMethodName:JS_METHODNAME_CALLBACKRESULT SerialNumber:messagebody[@"serialNumber"]  andMessage:jsString];
+                    }];
+                } Error:^(NSString * _Nonnull errorAlert, id  _Nonnull responseObject) {
+                    [weakSelf.view makeToast:CCWLocalizable(@"密码错误，请重新输入")];
                 }];
             }];
             [alert show];

@@ -110,6 +110,16 @@ typedef void (^ErrorBlock)(NSString *errorAlert,id responseObject);// 失败回�
                     Error:(ErrorBlock)errorBlock;
 
 
+/**
+ 验证密码
+ 
+ @param accountName 账户名
+ @param password 密码
+ */
++ (void)CCW_ValidateAccount:(NSString *)accountName
+                   password:(NSString *)password
+                    Success:(SuccessBlock)successBlock
+                      Error:(ErrorBlock)errorBlock;
 
 /**
  查询账户信息

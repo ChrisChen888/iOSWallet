@@ -187,6 +187,22 @@
 }
 
 /**
+ 验证密码
+
+ @param accountName 账户名
+ @param password 密码
+ */
++ (void)CCW_ValidateAccount:(NSString *)accountName
+                   password:(NSString *)password
+                    Success:(SuccessBlock)successBlock
+                      Error:(ErrorBlock)errorBlock
+{
+    [[CocosSDK shareInstance] validateAccount:accountName Password:password Success:successBlock Error:^(NSError *error) {
+        !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
+    }];
+}
+
+/**
  查询账户信息
  @param account 帐号
  */
