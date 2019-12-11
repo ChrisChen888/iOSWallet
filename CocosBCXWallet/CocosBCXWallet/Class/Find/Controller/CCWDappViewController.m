@@ -219,16 +219,30 @@
                 
                 // 加一层验证密码的
                 [CCWSDKRequest CCW_ValidateAccount:CCWAccountName password:pwd Success:^(id  _Nonnull responseObject) {
-                    if (isIgnoreConfirm == YES) {
+                    if (responseObject[@"active_key"] && isIgnoreConfirm == YES) {
                         weakSelf.viewpassword = pwd;
-                    }
-                    [CCWDappWebTool JSHandle_ReceiveMessageBody:messagebody password:pwd response:^(NSDictionary * _Nonnull response) {
-                        NSString *jsString = [response mj_JSONString];
+                        [CCWDappWebTool JSHandle_ReceiveMessageBody:messagebody password:pwd response:^(NSDictionary * _Nonnull response) {
+                            NSString *jsString = [response mj_JSONString];
+                            jsString = [jsString stringByReplacingOccurrencesOfString:@"\\" withString:@"\\\\"];
+                            [weakSelf responseToJsWithJSMethodName:JS_METHODNAME_CALLBACKRESULT SerialNumber:messagebody[@"serialNumber"]  andMessage:jsString];
+                        }];
+                    }else{
+                        NSDictionary *pwdError = @{
+                                                   @"message":@"Please enter the correct original/temporary password",
+                                                   @"code":@(105)
+                                                   };
+                        NSString *jsString = [pwdError mj_JSONString];
                         jsString = [jsString stringByReplacingOccurrencesOfString:@"\\" withString:@"\\\\"];
                         [weakSelf responseToJsWithJSMethodName:JS_METHODNAME_CALLBACKRESULT SerialNumber:messagebody[@"serialNumber"]  andMessage:jsString];
-                    }];
+                    }
                 } Error:^(NSString * _Nonnull errorAlert, id  _Nonnull responseObject) {
-                    [weakSelf.view makeToast:CCWLocalizable(@"密码错误，请重新输入")];
+                    NSDictionary *pwdError = @{
+                             @"message":@"Please enter the correct original/temporary password",
+                             @"code":@(105)
+                             };
+                    NSString *jsString = [pwdError mj_JSONString];
+                    jsString = [jsString stringByReplacingOccurrencesOfString:@"\\" withString:@"\\\\"];
+                    [weakSelf responseToJsWithJSMethodName:JS_METHODNAME_CALLBACKRESULT SerialNumber:messagebody[@"serialNumber"]  andMessage:jsString];
                 }];
             }];
             [alert show];
