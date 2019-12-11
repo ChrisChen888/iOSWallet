@@ -81,11 +81,6 @@
     // 节点类型
     CCWNetNotesType = nodeInfo.type;
     
-    {
-        nodeInfo.ws = @"wss://test.cocosbcx.net";
-        nodeInfo.faucetUrl = @"https://test-faucet.cocosbcx.net";
-    }
-    
     CCWWeakSelf
     // 最新新节点
     [CCWSDKRequest CCW_InitWithUrl:nodeInfo.ws Core_Asset:nodeInfo.coreAsset Faucet_url:nodeInfo.faucetUrl ChainId:nodeInfo.chainId Success:^(id  _Nonnull responseObject) {

@@ -28,7 +28,7 @@
     
     self.title = CCWLocalizable(@"系统设置");
     self.currentLanguageLabel.text = [CCWLocalizableTool userLanguageString];
-    
+    self.nodeInfoArray = [[CCWDataBase CCW_shareDatabase] CCW_QueryNodeInfo];
     CCWNodeInfoModel *nodeInfo = [CCWNodeInfoModel mj_objectWithKeyValues:CCWNodeInfo];
     self.netLabel.text = nodeInfo.type?CCWLocalizable(@"主网"):CCWLocalizable(@"测试网");
 }

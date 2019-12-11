@@ -48,7 +48,7 @@
 "请设置临时密码" = "Please set temporary passcode";
 "导入成功" = "Imported";
 "创建账户需符合要求" = "Account creation required";
-"账户需满足·含有数字"; = "Creating  free account required";
+"账户需满足·含有数字" = "Creating  free account required";
 "该账户已存在" = "The account already exists";
 "没有权限" = "No authority";
 "今日你不能再创建账户" = "You can't create any more accounts today";

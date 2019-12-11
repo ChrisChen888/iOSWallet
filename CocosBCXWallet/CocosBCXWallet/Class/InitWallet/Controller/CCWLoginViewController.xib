@@ -15,6 +15,7 @@
                 <outlet property="loginAccountTextField" destination="9HO-b1-8gE" id="qUQ-8c-1pY"/>
                 <outlet property="loginButton" destination="dLb-7X-sgD" id="A5g-V6-zxV"/>
                 <outlet property="loginPwdTextField" destination="Pm3-wB-WMU" id="dhw-6X-m37"/>
+                <outlet property="switchNetButton" destination="U6E-Z9-2yE" id="fuX-TK-7J0"/>
                 <outlet property="view" destination="iN0-l3-epB" id="kUg-Gl-bwu"/>
             </connections>
         </placeholder>
@@ -85,12 +86,27 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                 </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U6E-Z9-2yE">
+                    <rect key="frame" x="281" y="35.5" width="74" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="74" id="3bE-FE-pdK"/>
+                        <constraint firstAttribute="height" constant="28" id="HYU-YD-0zE"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="测试网">
+                        <color key="titleColor" red="0.29803921568627451" green="0.41568627450980389" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="switchNodeInfoClick:" destination="-1" eventType="touchUpInside" id="R5Q-j3-noQ"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Pm3-wB-WMU" firstAttribute="trailing" secondItem="9HO-b1-8gE" secondAttribute="trailing" id="0E7-0R-fgi"/>
                 <constraint firstItem="T6E-Yj-YUq" firstAttribute="height" secondItem="nfV-4G-7r0" secondAttribute="height" id="0fQ-ba-DJS"/>
                 <constraint firstItem="nfV-4G-7r0" firstAttribute="top" secondItem="9HO-b1-8gE" secondAttribute="bottom" constant="5" id="3Zb-HE-tAB"/>
+                <constraint firstItem="U6E-Z9-2yE" firstAttribute="trailing" secondItem="9HO-b1-8gE" secondAttribute="trailing" id="Czh-PJ-KMf"/>
                 <constraint firstItem="dLb-7X-sgD" firstAttribute="top" secondItem="T6E-Yj-YUq" secondAttribute="bottom" constant="44" id="DgR-9V-NQy"/>
                 <constraint firstItem="o7U-fm-W49" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="IPU-oV-Y2l"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="9HO-b1-8gE" secondAttribute="trailing" constant="20" id="Jvt-5e-b0I"/>
@@ -101,6 +117,7 @@
                 <constraint firstItem="dLb-7X-sgD" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="SWO-Ws-7Jc"/>
                 <constraint firstItem="nfV-4G-7r0" firstAttribute="leading" secondItem="9HO-b1-8gE" secondAttribute="leading" id="SvJ-aC-PBZ"/>
                 <constraint firstItem="9HO-b1-8gE" firstAttribute="top" secondItem="qLO-62-MhS" secondAttribute="bottom" constant="40" id="VGO-PW-Gi2"/>
+                <constraint firstItem="U6E-Z9-2yE" firstAttribute="centerY" secondItem="qLO-62-MhS" secondAttribute="centerY" id="Wq3-g1-NdM"/>
                 <constraint firstItem="Pm3-wB-WMU" firstAttribute="height" secondItem="9HO-b1-8gE" secondAttribute="height" id="XOr-h0-be8"/>
                 <constraint firstItem="9HO-b1-8gE" firstAttribute="leading" secondItem="qLO-62-MhS" secondAttribute="leading" id="Y0d-zA-4Qi"/>
                 <constraint firstItem="Pm3-wB-WMU" firstAttribute="top" secondItem="nfV-4G-7r0" secondAttribute="bottom" constant="20" id="bUL-XA-eO9"/>
