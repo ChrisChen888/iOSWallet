@@ -1877,6 +1877,7 @@
                         
                         if ([vestingbalance.identifier.description isEqualToString:vesting_id]) {
                             CocosClaimVestingBalanceOperation *operation = [[CocosClaimVestingBalanceOperation alloc] init];
+                            operation.vesting_balance = [ChainObjectId createFromString:vesting_id];
                             operation.owner = ownerAccount.identifier;
                             NSDictionary *vestingBalance = [self handleVestingBalance:vestingDic];
                             long available_balance_amount = [vestingBalance[@"available_balance_amount"] longValue];

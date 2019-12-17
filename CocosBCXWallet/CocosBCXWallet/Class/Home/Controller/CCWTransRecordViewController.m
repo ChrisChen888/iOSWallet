@@ -39,6 +39,7 @@
     CCWWeakSelf
     // 查询资产个数
     [CCWSDKRequest CCW_QueryAccountBalances:accountId assetId:self.assetsModel.asset_id Success:^(CCWAssetsModel *  _Nonnull responseObject) {
+        weakSelf.assetsModel.amount = responseObject.amount;
         weakSelf.headerView.assetsModel = responseObject;
     } Error:^(NSString * _Nonnull errorAlert, id  _Nonnull responseObject) {
         [weakSelf.view makeToast:CCWLocalizable(@"网络繁忙，请检查您的网络连接")];
@@ -119,6 +120,7 @@
     [self.view makeToast:CCWLocalizable(@"复制成功")];
 }
 
+// 转账
 - (void)transferRecordHeaderTransferClick:(CCWTransferRecordHeader *)headerView
 {
     CCWTransferViewController *transferViewController = [[CCWTransferViewController alloc] init];

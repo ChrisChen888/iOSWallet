@@ -135,14 +135,14 @@
     
 }
 
-//- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
-//    UIView *hitView = [super hitTest:point withEvent:event];
-//    if(hitView == self){
-//        [self CCW_Close];
-//        return nil;
-//    }
-//    return hitView;
-//}
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    UIView *hitView = [super hitTest:point withEvent:event];
+    if(hitView == self){
+        [self CCW_Close];
+        return nil;
+    }
+    return hitView;
+}
 
 
 /** 显示 */

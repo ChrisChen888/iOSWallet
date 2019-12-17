@@ -218,11 +218,26 @@
         [self sendWithChainApi:WebsocketBlockChainApiNormal method:(WebsocketBlockChainMethodApiCall) params:uploadParams callBack:callBack];
     }];
 }
+
 - (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error {
+    
+    
     !self.closeCallBack?:self.closeCallBack(error);
     self.connectStatus = WebsocketConnectStatusClosed;
     [self.websocket closeWithCode:-25 reason:nil];
+    
+    // 重连
+//    NSLog(@"xxxxxx%@",self.websocket);
+//    if (!self.websocket) {
+        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.connectedUrl] cachePolicy:0 timeoutInterval:5];
+        
+        self.websocket = [[SRWebSocket alloc] initWithURLRequest:
+                          request];
+        
+        [self.websocket open];
+//    }
 }
+
 - (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean {
     if (code == -25) return;
     self.connectStatus = WebsocketConnectStatusClosed;
@@ -247,7 +262,9 @@
     if (already) {
         self.connectStatus = WebsocketConnectStatusConnected;
     }else {
-        if (self.connectStatus == WebsocketConnectStatusConnected) self.connectStatus = WebsocketConnectStatusClosed;
+        if (self.connectStatus == WebsocketConnectStatusConnected) {
+            self.connectStatus = WebsocketConnectStatusClosed;
+        }
     }
 }
 
