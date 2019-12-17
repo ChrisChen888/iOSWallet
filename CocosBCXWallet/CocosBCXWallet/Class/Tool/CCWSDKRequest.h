@@ -80,15 +80,12 @@ typedef void (^ErrorBlock)(NSString *errorAlert,id responseObject);// 失败回�
                     Success:(SuccessBlock)successBlock
                       Error:(ErrorBlock)errorBlock;
 
-
-
 /**
  退出登录
  */
 + (void)CCW_LogoutAccount:(NSString *)accountName
                   Success:(SuccessBlock)successBlock
                     Error:(ErrorBlock)errorBlock;
-
 
 /**
  修改密码
@@ -99,8 +96,6 @@ typedef void (^ErrorBlock)(NSString *errorAlert,id responseObject);// 失败回�
                newPassword:(NSString *)newPassword
                    Success:(SuccessBlock)successBlock
                      Error:(ErrorBlock)errorBlock;
-
-
 /**
  获取私钥
  */
@@ -108,8 +103,6 @@ typedef void (^ErrorBlock)(NSString *errorAlert,id responseObject);// 失败回�
                  password:(NSString *)password
                   Success:(SuccessBlock)successBlock
                     Error:(ErrorBlock)errorBlock;
-
-
 /**
  验证密码
  
@@ -118,6 +111,14 @@ typedef void (^ErrorBlock)(NSString *errorAlert,id responseObject);// 失败回�
  */
 + (void)CCW_ValidateAccount:(NSString *)accountName
                    password:(NSString *)password
+                    Success:(SuccessBlock)successBlock
+                      Error:(ErrorBlock)errorBlock;
+/**
+ 重新导入钱包模式
+ */
++ (void)CCW_ReImportAccount:(NSString *)password
+               OwnerPrivate:(NSString *)ownerPrivate
+              ActivePrivate:(NSString *)activePrivate
                     Success:(SuccessBlock)successBlock
                       Error:(ErrorBlock)errorBlock;
 

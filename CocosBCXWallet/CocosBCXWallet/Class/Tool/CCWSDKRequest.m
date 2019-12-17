@@ -126,13 +126,12 @@
                     Success:(SuccessBlock)successBlock
                       Error:(ErrorBlock)errorBlock
 {
-    [[CocosSDK shareInstance] Cocos_ImportWalletWithPrivate:privateKey WalletMode:CocosWalletModeAccount TempPassword:password Success:^(id responseObject) {
+    [[CocosSDK shareInstance] Cocos_ImportWalletWithPrivate:privateKey WalletMode:CocosWalletModeWallet TempPassword:password Success:^(id responseObject) {
         [[CocosSDK shareInstance] Cocos_GetDBAccount:responseObject Success:^(CocosDBAccountModel * dbAccount) {
             !successBlock?:successBlock(@{@"account":responseObject,@"id":dbAccount.ID});
         } Error:^(NSError *error) {
             !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
         }];
-
     } Error:^(NSError *error) {
         !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
     }];
@@ -162,14 +161,9 @@
                    Success:(SuccessBlock)successBlock
                      Error:(ErrorBlock)errorBlock
 {
-//    [[bcxObject sharedInstance] changePassword:oldPassword newPassword:newPassword Callback:^(NSDictionary *responseDict) {
-//        NSString *code =  responseDict[@"code"];
-//        if ([code integerValue] == 1) {
-//            !successBlock?:successBlock(responseDict[@"data"]);
-//        }else{
-//            !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:responseDict],responseDict);
-//        }
-//    }];
+    [[CocosSDK shareInstance] Cocos_ChangePassword:CCWAccountId OldPassword:oldPassword CurrentPassword:newPassword Success:successBlock Error:^(NSError *error) {
+        !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
+    }];
 }
 
 /**
@@ -180,7 +174,6 @@
                   Success:(SuccessBlock)successBlock
                     Error:(ErrorBlock)errorBlock
 {
-
     [[CocosSDK shareInstance] validateAccount:accountName Password:password Success:successBlock Error:^(NSError *error) {
         !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
     }];
@@ -201,7 +194,19 @@
         !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
     }];
 }
-
+/**
+ 重新导入钱包模式
+ */
++ (void)CCW_ReImportAccount:(NSString *)password
+               OwnerPrivate:(NSString *)ownerPrivate
+              ActivePrivate:(NSString *)activePrivate
+                    Success:(SuccessBlock)successBlock
+                      Error:(ErrorBlock)errorBlock
+{
+    [[CocosSDK shareInstance] SaveAccountInfo:CCWAccountName isNewAccount:NO OwnerPrivate:ownerPrivate ActivePrivate:activePrivate Password:password WalletMode:CocosWalletModeWallet Success:successBlock Error:^(NSError *error) {
+        !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
+    }];
+}
 /**
  查询账户信息
  @param account 帐号

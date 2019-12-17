@@ -73,7 +73,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)Cocos_QueryCurrentChainID:(SuccessBlock)successBlock
                             Error:(Error)errorBlock;
-
 #pragma mark - Create account
 /**
  Create account
@@ -152,6 +151,19 @@ NS_ASSUME_NONNULL_BEGIN
                           Password:(NSString *)password
                            Success:(SuccessBlock)successBlock
                              Error:(Error)errorBlock;
+
+/**
+ ChangePassword Account mode
+ 
+ @param account            Account
+ @param oldpassword        oldpassword
+ @param currentPassword    currentPassword
+ */
+- (void)Cocos_ChangePassword:(NSString *)account
+                 OldPassword:(NSString *)oldpassword
+             CurrentPassword:(NSString *)currentPassword
+                     Success:(SuccessBlock)successBlock
+                       Error:(Error)errorBlock;
 
 #pragma mark - Information Operation of Accounts
 /**
@@ -621,6 +633,16 @@ Votes CommitteeMember , Witness
 /** Verify that the password is correct */
 - (void)validateAccount:(NSString *)accountName
                Password:(NSString *)password
+                Success:(SuccessBlock)successBlock
+                  Error:(Error)errorBlock;
+
+/** Save account information */
+- (void)SaveAccountInfo:(NSString *)accountName
+           isNewAccount:(BOOL)newAccount
+           OwnerPrivate:(NSString *)ownerPrivate
+          ActivePrivate:(NSString *)activePrivate
+               Password:(NSString *)password
+             WalletMode:(CocosWalletMode)walletMode
                 Success:(SuccessBlock)successBlock
                   Error:(Error)errorBlock;
 @end

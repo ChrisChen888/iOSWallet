@@ -108,8 +108,8 @@
 // 获取账号信息
 + (void)js_getCocosAccount:(NSDictionary *)param response:(CallbackBlock)block{
     NSDictionary *jsMessage = @{
-                                @"account_id":CCWAccountId,
-                                @"account_name":CCWAccountName
+                                @"account_id":CCWAccountId?:@"",
+                                @"account_name":CCWAccountName?:@""
                                 };
     !block?:block(jsMessage);
 }

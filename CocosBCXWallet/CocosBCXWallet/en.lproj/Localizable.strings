@@ -14,6 +14,12 @@
 "暂不更新" = "Not Updated";
 
 // 1.登录页
+"免费账户需任意满足以下条件之一" = "When the account name meets one of the following conditions, it is Basic Name：";
+"1. 含有数字0～9\
+2. 含有特殊字符-\
+3. 不含有a，e，i，o，u，y字母的" = "1. Contains numbers 0-9\
+2. Contains special characters-\
+3. Without a, e, i, o, u, y";
 "登录" = "Log In";
 "注册" = "Register";
 "账户名称" = "Account Name";
@@ -55,6 +61,7 @@
 "今日已经没有免费账户" = "No free account today";
 
 // 首页
+"立即登陆/创建账户" = "Login/Register";
 "切换失败" = "Handover failure";
 "(测试)" = "(TEST)";
 "账户名称" = "Account Name";
@@ -73,6 +80,7 @@
 "确认" = "Confirm";
 "资源" = "Gas";
 "投票" = "Vote";
+"请登陆/注册后再试" = "Try again after Login/Register";
 
 // 交易记录详情
 "交易记录" = "Transaction History";

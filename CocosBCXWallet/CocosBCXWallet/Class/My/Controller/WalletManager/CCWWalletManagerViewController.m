@@ -10,6 +10,7 @@
 #import "CCWNavigationController.h"
 #import "CCWExportViewController.h"
 #import "CCWLogOutAlert.h"
+#import "CCWFixPWDViewController.h"
 
 @interface CCWWalletManagerViewController ()
 @property (weak, nonatomic) IBOutlet UIView *headerBackView;
@@ -49,10 +50,13 @@
     // 资产个数
     self.coinCountLabel.text = [CCWDecimalTool CCW_decimalSubScaleString:[NSString stringWithFormat:@"%@",self.walletAccountModel.cocosAssets.amount] scale:5];
     
+    [self reloadPublicKey];
+}
+
+- (void)reloadPublicKey
+{
     CCWWeakSelf;
-
     [CCWSDKRequest CCW_QueryAccountInfo:self.walletAccountModel.dbAccountModel.name Success:^(id  _Nonnull responseObject) {
-
         NSDictionary *activeDic = responseObject[@"active"];
         NSDictionary *ownerDic = responseObject[@"owner"];
         NSArray *activeKey = activeDic[@"key_auths"];
@@ -82,8 +86,14 @@
 
 // 修改密码
 - (IBAction)fixPwdClick:(UIButton *)sender {
-    [self.view makeToast:CCWLocalizable(@"敬请期待")];
-//    [self.navigationController pushViewController:[NSClassFromString(@"CCWFixPWDViewController") new] animated:YES];
+    CCWFixPWDViewController *fixPwdVC = [[CCWFixPWDViewController alloc] init];
+    fixPwdVC.walletMode = self.walletAccountModel.dbAccountModel.walletMode;
+    CCWWeakSelf;
+    fixPwdVC.setpwdSuccess = ^{
+        [weakSelf.view makeToast:CCWLocalizable(@"密码修改成功")];
+        [weakSelf reloadPublicKey];
+    };
+    [self.navigationController pushViewController:fixPwdVC animated:YES];
 }
 
 // 导出私钥

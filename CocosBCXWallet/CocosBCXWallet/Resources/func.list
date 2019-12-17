@@ -64,6 +64,7 @@ CCW_QueryFindDappListSuccess
 CCW_QueryMyContactComplete
 CCW_QueryUserOperations
 CCW_QueryVersionInfoSuccess
+CCW_ReImportAccount
 CCW_RequestAPPVersionInfo
 CCW_RequestNodeSuccess
 CCW_SaveMyContactModel

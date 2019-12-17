@@ -121,8 +121,10 @@
     self.titleLabel.centerY = self.coinImageView.centerY;
     [self.containerView addSubview:self.titleLabel];
 
-    self.addCountBtn.centerY = self.titleLabel.centerY;
-    self.addCountBtn.x = CCWScreenW - 40;
+    self.addCountBtn.centerY = self.titleLabel.centerY - 15;
+    self.addCountBtn.x = CCWScreenW - 40 - 10;
+    self.addCountBtn.width = 50;
+    self.addCountBtn.height = 50;
     [self.containerView addSubview:self.addCountBtn];
     
     CGFloat headerMaxY = CGRectGetMaxY(self.coinImageView.frame) + 10;
@@ -133,14 +135,14 @@
     
 }
 
-- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
-    UIView *hitView = [super hitTest:point withEvent:event];
-    if(hitView == self){
-        [self CCW_Close];
-        return nil;
-    }
-    return hitView;
-}
+//- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+//    UIView *hitView = [super hitTest:point withEvent:event];
+//    if(hitView == self){
+//        [self CCW_Close];
+//        return nil;
+//    }
+//    return hitView;
+//}
 
 
 /** 显示 */

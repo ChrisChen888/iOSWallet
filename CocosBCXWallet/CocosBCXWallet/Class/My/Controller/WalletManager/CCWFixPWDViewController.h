@@ -12,6 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CCWFixPWDViewController : UIViewController
 
+@property (nonatomic, copy) void (^setpwdSuccess)(void);
+
+@property (nonatomic, assign) CocosWalletMode walletMode;
+
 @end
 
 NS_ASSUME_NONNULL_END

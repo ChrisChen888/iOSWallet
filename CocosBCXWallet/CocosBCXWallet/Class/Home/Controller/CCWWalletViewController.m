@@ -96,7 +96,7 @@
 - (void)connectSuccess
 {
     CCWWeakSelf
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.05 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         if (!CCWAccountId) {
             self.headerView.account = @"";
             [weakSelf.tableView reloadData];
@@ -210,7 +210,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (!CCWAccountId) {
         id<CCWInitModuleProtocol> initModule  = [[CCWMediator sharedInstance] moduleForProtocol:@protocol(CCWInitModuleProtocol)];
-        [self.navigationController pushViewController:[initModule CCW_CreateWalletViewController] animated:YES];
+        [self.navigationController pushViewController:[initModule CCW_LoginRegisterWalletViewController] animated:YES];
     }else{
         CCWTransRecordViewController *transRecordViewController = [[CCWTransRecordViewController alloc] init];
         transRecordViewController.assetsModel = self.assetsModelArray[indexPath.row];
@@ -233,6 +233,11 @@
 // 按钮点击
 - (void)CCW_HomeNavbuttonClick:(CCWWalletHeaderView *)walletHeaderView button:(UIButton *)button
 {
+    
+    if (!CCWAccountId) {
+        [self.view makeToast:CCWLocalizable(@"请登陆/注册后再试")];
+        return;
+    }
     switch (button.tag) {
         case 0:
         {
@@ -253,14 +258,14 @@
         case 2:
         {
             id<CCWFindModuleProtocol> findModule = [[CCWMediator sharedInstance] moduleForProtocol:@protocol(CCWFindModuleProtocol)];
-            UIViewController *viewController = [findModule CCW_FindWebViewControllerWithTitle:CCWLocalizable(@"资源") loadDappURLString:@"http://gas.cocosbcx.net/"];
+            UIViewController *viewController = [findModule CCW_FindWebViewControllerWithTitle:CCWLocalizable(@"资源") loadDappURLString:@"https://gas.cocosbcx.net/"];
             [self.navigationController pushViewController:viewController animated:YES];
         }
             break;
         case 3:
         {
             id<CCWFindModuleProtocol> findModule = [[CCWMediator sharedInstance] moduleForProtocol:@protocol(CCWFindModuleProtocol)];
-            UIViewController *viewController = [findModule CCW_FindWebViewControllerWithTitle:CCWLocalizable(@"投票") loadDappURLString:@"http://vote.cocosbcx.net/"];
+            UIViewController *viewController = [findModule CCW_FindWebViewControllerWithTitle:CCWLocalizable(@"投票") loadDappURLString:@"https://vote.cocosbcx.net/"];
             [self.navigationController pushViewController:viewController animated:YES];
         }
             break;
