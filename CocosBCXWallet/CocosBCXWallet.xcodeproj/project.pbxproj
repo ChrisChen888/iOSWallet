@@ -256,6 +256,9 @@
 		3191A0E8225F1D41003AB263 /* CCWWalletAccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191A0E7225F1D41003AB263 /* CCWWalletAccountModel.m */; };
 		319D45C1221BAB3600D1E6D2 /* CCWFindModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 319D45BF221BAB3500D1E6D2 /* CCWFindModel.m */; };
 		319D45E2221C0FFA00D1E6D2 /* CCWWalletAccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 319D45E1221C0FFA00D1E6D2 /* CCWWalletAccountTool.m */; };
+		31A12CA823AA176C006523B4 /* CCWCoinTypeSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A12CA323AA176C006523B4 /* CCWCoinTypeSheetView.m */; };
+		31A12CA923AA176C006523B4 /* CCWCoinTypeSheetViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A12CA523AA176C006523B4 /* CCWCoinTypeSheetViewCell.m */; };
+		31A12CAA23AA176C006523B4 /* CCWCoinTypeSheetViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31A12CA623AA176C006523B4 /* CCWCoinTypeSheetViewCell.xib */; };
 		31B1D92623A7775100421A57 /* CocosCallContractOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1D90A23A7774F00421A57 /* CocosCallContractOperation.m */; };
 		31B1D92723A7775100421A57 /* CocosCreateSonAccountOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1D90B23A7774F00421A57 /* CocosCreateSonAccountOperation.m */; };
 		31B1D92823A7775100421A57 /* CocosBuyNHOrderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B1D90C23A7774F00421A57 /* CocosBuyNHOrderOperation.m */; };
@@ -789,6 +792,11 @@
 		319D45DB221BF95E00D1E6D2 /* AppNilOrNull.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppNilOrNull.h; sourceTree = "<group>"; };
 		319D45E0221C0FFA00D1E6D2 /* CCWWalletAccountTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCWWalletAccountTool.h; sourceTree = "<group>"; };
 		319D45E1221C0FFA00D1E6D2 /* CCWWalletAccountTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCWWalletAccountTool.m; sourceTree = "<group>"; };
+		31A12CA323AA176C006523B4 /* CCWCoinTypeSheetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCWCoinTypeSheetView.m; sourceTree = "<group>"; };
+		31A12CA423AA176C006523B4 /* CCWCoinTypeSheetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCWCoinTypeSheetView.h; sourceTree = "<group>"; };
+		31A12CA523AA176C006523B4 /* CCWCoinTypeSheetViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCWCoinTypeSheetViewCell.m; sourceTree = "<group>"; };
+		31A12CA623AA176C006523B4 /* CCWCoinTypeSheetViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCWCoinTypeSheetViewCell.xib; sourceTree = "<group>"; };
+		31A12CA723AA176C006523B4 /* CCWCoinTypeSheetViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCWCoinTypeSheetViewCell.h; sourceTree = "<group>"; };
 		31B1D90A23A7774F00421A57 /* CocosCallContractOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosCallContractOperation.m; sourceTree = "<group>"; };
 		31B1D90B23A7774F00421A57 /* CocosCreateSonAccountOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosCreateSonAccountOperation.m; sourceTree = "<group>"; };
 		31B1D90C23A7774F00421A57 /* CocosBuyNHOrderOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosBuyNHOrderOperation.m; sourceTree = "<group>"; };
@@ -1913,6 +1921,7 @@
 			children = (
 				31B540B0229FEC17002FA33B /* CCWNodeAlertSheetView */,
 				31E198AD221FA1260076A822 /* CCWMyAlertSheetView */,
+				31A12CA223AA1700006523B4 /* CCWChangCoinType */,
 				31E198BC221FE2FC0076A822 /* CCWAssetsOverviewCollectionViewCell.h */,
 				31E198BD221FE2FC0076A822 /* CCWAssetsOverviewCollectionViewCell.m */,
 				317D2D4E22E0428E00559A7C /* CCWPropAssetsTableViewCell.h */,
@@ -2015,6 +2024,18 @@
 				3149E6002227AC5800EAF5B4 /* CCWSDKErrorHandle.m */,
 			);
 			path = Tool;
+			sourceTree = "<group>";
+		};
+		31A12CA223AA1700006523B4 /* CCWChangCoinType */ = {
+			isa = PBXGroup;
+			children = (
+				31A12CA423AA176C006523B4 /* CCWCoinTypeSheetView.h */,
+				31A12CA323AA176C006523B4 /* CCWCoinTypeSheetView.m */,
+				31A12CA723AA176C006523B4 /* CCWCoinTypeSheetViewCell.h */,
+				31A12CA523AA176C006523B4 /* CCWCoinTypeSheetViewCell.m */,
+				31A12CA623AA176C006523B4 /* CCWCoinTypeSheetViewCell.xib */,
+			);
+			path = CCWChangCoinType;
 			sourceTree = "<group>";
 		};
 		31B540B0229FEC17002FA33B /* CCWNodeAlertSheetView */ = {
@@ -2286,6 +2307,7 @@
 				3165861A221689190039B439 /* CCWReceiveViewController.xib in Resources */,
 				3176CEE222E591F40022B408 /* CCWPropDetailViewController.xib in Resources */,
 				31725B9521FEB02B005962C6 /* Assets.xcassets in Resources */,
+				31A12CAA23AA176C006523B4 /* CCWCoinTypeSheetViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2360,6 +2382,7 @@
 				31E19880221E7BCF0076A822 /* CCWConstkey.m in Sources */,
 				3178D45C2390C15900CFB83B /* CocosPackData.m in Sources */,
 				3144D05A22003BE700CDA62A /* CCWRSAUtill.m in Sources */,
+				31A12CA823AA176C006523B4 /* CCWCoinTypeSheetView.m in Sources */,
 				3176CECE22E58FE00022B408 /* CCWExportViewController.m in Sources */,
 				313D8B53237AB8F000A2BBCC /* CCWMenuTextField.m in Sources */,
 				31E4338722EAAB4C00CAFDCA /* CCWAddNodeViewController.m in Sources */,
@@ -2534,6 +2557,7 @@
 				3178D4672390C15900CFB83B /* ChainAssetOption.m in Sources */,
 				3178D46B2390C15900CFB83B /* CocosPublicKey.m in Sources */,
 				3144D05C22003BE700CDA62A /* NSDate+YCExtension.m in Sources */,
+				31A12CA923AA176C006523B4 /* CCWCoinTypeSheetViewCell.m in Sources */,
 				3178D4622390C15900CFB83B /* CocosSDK.m in Sources */,
 				31B1D92E23A7775100421A57 /* CocosUpdateAccountOperation.m in Sources */,
 				3178D4782390C15900CFB83B /* BitAddressAuthorityObject.m in Sources */,

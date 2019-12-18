@@ -11,13 +11,16 @@
 #import "CCWTabViewController.h"
 #import "CCWMyAlertSheetView.h"
 #import "CCWNodeAlertSheetView.h"
+#import "CCWCoinTypeSheetView.h"
 #import "CCWDataBase+CCWNodeINfo.h"
 #import "CCWAddNodeViewController.h"
 #import "CCWNavigationController.h"
 
-@interface CCWSystemSetViewController ()<CCWMyAlertSheetViewDelegate,CCWNodeAlertViewDelegate>
+@interface CCWSystemSetViewController ()<CCWMyAlertSheetViewDelegate,CCWNodeAlertViewDelegate,CCWCoinTypeSheetViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *currentLanguageLabel;
 @property (weak, nonatomic) IBOutlet UILabel *netLabel;
+@property (weak, nonatomic) IBOutlet UILabel *coinTypeLabel;
+
 @property (nonatomic, strong) NSMutableArray *nodeInfoArray;
 @end
 
@@ -31,8 +34,10 @@
     self.nodeInfoArray = [[CCWDataBase CCW_shareDatabase] CCW_QueryNodeInfo];
     CCWNodeInfoModel *nodeInfo = [CCWNodeInfoModel mj_objectWithKeyValues:CCWNodeInfo];
     self.netLabel.text = nodeInfo.type?CCWLocalizable(@"主网"):CCWLocalizable(@"测试网");
+    self.coinTypeLabel.text = CCWCNYORUSD?@"CNY":@"USD";
 }
 
+// 按钮点击
 - (IBAction)CCW_SetViewdidSelectIndexPath:(UIButton *)button
 {
     NSInteger tagInteger = button.tag;
@@ -52,6 +57,13 @@
             [nodeSheetView CCW_ShowWithDataArray:self.nodeInfoArray];
         }
             break;
+        case 2:
+        {
+            CCWCoinTypeSheetView *coitTypeView = [[CCWCoinTypeSheetView alloc] init];
+            coitTypeView.delegate = self;
+            [coitTypeView CCW_Show];
+        }
+            break;
         default:
             break;
     }
@@ -69,6 +81,7 @@
     CCWKeyWindow.rootViewController = tabBarController;
 }
 
+// 选择节点
 - (void)CCW_NodeAlertSheetView:(CCWNodeAlertSheetView *)alertSheetView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CCWNodeInfoModel *nodeInfo = self.nodeInfoArray[indexPath.row];
@@ -139,4 +152,11 @@
 {
     [self.navigationController pushViewController:[[CCWAddNodeViewController alloc] init] animated:YES];
 }
+
+// 切换货币
+- (void)CCW_CoinTypeSheetView:(CCWCoinTypeSheetView *)alertSheetView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.coinTypeLabel.text = CCWCNYORUSD?@"CNY":@"USD";
+}
+
 @end

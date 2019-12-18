@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="CCWCoinTypeSheetViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pdq-bL-9CH">
+                        <rect key="frame" x="0.0" y="42.5" width="320" height="1"/>
+                        <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="Vt8-hF-Hoi"/>
+                        </constraints>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="languageSelect" translatesAutoresizingMaskIntoConstraints="NO" id="ibI-TR-pyR">
+                        <rect key="frame" x="283" y="11" width="22" height="22"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="自定义" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKt-d9-Imk" customClass="CCWLabel">
+                        <rect key="frame" x="15" y="0.0" width="290" height="42.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.14901960784313725" green="0.16470588235294117" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="pdq-bL-9CH" secondAttribute="bottom" id="6hV-6b-9iC"/>
+                    <constraint firstItem="pdq-bL-9CH" firstAttribute="top" secondItem="iKt-d9-Imk" secondAttribute="bottom" id="DNz-Mb-jV0"/>
+                    <constraint firstAttribute="trailing" secondItem="pdq-bL-9CH" secondAttribute="trailing" id="K1C-Ye-HFd"/>
+                    <constraint firstAttribute="trailing" secondItem="iKt-d9-Imk" secondAttribute="trailing" constant="15" id="Mib-S3-qb6"/>
+                    <constraint firstItem="iKt-d9-Imk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="PHK-Ox-8yh"/>
+                    <constraint firstItem="ibI-TR-pyR" firstAttribute="trailing" secondItem="iKt-d9-Imk" secondAttribute="trailing" id="nPd-iR-8cU"/>
+                    <constraint firstItem="pdq-bL-9CH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="yLW-vt-O2g"/>
+                    <constraint firstItem="iKt-d9-Imk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="yee-22-VcM"/>
+                    <constraint firstItem="ibI-TR-pyR" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="z28-Zs-imJ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="coinTypeImageView" destination="ibI-TR-pyR" id="z10-G4-5kL"/>
+                <outlet property="titleLabel" destination="iKt-d9-Imk" id="CJa-th-oUh"/>
+            </connections>
+            <point key="canvasLocation" x="52" y="48"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="languageSelect" width="22" height="22"/>
+    </resources>
+</document>

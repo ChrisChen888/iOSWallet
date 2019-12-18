@@ -30,6 +30,8 @@ NS_ASSUME_NONNULL_BEGIN
 /** 总资产 */
 @property (nonatomic, strong) NSNumber *assetsNum;
 
+
+
 /** 账户名 */
 @property (nonatomic, copy) NSString *account;
 @end

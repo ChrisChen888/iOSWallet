@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CCWSystemSetViewController">
             <connections>
+                <outlet property="coinTypeLabel" destination="gy0-ze-2bc" id="ndb-JO-Hba"/>
                 <outlet property="currentLanguageLabel" destination="OKp-d2-uF9" id="qvF-Ob-6Dq"/>
                 <outlet property="netLabel" destination="gJ5-Qf-PoZ" id="nEh-pC-kyE"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -99,11 +100,14 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rightItem" translatesAutoresizingMaskIntoConstraints="NO" id="cft-ds-VPy">
                     <rect key="frame" x="352" y="158" width="8" height="14"/>
                 </imageView>
-                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AEa-7V-X5d">
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AEa-7V-X5d">
                     <rect key="frame" x="0.0" y="141.5" width="375" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="frh-ej-om7"/>
                     </constraints>
+                    <connections>
+                        <action selector="CCW_SetViewdidSelectIndexPath:" destination="-1" eventType="touchUpInside" id="w9L-z6-Rg2"/>
+                    </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rCE-gg-vVV">
                     <rect key="frame" x="15" y="191.5" width="360" height="0.5"/>

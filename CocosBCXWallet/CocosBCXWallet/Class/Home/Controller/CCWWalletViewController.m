@@ -91,6 +91,7 @@
 {
     [super viewWillAppear:animated];
     [self connectSuccess];
+    
 }
 
 - (void)connectSuccess

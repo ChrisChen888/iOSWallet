@@ -251,6 +251,8 @@
     NSString *totalPrice = [CCWDecimalTool CCW_multiplyTotalAssetsWithMultiplier:[NSString stringWithFormat:@"%@",cocosprice] faciend:[NSString stringWithFormat:@"%@",assetsNum]].stringValue;
     
     self.assetsLabel.text = [CCWDecimalTool CCW_convertRateWithPrice:totalPrice scale:6];
+    
+    self.assetsTitleLabel.text = [NSString stringWithFormat:@"%@(%@)",CCWLocalizable(@"总资产"),CCWCNYORUSD?@"￥":@"$"];
 }
 
 - (void)clickToSwitchAccount
