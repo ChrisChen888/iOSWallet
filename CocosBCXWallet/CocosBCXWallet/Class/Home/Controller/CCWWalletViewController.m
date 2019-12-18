@@ -96,32 +96,53 @@
 - (void)connectSuccess
 {
     CCWWeakSelf
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.05 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        if (!CCWAccountId) {
-            self.headerView.account = @"";
-            [weakSelf.tableView reloadData];
-        }else{
-            NSString *accountName = CCWAccountName;
-            if (accountName.length > 13) {
-                accountName = [accountName substringToIndex:13];//截取掉下标5之前的字符串
-                accountName = [NSString stringWithFormat:@"%@...",accountName];
-            }
-            self.headerView.account = [NSString stringWithFormat:@"%@ >",accountName];
-            
-            // 查询资产
-            [CCWSDKRequest CCW_QueryAccountAllBalances:CCWAccountId Success:^(NSMutableArray *responseObject) {
-                [weakSelf.assetsModelArray removeAllObjects];
-                for (CCWAssetsModel *assetsModel in responseObject) {
-                    if (![assetsModel.asset_id isEqualToString:@"1.3.1"]) {
-                        [weakSelf.assetsModelArray addObject:assetsModel];
-                    }
-                }
-                [weakSelf.tableView reloadData];
-            } Error:^(NSString * _Nonnull errorAlert, id  _Nonnull responseObject) {
-                //        [weakSelf.view makeToast:CCWLocalizable(@"网络繁忙，请检查您的网络连接")];
-            }];
+    if (!CCWAccountId) {
+        self.headerView.account = @"";
+        [self.tableView reloadData];
+    }else{
+        NSString *accountName = CCWAccountName;
+        if (accountName.length > 13) {
+            accountName = [accountName substringToIndex:13];//截取掉下标5之前的字符串
+            accountName = [NSString stringWithFormat:@"%@...",accountName];
         }
-    });
+        self.headerView.account = [NSString stringWithFormat:@"%@ >",accountName];
+        
+        // 查询资产
+        [CCWSDKRequest CCW_QueryAccountAllBalances:CCWAccountId Success:^(NSMutableArray *responseObject) {
+            
+            // 刷新数据
+            [weakSelf reloadAllDataWithResponseObject:responseObject];
+            
+            [CCWSDKRequest CCW_RequestCocosPriceSuccess:^(id  _Nonnull cocosprice) {
+                // COCOS价格
+                NSDictionary *cocosPrice = [cocosprice firstObject];
+                [CCWSaveTool setObject:cocosPrice[@"price_usd"] forKey:CCWCurrencyCocosPrice];
+                
+                // 刷新数据
+                [weakSelf reloadAllDataWithResponseObject:responseObject];
+
+            } Error:^(NSString * _Nonnull errorAlert, id  _Nonnull responseObject) {
+                
+            }];
+        } Error:^(NSString * _Nonnull errorAlert, id  _Nonnull responseObject) {
+            // [weakSelf.view makeToast:CCWLocalizable(@"网络繁忙，请检查您的网络连接")];
+        }];
+    }
+}
+
+// 刷新所有数据
+- (void)reloadAllDataWithResponseObject:(NSMutableArray *)responseObject
+{
+    [self.assetsModelArray removeAllObjects];
+    for (CCWAssetsModel *assetsModel in responseObject) {
+        if (![assetsModel.asset_id isEqualToString:@"1.3.1"]) {
+            [self.assetsModelArray addObject:assetsModel];
+        }
+        if ([assetsModel.asset_id isEqualToString:@"1.3.0"]) {
+            self.headerView.assetsNum = assetsModel.amount;
+        }
+    }
+    [self.tableView reloadData];
 }
 
 - (void)dealloc

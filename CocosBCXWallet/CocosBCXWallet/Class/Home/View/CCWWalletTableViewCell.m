@@ -34,6 +34,13 @@
     _assetsModel = assetsModel;
     self.accountLabel.text = [CCWDecimalTool CCW_decimalSubScaleString:[NSString stringWithFormat:@"%@",assetsModel.amount] scale:[assetsModel.precision integerValue]];
     self.coinNameLabel.text = [NSString stringWithFormat:@"%@",assetsModel.symbol];
+
+    NSString *price = @"0";
+    if ([assetsModel.symbol isEqualToString:@"COCOS"]) {
+        id cocosprice = [CCWSaveTool objectForKey:CCWCurrencyCocosPrice];
+        price = [CCWDecimalTool CCW_convertRateWithPrice:[NSString stringWithFormat:@"%@",cocosprice] scale:6];
+    }
+    self.priceLabel.text = [NSString stringWithFormat:@"≈ %@%@",CCWCNYORUSD?@"￥":@"$",price];
 }
 
 - (void)setReceiveAssetsModel:(CCWAssetsModel *)receiveAssetsModel

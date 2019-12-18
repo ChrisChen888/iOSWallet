@@ -97,7 +97,7 @@
 {
     if (!_assetsTitleLabel) {
         _assetsTitleLabel = [[UILabel alloc] init];
-        _assetsTitleLabel.text = [NSString stringWithFormat:@"%@(¥)",CCWLocalizable(@"总资产")];
+        _assetsTitleLabel.text = [NSString stringWithFormat:@"%@(%@)",CCWLocalizable(@"总资产"),CCWCNYORUSD?@"￥":@"$"];
         _assetsTitleLabel.font = CCWFont(14);
         _assetsTitleLabel.textColor = [UIColor whiteColor];
     }
@@ -240,6 +240,17 @@
 {
     _account = account;
     self.accountLabel.text = account;
+}
+
+// 设置资产
+- (void)setAssetsNum:(NSNumber *)assetsNum
+{
+    _assetsNum = assetsNum;
+    id cocosprice = [CCWSaveTool objectForKey:CCWCurrencyCocosPrice];
+    
+    NSString *totalPrice = [CCWDecimalTool CCW_multiplyTotalAssetsWithMultiplier:[NSString stringWithFormat:@"%@",cocosprice] faciend:[NSString stringWithFormat:@"%@",assetsNum]].stringValue;
+    
+    self.assetsLabel.text = [CCWDecimalTool CCW_convertRateWithPrice:totalPrice scale:6];
 }
 
 - (void)clickToSwitchAccount

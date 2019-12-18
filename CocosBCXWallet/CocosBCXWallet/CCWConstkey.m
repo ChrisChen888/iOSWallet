@@ -23,6 +23,8 @@ BOOL CCWNetNotesType;//!< 节点类型，测试网，主网
 NSString * const CCWCurrencyType = @"CCWCurrencyType";//(YES是USD,NO是CNY)
 NSString * const CCWCurrencyValueKey = @"CCWCurrencyValueKey";//!< 缓存汇率的值
 
+NSString * const CCWCurrencyCocosPrice = @"CCWCurrencyCocosPrice";//!< 缓存COCOS价格
+
 #pragma mark - 第三方Key
 NSString * const UMengAppKey = @"5d006f774ca35713eb0007d0";// 友盟AppKey
 

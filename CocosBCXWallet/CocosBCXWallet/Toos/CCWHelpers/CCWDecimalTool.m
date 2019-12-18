@@ -57,7 +57,7 @@
 +(NSDecimalNumber *)CCW_convertRateWithValue:(NSString *)value
 {
     NSDecimalNumber *dnValue = nil;
-    if (CCWCNYORUSD) { // USD
+    if (!CCWCNYORUSD) { // USD
         dnValue = [self CCW_decimalNumberWithString:value];
     }else{// CNY
         // 需要转换的总值

@@ -15,13 +15,28 @@
 
 @implementation CCWSDKRequest
 
+/** 查询汇率 */
++ (void)CCW_RequestExchangeSuccess:(SuccessBlock)successBlock Error:(ErrorBlock)errorBlock
+{
+    [[CocosHTTPManager CCW_shareHTTPManager] CCW_GET:@"http://op.juhe.cn/onebox/exchange/currency?key=ed68793dc91e178e665bfb75f44df4d2&from=CNY&to=USD" Param:nil Success:successBlock Error:^(NSError *error) {
+        !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
+    }];
+}
+
+/** 查询COCOS价格 **/
++ (void)CCW_RequestCocosPriceSuccess:(SuccessBlock)successBlock Error:(ErrorBlock)errorBlock
+{
+    [[CocosHTTPManager CCW_shareHTTPManager] CCW_GET:@"http://fxhapi.feixiaohao.com/public/v1/ticker?code=cocosbcx" Param:nil Success:successBlock Error:^(NSError *error) {
+        !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
+    }];
+}
+
 /** 查询后台配置节点信息 */
 + (void)CCW_RequestNodeSuccess:(SuccessBlock)successBlock Error:(ErrorBlock)errorBlock
 {
     [[CocosHTTPManager CCW_shareHTTPManager] CCW_GET:@"https://api-cocosbcx.cocosbcx.net/backend/getParams" Param:nil Success:successBlock Error:^(NSError *error) {
         !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
     }];
-
 }
 
 /**
@@ -39,7 +54,7 @@
                 Success:(SuccessBlock)successBlock
                   Error:(ErrorBlock)errorBlock
 {
-    [[CocosSDK shareInstance] Cocos_OpenLog:YES];
+//    [[CocosSDK shareInstance] Cocos_OpenLog:YES];
     [[CocosSDK shareInstance] Cocos_ConnectWithNodeUrl:url Fauceturl:faucetUrl TimeOut:5 CoreAsset:core_asset ChainId:chainId ConnectedStatus:^(WebsocketConnectStatus connectStatus) {
         if (connectStatus == WebsocketConnectStatusConnected) {
             !successBlock?:successBlock(@"connect success");

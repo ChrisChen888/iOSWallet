@@ -22,17 +22,12 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    CCWWeakSelf;
+    
+    // 查询汇率
+    [self CCW_RequestExchange];
+    
     // 请求连接节点
-    [CCWSDKRequest CCW_RequestNodeSuccess:^(id  _Nonnull responseObject) {
-        NSMutableArray *nodeArray = [CCWNodeInfoModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
-        // 重新填入数据库
-        [[CCWDataBase CCW_shareDatabase] CCW_SaveSerVerNodeInfoArray:nodeArray];
-        [weakSelf connectNodeWithNodeArray:nodeArray];
-    } Error:^(NSString * _Nonnull errorAlert, id  _Nonnull responseObject) {
-        NSMutableArray *nodeArray = [[CCWDataBase CCW_shareDatabase] CCW_QueryNodeInfo];
-        [weakSelf connectNodeWithNodeArray:nodeArray];
-    }];
+    [self CCW_RequestNodeInfo];
     
     // 模块注册
     [[CCWMediator sharedInstance] registerAllModules];
@@ -42,6 +37,9 @@
     
     //设置键盘
     [self CCW_KeyBoardSetting];
+    
+    // 第一次安装默认人民币
+    [self CCW_SetCoinType];
     
     // 设置 Toast
     [self CCW_SetToast];
@@ -60,6 +58,35 @@
     [self.window makeKeyAndVisible];
     
     return YES;
+}
+
+// 查询汇率
+- (void)CCW_RequestExchange
+{
+    [CCWSDKRequest CCW_RequestExchangeSuccess:^(id  _Nonnull responseObject) {
+        NSArray *exchange = responseObject[@"result"];
+        NSDictionary *usd = [exchange lastObject];
+        NSString *exchangerate = usd[@"exchange"];
+        [CCWSaveTool setObject:exchangerate forKey:CCWCurrencyValueKey];
+    } Error:^(NSString * _Nonnull errorAlert, id  _Nonnull responseObject) {
+        
+    }];
+}
+
+// 请求连接节点
+- (void)CCW_RequestNodeInfo
+{
+    CCWWeakSelf;
+    // 请求连接节点
+    [CCWSDKRequest CCW_RequestNodeSuccess:^(id  _Nonnull responseObject) {
+        NSMutableArray *nodeArray = [CCWNodeInfoModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
+        // 重新填入数据库
+        [[CCWDataBase CCW_shareDatabase] CCW_SaveSerVerNodeInfoArray:nodeArray];
+        [weakSelf connectNodeWithNodeArray:nodeArray];
+    } Error:^(NSString * _Nonnull errorAlert, id  _Nonnull responseObject) {
+        NSMutableArray *nodeArray = [[CCWDataBase CCW_shareDatabase] CCW_QueryNodeInfo];
+        [weakSelf connectNodeWithNodeArray:nodeArray];
+    }];
 }
 
 // 连接节点
@@ -120,6 +147,16 @@
     manager.shouldResignOnTouchOutside = YES;
     manager.shouldToolbarUsesTextFieldTintColor = YES;
     manager.enableAutoToolbar = NO;
+}
+
+// 设置默认货币人民币
+- (void)CCW_SetCoinType
+{
+    NSString *versionInfo = [CCWSaveTool objectForKey:@"CCWAppVersionLanchApp"];
+    if (!versionInfo) {// 第一次安装
+        [CCWSaveTool setBool:YES forKey:CCWCurrencyType];
+        [CCWSaveTool setBool:YES forKey:@"CCWAppVersionLanchApp"];
+    }
 }
 
 // Toast 配置

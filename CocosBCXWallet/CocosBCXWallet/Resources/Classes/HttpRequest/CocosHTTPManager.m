@@ -23,7 +23,7 @@ static CocosHTTPManager *_shareHTTPManager = nil;
     dispatch_once(&onceToken, ^{
         _shareHTTPManager = [[CocosHTTPManager alloc] initWithBaseURL:nil sessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
         _shareHTTPManager.requestSerializer = [AFJSONRequestSerializer serializer];
-        _shareHTTPManager.requestSerializer.timeoutInterval = 15;
+        _shareHTTPManager.requestSerializer.timeoutInterval = 3;
         _shareHTTPManager.responseSerializer.acceptableStatusCodes = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(100, 600)];
         _shareHTTPManager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/plain" ,@"application/json", @"text/json", @"text/javascript",@"text/html",@"application/x-gzip", nil];
         _shareHTTPManager.securityPolicy.allowInvalidCertificates = YES;

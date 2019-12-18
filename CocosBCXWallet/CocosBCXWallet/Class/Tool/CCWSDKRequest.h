@@ -16,6 +16,12 @@ typedef void (^ErrorBlock)(NSString *errorAlert,id responseObject);// 失败回�
 
 @interface CCWSDKRequest : NSObject
 
+/** 查询汇率 */
++ (void)CCW_RequestExchangeSuccess:(SuccessBlock)successBlock Error:(ErrorBlock)errorBlock;
+
+/** 查询COCOS价格 **/
++ (void)CCW_RequestCocosPriceSuccess:(SuccessBlock)successBlock Error:(ErrorBlock)errorBlock;
+
 /** 查询后台配置节点信息 */
 + (void)CCW_RequestNodeSuccess:(SuccessBlock)successBlock Error:(ErrorBlock)errorBlock;
 

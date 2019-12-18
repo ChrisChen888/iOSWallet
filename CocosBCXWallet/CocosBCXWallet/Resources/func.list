@@ -66,6 +66,10 @@ CCW_QueryUserOperations
 CCW_QueryVersionInfoSuccess
 CCW_ReImportAccount
 CCW_RequestAPPVersionInfo
+CCW_RequestCocosPriceSuccess
+CCW_RequestExchange
+CCW_RequestExchangeSuccess
+CCW_RequestNodeInfo
 CCW_RequestNodeSuccess
 CCW_SaveMyContactModel
 CCW_SaveNodeInfo
@@ -76,6 +80,7 @@ CCW_ScanQRCodeToTransferWithBlock
 CCW_SellAssetsViewControllerWithAsset
 CCW_SellNHAssetMaxExpirationSuccess
 CCW_SellNHAssetNHAssetId
+CCW_SetCoinType
 CCW_SetImageWithURL
 CCW_SetToast
 CCW_SetupSubView

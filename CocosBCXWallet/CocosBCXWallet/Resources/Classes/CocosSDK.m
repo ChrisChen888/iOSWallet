@@ -56,7 +56,9 @@
 
 {
     //    if (_client.connectStatus == WebsocketConnectStatusConnected) return;
-    self.client = [[WebsocketClient alloc] initWithUrl:url closedCallBack:nil];
+    self.client = [[WebsocketClient alloc] initWithUrl:url closedCallBack:^(NSError *error) {
+        CCWLog(@"连接节点失败了");
+    }];
     [self.client connectWithTimeOut:timeOut];
     // Connection state callback
     self.client.connectStatusChange = connectedStatus;

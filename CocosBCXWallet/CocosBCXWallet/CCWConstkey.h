@@ -23,6 +23,7 @@ UIKIT_EXTERN BOOL CCWNetNotesType;//!< 节点类型，测试网，主网
 UIKIT_EXTERN NSString * const CCWCurrencyType;//!< 当前显示CNY或者USD(YES是CNY,NO是USD)
 UIKIT_EXTERN NSString * const CCWCurrencyValueKey;//!< 缓存汇率的值
 
+UIKIT_EXTERN NSString * const CCWCurrencyCocosPrice;//!< 缓存COCOS价格
 
 #pragma mark - 第三方Key
 UIKIT_EXTERN NSString * const UMengAppKey;// 友盟AppKey

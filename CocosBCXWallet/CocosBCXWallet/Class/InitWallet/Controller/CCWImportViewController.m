@@ -51,6 +51,10 @@
     }
     CCWWeakSelf
     [MBProgressHUD showLoadingMessage:nil];
+    // 网络失败，3秒消失
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [MBProgressHUD hideHUD];
+    });
     [CCWSDKRequest CCW_PrivateKeyLogin:privateKeyStr password:pwdStr Success:^(id  _Nonnull responseObject) {
         [MBProgressHUD hideHUD];
         CCWSETAccountName(responseObject[@"account"]);

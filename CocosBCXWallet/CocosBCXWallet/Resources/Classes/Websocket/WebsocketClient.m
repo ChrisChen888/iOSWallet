@@ -221,21 +221,13 @@
 
 - (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error {
     
-    
     !self.closeCallBack?:self.closeCallBack(error);
     self.connectStatus = WebsocketConnectStatusClosed;
     [self.websocket closeWithCode:-25 reason:nil];
     
     // 重连
-//    NSLog(@"xxxxxx%@",self.websocket);
-//    if (!self.websocket) {
-        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.connectedUrl] cachePolicy:0 timeoutInterval:5];
-        
-        self.websocket = [[SRWebSocket alloc] initWithURLRequest:
-                          request];
-        
-        [self.websocket open];
-//    }
+    CCWLog(@"重新连接");
+    [self connectWithTimeOut:5];
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean {
@@ -244,7 +236,6 @@
     if (!reason) {
         reason = @"Websocket unknown closed reason";
     }
-    
     !self.closeCallBack?:self.closeCallBack([NSError errorWithDomain:reason code:code userInfo:nil]);
 }
 
