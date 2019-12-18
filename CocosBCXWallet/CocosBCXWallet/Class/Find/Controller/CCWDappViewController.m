@@ -156,7 +156,7 @@
     
     // 初始化节点
     CCWNodeInfoModel *saveNodelInfo = [CCWNodeInfoModel mj_objectWithKeyValues:CCWNodeInfo];
-    NSString *jsStr = [NSString stringWithFormat:@"BcxWeb.initConnect('%@', '%@','%@','%@')",saveNodelInfo.ws, saveNodelInfo.coreAsset, saveNodelInfo.faucetUrl, saveNodelInfo.chainId];
+    NSString *jsStr = [NSString stringWithFormat:@"BcxWeb.initConnectClent('%@', '%@','%@','%@')",saveNodelInfo.ws, saveNodelInfo.coreAsset, saveNodelInfo.faucetUrl, saveNodelInfo.chainId];
     [self.wkWebView evaluateJavaScript:jsStr completionHandler:nil];
     
     //加载完成后隐藏progressView
@@ -196,6 +196,7 @@
         return;
     }
     NSDictionary *messagebody = message.body;
+    
     CCWWeakSelf;
     // 弹窗
     if ([self isVaildPasswordWithMessageBody:message.body]) {

@@ -47,6 +47,10 @@
     
     // 查询交易记录
     [MBProgressHUD showLoadingMessage:@"Loading..."];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [MBProgressHUD hideHUD];
+        [weakSelf.view makeToast:CCWLocalizable(@"网络繁忙，请检查您的网络连接")];
+    });
     [CCWSDKRequest CCW_QueryUserOperations:accountId limit:100 Success:^(NSArray * _Nonnull responseObject) {
         [MBProgressHUD hideHUD];
         [weakSelf.transferArray removeAllObjects];

@@ -1884,6 +1884,9 @@
                             NSDictionary *vestingBalance = [self handleVestingBalance:vestingDic];
                             long available_balance_amount = [vestingBalance[@"available_balance_amount"] longValue];
                             
+                            // 特殊处理 by gnkhandsome
+                            available_balance_amount = available_balance_amount - available_balance_amount * 0.02;
+                            
                             ChainAssetAmountObject *amount = [[ChainAssetAmountObject alloc] initFromAssetId:vestingbalance.balance.assetId amount:available_balance_amount];
                             operation.amount = amount;
                             operation.requiredAuthority = ownerAccount.active.publicKeys;
