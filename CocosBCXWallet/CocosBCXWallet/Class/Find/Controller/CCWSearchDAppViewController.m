@@ -29,6 +29,7 @@
     self.searchTextField.layer.cornerRadius = 2;
     self.searchTextField.layer.borderColor = [UIColor getColor:@"f0f2f3"].CGColor;
     self.searchTextField.layer.borderWidth = 0.5;
+    self.searchTextField.text = @"http://gas.test.cocosbcx.net/";
 }
 
 - (NSString *)getCompleteWebsite:(NSString *)urlStr{

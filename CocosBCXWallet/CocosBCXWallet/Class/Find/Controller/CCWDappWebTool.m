@@ -64,16 +64,34 @@
 
 + (void)JS_ClaimVestingBalance:(NSDictionary *)param addPassword:(NSString *)password response:(CallbackBlock)block {
     NSDictionary *publishParam = param[@"params"];
-    NSString *vestingid = publishParam[@"id"];
+    NSArray *vestingids = publishParam[@"id"];
     
-    [CCWSDKRequest CCW_ClaimVestingBalance:CCWAccountName Password:password VestingID:vestingid Success:^(id  _Nonnull responseObject) {
-        NSDictionary *jsMessage = @{
-                                    @"trx_id":responseObject,
-                                    };
-        !block?:block(@{@"data":@[],@"code":@1,@"trx_data":jsMessage} );
-    } Error:^(NSString * _Nonnull errorAlert, NSError *error) {
-        !block?:block([self errorBlockWithError:errorAlert ResponseObject:error]);
-    }];
+    for (NSString *vestingid in vestingids) {
+        [CCWSDKRequest CCW_ClaimVestingBalance:CCWAccountName Password:password VestingID:vestingid Success:^(id  _Nonnull responseObject) {
+            NSDictionary *jsMessage = @{
+                                        @"trx_id":responseObject,
+                                        };
+            !block?:block(@{@"data":@[],@"code":@1,@"trx_data":jsMessage} );
+        } Error:^(NSString * _Nonnull errorAlert, NSError *error) {
+            
+            if ([error.userInfo[@"message"] containsString:@"vbo.is_withdraw_allowed"]){
+                !block?:block(@{
+                                @"message":@"No reward available",
+                                @"code":@(127)
+                                });
+                return;
+            }else if ([error.userInfo[@"message"] containsString:@"vbo.owner"]) {
+                !block?:block(@{
+                                @"message":@"Not reward owner",
+                                @"code":@(115)
+                                });
+                
+                return;
+            }
+            
+            !block?:block([self errorBlockWithError:errorAlert ResponseObject:error]);
+        }];
+    }
 }
 
 + (void)JS_publishVotes:(NSDictionary *)param addPassword:(NSString *)password response:(CallbackBlock)block {

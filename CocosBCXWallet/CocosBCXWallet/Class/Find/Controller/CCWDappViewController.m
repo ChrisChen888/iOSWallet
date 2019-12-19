@@ -195,7 +195,16 @@
     if (![message.name isEqualToString:JS_PUSHMESSAGE]) {
         return;
     }
+    
     NSDictionary *messagebody = message.body;
+    
+    // init 回调
+    if ([messagebody[@"methodName"] isEqualToString:JS_METHOD_initConnect]) {
+        NSString *jsString = [CCWNodeInfo mj_JSONString];
+        jsString = [jsString stringByReplacingOccurrencesOfString:@"\\" withString:@"\\\\"];
+        [self responseToJsWithJSMethodName:JS_METHODNAME_CALLBACKRESULT SerialNumber:messagebody[@"serialNumber"]  andMessage:jsString];
+        return;
+    }
     
     CCWWeakSelf;
     // 弹窗

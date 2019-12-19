@@ -10,6 +10,7 @@
 
 #define JS_PUSHMESSAGE                  @"pushMessage"
 
+#define JS_METHOD_initConnect           @"initConnect"
 #define JS_METHOD_getCocosAccount       @"getAccountInfo"
 #define JS_METHOD_transfer              @"transferAsset"
 #define JS_METHOD_callContract          @"callContractFunction"
