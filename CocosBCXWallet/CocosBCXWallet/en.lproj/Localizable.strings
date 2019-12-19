@@ -81,6 +81,7 @@
 "资源" = "Gas";
 "投票" = "Vote";
 "请登陆/注册后再试" = "Try again after Login/Register";
+"冻结" = "Locked";
 
 // 交易记录详情
 "交易记录" = "Transaction History";
@@ -120,6 +121,7 @@
 "确认支付" = "Confirm Payment";
 "owner key不能进行转账，请导入active key" = "Owner key cannot transfer,Please import active key";
 "输入转账信息" = "Enter transfer information";
+"输入转出金额" = "Enter transfer amount";
 "无法给自己转账" = "You cannot transfer to your own account";
 "请输入转账数量" = "Please enter the amount to be transferred";
 "收款账户不存在" = "Account does not exist";
@@ -128,6 +130,7 @@
 "资产总览" = "Assets Overview";
 "钱包管理" = "Wallet Management";
 "多语言" = "Language";
+"货币单位" = "Currency Unit";
 "联系人" = "Contacts";
 "关于我们" = "About";
 

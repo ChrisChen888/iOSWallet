@@ -39,7 +39,7 @@
      
     self.title = CCWLocalizable(@"转账");
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"scanQRCode"] style:UIBarButtonItemStylePlain target:self action:@selector(CCW_ScanQRCode)];
-    NSString *balanceStr = [CCWDecimalTool CCW_decimalSubScaleString:[NSString stringWithFormat:@"%@",self.assetsModel.amount] scale:5];
+    NSString *balanceStr = [CCWDecimalTool CCW_decimalSubScaleString:[NSString stringWithFormat:@"%@",self.assetsModel.availableTotal] scale:5];
     self.accountLabel.text = [NSString stringWithFormat:@"%@：%@ %@",CCWLocalizable(@"余额"),balanceStr,self.assetsModel.symbol];
     self.transferNumTextField.delegate = self;
     [self.transferNumTextField addTarget:self action:@selector(textEditingChange:) forControlEvents:UIControlEventEditingChanged];
@@ -74,7 +74,7 @@
 
 // 转账全部资产
 - (IBAction)transferAllAssets:(UIButton *)sender {
-    self.transferNumTextField.text = [CCWDecimalTool CCW_decimalSubScaleString:[NSString stringWithFormat:@"%@",self.assetsModel.amount] scale:5];
+    self.transferNumTextField.text = [CCWDecimalTool CCW_decimalSubScaleString:[NSString stringWithFormat:@"%@",self.assetsModel.availableTotal] scale:5];
 }
 
 // 点击转账
@@ -165,8 +165,8 @@
 #pragma mark - UITextField
 - (void)textEditingChange:(UITextField *)textField
 {
-    if ([textField.text floatValue] > [self.assetsModel.amount floatValue]) {
-        NSString *balanceStr = [CCWDecimalTool CCW_decimalSubScaleString:[NSString stringWithFormat:@"%@",self.assetsModel.amount] scale:5];
+    if ([textField.text floatValue] > [self.assetsModel.availableTotal floatValue]) {
+        NSString *balanceStr = [CCWDecimalTool CCW_decimalSubScaleString:[NSString stringWithFormat:@"%@",self.assetsModel.availableTotal] scale:5];
         textField.text = balanceStr;
     }
 }

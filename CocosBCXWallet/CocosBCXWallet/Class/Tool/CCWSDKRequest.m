@@ -18,7 +18,7 @@
 /** 查询汇率 */
 + (void)CCW_RequestExchangeSuccess:(SuccessBlock)successBlock Error:(ErrorBlock)errorBlock
 {
-    [[CocosHTTPManager CCW_shareHTTPManager] CCW_GET:@"http://op.juhe.cn/onebox/exchange/currency?key=ed68793dc91e178e665bfb75f44df4d2&from=CNY&to=USD" Param:nil Success:successBlock Error:^(NSError *error) {
+    [[CocosHTTPManager CCW_shareHTTPManager] CCW_GET:@"https://api-cocosbcx.cocosbcx.net/backend/currencyRate" Param:nil Success:successBlock Error:^(NSError *error) {
         !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
     }];
 }
@@ -364,6 +364,7 @@
                             Success:(SuccessBlock)successBlock
                               Error:(ErrorBlock)errorBlock
 {
+    
     [[CocosSDK shareInstance] Cocos_GetAccountBalance:accountID CoinID:@[] Success:^(NSArray *responseObject) {
         NSMutableArray *myassetArr = [CCWAssetsModel mj_objectArrayWithKeyValuesArray:responseObject];
         __block NSMutableArray *tempArray = [NSMutableArray array];
@@ -371,15 +372,48 @@
             !successBlock?:successBlock(tempArray);
             return;
         }
-        [myassetArr enumerateObjectsUsingBlock:^(CCWAssetsModel *asset, NSUInteger idx, BOOL * _Nonnull stop) {
-            [self CCW_QueryAssetInfo:asset.asset_id Success:^(CCWAssetsModel *assetsModel) {
-                assetsModel.asset_id = asset.asset_id;
-                assetsModel.amount = [[CCWDecimalTool CCW_decimalNumberWithString:[NSString stringWithFormat:@"%@",asset.amount]] decimalNumberByMultiplyingByPowerOf10:-[assetsModel.precision integerValue]];
-                [tempArray addObject:assetsModel];
-                if (tempArray.count == myassetArr.count) {
-                    !successBlock?:successBlock(tempArray);
+        CCWWeakSelf
+        
+        [self CCW_QueryAccountInfo:CCWAccountName Success:^(id  _Nonnull accountObject) {
+            NSDictionary *asset_locked = accountObject[@"asset_locked"];
+            NSArray *locked_total = asset_locked[@"locked_total"];
+
+            dispatch_async(dispatch_get_global_queue(0, 0), ^{
+                dispatch_semaphore_t disp = dispatch_semaphore_create(0);
+                for (CCWAssetsModel *asset in myassetArr) {
+                    if ([asset.asset_id isEqualToString:@"1.3.1"]) {
+                        continue;
+                    }
+                    [weakSelf CCW_QueryAssetInfo:asset.asset_id Success:^(CCWAssetsModel *assetsModel) {
+                        assetsModel.asset_id = asset.asset_id;
+                        assetsModel.amount = [[CCWDecimalTool CCW_decimalNumberWithString:[NSString stringWithFormat:@"%@",asset.amount]] decimalNumberByMultiplyingByPowerOf10:-[assetsModel.precision integerValue]];
+                        assetsModel.locked_total = @(0);
+                        
+                        NSDecimalNumber *tempAmout = [CCWDecimalTool CCW_decimalNumberWithString:[NSString stringWithFormat:@"%@",assetsModel.amount]];
+                        assetsModel.availableTotal = tempAmout.stringValue;
+                        
+                        for (NSArray *lockasset in locked_total) {
+                            if ([[lockasset firstObject] isEqualToString:assetsModel.asset_id]) {
+                                assetsModel.locked_total = [[CCWDecimalTool CCW_decimalNumberWithString:[NSString stringWithFormat:@"%@",[lockasset lastObject]]] decimalNumberByMultiplyingByPowerOf10:-[assetsModel.precision integerValue]];
+                                NSDecimalNumber *tempLocked = [CCWDecimalTool CCW_decimalNumberWithString:[NSString stringWithFormat:@"%@",assetsModel.locked_total]];
+                                NSDecimalNumber *availableDecNum = [tempAmout decimalNumberBySubtracting:tempLocked];
+                                assetsModel.availableTotal = availableDecNum.stringValue;
+                                break;
+                            }
+                        }
+                        [tempArray addObject:assetsModel];
+                        //发送信号
+                        dispatch_semaphore_signal(disp);
+                    } Error:errorBlock];
+                    // 2. 等待信号
+                    dispatch_semaphore_wait(disp, DISPATCH_TIME_FOREVER);
                 }
-            } Error:errorBlock];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    !successBlock?:successBlock(tempArray);
+                });
+            });
+        } Error:^(NSString * _Nonnull errorAlert, NSError *error) {
+            !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
         }];
     } Error:^(NSError *error) {
         !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
@@ -477,27 +511,6 @@
             !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
         }];
     }];
-}
-
-/** 调用合约手续费 */
-+ (void)CCW_CallContractFee:(NSString *)contractIdOrName
-        ContractMethodParam:(NSArray *)param
-             ContractMethod:(NSString *)contractmMethod
-              CallerAccount:(NSString *)accountIdOrName
-             feePayingAsset:(NSString *)feePayingAsset
-                   Password:(NSString *)password
-        CallContractSuccess:(SuccessBlock)successBlock
-                      Error:(ErrorBlock)errorBlock
-{
-//    [[CocosSDK shareInstance] Cocos_GetCallContractFee:contractIdOrName ContractMethodParam:param ContractMethod:contractmMethod CallerAccount:accountIdOrName feePayingAsset:feePayingAsset Success:^(id responseObject) {
-//        CCWAssetsModel *assetAmountModel = [CCWAssetsModel mj_objectWithKeyValues:[responseObject firstObject]];
-//        [self CCW_QueryAssetInfo:feePayingAsset Success:^(CCWAssetsModel *assetsModel) {
-//            assetsModel.amount = [[CCWDecimalTool CCW_decimalNumberWithString:[NSString stringWithFormat:@"%@",assetAmountModel.amount]] decimalNumberByMultiplyingByPowerOf10:-[assetsModel.precision integerValue]];
-//            !successBlock?:successBlock(assetsModel);
-//        } Error:errorBlock];
-//    } Error:^(NSError *error) {
-//        !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
-//    }];
 }
 
 /** 调用合约 */

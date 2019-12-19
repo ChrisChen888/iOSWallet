@@ -210,15 +210,6 @@ typedef void (^ErrorBlock)(NSString *errorAlert,id responseObject);// 失败回�
 + (void)CCW_QueryAccountListSuccess:(SuccessBlock)successBlock
                               Error:(ErrorBlock)errorBlock;
 
-/** 调用合约手续费 */
-+ (void)CCW_CallContractFee:(NSString *)contractIdOrName
-        ContractMethodParam:(NSArray *)param
-             ContractMethod:(NSString *)contractmMethod
-              CallerAccount:(NSString *)accountIdOrName
-             feePayingAsset:(NSString *)feePayingAsset
-                   Password:(NSString *)password
-        CallContractSuccess:(SuccessBlock)successBlock
-                      Error:(ErrorBlock)errorBlock;
 /** 调用合约 */
 + (void)CCW_CallContract:(NSString *)contractIdOrName
      ContractMethodParam:(NSArray *)param

@@ -11,16 +11,13 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CCWAssetsModel : NSObject
-/** <#视图#> */
+/** 总的个数 */
 @property (nonatomic, strong) NSNumber *amount;
-/** <#视图#> */
-@property (nonatomic, strong) NSNumber *eq_precision;
-/** <#视图#> */
-@property (nonatomic, strong) NSNumber *eq_value;
-/** <#视图#> */
-@property (nonatomic, copy) NSString *eq_unit;
 /** 锁仓总量 */
 @property (nonatomic, strong) NSNumber *locked_total;
+/** 可用总量 */
+@property (nonatomic, copy) NSString *availableTotal;
+
 /** 资产ID */
 @property (nonatomic, copy) NSString *asset_id;
 /** 小数位 */

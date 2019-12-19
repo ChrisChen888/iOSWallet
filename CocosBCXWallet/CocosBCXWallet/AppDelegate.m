@@ -64,7 +64,8 @@
 - (void)CCW_RequestExchange
 {
     [CCWSDKRequest CCW_RequestExchangeSuccess:^(id  _Nonnull responseObject) {
-        NSArray *exchange = responseObject[@"result"];
+        NSDictionary *exchangeResult = responseObject[@"data"];
+        NSArray *exchange = exchangeResult[@"result"];
         NSDictionary *usd = [exchange lastObject];
         NSString *exchangerate = usd[@"exchange"];
         [CCWSaveTool setObject:exchangerate forKey:CCWCurrencyValueKey];

@@ -246,8 +246,7 @@
 - (void)setAssetsNum:(NSNumber *)assetsNum
 {
     _assetsNum = assetsNum;
-    id cocosprice = [CCWSaveTool objectForKey:CCWCurrencyCocosPrice];
-    
+    id cocosprice = [CCWSaveTool objectForKey:CCWCurrencyCocosPrice];    
     NSString *totalPrice = [CCWDecimalTool CCW_multiplyTotalAssetsWithMultiplier:[NSString stringWithFormat:@"%@",cocosprice] faciend:[NSString stringWithFormat:@"%@",assetsNum]].stringValue;
     
     self.assetsLabel.text = [CCWDecimalTool CCW_convertRateWithPrice:totalPrice scale:6];

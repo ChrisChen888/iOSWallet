@@ -12,7 +12,7 @@
 /** string类型转NSDecimalNumber */
 +(NSDecimalNumber *)CCW_decimalNumberWithString:(NSString *)stringValue
 {
-    if (stringValue.length == 0 || !stringValue || !VALIDATE_STRING(stringValue)) {
+    if (stringValue.length == 0 || !stringValue || !VALIDATE_STRING(stringValue) || IsStrEmpty(stringValue) || IsNilOrNull(stringValue) || [stringValue isEqualToString:@"(null)"]) {
         stringValue = @"0";
     }
     NSDecimalNumber *dnTemp = [NSDecimalNumber decimalNumberWithString:stringValue?:@"0"];

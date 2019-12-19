@@ -59,9 +59,23 @@
                                 <color key="textColor" red="0.1803921568627451" green="0.43137254901960786" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COCOS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Is1-o9-Amy">
+                                <rect key="frame" x="64" y="18" width="60.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <color key="textColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="冻结 123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q0b-3C-5X0">
+                                <rect key="frame" x="64" y="40" width="49" height="15"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.96470588235294119" green="0.97254901960784312" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="Is1-o9-Amy" firstAttribute="top" secondItem="Ixd-yL-dD0" secondAttribute="top" constant="5" id="5mQ-7h-NzT"/>
+                            <constraint firstItem="Q0b-3C-5X0" firstAttribute="bottom" secondItem="Ixd-yL-dD0" secondAttribute="bottom" constant="-2" id="6oY-xz-Kge"/>
                             <constraint firstAttribute="trailing" secondItem="ck2-0n-016" secondAttribute="trailing" constant="12" id="HtK-KH-1nD"/>
                             <constraint firstItem="vhW-qF-7S4" firstAttribute="top" secondItem="4Gj-Uk-xFQ" secondAttribute="top" constant="12" id="MeL-Ks-4qc"/>
                             <constraint firstItem="8kf-nU-p7R" firstAttribute="leading" secondItem="Ixd-yL-dD0" secondAttribute="trailing" constant="8" id="RkL-Fc-SXV"/>
@@ -69,6 +83,8 @@
                             <constraint firstItem="gOM-nj-dGL" firstAttribute="top" secondItem="8kf-nU-p7R" secondAttribute="top" id="YT4-fQ-S8D"/>
                             <constraint firstItem="gOM-nj-dGL" firstAttribute="leading" secondItem="8kf-nU-p7R" secondAttribute="trailing" constant="10" id="aBB-yq-Lb1"/>
                             <constraint firstItem="Ixd-yL-dD0" firstAttribute="leading" secondItem="4Gj-Uk-xFQ" secondAttribute="leading" constant="12" id="cHH-q9-qQb"/>
+                            <constraint firstItem="Q0b-3C-5X0" firstAttribute="leading" secondItem="Is1-o9-Amy" secondAttribute="leading" id="d4U-5w-Gof"/>
+                            <constraint firstItem="8kf-nU-p7R" firstAttribute="leading" secondItem="Is1-o9-Amy" secondAttribute="leading" id="dXT-Fd-mcY"/>
                             <constraint firstItem="Ixd-yL-dD0" firstAttribute="centerY" secondItem="4Gj-Uk-xFQ" secondAttribute="centerY" id="hjP-P2-Myy"/>
                             <constraint firstAttribute="trailing" secondItem="vhW-qF-7S4" secondAttribute="trailing" constant="12" id="idN-4p-GQA"/>
                             <constraint firstItem="8kf-nU-p7R" firstAttribute="centerY" secondItem="Ixd-yL-dD0" secondAttribute="centerY" id="v5T-bY-1UM"/>
@@ -92,6 +108,8 @@
                 <outlet property="accountLabel" destination="vhW-qF-7S4" id="LKG-To-FQf"/>
                 <outlet property="coinImageView" destination="Ixd-yL-dD0" id="17v-Lh-nLx"/>
                 <outlet property="coinNameLabel" destination="8kf-nU-p7R" id="HmO-K7-ev4"/>
+                <outlet property="havelockCoinLabel" destination="Is1-o9-Amy" id="w8S-un-RyU"/>
+                <outlet property="lockAmontLabel" destination="Q0b-3C-5X0" id="HQf-g2-FBg"/>
                 <outlet property="priceLabel" destination="ck2-0n-016" id="Lc7-Bm-QsL"/>
             </connections>
             <point key="canvasLocation" x="228" y="164.6176911544228"/>

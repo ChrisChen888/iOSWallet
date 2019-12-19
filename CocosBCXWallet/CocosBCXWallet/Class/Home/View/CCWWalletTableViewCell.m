@@ -14,6 +14,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *accountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *havelockCoinLabel;
+@property (weak, nonatomic) IBOutlet UILabel *lockAmontLabel;
+
+
 @end
 
 @implementation CCWWalletTableViewCell
@@ -32,9 +36,22 @@
 - (void)setAssetsModel:(CCWAssetsModel *)assetsModel
 {
     _assetsModel = assetsModel;
-    self.accountLabel.text = [CCWDecimalTool CCW_decimalSubScaleString:[NSString stringWithFormat:@"%@",assetsModel.amount] scale:[assetsModel.precision integerValue]];
-    self.coinNameLabel.text = [NSString stringWithFormat:@"%@",assetsModel.symbol];
-
+    
+    if (assetsModel.locked_total.doubleValue == 0) { // 没有锁仓金额
+        self.havelockCoinLabel.hidden = YES;
+        self.lockAmontLabel.hidden = YES;
+        self.coinNameLabel.hidden = NO;
+        self.coinNameLabel.text = [NSString stringWithFormat:@"%@",assetsModel.symbol];
+    }else {
+        self.havelockCoinLabel.hidden = NO;
+        self.lockAmontLabel.hidden = NO;
+        self.coinNameLabel.hidden = YES;
+        self.havelockCoinLabel.text = [NSString stringWithFormat:@"%@",assetsModel.symbol];
+        self.lockAmontLabel.text = [NSString stringWithFormat:@"%@ %@",CCWLocalizable(@"冻结"),[CCWDecimalTool CCW_decimalSubScaleString:[NSString stringWithFormat:@"%@",assetsModel.locked_total] scale:[assetsModel.precision integerValue]]];
+    }
+    
+    self.accountLabel.text = [CCWDecimalTool CCW_decimalSubScaleString:[NSString stringWithFormat:@"%@",assetsModel.availableTotal] scale:[assetsModel.precision integerValue]];
+    
     NSString *price = @"0";
     if ([assetsModel.symbol isEqualToString:@"COCOS"]) {
         id cocosprice = [CCWSaveTool objectForKey:CCWCurrencyCocosPrice];
