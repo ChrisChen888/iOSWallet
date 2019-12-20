@@ -9,6 +9,7 @@
 #import "CCWWalletListViewController.h"
 #import "CCWMyWalletTableViewCell.h"
 #import "CCWWalletManagerViewController.h"
+#import "CCWRegisterTableViewCell.h"
 
 @interface CCWWalletListViewController ()<UITableViewDelegate,UITableViewDataSource,CCWMyWalletTableViewCellDelegate>
 /** tableView */
@@ -27,7 +28,6 @@
         UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
         tableView.delegate = self;
         tableView.dataSource = self;
-        tableView.rowHeight = 120;
         tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [self.view addSubview:tableView];
         tableView;
@@ -43,26 +43,47 @@
 
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (!CCWAccountId) {
+        return 70;
+    }
+    return 120;
+}
+
 #pragma mark - tableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if (!CCWAccountId) {
+        return 1;
+    }
     return self.myWalletArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CCWMyWalletTableViewCell *cell = [CCWMyWalletTableViewCell cellWithTableView:tableView WithIdentifier:@"MyWalletCell"];
-    cell.walletAccountModel = self.myWalletArray[indexPath.row];
-    cell.delegate = self;
-    return cell;
+    if (!CCWAccountId) {
+        CCWRegisterTableViewCell *cell = [CCWRegisterTableViewCell cellWithTableView:tableView WithIdentifier:@"RegisterCell"];
+        return cell;
+    }else{
+        CCWMyWalletTableViewCell *cell = [CCWMyWalletTableViewCell cellWithTableView:tableView WithIdentifier:@"MyWalletCell"];
+        cell.walletAccountModel = self.myWalletArray[indexPath.row];
+        cell.delegate = self;
+        return cell;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    CCWWalletManagerViewController *walletManagerVC = [[CCWWalletManagerViewController alloc] init];
-    walletManagerVC.walletAccountModel = self.myWalletArray[indexPath.row];
-    [self.navigationController pushViewController:walletManagerVC animated:YES];
+    if (!CCWAccountId) {
+        id<CCWInitModuleProtocol> initModule  = [[CCWMediator sharedInstance] moduleForProtocol:@protocol(CCWInitModuleProtocol)];
+        [self.navigationController pushViewController:[initModule CCW_LoginRegisterWalletViewController] animated:YES];
+    }else{
+        CCWWalletManagerViewController *walletManagerVC = [[CCWWalletManagerViewController alloc] init];
+        walletManagerVC.walletAccountModel = self.myWalletArray[indexPath.row];
+        [self.navigationController pushViewController:walletManagerVC animated:YES];
+    }
 }
 
 // 点击复制

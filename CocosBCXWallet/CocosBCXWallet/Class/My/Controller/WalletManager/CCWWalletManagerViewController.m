@@ -119,6 +119,7 @@
     });
 }
 
+
 // 退出登录
 - (IBAction)loginPutClick:(UIButton *)sender {
     CCWWeakSelf;
@@ -136,16 +137,19 @@
                     CocosDBAccountModel *dbAccountModel = [accountArray firstObject];
                     CCWSETAccountName(dbAccountModel.name);
                     CCWSETAccountId(dbAccountModel.ID);
-                    CCWKeyWindow.rootViewController = [NSClassFromString(@"CCWTabViewController") new];
+                    //                    CCWKeyWindow.rootViewController = [NSClassFromString(@"CCWTabViewController") new];
+                    [weakSelf.navigationController popToRootViewControllerAnimated:YES];
                 }else{
                     CCWSETAccountName(nil);
                     CCWSETAccountId(nil);
-                    id<CCWInitModuleProtocol> registerModule = [[CCWMediator sharedInstance] moduleForProtocol:@protocol(CCWInitModuleProtocol)];
-                    CCWNavigationController *registerController = [[CCWNavigationController alloc] initWithRootViewController:[registerModule CCW_LoginRegisterWalletViewController]];
-                    CCWKeyWindow.rootViewController = registerController;
+                    //                    id<CCWInitModuleProtocol> registerModule = [[CCWMediator sharedInstance] moduleForProtocol:@protocol(CCWInitModuleProtocol)];
+                    //                    CCWNavigationController *registerController = [[CCWNavigationController alloc] initWithRootViewController:[registerModule CCW_LoginRegisterWalletViewController]];
+                    //                    CCWKeyWindow.rootViewController = registerController;
+                    [weakSelf.navigationController popToRootViewControllerAnimated:YES];
                 }
             }else{
-                CCWKeyWindow.rootViewController = [NSClassFromString(@"CCWTabViewController") new];
+                [weakSelf.navigationController popToRootViewControllerAnimated:YES];
+                //                CCWKeyWindow.rootViewController = [NSClassFromString(@"CCWTabViewController") new];
             }
             
         } Error:^(NSString * _Nonnull errorAlert, id  _Nonnull responseObject) {
@@ -154,5 +158,41 @@
     }];
     [visionAlret alertWithRootViewControllerAddAction:@[cancel,comfirm]];
 }
+
+// 退出登录
+//- (IBAction)loginPutClick:(UIButton *)sender {
+//    CCWWeakSelf;
+//    CCWLogOutAlert *visionAlret = [[CCWLogOutAlert alloc] init];
+//    CCWAlertAction *cancel = [CCWAlertAction CCW_actionWithTitle:CCWLocalizable(@"取消") style:CCWAlertActionStyleCancel handler:^(CCWAlertAction *action) {
+//
+//    }];
+//
+//    CCWAlertAction *comfirm = [CCWAlertAction CCW_actionWithTitle:CCWLocalizable(@"确认") style:CCWAlertActionStyleDefault handler:^(CCWAlertAction *action) {
+//
+//        [CCWSDKRequest CCW_LogoutAccount:weakSelf.walletAccountModel.dbAccountModel.name Success:^(id  _Nonnull responseObject) {
+//            if ([weakSelf.walletAccountModel.dbAccountModel.name isEqualToString:CCWAccountName]) {
+//                NSArray *accountArray = [CCWSDKRequest CCW_QueryAccountList];
+//                if (accountArray.count > 0) {
+//                    CocosDBAccountModel *dbAccountModel = [accountArray firstObject];
+//                    CCWSETAccountName(dbAccountModel.name);
+//                    CCWSETAccountId(dbAccountModel.ID);
+//                    CCWKeyWindow.rootViewController = [NSClassFromString(@"CCWTabViewController") new];
+//                }else{
+//                    CCWSETAccountName(nil);
+//                    CCWSETAccountId(nil);
+//                    id<CCWInitModuleProtocol> registerModule = [[CCWMediator sharedInstance] moduleForProtocol:@protocol(CCWInitModuleProtocol)];
+//                    CCWNavigationController *registerController = [[CCWNavigationController alloc] initWithRootViewController:[registerModule CCW_LoginRegisterWalletViewController]];
+//                    CCWKeyWindow.rootViewController = registerController;
+//                }
+//            }else{
+//                CCWKeyWindow.rootViewController = [NSClassFromString(@"CCWTabViewController") new];
+//            }
+//
+//        } Error:^(NSString * _Nonnull errorAlert, id  _Nonnull responseObject) {
+//            [weakSelf.view makeToast:CCWLocalizable(@"退出账户失败")];
+//        }];
+//    }];
+//    [visionAlret alertWithRootViewControllerAddAction:@[cancel,comfirm]];
+//}
 
 @end
