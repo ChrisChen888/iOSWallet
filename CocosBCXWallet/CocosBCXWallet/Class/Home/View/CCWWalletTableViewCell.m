@@ -63,6 +63,8 @@
 - (void)setReceiveAssetsModel:(CCWAssetsModel *)receiveAssetsModel
 {
     _receiveAssetsModel = receiveAssetsModel;
+    self.havelockCoinLabel.hidden = YES;
+    self.lockAmontLabel.hidden = YES;
     self.accountLabel.hidden = YES;
     self.priceLabel.hidden = YES;
     self.coinNameLabel.text = [NSString stringWithFormat:@"%@",receiveAssetsModel.symbol];
