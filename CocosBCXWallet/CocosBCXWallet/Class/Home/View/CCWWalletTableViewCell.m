@@ -57,7 +57,13 @@
         id cocosprice = [CCWSaveTool objectForKey:CCWCurrencyCocosPrice];
         price = [CCWDecimalTool CCW_convertRateWithPrice:[NSString stringWithFormat:@"%@",cocosprice] scale:6];
     }
-    self.priceLabel.text = [NSString stringWithFormat:@"≈ %@%@",CCWCNYORUSD?@"￥":@"$",price];
+    
+    // 测试网价格为0
+    if (CCWNetNotesType) {
+        self.priceLabel.text = [NSString stringWithFormat:@"≈ %@%@",CCWCNYORUSD?@"￥":@"$",price];
+    }else{
+        self.priceLabel.text = [NSString stringWithFormat:@"≈ %@0",CCWCNYORUSD?@"￥":@"$"];
+    }
 }
 
 - (void)setReceiveAssetsModel:(CCWAssetsModel *)receiveAssetsModel

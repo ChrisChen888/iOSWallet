@@ -248,8 +248,12 @@
     _assetsNum = assetsNum;
     id cocosprice = [CCWSaveTool objectForKey:CCWCurrencyCocosPrice];    
     NSString *totalPrice = [CCWDecimalTool CCW_multiplyTotalAssetsWithMultiplier:[NSString stringWithFormat:@"%@",cocosprice] faciend:[NSString stringWithFormat:@"%@",assetsNum]].stringValue;
-    
-    self.assetsLabel.text = [CCWDecimalTool CCW_convertRateWithPrice:totalPrice scale:6];
+    // 测试网价格为0
+    if (CCWNetNotesType) {
+        self.assetsLabel.text = [CCWDecimalTool CCW_convertRateWithPrice:totalPrice scale:6];
+    }else{
+        self.assetsLabel.text = @"0.00";
+    }
     
     self.assetsTitleLabel.text = [NSString stringWithFormat:@"%@(%@)",CCWLocalizable(@"总资产"),CCWCNYORUSD?@"￥":@"$"];
 }
