@@ -137,7 +137,14 @@
             self.headerView.assetsNum = assetsModel.amount;
         }
     }
-    self.assetsModelArray = responseObject;
+//    self.assetsModelArray = responseObject;
+    self.assetsModelArray = [responseObject sortedArrayUsingComparator:^NSComparisonResult(CCWAssetsModel *p1, CCWAssetsModel *p2){
+        //对数组进行排序（升序）
+        return [p1.ID compare:p2.ID];
+        //对数组进行排序（降序）
+//         return [p2.ID compare:p1.ID];
+    }].mutableCopy;
+    
     [self.tableView reloadData];
 }
 

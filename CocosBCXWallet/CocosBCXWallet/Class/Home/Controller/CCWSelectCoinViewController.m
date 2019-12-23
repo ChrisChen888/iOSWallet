@@ -52,6 +52,14 @@
                     [weakSelf.assetsModelArray addObject:assetsModel];
                 }
             }
+            
+            weakSelf.assetsModelArray = [weakSelf.assetsModelArray sortedArrayUsingComparator:^NSComparisonResult(CCWAssetsModel *p1, CCWAssetsModel *p2){
+                //对数组进行排序（升序）
+                return [p1.ID compare:p2.ID];
+                //对数组进行排序（降序）
+                // return [p2.dateOfBirth compare:p1.dateOfBirth];
+            }].mutableCopy;
+
             [weakSelf.tableView reloadData];
         } Error:^(NSString * _Nonnull errorAlert, id  _Nonnull responseObject) {
             [weakSelf.view makeToast:CCWLocalizable(@"网络繁忙，请检查您的网络连接")];
