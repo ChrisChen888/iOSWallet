@@ -91,7 +91,7 @@
 {
     [super viewWillAppear:animated];
     [self connectSuccess];
-    
+
 }
 
 - (void)connectSuccess
@@ -99,6 +99,11 @@
     CCWWeakSelf
     if (!CCWAccountId) {
         self.headerView.account = @"";
+        self.headerView.assetsNum = @(0);
+        
+        // 缓存总资产
+        CCWAllAssetPrice = @(0);
+        
         [self.tableView reloadData];
     }else{
         NSString *accountName = CCWAccountName;
@@ -135,6 +140,9 @@
     for (CCWAssetsModel *assetsModel in responseObject) {
         if ([assetsModel.asset_id isEqualToString:@"1.3.0"]) {
             self.headerView.assetsNum = assetsModel.amount;
+            
+            // 缓存总资产
+            CCWAllAssetPrice = assetsModel.amount;
         }
     }
 //    self.assetsModelArray = responseObject;

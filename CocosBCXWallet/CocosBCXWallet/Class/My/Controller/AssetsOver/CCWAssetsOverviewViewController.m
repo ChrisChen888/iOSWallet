@@ -91,7 +91,21 @@ static NSString *const AssetsCollectionCell = @"AssetsCollectionCell";
     [super viewDidLoad];
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.title = CCWLocalizable(@"资产总览");
-    self.assetsTitleLabel.text = [NSString stringWithFormat:@"%@(￥)",CCWLocalizable(@"资产")];
+    
+    self.assetsTitleLabel.text = [NSString stringWithFormat:@"%@(%@)",CCWLocalizable(@"总资产"),CCWCNYORUSD?@"￥":@"$"];
+    
+    {
+        // 设置总资产
+        id cocosprice = [CCWSaveTool objectForKey:CCWCurrencyCocosPrice];
+        NSString *totalPrice = [CCWDecimalTool CCW_multiplyTotalAssetsWithMultiplier:[NSString stringWithFormat:@"%@",cocosprice] faciend:[NSString stringWithFormat:@"%@",CCWAllAssetPrice]].stringValue;
+        // 测试网价格为0
+        if (CCWNetNotesType) {
+            self.allAssetsLabel.text = [CCWDecimalTool CCW_convertRateWithPrice:totalPrice scale:6];
+        }else{
+            self.allAssetsLabel.text = @"0.00";
+        }
+    }
+    
     self.view.backgroundColor = [UIColor whiteColor];
     self.automaticallyAdjustsScrollViewInsets = NO;
 
@@ -130,8 +144,19 @@ static NSString *const AssetsCollectionCell = @"AssetsCollectionCell";
 
 - (IBAction)assetsShowOrHidden:(UIButton *)sender {
     sender.selected = !sender.selected;
-    NSString *allAssets = sender.selected?@"****":@"0.00";
-    self.allAssetsLabel.text = allAssets;
+    
+    // 设置总资产
+    id cocosprice = [CCWSaveTool objectForKey:CCWCurrencyCocosPrice];
+    NSString *totalPrice = [CCWDecimalTool CCW_multiplyTotalAssetsWithMultiplier:[NSString stringWithFormat:@"%@",cocosprice] faciend:[NSString stringWithFormat:@"%@",CCWAllAssetPrice]].stringValue;
+    // 测试网价格为0
+    NSString *allAssets;
+    if (CCWNetNotesType) {
+        allAssets = [CCWDecimalTool CCW_convertRateWithPrice:totalPrice scale:6];
+    }else{
+        allAssets = @"0.00";
+    }
+    
+    self.allAssetsLabel.text = sender.selected?@"****":allAssets;
 }
 
 /**

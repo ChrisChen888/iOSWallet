@@ -94,7 +94,17 @@
         [self.view makeToast:CCWLocalizable(@"请输入转账数量")];
         return;
     }
-    [self showTransferDetail];
+    
+    CCWWeakSelf
+    [CCWSDKRequest CCW_QueryAccountInfo:receiveAddress Success:^(id  _Nonnull responseObject) {
+        [weakSelf showTransferDetail];
+    } Error:^(NSString * _Nonnull errorAlert, NSError *error) {
+        if (error.code == 104) {
+            [weakSelf.view makeToast:CCWLocalizable(@"收款账户不存在")];
+        }else{
+            [weakSelf.view makeToast:CCWLocalizable(@"网络繁忙，请检查您的网络连接")];
+        }
+    }];
 }
 
 - (void)showTransferDetail

@@ -25,5 +25,6 @@ UIKIT_EXTERN NSString * const CCWCurrencyValueKey;//!< 缓存汇率的值
 
 UIKIT_EXTERN NSString * const CCWCurrencyCocosPrice;//!< 缓存COCOS价格
 
+UIKIT_EXTERN NSNumber *CCWAllAssetPrice;//!< 总资产
 #pragma mark - 第三方Key
 UIKIT_EXTERN NSString * const UMengAppKey;// 友盟AppKey
