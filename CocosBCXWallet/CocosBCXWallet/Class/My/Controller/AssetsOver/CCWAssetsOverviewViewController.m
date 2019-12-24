@@ -117,7 +117,6 @@ static NSString *const AssetsCollectionCell = @"AssetsCollectionCell";
                        (id)[UIColor getColor:@"ECEEFD"].CGColor, nil];
     [self.headerBgView.layer addSublayer:gradient];
     ////////////// 渐变色
-
     
     self.assetsBgView.backgroundColor = [UIColor gradientColorFromColors:@[[UIColor getColor:@"507BF0"],[UIColor getColor:@"779EF9"]] gradientType:CCWGradientTypeLeftToRight colorSize:CGSizeMake(CCWScreenW, 130)];
     [self ccw_setNavBackgroundColor:[UIColor getColor:@"D2D9F3"]];

@@ -25,6 +25,11 @@
     NSInteger tagInteger = button.tag;
     switch (tagInteger) {
         case 0:
+            
+            if (!CCWAccountId) {
+                [self.view makeToast:CCWLocalizable(@"请登陆/注册后再试")];
+                return;
+            }
             [self.navigationController pushViewController:[NSClassFromString(@"CCWAssetsOverviewViewController") new] animated:YES];
             break;
         case 1: // 钱包管理

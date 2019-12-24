@@ -71,12 +71,13 @@
     
     //左边导航栏的图标
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navBack"] style:UIBarButtonItemStylePlain target:self action:@selector(CCW_GoBackAction)];
-    
 }
 
-
-- (void)dealloc
+// 清除缓存
+//- (void)dealloc
+- (void)viewDidDisappear:(BOOL)animated
 {
+    [super viewDidDisappear:animated];
     [self.wkWebView removeObserver:self forKeyPath:@"estimatedProgress"];
     [self.wkWebView removeObserver:self forKeyPath:@"title"];
     
@@ -85,8 +86,7 @@
 }
 
 - (void)clearWebCache {
-    NSSet *websiteDataTypes
-    = [NSSet setWithArray:@[
+    NSSet *websiteDataTypes = [NSSet setWithArray:@[
                             WKWebsiteDataTypeDiskCache,
                             WKWebsiteDataTypeMemoryCache
                             ]];
@@ -121,7 +121,7 @@
              *动画时长0.25s，延时0.3s后开始动画
              *动画结束后将progressView隐藏
              */
-            __weak typeof (self)weakSelf = self;
+            CCWWeakSelf
             [UIView animateWithDuration:0.25f delay:0.3f options:UIViewAnimationOptionCurveEaseOut animations:^{
                 weakSelf.progressView.transform = CGAffineTransformMakeScale(1.0f, 1.4f);
             } completion:^(BOOL finished) {

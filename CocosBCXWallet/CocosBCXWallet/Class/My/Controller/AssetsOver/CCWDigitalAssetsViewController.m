@@ -33,6 +33,8 @@
     self.tableView.rowHeight = 82;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
+    
+    
     CCWWeakSelf
     // 查询资产
     [CCWSDKRequest CCW_QueryAccountAllBalances:CCWAccountId Success:^(id  _Nonnull responseObject) {

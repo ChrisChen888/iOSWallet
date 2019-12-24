@@ -265,7 +265,6 @@
 // 按钮点击
 - (void)CCW_HomeNavbuttonClick:(CCWWalletHeaderView *)walletHeaderView button:(UIButton *)button
 {
-    
     if (!CCWAccountId) {
         [self.view makeToast:CCWLocalizable(@"请登陆/注册后再试")];
         return;

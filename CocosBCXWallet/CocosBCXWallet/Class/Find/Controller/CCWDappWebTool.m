@@ -51,14 +51,14 @@
     NSString *mortgager = updateGasParam[@"mortgager"];
     NSString *beneficiary = updateGasParam[@"beneficiary"];
     NSNumber *amount = updateGasParam[@"amount"];
-    
+    CCWWeakSelf
     [CCWSDKRequest CCW_GasWithMortgager:mortgager Beneficiary:beneficiary Collateral:[amount longValue] Password:password Success:^(id  _Nonnull responseObject) {
         NSDictionary *jsMessage = @{
                                     @"trx_id":responseObject,
                                     };
         !block?:block(@{@"data":@[],@"code":@1,@"trx_data":jsMessage} );
     } Error:^(NSString * _Nonnull errorAlert, NSError *error) {
-        !block?:block([self errorBlockWithError:errorAlert ResponseObject:error]);
+        !block?:block([weakSelf errorBlockWithError:errorAlert ResponseObject:error]);
     }];
 }
 
@@ -67,6 +67,7 @@
     NSArray *vestingids = publishParam[@"id"];
     
     for (NSString *vestingid in vestingids) {
+        CCWWeakSelf
         [CCWSDKRequest CCW_ClaimVestingBalance:CCWAccountName Password:password VestingID:vestingid Success:^(id  _Nonnull responseObject) {
             NSDictionary *jsMessage = @{
                                         @"trx_id":responseObject,
@@ -89,7 +90,7 @@
                 return;
             }
             
-            !block?:block([self errorBlockWithError:errorAlert ResponseObject:error]);
+            !block?:block([weakSelf errorBlockWithError:errorAlert ResponseObject:error]);
         }];
     }
 }
@@ -112,14 +113,14 @@
     if ([votes isEqualToString:@"0"]) {
         voteIds = @[];
     }
-    
+    CCWWeakSelf
     [CCWSDKRequest CCW_PublishVotes:CCWAccountName Password:password VoteType:voteType VoteIds:voteIds Votes:votes Success:^(id  _Nonnull responseObject) {
         NSDictionary *jsMessage = @{
                                     @"trx_id":responseObject,
                                     };
         !block?:block(@{@"data":@[],@"code":@1,@"trx_data":jsMessage} );
     } Error:^(NSString * _Nonnull errorAlert, NSError *error) {
-        !block?:block([self errorBlockWithError:errorAlert ResponseObject:error]);
+        !block?:block([weakSelf errorBlockWithError:errorAlert ResponseObject:error]);
     }];
 }
 
@@ -143,13 +144,14 @@
     NSString *assetId = transferParam[@"assetId"];
     NSString *memo = transferParam[@"memo"];
     
+    CCWWeakSelf
     [CCWSDKRequest CCW_TransferAsset:from toAccount:to password:password assetId:assetId  amount:amount memo:memo Success:^(id  _Nonnull responseObject) {
         NSDictionary *jsMessage = @{
                                     @"trx_id":responseObject,
                                     };
         !block?:block(@{@"data":@[],@"code":@1,@"trx_data":jsMessage} );
     } Error:^(NSString * _Nonnull errorAlert, NSError *error)  {
-        !block?:block([self errorBlockWithError:errorAlert ResponseObject:error]);
+        !block?:block([weakSelf errorBlockWithError:errorAlert ResponseObject:error]);
     }];
 }
 
@@ -160,11 +162,11 @@
     NSString *nameOrId = callContractParam[@"nameOrId"];
     NSString *functionName = callContractParam[@"functionName"];
     NSArray *valueList = callContractParam[@"valueList"];
-    
+    CCWWeakSelf
     [CCWSDKRequest CCW_CallContract:nameOrId ContractMethodParam:valueList ContractMethod:functionName CallerAccount:CCWAccountName Password:password CallContractSuccess:^(id  _Nonnull responseObject) {
         !block?:block(responseObject);
     } Error:^(NSString * _Nonnull errorAlert, NSError *error) {
-        !block?:block([self errorBlockWithError:errorAlert ResponseObject:error]);
+        !block?:block([weakSelf errorBlockWithError:errorAlert ResponseObject:error]);
     }];
     
 }
@@ -172,18 +174,20 @@
 // 解密备注
 + (void)JS_DecodeMemo:(NSDictionary *)param addPassword:(NSString *)password response:(CallbackBlock)block
 {
+    CCWWeakSelf
     NSDictionary *memoParam = param[@"params"];
     NSDictionary *memoDic = memoParam;
     [CCWSDKRequest CCW_DecodeMemo:memoDic Password:password Success:^(id  _Nonnull responseObject) {
         !block?:block(@{@"data":@{@"text":responseObject},@"code":@1});
     } Error:^(NSString * _Nonnull errorAlert, NSError *error)  {
-        !block?:block([self errorBlockWithError:errorAlert ResponseObject:error]);
+        !block?:block([weakSelf errorBlockWithError:errorAlert ResponseObject:error]);
     }];
 }
 
 // 转移资产
 + (void)JS_TransferNHAsset:(NSDictionary *)param addPassword:(NSString *)password response:(CallbackBlock)block
 {
+    CCWWeakSelf
     NSDictionary *trnhParam = param[@"params"];
     NSString *toAccount = trnhParam[@"toAccount"];
     NSArray *NHAssetIds = trnhParam[@"NHAssetIds"];
@@ -193,7 +197,7 @@
                                     };
         !block?:block(@{@"data":@[],@"code":@1,@"trx_data":jsMessage});
     } Error:^(NSString * _Nonnull errorAlert, NSError *error)  {
-        !block?:block([self errorBlockWithError:errorAlert ResponseObject:error]);
+        !block?:block([weakSelf errorBlockWithError:errorAlert ResponseObject:error]);
     }];
 }
 
@@ -203,14 +207,14 @@
     NSDictionary *nhassetParam = param[@"params"];
     NSString *orderId = nhassetParam[@"orderId"];
     
-
+    CCWWeakSelf
     [CCWSDKRequest CCW_BuyNHAssetOrderID:orderId Account:CCWAccountName Password:password Success:^(id  _Nonnull responseObject) {
         NSDictionary *jsMessage = @{
                                     @"trx_id":responseObject,
                                     };
         !block?:block(@{@"data":@[],@"code":@1,@"trx_data":jsMessage});
     } Error:^(NSString * _Nonnull errorAlert, NSError *error)  {
-        !block?:block([self errorBlockWithError:errorAlert ResponseObject:error]);
+        !block?:block([weakSelf errorBlockWithError:errorAlert ResponseObject:error]);
     }];
 }
 
