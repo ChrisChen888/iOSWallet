@@ -23,16 +23,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.title = CCWLocalizable(@"修改密码");
+    if (self.walletMode == CocosWalletModeAccount) {
+        self.title = CCWLocalizable(@"修改密码");
+        self.pwdTipLabel.hidden = NO;
+    }else{
+        self.title = CCWLocalizable(@"重置密码");
+        self.pwdTipLabel.hidden = YES;
+    }
     self.comlpleButton.backgroundColor = CCWButtonBgColor;
     [self.nowPwdTextField addTarget:self action:@selector(textPwdChange:) forControlEvents:UIControlEventEditingChanged];
 }
 
 - (void)textPwdChange:(UITextField *)textField
 {
-    self.pwdTipLabel.hidden = NO;
-    if ([textField.text ys_regexValidate:@"^(?!^\\d+$)(?!^[A-Za-z]+$)(?!^[^A-Za-z0-9]+$)(?!^.*[\\u4E00-\\u9FA5].*$)^\\S{8,12}$"]) {
-        self.pwdTipLabel.hidden = YES;
+    if (self.walletMode == CocosWalletModeAccount) {
+        self.pwdTipLabel.hidden = NO;
+        if ([textField.text ys_regexValidate:@"^(?!^\\d+$)(?!^[A-Za-z]+$)(?!^[^A-Za-z0-9]+$)(?!^.*[\\u4E00-\\u9FA5].*$)^\\S{8,12}$"]) {
+            self.pwdTipLabel.hidden = YES;
+        }
     }
 }
 

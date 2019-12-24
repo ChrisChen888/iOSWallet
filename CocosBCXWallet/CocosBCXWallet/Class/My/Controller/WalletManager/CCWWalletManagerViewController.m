@@ -23,6 +23,10 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *logoutButton;
 
+// 修改密码
+@property (weak, nonatomic) IBOutlet UILabel *changePwdTitleLabel;
+
+
 @end
 
 @implementation CCWWalletManagerViewController
@@ -42,6 +46,12 @@
                        (id)[UIColor getColor:@"FFFFFF"].CGColor, nil];
     [self.headerBackView.layer addSublayer:gradient];
     ////////////// 渐变色
+    
+    if (self.walletAccountModel.dbAccountModel.walletMode == CocosWalletModeAccount) {
+        self.changePwdTitleLabel.text = CCWLocalizable(@"修改密码");
+    }else{
+        self.changePwdTitleLabel.text = CCWLocalizable(@"重置密码");
+    }
     
     [self.headerView shadowWithColor:[UIColor getColor:@"EBEEF4"] offset:CGSizeMake(0, 4) opacity:1 radius:6];
     self.accountNameLabel.text = self.walletAccountModel.dbAccountModel.name;

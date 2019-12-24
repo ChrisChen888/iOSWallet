@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="accountLabel" destination="ZyR-kE-Jsd" id="0qQ-SX-1Sx"/>
                 <outlet property="accountNameLabel" destination="04Y-mh-tfv" id="11D-S1-WL6"/>
+                <outlet property="changePwdTitleLabel" destination="k6o-Qa-8Oy" id="cZd-ro-FTJ"/>
                 <outlet property="coinCountLabel" destination="zrM-eV-ZYD" id="Me6-t7-Xf5"/>
                 <outlet property="headerBackView" destination="NfI-Pm-kzu" id="Zoc-gW-Msb"/>
                 <outlet property="headerView" destination="Ybw-xY-6IG" id="wkA-kO-W7Z"/>

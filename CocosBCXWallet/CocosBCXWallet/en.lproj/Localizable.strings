@@ -137,6 +137,7 @@
 "资产公钥" = "Asset Public Key";
 "账户公钥" = "Account Public Key";
 "修改密码" = "Change Passcode";
+"重置密码" = "Reset Passcode";
 "导出私钥" = "Export Private Key";
 "退出账号" = "Log Out";
 
