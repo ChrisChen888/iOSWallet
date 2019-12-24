@@ -82,13 +82,16 @@
 
             NSString *ownerPri = responseObject[@"owner_key"];
             NSString *activePri = responseObject[@"active_key"];
-            
-            [CCWSDKRequest CCW_ReImportAccount:nowPwdStr OwnerPrivate:ownerPri ActivePrivate:activePri Success:^(id  _Nonnull responseObject) {
-                !weakSelf.setpwdSuccess?:weakSelf.setpwdSuccess();
-                [weakSelf.navigationController popViewControllerAnimated:YES];
-            } Error:^(NSString * _Nonnull errorAlert, id  _Nonnull responseObject) {
-               [weakSelf.view makeToast:CCWLocalizable(@"网络繁忙，请检查您的网络连接")];
-            }];
+            if (ownerPri == nil && activePri == nil) {
+                [weakSelf.view makeToast:CCWLocalizable(@"密码错误，请重新输入")];
+            }else{
+                [CCWSDKRequest CCW_ReImportAccount:nowPwdStr OwnerPrivate:ownerPri ActivePrivate:activePri Success:^(id  _Nonnull responseObject) {
+                    !weakSelf.setpwdSuccess?:weakSelf.setpwdSuccess();
+                    [weakSelf.navigationController popViewControllerAnimated:YES];
+                } Error:^(NSString * _Nonnull errorAlert, id  _Nonnull responseObject) {
+                    [weakSelf.view makeToast:CCWLocalizable(@"网络繁忙，请检查您的网络连接")];
+                }];
+            }
         } Error:^(NSString * _Nonnull errorAlert, NSError *error) {
             if (error.code == 105){
                 [weakSelf.view makeToast:CCWLocalizable(@"密码错误，请重新输入")];
