@@ -15,6 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 /** 资产模型 */
 @property (nonatomic, strong) CCWAssetsModel *assetsModel;
 
+/** 转账成功回调 */
+@property (nonatomic, copy) void (^transferSuccess)();
+
 @end
 
 NS_ASSUME_NONNULL_END

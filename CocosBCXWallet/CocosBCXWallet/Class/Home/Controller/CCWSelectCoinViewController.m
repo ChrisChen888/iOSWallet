@@ -91,6 +91,10 @@
     if (self.selectCoinStyle == CCWSelectCoinStyleTransfer) {
         CCWTransferViewController *transferViewController = [[CCWTransferViewController alloc] init];
         transferViewController.assetsModel = self.assetsModelArray[indexPath.row];;
+        CCWWeakSelf
+        transferViewController.transferSuccess = ^{
+            [weakSelf.view makeToast:CCWLocalizable(@"转账成功")];
+        };
         [self.navigationController pushViewController:transferViewController animated:YES];
     }else{
         CCWReceiveViewController *receiveViewController = [[CCWReceiveViewController alloc] init];

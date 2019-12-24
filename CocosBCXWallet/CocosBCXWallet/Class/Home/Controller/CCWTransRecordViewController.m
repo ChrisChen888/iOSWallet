@@ -129,6 +129,10 @@
 {
     CCWTransferViewController *transferViewController = [[CCWTransferViewController alloc] init];
     transferViewController.assetsModel = self.assetsModel;
+    CCWWeakSelf
+    transferViewController.transferSuccess = ^{
+      [weakSelf.view makeToast:CCWLocalizable(@"转账成功")];
+    };
     [self.navigationController pushViewController:transferViewController animated:YES];
 }
 

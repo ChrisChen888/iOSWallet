@@ -156,7 +156,7 @@
         // 通过数组拿到textTF的值
         NSString *password = [[alertVc textFields] objectAtIndex:0].text;
         [CCWSDKRequest CCW_TransferAsset:CCWAccountName toAccount:receiveAddress password:password assetId:self.assetsModel.asset_id amount:transferNumStr memo:self.remakeTextField.text Success:^(id  _Nonnull responseObject) {
-            [weakSelf.view makeToast:CCWLocalizable(@"转账成功")];
+            !weakSelf.transferSuccess?:weakSelf.transferSuccess();
             [weakSelf.navigationController popViewControllerAnimated:YES];
         } Error:^(NSString * _Nonnull errorAlert, NSError *error) {
             if (error.code == 116) {
