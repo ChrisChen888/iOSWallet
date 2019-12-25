@@ -744,7 +744,7 @@
 // 抵押 Gas
 + (void)CCW_GasWithMortgager:(NSString *)mortgagerAccount
                  Beneficiary:(NSString *)beneficiaryAccount
-                  Collateral:(long)collateral
+                  Collateral:(float)collateral
                     Password:(NSString *)password
                      Success:(SuccessBlock)successBlock
                        Error:(ErrorBlock)errorBlock

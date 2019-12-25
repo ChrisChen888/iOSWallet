@@ -229,8 +229,10 @@
                 
                 // 加一层验证密码的
                 [CCWSDKRequest CCW_ValidateAccount:CCWAccountName password:pwd Success:^(id  _Nonnull responseObject) {
-                    if (responseObject[@"active_key"] && isIgnoreConfirm == YES) {
-                        weakSelf.viewpassword = pwd;
+                    if (responseObject[@"active_key"]) {
+                        if (isIgnoreConfirm) { // 是否记住密码
+                            weakSelf.viewpassword = pwd;
+                        }
                         [CCWDappWebTool JSHandle_ReceiveMessageBody:messagebody password:pwd response:^(NSDictionary * _Nonnull response) {
                             NSString *jsString = [response mj_JSONString];
                             jsString = [jsString stringByReplacingOccurrencesOfString:@"\\" withString:@"\\\\"];
