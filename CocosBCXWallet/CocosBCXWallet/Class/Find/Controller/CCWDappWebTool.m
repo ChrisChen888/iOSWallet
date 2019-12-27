@@ -86,6 +86,13 @@
                                 });
                 
                 return;
+            }else if ([error.userInfo[@"message"] containsString:@"Insufficient Balance:"]) {
+                !block?:block(@{
+                                @"message":@"Assert Exception: itr->get_balance() >= -delta: Insufficient Balance:",
+                                @"code":@(0)
+                                });
+                
+                return;
             }
             !block?:block([self errorBlockWithError:errorAlert ResponseObject:error]);
         }];
