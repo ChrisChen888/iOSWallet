@@ -1141,7 +1141,13 @@
                     }else{
                         for (NSString *paramStr in param) {
                             NSMutableArray *array = [NSMutableArray array];
-                            [array addObject:@(2)];
+                            if ([paramStr isKindOfClass:[NSString class]]) {
+                                [array addObject:@(2)];
+                            }else if ([paramStr isKindOfClass:[NSNumber class]]) {
+                                [array addObject:@(0)];
+                            }else{
+                                [array addObject:@(2)];
+                            }
                             NSDictionary *dic = @{@"v":paramStr};
                             [array addObject:dic];
                             [tempArray addObject:array];

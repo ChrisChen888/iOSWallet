@@ -84,14 +84,6 @@
                                 @"message":@"Not reward owner",
                                 @"code":@(115)
                                 });
-                
-                return;
-            }else if ([error.userInfo[@"message"] containsString:@"Insufficient Balance:"]) {
-                !block?:block(@{
-                                @"message":@"Assert Exception: itr->get_balance() >= -delta: Insufficient Balance:",
-                                @"code":@(0)
-                                });
-                
                 return;
             }
             !block?:block([self errorBlockWithError:errorAlert ResponseObject:error]);
@@ -170,7 +162,6 @@
     } Error:^(NSString * _Nonnull errorAlert, NSError *error) {
         !block?:block([self errorBlockWithError:errorAlert ResponseObject:error]);
     }];
-    
 }
 
 // 解密备注
@@ -221,9 +212,12 @@
 // 所有错误处理
 + (NSDictionary *)errorBlockWithError:(NSString *)error ResponseObject:(NSError *)errorObj
 {
+    NSString *message = errorObj.userInfo[@"message"];
+    message = [message stringByReplacingOccurrencesOfString:@"\'" withString:@"’"];
+    message = [message stringByReplacingOccurrencesOfString:@"\"" withString:@"’"];
     return @{
-             @"message":errorObj.domain.description,
-             @"code":@(errorObj.code)
+             @"message":message,
+             @"code":errorObj.userInfo[@"code"]
              };
 }
 @end
