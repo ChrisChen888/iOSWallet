@@ -19,7 +19,6 @@
 
 @implementation CCWSearchDAppViewController
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     

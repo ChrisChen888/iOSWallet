@@ -61,7 +61,7 @@
 "今日已经没有免费账户" = "No free account today";
 
 // 首页
-"立即登陆/创建账户" = "Login/Register";
+"立即登录/创建账户" = "Login/Register";
 "切换失败" = "Handover failure";
 "(测试)" = "(TEST)";
 "账户名称" = "Account Name";

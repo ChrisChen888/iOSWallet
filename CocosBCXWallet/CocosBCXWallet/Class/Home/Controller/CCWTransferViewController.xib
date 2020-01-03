@@ -31,7 +31,7 @@
                     <color key="textColor" red="0.14901960784313725" green="0.16470588235294117" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="接收方" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t6E-d3-GCY" customClass="CCWTextField">
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="接收方" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t6E-d3-GCY" customClass="CCWMenuTextField">
                     <rect key="frame" x="15" y="62" width="345" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="2PY-JU-3cG"/>
