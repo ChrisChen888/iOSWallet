@@ -80,7 +80,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请设置临时密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Fv-dO-aVF" customClass="CCWMenuTextField">
-                            <rect key="frame" x="74" y="104.5" width="256" height="44"/>
+                            <rect key="frame" x="74" y="104.5" width="226" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="WR0-fE-l2X"/>
                             </constraints>
@@ -88,6 +88,17 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                         </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TMy-GN-EM6">
+                            <rect key="frame" x="300" y="104.5" width="30" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="EsO-iZ-N7J"/>
+                            </constraints>
+                            <state key="normal" image="hidden_pwd"/>
+                            <state key="selected" image="show_pwd"/>
+                            <connections>
+                                <action selector="showOrHiddenClick:" destination="-1" eventType="touchUpInside" id="D8y-kW-dws"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -95,15 +106,18 @@
                         <constraint firstAttribute="bottom" secondItem="2Fv-dO-aVF" secondAttribute="bottom" constant="8" id="5jj-G8-uM7"/>
                         <constraint firstItem="2Fv-dO-aVF" firstAttribute="leading" secondItem="kyQ-Vw-aKh" secondAttribute="leading" id="6az-sd-Iuq"/>
                         <constraint firstItem="H5z-fi-8TH" firstAttribute="leading" secondItem="Q9l-sr-jtf" secondAttribute="leading" id="7cO-Fl-aXW"/>
+                        <constraint firstItem="TMy-GN-EM6" firstAttribute="height" secondItem="2Fv-dO-aVF" secondAttribute="height" id="GAM-7i-HeE"/>
                         <constraint firstAttribute="trailing" secondItem="uO7-ks-fde" secondAttribute="trailing" id="GnC-pi-h8G"/>
+                        <constraint firstItem="TMy-GN-EM6" firstAttribute="leading" secondItem="2Fv-dO-aVF" secondAttribute="trailing" id="IuI-OP-hkt"/>
+                        <constraint firstItem="TMy-GN-EM6" firstAttribute="centerY" secondItem="2Fv-dO-aVF" secondAttribute="centerY" id="K9q-kT-PkC"/>
                         <constraint firstItem="Q9l-sr-jtf" firstAttribute="top" secondItem="iOt-I6-8C0" secondAttribute="top" constant="24" id="LfF-Vc-3wY"/>
                         <constraint firstItem="uO7-ks-fde" firstAttribute="top" secondItem="kyQ-Vw-aKh" secondAttribute="bottom" constant="3" id="Lkm-Xk-gEz"/>
                         <constraint firstItem="2Fv-dO-aVF" firstAttribute="centerY" secondItem="H5z-fi-8TH" secondAttribute="centerY" id="UUK-jv-rxU"/>
                         <constraint firstItem="kyQ-Vw-aKh" firstAttribute="leading" secondItem="Q9l-sr-jtf" secondAttribute="trailing" constant="28" id="cca-LQ-9Nm"/>
                         <constraint firstItem="H5z-fi-8TH" firstAttribute="top" secondItem="uO7-ks-fde" secondAttribute="bottom" constant="21" id="kmc-XO-h5P"/>
+                        <constraint firstItem="TMy-GN-EM6" firstAttribute="trailing" secondItem="kyQ-Vw-aKh" secondAttribute="trailing" id="nPQ-oJ-sAY"/>
                         <constraint firstItem="Q9l-sr-jtf" firstAttribute="leading" secondItem="iOt-I6-8C0" secondAttribute="leading" constant="15" id="nRx-Rf-8l7"/>
                         <constraint firstItem="uO7-ks-fde" firstAttribute="leading" secondItem="Q9l-sr-jtf" secondAttribute="leading" id="sqc-88-iIB"/>
-                        <constraint firstItem="2Fv-dO-aVF" firstAttribute="trailing" secondItem="kyQ-Vw-aKh" secondAttribute="trailing" id="tH6-8c-fEZ"/>
                         <constraint firstAttribute="trailing" secondItem="kyQ-Vw-aKh" secondAttribute="trailing" constant="15" id="v36-AM-ztn"/>
                     </constraints>
                 </view>
@@ -121,4 +135,8 @@
             <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>
         </view>
     </objects>
+    <resources>
+        <image name="hidden_pwd" width="20" height="10"/>
+        <image name="show_pwd" width="20" height="14"/>
+    </resources>
 </document>

@@ -50,7 +50,7 @@
                         <action selector="cancelClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="FJj-7c-9wa"/>
                     </connections>
                 </button>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入密码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cOf-gv-rZt" customClass="CCWMenuTextField">
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cOf-gv-rZt" customClass="CCWMenuTextField">
                     <rect key="frame" x="16" y="45.5" width="324" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="HCT-ll-ytb"/>
@@ -74,19 +74,33 @@
                         <action selector="selectIgnoreClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="f4O-nq-4Gb"/>
                     </connections>
                 </button>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqv-Xh-2TP">
+                    <rect key="frame" x="314" y="45.5" width="20" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="lf5-TT-yNW"/>
+                    </constraints>
+                    <state key="normal" image="hidden_pwd"/>
+                    <state key="selected" image="show_pwd"/>
+                    <connections>
+                        <action selector="showOrHiddenClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="Ps2-QQ-dTZ"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="cqv-Xh-2TP" firstAttribute="trailing" secondItem="cOf-gv-rZt" secondAttribute="trailing" constant="-6" id="BNr-Fg-CxU"/>
                 <constraint firstItem="Xdu-u0-HwJ" firstAttribute="centerY" secondItem="a6U-O0-rZS" secondAttribute="centerY" id="Bfv-qA-9b9"/>
                 <constraint firstItem="cOf-gv-rZt" firstAttribute="top" secondItem="msl-ar-yud" secondAttribute="bottom" constant="10" id="Dy8-99-f3b"/>
-                <constraint firstItem="GAg-oU-GTp" firstAttribute="trailing" secondItem="cOf-gv-rZt" secondAttribute="trailing" id="En6-7r-VZS"/>
                 <constraint firstItem="GAg-oU-GTp" firstAttribute="top" secondItem="cOf-gv-rZt" secondAttribute="bottom" constant="5" id="Erm-Bi-zl1"/>
+                <constraint firstItem="cqv-Xh-2TP" firstAttribute="height" secondItem="cOf-gv-rZt" secondAttribute="height" id="JPI-Az-Ymm"/>
                 <constraint firstItem="cOf-gv-rZt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="KuG-SR-qGA"/>
+                <constraint firstItem="GAg-oU-GTp" firstAttribute="trailing" secondItem="cOf-gv-rZt" secondAttribute="trailing" id="OnB-61-JNj"/>
                 <constraint firstItem="Xdu-u0-HwJ" firstAttribute="width" secondItem="a6U-O0-rZS" secondAttribute="width" id="PfW-H6-NNG"/>
                 <constraint firstAttribute="bottom" secondItem="a6U-O0-rZS" secondAttribute="bottom" id="SOI-z4-wpY"/>
                 <constraint firstItem="y7g-Fq-B5d" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="SWf-sX-gaP"/>
                 <constraint firstItem="GAg-oU-GTp" firstAttribute="leading" secondItem="cOf-gv-rZt" secondAttribute="leading" id="U5v-0m-PhN"/>
-                <constraint firstAttribute="trailing" secondItem="cOf-gv-rZt" secondAttribute="trailing" constant="16" id="as3-a1-ffs"/>
+                <constraint firstItem="cqv-Xh-2TP" firstAttribute="centerY" secondItem="cOf-gv-rZt" secondAttribute="centerY" id="ape-Oa-Sov"/>
+                <constraint firstAttribute="trailing" secondItem="cOf-gv-rZt" secondAttribute="trailing" constant="16" id="dhq-EI-YYt"/>
                 <constraint firstItem="a6U-O0-rZS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ez1-G6-t5t"/>
                 <constraint firstItem="Xdu-u0-HwJ" firstAttribute="height" secondItem="a6U-O0-rZS" secondAttribute="height" id="fZh-VK-dWj"/>
                 <constraint firstItem="msl-ar-yud" firstAttribute="top" secondItem="y7g-Fq-B5d" secondAttribute="bottom" constant="8" id="kBV-1j-7vI"/>
@@ -108,7 +122,9 @@
         </view>
     </objects>
     <resources>
+        <image name="hidden_pwd" width="20" height="10"/>
         <image name="pwdNomal" width="18" height="18"/>
         <image name="pwdSelect" width="18" height="18"/>
+        <image name="show_pwd" width="20" height="14"/>
     </resources>
 </document>

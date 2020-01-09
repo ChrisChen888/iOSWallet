@@ -215,9 +215,16 @@
     NSString *message = errorObj.userInfo[@"message"];
     message = [message stringByReplacingOccurrencesOfString:@"\'" withString:@"’"];
     message = [message stringByReplacingOccurrencesOfString:@"\"" withString:@"’"];
-    return @{
-             @"message":message,
-             @"code":errorObj.userInfo[@"code"]
-             };
+    if (message) {
+        return @{
+                 @"message":message,
+                 @"code":errorObj.userInfo[@"code"]
+                 };
+    }else{
+        return @{
+                 @"message":errorObj.domain.description,
+                 @"code":@(errorObj.code)
+                 };
+    }
 }
 @end

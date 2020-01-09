@@ -36,6 +36,27 @@
 {
     [self.navigationController pushViewController:[NSClassFromString(@"CCWLoginViewController") new] animated:YES];
 }
+
+
+
+/** 隐藏显示密码 */
+- (IBAction)showOrHiddenClick:(UIButton *)sender {
+    // 切换按钮的状态
+    sender.selected = !sender.selected;
+    if (sender.selected) { // 按下去了就是明文
+        NSString *tempPwdStr = self.pwdTextField.text;
+        self.pwdTextField.text = @""; // 这句代码可以防止切换的时候光标偏移
+        self.pwdTextField.secureTextEntry = NO;
+        self.pwdTextField.text = tempPwdStr;
+        
+    } else { // 暗文
+        NSString *tempPwdStr = self.pwdTextField.text;
+        self.pwdTextField.text = @"";
+        self.pwdTextField.secureTextEntry = YES;
+        self.pwdTextField.text = tempPwdStr;
+    }
+}
+
 - (IBAction)importClick:(UIButton *)sender {
     [self.view endEditing:YES];
     

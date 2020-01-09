@@ -55,6 +55,26 @@
     [self.switchNetButton setTitle:currentNodeInfo.name forState:UIControlStateNormal];
 }
 
+
+/** 隐藏显示密码 */
+- (IBAction)showOrHiddenClick:(UIButton *)sender {
+    // 切换按钮的状态
+    sender.selected = !sender.selected;
+    
+    if (sender.selected) { // 按下去了就是明文
+        NSString *tempPwdStr = self.loginPwdTextField.text;
+        self.loginPwdTextField.text = @""; // 这句代码可以防止切换的时候光标偏移
+        self.loginPwdTextField.secureTextEntry = NO;
+        self.loginPwdTextField.text = tempPwdStr;
+        
+    } else { // 暗文
+        NSString *tempPwdStr = self.loginPwdTextField.text;
+        self.loginPwdTextField.text = @"";
+        self.loginPwdTextField.secureTextEntry = YES;
+        self.loginPwdTextField.text = tempPwdStr;
+    }
+}
+
 - (IBAction)switchNodeInfoClick:(UIButton *)sender {
     
     self.nodeInfoArray = [[CCWDataBase CCW_shareDatabase] CCW_QueryNodeInfo];

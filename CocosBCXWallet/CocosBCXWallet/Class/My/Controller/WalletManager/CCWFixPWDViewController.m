@@ -44,6 +44,56 @@
     }
 }
 
+
+/** 隐藏显示密码 */
+- (IBAction)showOrHiddenClick:(UIButton *)sender {
+    // 切换按钮的状态
+    sender.selected = !sender.selected;
+    
+    if (sender.tag == 0) {
+        if (sender.selected) { // 按下去了就是明文
+            NSString *tempPwdStr = self.currentPwdTextField.text;
+            self.currentPwdTextField.text = @""; // 这句代码可以防止切换的时候光标偏移
+            self.currentPwdTextField.secureTextEntry = NO;
+            self.currentPwdTextField.text = tempPwdStr;
+            
+        } else { // 暗文
+            NSString *tempPwdStr = self.currentPwdTextField.text;
+            self.currentPwdTextField.text = @"";
+            self.currentPwdTextField.secureTextEntry = YES;
+            self.currentPwdTextField.text = tempPwdStr;
+        }
+        
+    }else if (sender.tag == 1) {
+        if (sender.selected) { // 按下去了就是明文
+            NSString *tempPwdStr = self.nowPwdTextField.text;
+            self.nowPwdTextField.text = @""; // 这句代码可以防止切换的时候光标偏移
+            self.nowPwdTextField.secureTextEntry = NO;
+            self.nowPwdTextField.text = tempPwdStr;
+            
+        } else { // 暗文
+            NSString *tempPwdStr = self.nowPwdTextField.text;
+            self.nowPwdTextField.text = @"";
+            self.nowPwdTextField.secureTextEntry = YES;
+            self.nowPwdTextField.text = tempPwdStr;
+        }
+
+    }else if (sender.tag == 2) {
+        if (sender.selected) { // 按下去了就是明文
+            NSString *tempPwdStr = self.confirmTextField.text;
+            self.confirmTextField.text = @""; // 这句代码可以防止切换的时候光标偏移
+            self.confirmTextField.secureTextEntry = NO;
+            self.confirmTextField.text = tempPwdStr;
+        } else { // 暗文
+            NSString *tempPwdStr = self.confirmTextField.text;
+            self.confirmTextField.text = @"";
+            self.confirmTextField.secureTextEntry = YES;
+            self.confirmTextField.text = tempPwdStr;
+        }
+    }
+}
+
+
 - (IBAction)compleBtnClick:(UIButton *)sender {
     [self.view endEditing:YES];
     
@@ -73,6 +123,8 @@
         } Error:^(NSString * _Nonnull errorAlert, NSError *error) {
             if (error.code == 105){
                 [weakSelf.view makeToast:CCWLocalizable(@"密码错误，请重新输入")];
+            }else if ([error.userInfo[@"message"] containsString:@"Insufficient Balance"]) {
+                [weakSelf.view makeToast:CCWLocalizable(@"余额不足")];
             }else{
                 [weakSelf.view makeToast:CCWLocalizable(@"网络繁忙，请检查您的网络连接")];
             }

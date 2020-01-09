@@ -39,6 +39,11 @@
 		313FD4AF22A4BE9F0058A8A2 /* CCWNodeInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 313FD4AE22A4BE9F0058A8A2 /* CCWNodeInfoModel.m */; };
 		313FD4B322A4D6CB0058A8A2 /* CCWNodeAlertTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 313FD4B122A4D6CB0058A8A2 /* CCWNodeAlertTableViewCell.m */; };
 		313FD4B422A4D6CB0058A8A2 /* CCWNodeAlertTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 313FD4B222A4D6CB0058A8A2 /* CCWNodeAlertTableViewCell.xib */; };
+		3141229D23C5ED5E005BEB03 /* CCWInvokerLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3141229B23C5ED5E005BEB03 /* CCWInvokerLoginViewController.m */; };
+		3141229E23C5ED5E005BEB03 /* CCWInvokerLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3141229C23C5ED5E005BEB03 /* CCWInvokerLoginViewController.xib */; };
+		314122A823C5EDFF005BEB03 /* CocosResponseObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 314122A023C5EDFF005BEB03 /* CocosResponseObj.m */; };
+		314122A923C5EDFF005BEB03 /* CocosRequestObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 314122A523C5EDFF005BEB03 /* CocosRequestObj.m */; };
+		314122AB23C5EDFF005BEB03 /* CocosWalletApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 314122A723C5EDFF005BEB03 /* CocosWalletApi.m */; };
 		3144D05322003BE700CDA62A /* CCWAES.m in Sources */ = {isa = PBXBuildFile; fileRef = 3144D00B22003BE700CDA62A /* CCWAES.m */; };
 		3144D05422003BE700CDA62A /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 3144D00D22003BE700CDA62A /* NSData+Base64.m */; };
 		3144D05522003BE700CDA62A /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 3144D00F22003BE700CDA62A /* NSData+CommonCrypto.m */; };
@@ -372,6 +377,15 @@
 		313FD4B022A4D6CB0058A8A2 /* CCWNodeAlertTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCWNodeAlertTableViewCell.h; sourceTree = "<group>"; };
 		313FD4B122A4D6CB0058A8A2 /* CCWNodeAlertTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCWNodeAlertTableViewCell.m; sourceTree = "<group>"; };
 		313FD4B222A4D6CB0058A8A2 /* CCWNodeAlertTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCWNodeAlertTableViewCell.xib; sourceTree = "<group>"; };
+		3141229A23C5ED5E005BEB03 /* CCWInvokerLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCWInvokerLoginViewController.h; sourceTree = "<group>"; };
+		3141229B23C5ED5E005BEB03 /* CCWInvokerLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCWInvokerLoginViewController.m; sourceTree = "<group>"; };
+		3141229C23C5ED5E005BEB03 /* CCWInvokerLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCWInvokerLoginViewController.xib; sourceTree = "<group>"; };
+		314122A023C5EDFF005BEB03 /* CocosResponseObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosResponseObj.m; sourceTree = "<group>"; };
+		314122A223C5EDFF005BEB03 /* CocosRequestObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosRequestObj.h; sourceTree = "<group>"; };
+		314122A323C5EDFF005BEB03 /* CocosWalletApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosWalletApi.h; sourceTree = "<group>"; };
+		314122A423C5EDFF005BEB03 /* CocosResponseObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosResponseObj.h; sourceTree = "<group>"; };
+		314122A523C5EDFF005BEB03 /* CocosRequestObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosRequestObj.m; sourceTree = "<group>"; };
+		314122A723C5EDFF005BEB03 /* CocosWalletApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosWalletApi.m; sourceTree = "<group>"; };
 		3144D00A22003BE700CDA62A /* CCWAES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCWAES.h; sourceTree = "<group>"; };
 		3144D00B22003BE700CDA62A /* CCWAES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCWAES.m; sourceTree = "<group>"; };
 		3144D00C22003BE700CDA62A /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
@@ -954,6 +968,38 @@
 				3129ED4E22E990320028A1CA /* CCWBuyNHInfoView.m */,
 			);
 			path = OperationInfo;
+			sourceTree = "<group>";
+		};
+		3141229723C5EC46005BEB03 /* walletinvoker */ = {
+			isa = PBXGroup;
+			children = (
+				3141229F23C5EDFF005BEB03 /* walletinvoker */,
+				3141229923C5ED1D005BEB03 /* Controller */,
+			);
+			path = walletinvoker;
+			sourceTree = "<group>";
+		};
+		3141229923C5ED1D005BEB03 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3141229A23C5ED5E005BEB03 /* CCWInvokerLoginViewController.h */,
+				3141229B23C5ED5E005BEB03 /* CCWInvokerLoginViewController.m */,
+				3141229C23C5ED5E005BEB03 /* CCWInvokerLoginViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3141229F23C5EDFF005BEB03 /* walletinvoker */ = {
+			isa = PBXGroup;
+			children = (
+				314122A323C5EDFF005BEB03 /* CocosWalletApi.h */,
+				314122A723C5EDFF005BEB03 /* CocosWalletApi.m */,
+				314122A223C5EDFF005BEB03 /* CocosRequestObj.h */,
+				314122A523C5EDFF005BEB03 /* CocosRequestObj.m */,
+				314122A423C5EDFF005BEB03 /* CocosResponseObj.h */,
+				314122A023C5EDFF005BEB03 /* CocosResponseObj.m */,
+			);
+			path = walletinvoker;
 			sourceTree = "<group>";
 		};
 		3144D00722003BE700CDA62A /* Toos */ = {
@@ -2069,6 +2115,7 @@
 		31CDB7E5222531AA00D377B2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3141229723C5EC46005BEB03 /* walletinvoker */,
 				3178D3882390C15800CFB83B /* Classes */,
 				3144D09322003D6500CDA62A /* CocosBCXWallet.pch */,
 				317784EB2200486100525237 /* AppMacro.h */,
@@ -2298,6 +2345,7 @@
 				3176CED822E58FE00022B408 /* CCWJoinUsViewController.xib in Resources */,
 				31881F5922165EB7006C31A2 /* CCWBackupsPrivateController.xib in Resources */,
 				317D2D5222E0428E00559A7C /* CCWPropAssetsTableViewCell.xib in Resources */,
+				3141229E23C5ED5E005BEB03 /* CCWInvokerLoginViewController.xib in Resources */,
 				31E4338922EAAB4C00CAFDCA /* CCWAddNodeViewController.xib in Resources */,
 				3123E22522B0DDDD00874CBF /* VersionLog.html in Resources */,
 				3129ED3922E82F240028A1CA /* CCWSellNHAssetViewController.xib in Resources */,
@@ -2420,6 +2468,7 @@
 				3178D4762390C15900CFB83B /* AccountAuthoriyObject.m in Sources */,
 				3176CED122E58FE00022B408 /* CCWAssetsOverviewViewController.m in Sources */,
 				31B1D92723A7775100421A57 /* CocosCreateSonAccountOperation.m in Sources */,
+				3141229D23C5ED5E005BEB03 /* CCWInvokerLoginViewController.m in Sources */,
 				3178D49E2390C15900CFB83B /* CocosConfig.m in Sources */,
 				3144D06522003BE700CDA62A /* CCWPageControl.m in Sources */,
 				31E4338A22EAAB4C00CAFDCA /* CCWSystemSetViewController.m in Sources */,
@@ -2479,6 +2528,7 @@
 				31881F532216593D006C31A2 /* CCWTipScreenShotViewController.m in Sources */,
 				3144D05922003BE700CDA62A /* CCWEncryptTool.m in Sources */,
 				3178D45E2390C15900CFB83B /* NSData+CopyWithRange.m in Sources */,
+				314122A923C5EDFF005BEB03 /* CocosRequestObj.m in Sources */,
 				316739A8221AD84B008D85C4 /* CCWFindTableViewCell.m in Sources */,
 				3176CEE122E591F40022B408 /* CCWPropDetailViewController.m in Sources */,
 				316739BA221AD9C3008D85C4 /* CCWFindButton.m in Sources */,
@@ -2501,6 +2551,7 @@
 				31B1D92823A7775100421A57 /* CocosBuyNHOrderOperation.m in Sources */,
 				313FD4B322A4D6CB0058A8A2 /* CCWNodeAlertTableViewCell.m in Sources */,
 				3178D4602390C15900CFB83B /* NSData+HashData.m in Sources */,
+				314122A823C5EDFF005BEB03 /* CocosResponseObj.m in Sources */,
 				3178D4702390C15900CFB83B /* ChainContract.m in Sources */,
 				31FC8D312213C9320036C8F8 /* CCWWalletTableViewCell.m in Sources */,
 				3144D08F22003CAB00CDA62A /* CCWWalletViewController.m in Sources */,
@@ -2564,6 +2615,7 @@
 				317948D0221E4B7800F4EA69 /* UIButton+CCWButton.m in Sources */,
 				3129ED3822E82F240028A1CA /* CCWSellNHAssetViewController.m in Sources */,
 				3144D06B22003BE700CDA62A /* UIView+Frame.m in Sources */,
+				314122AB23C5EDFF005BEB03 /* CocosWalletApi.m in Sources */,
 				3178D4952390C15900CFB83B /* Base64.m in Sources */,
 				3178D49A2390C15900CFB83B /* PBKDF2.m in Sources */,
 				3129ED4122E8781F0028A1CA /* CCWSellCoinTypeTableViewCell.m in Sources */,
@@ -2748,8 +2800,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 835CGYZJP6;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2783,9 +2835,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 8497T2NJ7P;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 835CGYZJP6;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2807,7 +2859,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.io.cocosbcx.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = pp_cocos;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 arm64e armv7s";
 			};

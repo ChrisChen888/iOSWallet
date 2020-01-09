@@ -81,7 +81,7 @@
                     <color key="backgroundColor" red="0.84705882349999995" green="0.85882352939999995" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入密码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Pm3-wB-WMU" customClass="CCWMenuTextField">
-                    <rect key="frame" x="20" y="178.5" width="335" height="44"/>
+                    <rect key="frame" x="20" y="178.5" width="305" height="44"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -100,14 +100,27 @@
                         <action selector="switchNodeInfoClick:" destination="-1" eventType="touchUpInside" id="R5Q-j3-noQ"/>
                     </connections>
                 </button>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o1F-mB-c2V">
+                    <rect key="frame" x="325" y="178.5" width="30" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="t2J-DV-8AX"/>
+                    </constraints>
+                    <state key="normal" image="hidden_pwd"/>
+                    <state key="selected" image="show_pwd"/>
+                    <connections>
+                        <action selector="showOrHiddenClick:" destination="-1" eventType="touchUpInside" id="2IK-sC-Ron"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Pm3-wB-WMU" firstAttribute="trailing" secondItem="9HO-b1-8gE" secondAttribute="trailing" id="0E7-0R-fgi"/>
                 <constraint firstItem="T6E-Yj-YUq" firstAttribute="height" secondItem="nfV-4G-7r0" secondAttribute="height" id="0fQ-ba-DJS"/>
                 <constraint firstItem="nfV-4G-7r0" firstAttribute="top" secondItem="9HO-b1-8gE" secondAttribute="bottom" constant="5" id="3Zb-HE-tAB"/>
+                <constraint firstItem="o1F-mB-c2V" firstAttribute="leading" secondItem="Pm3-wB-WMU" secondAttribute="trailing" id="5bw-c2-8TZ"/>
+                <constraint firstItem="o1F-mB-c2V" firstAttribute="height" secondItem="Pm3-wB-WMU" secondAttribute="height" id="C3k-GQ-OVL"/>
                 <constraint firstItem="U6E-Z9-2yE" firstAttribute="trailing" secondItem="9HO-b1-8gE" secondAttribute="trailing" id="Czh-PJ-KMf"/>
                 <constraint firstItem="dLb-7X-sgD" firstAttribute="top" secondItem="T6E-Yj-YUq" secondAttribute="bottom" constant="44" id="DgR-9V-NQy"/>
+                <constraint firstItem="o1F-mB-c2V" firstAttribute="centerY" secondItem="Pm3-wB-WMU" secondAttribute="centerY" id="H7j-aJ-R8g"/>
                 <constraint firstItem="o7U-fm-W49" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="IPU-oV-Y2l"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="9HO-b1-8gE" secondAttribute="trailing" constant="20" id="Jvt-5e-b0I"/>
                 <constraint firstItem="T6E-Yj-YUq" firstAttribute="trailing" secondItem="9HO-b1-8gE" secondAttribute="trailing" id="K5w-Ab-xg9"/>
@@ -124,6 +137,7 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="dLb-7X-sgD" secondAttribute="trailing" constant="15" id="btu-te-Twj"/>
                 <constraint firstItem="qLO-62-MhS" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="bu0-Pz-3hv"/>
                 <constraint firstItem="o7U-fm-W49" firstAttribute="top" secondItem="dLb-7X-sgD" secondAttribute="bottom" constant="12" id="iFM-SQ-dfX"/>
+                <constraint firstItem="o1F-mB-c2V" firstAttribute="trailing" secondItem="9HO-b1-8gE" secondAttribute="trailing" id="mqO-zq-fpJ"/>
                 <constraint firstItem="Pm3-wB-WMU" firstAttribute="leading" secondItem="9HO-b1-8gE" secondAttribute="leading" id="qQb-35-kRH"/>
                 <constraint firstItem="T6E-Yj-YUq" firstAttribute="leading" secondItem="9HO-b1-8gE" secondAttribute="leading" id="z7R-OU-jnG"/>
             </constraints>
@@ -131,4 +145,8 @@
             <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>
         </view>
     </objects>
+    <resources>
+        <image name="hidden_pwd" width="20" height="10"/>
+        <image name="show_pwd" width="20" height="14"/>
+    </resources>
 </document>
