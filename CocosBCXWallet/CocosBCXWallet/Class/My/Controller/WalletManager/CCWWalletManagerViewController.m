@@ -11,6 +11,7 @@
 #import "CCWExportViewController.h"
 #import "CCWLogOutAlert.h"
 #import "CCWFixPWDViewController.h"
+#import "CCWPwdAlertView.h"
 
 @interface CCWWalletManagerViewController ()
 @property (weak, nonatomic) IBOutlet UIView *headerBackView;
@@ -110,10 +111,9 @@
 - (IBAction)exportPrivitKeyClick:(UIButton *)sender {
     
     CCWWeakSelf
-    CCWPasswordAlert(^(UIAlertAction * _Nonnull action) {
-        // 通过数组拿到textTF的值
-        NSString *password = [[alertVc textFields] objectAtIndex:0].text;
-        [CCWSDKRequest CCW_GetPrivateKey:weakSelf.walletAccountModel.dbAccountModel.name password:password Success:^(id  _Nonnull responseObject) {
+    [[CCWPwdAlertView passwordAlertNoRememberWithCancelClick:^{
+    } confirmClick:^(NSString *pwd) {
+        [CCWSDKRequest CCW_GetPrivateKey:weakSelf.walletAccountModel.dbAccountModel.name password:pwd Success:^(id  _Nonnull responseObject) {
             NSString *activekey = responseObject[@"active_key"];
             NSString *ownerkey = responseObject[@"owner_key"];
             if (activekey == nil && ownerkey == nil) {
@@ -126,7 +126,7 @@
         } Error:^(NSString * _Nonnull errorAlert, id  _Nonnull responseObject) {
             [weakSelf.view makeToast:CCWLocalizable(errorAlert)];
         }];
-    });
+    }] show];
 }
 
 

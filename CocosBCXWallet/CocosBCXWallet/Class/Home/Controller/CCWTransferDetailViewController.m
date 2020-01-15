@@ -8,6 +8,7 @@
 
 #import "CCWTransferDetailViewController.h"
 #import "CCWAssetsModel.h"
+#import "CCWPwdAlertView.h"
 
 @interface CCWTransferDetailViewController ()
 // 渐变层
@@ -138,11 +139,9 @@
 - (void)decodeMemoTap:(UITapGestureRecognizer *)tapGesRecognizer
 {
     CCWWeakSelf
-    CCWPasswordAlert(^(UIAlertAction * _Nonnull action) {
-        // 通过数组拿到textTF的值
-        NSString *password = [[alertVc textFields] objectAtIndex:0].text;
-        
-        [CCWSDKRequest CCW_DecodeMemo:self.transRecordModel.operation.memo.lastObject Password:password Success:^(id  _Nonnull responseObject) {
+    [[CCWPwdAlertView passwordAlertNoRememberWithCancelClick:^{
+    } confirmClick:^(NSString *pwd) {
+        [CCWSDKRequest CCW_DecodeMemo:self.transRecordModel.operation.memo.lastObject Password:pwd Success:^(id  _Nonnull responseObject) {
             weakSelf.remarkLabel.userInteractionEnabled = NO;
             weakSelf.remarkLabel.text = responseObject;
             weakSelf.remarkLabel.textColor = [UIColor getColor:@"262A33"];
@@ -153,7 +152,7 @@
                 [weakSelf.view makeToast:CCWLocalizable(@"网络繁忙，请检查您的网络连接")];
             }
         }];
-    });    
+    }] show];
 }
 
 - (IBAction)makeAddress:(UIButton *)sender {

@@ -5,6 +5,7 @@
 
 #import "CCWPwdAlertView.h"
 #import "CCWPwdContent.h"
+#import "CCWNORememberContent.h"
 
 @interface CCWPwdAlertView ()
 
@@ -25,6 +26,19 @@
 {
     CCWPwdAlertView *alertVc = [[self alloc] init];
     CCWPwdContent *contentView = [CCWPwdContent contentViewCancelClick:cancel confirmClick:confirm];
+    alertVc.contentView = contentView;
+    return alertVc;
+}
+
+/**
+ 初始化，没有记住密码的密码框
+ @param cancel 取消回调
+ @param confirm 确认回调
+ */
++ (instancetype)passwordAlertNoRememberWithCancelClick:(void (^)(void))cancel confirmClick:(void (^)(NSString *pwd))confirm
+{
+    CCWPwdAlertView *alertVc = [[self alloc] init];
+    CCWNORememberContent *contentView = [CCWNORememberContent contentViewCancelClick:cancel confirmClick:confirm];
     alertVc.contentView = contentView;
     return alertVc;
 }

@@ -10,7 +10,7 @@ CCW_CancelOrderInfoViewNextButtonClick
 CCW_CancelSellNHAssetOrderId
 CCW_ChangePassword
 CCW_ClaimVestingBalance
-CCW_Close
+CCW_CloseCompletion
 CCW_CoinTypeSheetView
 CCW_CreateAccountWithWallet
 CCW_CreateContactTable

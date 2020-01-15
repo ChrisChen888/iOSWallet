@@ -65,7 +65,7 @@
     if (!_closeBtn) {
         _closeBtn = [[UIButton alloc] initWithFrame:CGRectMake(14, 15, 30, 30)];
         [_closeBtn setImage:[UIImage imageNamed:@"closeInfoButton"] forState:UIControlStateNormal];
-        [_closeBtn addTarget:self action:@selector(CCW_Close) forControlEvents:UIControlEventTouchUpInside];
+        [_closeBtn addTarget:self action:@selector(CCW_CloseCompletion:) forControlEvents:UIControlEventTouchUpInside];
         [self.containerView addSubview:_closeBtn];
     }
     return _closeBtn;
@@ -148,7 +148,7 @@
 //    [self CCW_Close];
 }
 
-- (void)CCW_Close
+- (void)CCW_CloseCompletion:(void (^)(BOOL finished))completion
 {
     CCWWeakSelf;
     self.show = NO;
@@ -161,6 +161,7 @@
             [v removeFromSuperview];
         }
         [self removeFromSuperview];
+        !completion?:completion(finished);
     }];
     for (UIGestureRecognizer *g in self.gestureRecognizers) {
         [self removeGestureRecognizer:g];
@@ -169,10 +170,12 @@
 
 - (void)CCW_nextBtnClick
 {
-    [self CCW_Close];
-    if ([self.delegate respondsToSelector:@selector(CCW_CancelOrderInfoViewNextButtonClick:)]) {
-        [self.delegate CCW_CancelOrderInfoViewNextButtonClick:self];
-    }
+    CCWWeakSelf
+    [self CCW_CloseCompletion:^(BOOL finished) {
+        if ([weakSelf.delegate respondsToSelector:@selector(CCW_CancelOrderInfoViewNextButtonClick:)]) {
+            [weakSelf.delegate CCW_CancelOrderInfoViewNextButtonClick:self];
+        }
+    }];
 }
 #pragma mark - tableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

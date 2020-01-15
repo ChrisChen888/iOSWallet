@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)CCW_Show;
 
 // 关闭
-- (void)CCW_Close;
+- (void)CCW_CloseCompletion:(void (^)(BOOL finished))completion;
 
 @property (nonatomic ,weak) id<CCWDeleteNHInfoViewDelegate> delegate;
 

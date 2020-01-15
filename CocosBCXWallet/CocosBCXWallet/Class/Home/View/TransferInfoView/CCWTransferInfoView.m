@@ -65,7 +65,7 @@
     if (!_closeBtn) {
         _closeBtn = [[UIButton alloc] initWithFrame:CGRectMake(14, 15, 30, 30)];
         [_closeBtn setImage:[UIImage imageNamed:@"closeInfoButton"] forState:UIControlStateNormal];
-        [_closeBtn addTarget:self action:@selector(CCW_Close) forControlEvents:UIControlEventTouchUpInside];
+        [_closeBtn addTarget:self action:@selector(CCW_CloseCompletion:) forControlEvents:UIControlEventTouchUpInside];
         [self.containerView addSubview:_closeBtn];
     }
     return _closeBtn;
@@ -131,15 +131,12 @@
     _containerView.alpha = 0;
     self.show = YES;
     CCWWeakSelf
-    [UIView animateWithDuration:0.23 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut
-                     animations:^{
-                         self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6f];
-                         weakSelf.containerView.alpha = 1;
-                         weakSelf.containerView.layer.opacity = 1.0f;
-                         weakSelf.containerView.layer.transform = CATransform3DMakeScale(1, 1, 1);
-                     }
-                     completion:NULL
-     ];
+    [UIView animateWithDuration:0.23 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6f];
+        weakSelf.containerView.alpha = 1;
+        weakSelf.containerView.layer.opacity = 1.0f;
+        weakSelf.containerView.layer.transform = CATransform3DMakeScale(1, 1, 1);
+    } completion:NULL];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
@@ -148,7 +145,7 @@
 //    [self CCW_Close];
 }
 
-- (void)CCW_Close
+- (void)CCW_CloseCompletion:(void (^)(BOOL finished))completion
 {
     CCWWeakSelf;
     self.show = NO;
@@ -161,6 +158,7 @@
             [v removeFromSuperview];
         }
         [self removeFromSuperview];
+        !completion?:completion(finished);
     }];
     for (UIGestureRecognizer *g in self.gestureRecognizers) {
         [self removeGestureRecognizer:g];
@@ -169,10 +167,13 @@
 
 - (void)CCW_nextBtnClick
 {
-    [self CCW_Close];
-    if ([self.delegate respondsToSelector:@selector(CCW_TransferInfoViewNextButtonClick:)]) {
-        [self.delegate CCW_TransferInfoViewNextButtonClick:self];
-    }
+    
+    CCWWeakSelf
+    [self CCW_CloseCompletion:^(BOOL finished) {
+        if ([weakSelf.delegate respondsToSelector:@selector(CCW_TransferInfoViewNextButtonClick:)]) {
+            [weakSelf.delegate CCW_TransferInfoViewNextButtonClick:self];
+        }
+    }];
 }
 #pragma mark - tableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

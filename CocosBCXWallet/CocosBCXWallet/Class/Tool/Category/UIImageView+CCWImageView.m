@@ -14,7 +14,7 @@
 - (void)CCW_SetImageWithURL:(NSString *)urlString
 {
     
-    [self sd_setImageWithURL:URLFromString(urlString) placeholderImage:[UIImage imageNamed:@"ccwplaceholder"] options:0 progress:nil completed:nil];
+    [self sd_setImageWithURL:URLFromString(urlString) placeholderImage:[UIImage imageNamed:@"cocosIcon"] options:0 progress:nil completed:nil];
     
     //    [self sd_setImageWithURL:URLFromString(urlString) placeholderImage:[UIImage imageNamed:@"ccwplaceholder"] options:0 progress:nil completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
     //        if (error) {

@@ -10,6 +10,13 @@
 
 @interface CCWInvokerLoginViewController ()
 
+@property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descLabel;
+@property (weak, nonatomic) IBOutlet UILabel *accountLabel;
+
+@property (weak, nonatomic) IBOutlet UIButton *switchAccount;
+
 @end
 
 @implementation CCWInvokerLoginViewController
@@ -17,16 +24,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.switchAccount.layer.borderColor = [UIColor getColor:@"007AFF"].CGColor;
+    self.switchAccount.layer.borderWidth = 1;
+    
+    self.nameLabel.text = self.loginModel.dappName;
+    self.descLabel.text = self.loginModel.desc;
+    [self.iconImageView CCW_SetImageWithURL:self.loginModel.dappIcon];
+    
+    self.accountLabel.text = CCWAccountName;
 }
 
-/*
-#pragma mark - Navigation
+// 切换账户
+- (IBAction)switchAccountClick:(UIButton *)sender {
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
 }
-*/
+
+- (IBAction)confirmButtonClick:(UIButton *)sender {
+    
+}
+
+- (IBAction)cancelButtonClick:(UIButton *)sender {
+    
+}
 
 @end

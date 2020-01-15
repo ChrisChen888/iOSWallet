@@ -10,6 +10,7 @@
 #import "CCWNHAssetOrderTableViewCell.h"
 #import "CCWOrderDetailViewController.h"
 #import "CCWBuyNHInfoView.h"
+#import "CCWPwdAlertView.h"
 
 @interface CCWAllOrderViewController ()<DZNEmptyDataSetSource, DZNEmptyDataSetDelegate,CCWPropOrderCellDelegate,CCWBuyNHInfoViewDelegate>
 {
@@ -161,7 +162,7 @@
 {
     self.transferInfoView.dataSource = array;
     if (self.transferInfoView.isShow) {
-        [self.transferInfoView CCW_Close];
+        [self.transferInfoView CCW_CloseCompletion:nil];
     }else{
         [self.transferInfoView CCW_Show];
     }
@@ -170,11 +171,10 @@
 {
     // 输入密码
     CCWWeakSelf
-    CCWPasswordAlert(^(UIAlertAction * _Nonnull action) {
-        // 通过数组拿到textTF的值
-        NSString *password = [[alertVc textFields] objectAtIndex:0].text;
-        [weakSelf buyNHAssetWithPassword:password];
-    });
+    [[CCWPwdAlertView passwordAlertNoRememberWithCancelClick:^{
+    } confirmClick:^(NSString *pwd) {
+        [weakSelf buyNHAssetWithPassword:pwd];
+    }] show];
 }
 
 - (void)buyNHAssetWithPassword:(NSString *)password{

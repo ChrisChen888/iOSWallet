@@ -8,6 +8,7 @@
 
 #import "CCWTransferViewController.h"
 #import "CCWTransferInfoView.h"
+#import "CCWPwdAlertView.h"
 
 @interface CCWTransferViewController ()<UITextFieldDelegate,CCWTransferInfoViewDelegate>
 
@@ -139,7 +140,7 @@
 {
     self.transferInfoView.dataSource = array;
     if (self.transferInfoView.isShow) {
-        [self.transferInfoView CCW_Close];
+        [self.transferInfoView CCW_CloseCompletion:nil];
     }else{
         [self.transferInfoView CCW_Show];
     }
@@ -152,10 +153,10 @@
     
     // 输入密码
     CCWWeakSelf
-    CCWPasswordAlert(^(UIAlertAction * _Nonnull action) {
-        // 通过数组拿到textTF的值
-        NSString *password = [[alertVc textFields] objectAtIndex:0].text;
-        [CCWSDKRequest CCW_TransferAsset:CCWAccountName toAccount:receiveAddress password:password assetId:self.assetsModel.asset_id amount:transferNumStr memo:self.remakeTextField.text Success:^(id  _Nonnull responseObject) {
+    [[CCWPwdAlertView passwordAlertNoRememberWithCancelClick:^{
+        
+    } confirmClick:^(NSString *pwd) {
+        [CCWSDKRequest CCW_TransferAsset:CCWAccountName toAccount:receiveAddress password:pwd assetId:self.assetsModel.asset_id amount:transferNumStr memo:self.remakeTextField.text Success:^(id  _Nonnull responseObject) {
             !weakSelf.transferSuccess?:weakSelf.transferSuccess();
             [weakSelf.navigationController popViewControllerAnimated:YES];
         } Error:^(NSString * _Nonnull errorAlert, NSError *error) {
@@ -169,7 +170,7 @@
                 [weakSelf.view makeToast:CCWLocalizable(@"网络繁忙，请检查您的网络连接")];
             }
         }];
-    });
+    }] show];
 }
 
 #pragma mark - UITextField

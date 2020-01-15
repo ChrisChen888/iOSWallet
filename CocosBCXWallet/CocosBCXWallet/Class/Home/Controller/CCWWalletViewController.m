@@ -18,6 +18,9 @@
 #import "CCWNavigationController.h"
 #import "CCWRegisterTableViewCell.h"
 
+
+#import "CCWPwdAlertView.h"
+
 @interface CCWWalletViewController ()<UITableViewDelegate,UITableViewDataSource,CCWWalletHeaderDelegate,CCWSwitchAccountViewDelegate,DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
 
 /** 当前登录账户名 */
@@ -256,7 +259,7 @@
     // 获取账户列表
     self.switchAccountView.dataSource = [CCWSDKRequest CCW_QueryAccountList];
     if (self.switchAccountView.isShow) {
-        [self.switchAccountView CCW_Close];
+        [self.switchAccountView CCW_CloseCompletion:nil];
     }else{
         [self.switchAccountView CCW_Show];
     }
@@ -265,6 +268,14 @@
 // 按钮点击
 - (void)CCW_HomeNavbuttonClick:(CCWWalletHeaderView *)walletHeaderView button:(UIButton *)button
 {
+    [[CCWPwdAlertView passwordAlertNoRememberWithCancelClick:^{
+        NSLog(@"-----取消");
+    } confirmClick:^(NSString *pwd) {
+        NSLog(@"-----确认%@",pwd);
+    }] show];
+    
+    return;
+    
     if (!CCWAccountId) {
         [self.view makeToast:CCWLocalizable(@"请登陆/注册后再试")];
         return;

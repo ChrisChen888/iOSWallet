@@ -8,6 +8,8 @@
 
 #import "CocosWalletApi.h"
 #import "CCWInvokerLoginViewController.h"
+#import "CCWInvokerTransferViewController.h"
+#import "CCWInvokerCallContractViewController.h"
 
 static const NSString *kReqRespParam  = @"param";
 
@@ -90,17 +92,22 @@ static NSString *callback_schema = nil;
                 callback_schema = loginObj.callbackSchema;
                 
                 CCWInvokerLoginViewController *invokerLoginVC = [[CCWInvokerLoginViewController alloc] init];
+                invokerLoginVC.loginModel = loginObj;
                 [ViewController presentViewController:invokerLoginVC animated:YES completion:nil];
             }else if (host && [host isEqualToString:kCocosSDKActionTransfer]) {
                 // 转账的
                 CocosTransferObj *transferObj = [CocosTransferObj mj_objectWithKeyValues:dic];
                 callback_schema = transferObj.callbackSchema;
+                
+                CCWInvokerTransferViewController *transferVC = [[CCWInvokerTransferViewController alloc] init];
+                [ViewController presentViewController:transferVC animated:YES completion:nil];
                 // 还要比较 from
             }else if (host && [host isEqualToString:kCocosSDKActionCallContract]) {
                 // 调用合约的
                 CocosCallContractObj *callContract = [CocosCallContractObj mj_objectWithKeyValues:dic];
                 callback_schema = callContract.callbackSchema;
-                
+                CCWInvokerCallContractViewController *callContractVC = [[CCWInvokerCallContractViewController alloc] init];
+                [ViewController presentViewController:callContractVC animated:YES completion:nil];
             }else{
                 return NO;
             }

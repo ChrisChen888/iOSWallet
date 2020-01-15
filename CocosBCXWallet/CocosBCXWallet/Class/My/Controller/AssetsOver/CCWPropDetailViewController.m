@@ -9,6 +9,7 @@
 #import "CCWPropDetailViewController.h"
 #import "CCWDeleteNHInfoView.h"
 #import "CCWAssetsModel.h"
+#import "CCWPwdAlertView.h"
 
 @interface CCWPropDetailViewController ()<CCWDeleteNHInfoViewDelegate>
 {
@@ -94,7 +95,7 @@
 {
     self.deleteInfoView.dataSource = array;
     if (self.deleteInfoView.isShow) {
-        [self.deleteInfoView CCW_Close];
+        [self.deleteInfoView CCW_CloseCompletion:nil];
     }else{
         [self.deleteInfoView CCW_Show];
     }
@@ -103,11 +104,10 @@
 - (void)CCW_DeleteInfoViewNextButtonClick:(nonnull CCWDeleteNHInfoView *)transferInfoView {
     // 输入密码
     CCWWeakSelf
-    CCWPasswordAlert(^(UIAlertAction * _Nonnull action) {
-        // 通过数组拿到textTF的值
-        NSString *password = [[alertVc textFields] objectAtIndex:0].text;
-        [weakSelf deleteNHAssetWithPassWord:password];
-    });
+    [[CCWPwdAlertView passwordAlertNoRememberWithCancelClick:^{
+    } confirmClick:^(NSString *pwd) {
+        [weakSelf deleteNHAssetWithPassWord:pwd];
+    }] show];
 }
 
 - (void)deleteNHAssetWithPassWord:(NSString *)password

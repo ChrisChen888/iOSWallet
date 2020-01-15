@@ -9,6 +9,7 @@
 #import "CCWSellNHAssetViewController.h"
 #import "CCWSelectSellCoinViewController.h"
 #import "CCWTransferInfoView.h"
+#import "CCWPwdAlertView.h"
 
 @interface CCWSellNHAssetViewController ()<UITextFieldDelegate,UIScrollViewDelegate,CCWTransferInfoViewDelegate>
 {
@@ -118,7 +119,7 @@
 {
     self.transferInfoView.dataSource = array;
     if (self.transferInfoView.isShow) {
-        [self.transferInfoView CCW_Close];
+        [self.transferInfoView CCW_CloseCompletion:nil];
     }else{
         [self.transferInfoView CCW_Show];
     }
@@ -127,11 +128,10 @@
 - (void)CCW_TransferInfoViewNextButtonClick:(CCWTransferInfoView *)transferInfoView
 {
     CCWWeakSelf
-    CCWPasswordAlert(^(UIAlertAction * _Nonnull action) {
-        // 通过数组拿到textTF的值
-        NSString *password = [[alertVc textFields] objectAtIndex:0].text;
-        [weakSelf sellNHAssetWithPassword:password];
-    });
+    [[CCWPwdAlertView passwordAlertNoRememberWithCancelClick:^{
+    } confirmClick:^(NSString *pwd) {
+        [weakSelf sellNHAssetWithPassword:pwd];
+    }] show];
 }
 
 - (void)sellNHAssetWithPassword:(NSString *)password

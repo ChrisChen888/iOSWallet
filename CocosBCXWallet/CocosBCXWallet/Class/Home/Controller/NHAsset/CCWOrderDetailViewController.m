@@ -9,6 +9,7 @@
 #import "CCWOrderDetailViewController.h"
 #import "CCWCancelSellNHInfoView.h"
 #import "CCWBuyNHInfoView.h"
+#import "CCWPwdAlertView.h"
 
 @interface CCWOrderDetailViewController ()<CCWCancelSellNHInfoViewDelegate,CCWBuyNHInfoViewDelegate>
 
@@ -121,7 +122,7 @@
 {
     self.cancelOrderInfoView.dataSource = array;
     if (self.cancelOrderInfoView.isShow) {
-        [self.cancelOrderInfoView CCW_Close];
+        [self.cancelOrderInfoView CCW_CloseCompletion:nil];
     }else{
         [self.cancelOrderInfoView CCW_Show];
     }
@@ -130,11 +131,10 @@
 {
     // 输入密码
     CCWWeakSelf
-    CCWPasswordAlert(^(UIAlertAction * _Nonnull action) {
-        // 通过数组拿到textTF的值
-        NSString *password = [[alertVc textFields] objectAtIndex:0].text;
-        [weakSelf cancelBuyNHAssetWithPassword:password];
-    });
+    [[CCWPwdAlertView passwordAlertNoRememberWithCancelClick:^{
+    } confirmClick:^(NSString *pwd) {
+        [weakSelf cancelBuyNHAssetWithPassword:pwd];
+    }] show];
 }
 
 - (void)cancelBuyNHAssetWithPassword:(NSString *)password
@@ -182,7 +182,7 @@
 {
     self.bugNhInfoView.dataSource = array;
     if (self.bugNhInfoView.isShow) {
-        [self.bugNhInfoView CCW_Close];
+        [self.bugNhInfoView CCW_CloseCompletion:nil];
     }else{
         [self.bugNhInfoView CCW_Show];
     }
@@ -192,11 +192,10 @@
 {
     // 输入密码
     CCWWeakSelf
-    CCWPasswordAlert(^(UIAlertAction * _Nonnull action) {
-        // 通过数组拿到textTF的值
-        NSString *password = [[alertVc textFields] objectAtIndex:0].text;
-        [weakSelf buyNHAssetWithPassword:password];
-    });
+    [[CCWPwdAlertView passwordAlertNoRememberWithCancelClick:^{
+    } confirmClick:^(NSString *pwd) {
+        [weakSelf buyNHAssetWithPassword:pwd];
+    }] show];
 }
 
 - (void)buyNHAssetWithPassword:(NSString *)password

@@ -75,7 +75,7 @@
     if (!_closeBtn) {
         _closeBtn = [UIButton buttonWithType:UIButtonTypeSystem];
         [_closeBtn setImage:[UIImage imageNamed:@"closeSwitch"] forState:UIControlStateNormal];
-        [_closeBtn addTarget:self action:@selector(CCW_Close) forControlEvents:UIControlEventTouchUpInside];
+        [_closeBtn addTarget:self action:@selector(CCW_CloseCompletion:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _closeBtn;
 }
@@ -138,7 +138,7 @@
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
     UIView *hitView = [super hitTest:point withEvent:event];
     if(hitView == self){
-        [self CCW_Close];
+        [self CCW_CloseCompletion:nil];
         return nil;
     }
     return hitView;
@@ -171,7 +171,7 @@
      ];
 }
 
-- (void)CCW_Close
+- (void)CCW_CloseCompletion:(void (^)(BOOL finished))completion
 {
     CCWWeakSelf;
     self.show = NO;
@@ -185,6 +185,7 @@
             [v removeFromSuperview];
         }
         [self removeFromSuperview];
+        !completion?:completion(finished);
     }];
 }
 
@@ -209,14 +210,16 @@
         [self.delegate CCW_SwitchAccountView:self didSelectDBAccountModel:self.dataSource[indexPath.row]];
     }
     [self.tableView reloadData];
-    [self CCW_Close];
+    [self CCW_CloseCompletion:nil];
 }
 
 - (void)CCW_AddAccountClick
 {
-    [self CCW_Close];
-    if ([self.delegate respondsToSelector:@selector(CCW_SwitchViewAddAccountClick:)]) {
-        [self.delegate CCW_SwitchViewAddAccountClick:self];
-    }
+    CCWWeakSelf
+    [self CCW_CloseCompletion:^(BOOL finished) {
+        if ([weakSelf.delegate respondsToSelector:@selector(CCW_SwitchViewAddAccountClick:)]) {
+            [weakSelf.delegate CCW_SwitchViewAddAccountClick:self];
+        }
+    }];
 }
 @end

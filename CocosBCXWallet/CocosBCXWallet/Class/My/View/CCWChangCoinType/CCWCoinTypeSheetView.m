@@ -77,25 +77,23 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     [super touchesBegan:touches withEvent:event];
-    [self CCW_Close];
+    [self CCW_CloseCompletion:nil];
 }
 
-- (void)CCW_Close
+- (void)CCW_CloseCompletion:(void (^)(BOOL finished))completion
 {
     CCWWeakSelf;
-    [UIView animateWithDuration:0.2f delay:0.0 options:UIViewAnimationOptionTransitionNone
-                     animations:^{
-                         self.backgroundColor = [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:0.0f];
-                         weakSelf.containerView.layer.transform = CATransform3DMakeTranslation(0,200 ,0);
-                         weakSelf.containerView.layer.opacity = 0.0f;
-                     }
-                     completion:^(BOOL finished) {
-                         for (UIView *v in [self subviews]) {
-                             [v removeFromSuperview];
-                         }
-                         [self removeFromSuperview];
-                     }
-     ];
+    [UIView animateWithDuration:0.2f delay:0.0 options:UIViewAnimationOptionTransitionNone animations:^{
+        self.backgroundColor = [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:0.0f];
+        weakSelf.containerView.layer.transform = CATransform3DMakeTranslation(0,200 ,0);
+        weakSelf.containerView.layer.opacity = 0.0f;
+    } completion:^(BOOL finished) {
+        for (UIView *v in [self subviews]) {
+            [v removeFromSuperview];
+        }
+        [self removeFromSuperview];
+        !completion?:completion(finished);
+    }];
     for (UIGestureRecognizer *g in self.gestureRecognizers) {
         [self removeGestureRecognizer:g];
     }
@@ -130,12 +128,12 @@
     }else if (indexPath.row == 1){
         [CCWSaveTool setBool:NO forKey:CCWCurrencyType];
     }else{
-      [self CCW_Close];
+      [self CCW_CloseCompletion:nil];
     }
     if ([self.delegate respondsToSelector:@selector(CCW_CoinTypeSheetView:didSelectRowAtIndexPath:)]) {
         [self.delegate CCW_CoinTypeSheetView:self didSelectRowAtIndexPath:indexPath];
     }
     [tableView reloadData];
-    [self CCW_Close];
+    [self CCW_CloseCompletion:nil];
 }
 @end
