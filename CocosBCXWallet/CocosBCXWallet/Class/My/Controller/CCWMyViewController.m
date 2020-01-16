@@ -27,7 +27,7 @@
         case 0:
             
             if (!CCWAccountId) {
-                [self.view makeToast:CCWLocalizable(@"请登陆/注册后再试")];
+                [self.view makeToast:CCWLocalizable(@"请登录/注册后再试")];
                 return;
             }
             [self.navigationController pushViewController:[NSClassFromString(@"CCWAssetsOverviewViewController") new] animated:YES];

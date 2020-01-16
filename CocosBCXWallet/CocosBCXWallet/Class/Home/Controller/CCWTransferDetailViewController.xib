@@ -239,6 +239,14 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rnD-7u-KZ7">
+                    <rect key="frame" x="104" y="603" width="167" height="29"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="到浏览器中查看详细信息&gt;"/>
+                    <connections>
+                        <action selector="lookupTransferDetail:" destination="-1" eventType="touchUpInside" id="jpE-X3-ziP"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.96470588235294119" green="0.96862745098039216" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -246,7 +254,9 @@
                 <constraint firstItem="KG0-Bz-Nha" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="LiG-HG-Nk7"/>
                 <constraint firstItem="KG0-Bz-Nha" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="QRL-xi-2US"/>
                 <constraint firstItem="aUO-Qm-2sn" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="47" id="WgR-kZ-yT4"/>
+                <constraint firstItem="rnD-7u-KZ7" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Xvh-fk-Y68"/>
                 <constraint firstItem="KG0-Bz-Nha" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="aiJ-VH-9ez"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="rnD-7u-KZ7" secondAttribute="bottom" constant="35" id="lzN-TR-51B"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="aUO-Qm-2sn" secondAttribute="trailing" constant="15" id="mRE-lN-1gn"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

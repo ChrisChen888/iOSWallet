@@ -131,15 +131,12 @@
     _containerView.alpha = 0;
     self.show = YES;
     CCWWeakSelf
-    [UIView animateWithDuration:0.23 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut
-                     animations:^{
-                         self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6f];
-                         weakSelf.containerView.alpha = 1;
-                         weakSelf.containerView.layer.opacity = 1.0f;
-                         weakSelf.containerView.layer.transform = CATransform3DMakeScale(1, 1, 1);
-                     }
-                     completion:NULL
-     ];
+    [UIView animateWithDuration:0.23 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6f];
+        weakSelf.containerView.alpha = 1;
+        weakSelf.containerView.layer.opacity = 1.0f;
+        weakSelf.containerView.layer.transform = CATransform3DMakeScale(1, 1, 1);
+    } completion:NULL];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event

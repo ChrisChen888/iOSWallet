@@ -268,16 +268,9 @@
 // 按钮点击
 - (void)CCW_HomeNavbuttonClick:(CCWWalletHeaderView *)walletHeaderView button:(UIButton *)button
 {
-    [[CCWPwdAlertView passwordAlertNoRememberWithCancelClick:^{
-        NSLog(@"-----取消");
-    } confirmClick:^(NSString *pwd) {
-        NSLog(@"-----确认%@",pwd);
-    }] show];
-    
-    return;
     
     if (!CCWAccountId) {
-        [self.view makeToast:CCWLocalizable(@"请登陆/注册后再试")];
+        [self.view makeToast:CCWLocalizable(@"请登录/注册后再试")];
         return;
     }
     switch (button.tag) {

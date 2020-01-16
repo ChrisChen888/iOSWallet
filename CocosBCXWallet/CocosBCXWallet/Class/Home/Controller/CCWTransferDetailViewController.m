@@ -165,4 +165,12 @@
     [self.view makeToast:CCWLocalizable(@"复制成功")];
 }
 
+- (IBAction)lookupTransferDetail:(UIButton *)sender {
+    
+    id<CCWFindModuleProtocol> findModule = [[CCWMediator sharedInstance] moduleForProtocol:@protocol(CCWFindModuleProtocol)];
+    UIViewController *viewController = [findModule CCW_FindWebViewControllerWithTitle:CCWLocalizable(@"交易详情") loadDappURLString:[NSString stringWithFormat:@"https://www.cocosabc.com/blocks/block/%@",self.transRecordModel.block_num]];
+    [self.navigationController pushViewController:viewController animated:YES];
+    
+}
+
 @end
