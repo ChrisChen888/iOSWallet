@@ -33,6 +33,7 @@
 "请再次输入密码" = "Enter passcode again";
 "注册钱包" = "Register Wallet";
 "请输入密码" = "Enter passcode";
+"验证密码" = "Verify";
 "请输入账户名称" = "Enter account name";
 "密码错误，请重新输入" = "Passcode error, enter again";
 "导入钱包" = "Import Wallet";
@@ -112,6 +113,7 @@
 "备注(选填)" = "Memo(Optional)";
 "下一步" = "Next";
 "交易详情" = "Transaction Details";
+"到浏览器中查看详细信息>" = "Go to browser for more details>";
 "订单信息" = "Order Information";
 "旷工费" = "Fee";
 "转出账号" = "From";
