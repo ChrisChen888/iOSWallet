@@ -30,6 +30,7 @@
 		3129ED4222E8781F0028A1CA /* CCWSellCoinTypeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3129ED4022E8781F0028A1CA /* CCWSellCoinTypeTableViewCell.xib */; };
 		3129ED4B22E950220028A1CA /* CCWCancelSellNHInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3129ED4722E950220028A1CA /* CCWCancelSellNHInfoView.m */; };
 		3129ED4F22E990320028A1CA /* CCWBuyNHInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3129ED4E22E990320028A1CA /* CCWBuyNHInfoView.m */; };
+		3138F22E23EAD60700F9D0D9 /* CCWFindMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3138F22D23EAD60600F9D0D9 /* CCWFindMoreView.m */; };
 		313AAB0D22E9A859003E0B5B /* CCWDeleteNHInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 313AAB0C22E9A859003E0B5B /* CCWDeleteNHInfoView.m */; };
 		313AAB1122EA95D7003E0B5B /* CCWTransferNhAssetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 313AAB0F22EA95D7003E0B5B /* CCWTransferNhAssetViewController.m */; };
 		313AAB1222EA95D7003E0B5B /* CCWTransferNhAssetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 313AAB1022EA95D7003E0B5B /* CCWTransferNhAssetViewController.xib */; };
@@ -366,6 +367,8 @@
 		3129ED4722E950220028A1CA /* CCWCancelSellNHInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCWCancelSellNHInfoView.m; sourceTree = "<group>"; };
 		3129ED4D22E990320028A1CA /* CCWBuyNHInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCWBuyNHInfoView.h; sourceTree = "<group>"; };
 		3129ED4E22E990320028A1CA /* CCWBuyNHInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCWBuyNHInfoView.m; sourceTree = "<group>"; };
+		3138F22C23EAD60600F9D0D9 /* CCWFindMoreView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCWFindMoreView.h; sourceTree = "<group>"; };
+		3138F22D23EAD60600F9D0D9 /* CCWFindMoreView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCWFindMoreView.m; sourceTree = "<group>"; };
 		313AAB0B22E9A859003E0B5B /* CCWDeleteNHInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCWDeleteNHInfoView.h; sourceTree = "<group>"; };
 		313AAB0C22E9A859003E0B5B /* CCWDeleteNHInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCWDeleteNHInfoView.m; sourceTree = "<group>"; };
 		313AAB0E22EA95D7003E0B5B /* CCWTransferNhAssetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCWTransferNhAssetViewController.h; sourceTree = "<group>"; };
@@ -985,6 +988,15 @@
 			path = OperationInfo;
 			sourceTree = "<group>";
 		};
+		3138F22B23EAD56D00F9D0D9 /* CCWFindMoreView */ = {
+			isa = PBXGroup;
+			children = (
+				3138F22C23EAD60600F9D0D9 /* CCWFindMoreView.h */,
+				3138F22D23EAD60600F9D0D9 /* CCWFindMoreView.m */,
+			);
+			path = CCWFindMoreView;
+			sourceTree = "<group>";
+		};
 		3141229723C5EC46005BEB03 /* walletinvoker */ = {
 			isa = PBXGroup;
 			children = (
@@ -1341,6 +1353,7 @@
 		316739A3221AD826008D85C4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3138F22B23EAD56D00F9D0D9 /* CCWFindMoreView */,
 				316739B9221AD9C3008D85C4 /* CCWFindButton.h */,
 				316739B8221AD9C3008D85C4 /* CCWFindButton.m */,
 				316739A7221AD84B008D85C4 /* CCWFindFirstTableViewCell.h */,
@@ -2479,6 +2492,7 @@
 				3178D47E2390C15900CFB83B /* WalletExtraKey.m in Sources */,
 				3178D4792390C15900CFB83B /* AuthorityObject.m in Sources */,
 				317784E72200473800525237 /* CCWMediator.m in Sources */,
+				3138F22E23EAD60700F9D0D9 /* CCWFindMoreView.m in Sources */,
 				3144D06222003BE700CDA62A /* NSString+YSAdd.m in Sources */,
 				31E4338C22EAB05B00CAFDCA /* MJRefresh+Localize.m in Sources */,
 				3144D06D22003BE700CDA62A /* UIView+YSAdd.m in Sources */,

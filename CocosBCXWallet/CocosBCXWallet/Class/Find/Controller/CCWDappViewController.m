@@ -12,8 +12,9 @@
 #import "CCWDappWebTool.h"
 #import "CCWNodeInfoModel.h"
 #import "CCWPwdAlertView.h"
+#import "CCWFindMoreView.h"
 
-@interface CCWDappViewController ()<WKUIDelegate,WKNavigationDelegate,WKScriptMessageHandler>
+@interface CCWDappViewController ()<CCWFindMoreViewDelegate,WKUIDelegate,WKNavigationDelegate,WKScriptMessageHandler>
 @property (nonatomic, copy) NSString *dappTitle;
 @property (nonatomic, copy) NSString *dappURLString;
 @property (nonatomic, strong) WKWebView *wkWebView;
@@ -45,7 +46,30 @@
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlString]];
     request.timeoutInterval = 5.0f;
     [self.wkWebView loadRequest:request];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Findmore"] style:UIBarButtonItemStylePlain target:self action:@selector(moreClick)];
+}
 
+// 点击更多
+- (void)moreClick
+{
+    CCWFindMoreView *alertMoreView = [[CCWFindMoreView alloc] init];
+    alertMoreView.delegate = self;
+    [alertMoreView CCW_Show];
+}
+
+- (void)CCW_FindMoreViewView:(CCWFindMoreView *)alertMoreView
+                didSelectRow:(NSInteger)index {
+    if (index == 1) {
+        [self.wkWebView loadRequest:[NSMutableURLRequest requestWithURL:[NSURL URLWithString:self.dappURLString]]];
+    }else if (index == 2) {
+        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+        [pasteboard setString:self.dappURLString];
+        [self.view makeToast:CCWLocalizable(@"复制成功")];
+    } else if (index == 3) {
+        [self.view makeToast:CCWLocalizable(@"敬请期待")];
+    } else if (index == 4) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.dappURLString]];
+    }
 }
 
 - (void)CCW_SetupView
@@ -178,7 +202,9 @@
 //页面跳转
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     //允许页面跳转
-    //    TWLog(@"%@",navigationAction.request.URL);
+    
+    CCWLog(@"%@",navigationAction.request.URL);
+    self.dappURLString = [NSString stringWithFormat:@"%@",navigationAction.request.URL];
     //如果是跳转一个新页面
     if (navigationAction.targetFrame == nil) {
         [webView loadRequest:navigationAction.request];
