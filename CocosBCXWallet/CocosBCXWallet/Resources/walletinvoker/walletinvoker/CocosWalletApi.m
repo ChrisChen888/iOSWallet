@@ -75,6 +75,7 @@ static NSString *callback_schema = nil;
                 // 调用合约的
                 CocosCallContractObj *callContract = [CocosCallContractObj mj_objectWithKeyValues:dic];
                 CCWInvokerCallContractViewController *callContractVC = [[CCWInvokerCallContractViewController alloc] init];
+                callContractVC.callContractModel = callContract;
                 [ViewController presentViewController:callContractVC animated:YES completion:nil];
             }else{
                 return NO;

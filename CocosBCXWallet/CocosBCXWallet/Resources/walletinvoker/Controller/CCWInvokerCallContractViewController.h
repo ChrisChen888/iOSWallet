@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CocosRequestObj.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CCWInvokerCallContractViewController : UIViewController
+
+@property (nonatomic, strong) CocosCallContractObj *callContractModel;
 
 @end
 
