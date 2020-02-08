@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CocosRequestObj.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CCWInvokerTransferViewController : UIViewController
+
+
+@property (nonatomic, strong) CocosTransferObj *transferModel;
 
 @end
 

@@ -68,6 +68,7 @@ static NSString *callback_schema = nil;
                 CocosTransferObj *transferObj = [CocosTransferObj mj_objectWithKeyValues:dic];
                 
                 CCWInvokerTransferViewController *transferVC = [[CCWInvokerTransferViewController alloc] init];
+                transferVC.transferModel = transferObj;
                 [ViewController presentViewController:transferVC animated:YES completion:nil];
                 // 还要比较 from
             }else if (host && [host isEqualToString:kCocosSDKActionCallContract]) {
