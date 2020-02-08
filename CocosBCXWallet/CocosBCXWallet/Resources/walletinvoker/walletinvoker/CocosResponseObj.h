@@ -26,9 +26,10 @@ typedef NS_ENUM(NSUInteger, CocosRespResult) {
 @interface CocosResponseObj : NSObject
 
 @property (nonatomic, assign) CocosRespResult result;      //!< 处理结果
+@property (nonatomic, copy) NSString *callbackSchema;      //!< 回调的url
 @property (nonatomic, copy) NSString *action;              //!< 回调类型
 @property (nonatomic, copy) NSString *message;             //!< 消息
-@property (nonatomic, weak) id data;                       //!< 结果数据
+@property (nonatomic, strong) NSDictionary *data;                       //!< 结果数据
 
 @end
 

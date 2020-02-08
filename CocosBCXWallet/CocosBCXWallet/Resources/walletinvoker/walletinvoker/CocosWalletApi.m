@@ -22,48 +22,18 @@ static NSString *callback_schema = nil;
 
 /**  发起请求 */
 + (BOOL)sendObj:(CocosResponseObj *)obj {
-//    if ([obj isKindOfClass:CocosLoginObj.class] ||
-//        [obj isKindOfClass:CocosTransferObj.class]||
-//        [obj isKindOfClass:CocosCallContractObj.class]) {
-//        return [self send:obj];
-//    }
-//    return NO;
-    //    NSDictionary *params = [obj cocos_toJSONObject];
-    NSString *JSONString = @"";//[self toJSONString:params];
     
+    NSMutableDictionary *params = [NSMutableDictionary new];
+    params[@"result"] = @(obj.result);
+    params[@"action"] = obj.action;
+    params[@"data"] = obj.data;
+    params[@"message"] = obj.message;
+    // JSON -> String
+    NSString *JSONString = [self toJSONString:params];
     // api
-    NSString *URLString = [NSString stringWithFormat:@"%@=%@", callback_schema, JSONString];
+    NSString *URLString = [NSString stringWithFormat:@"%@=%@", obj.callbackSchema, JSONString];
     return [self openURLWithString:URLString];
 }
-
-///**  发起 */
-//+ (BOOL)send:(CocosResponseObj *)obj {
-////    NSDictionary *params = [obj cocos_toJSONObject];
-//    NSString *JSONString = @"";//[self toJSONString:params];
-//
-//    // api
-//    NSString *URLString = [NSString stringWithFormat:@"%@=%@", callback_schema, JSONString];
-//    return [self openURLWithString:URLString];
-//}
-
-//            // iOS 10 code
-//            if (@available(iOS 10.0, *)) {
-//                [[UIApplication sharedApplication] openURL:url options:@{UIApplicationOpenURLOptionsOpenInPlaceKey:@"1"}completionHandler:^(BOOL success) {
-//                    //回调
-//                    if(!success) {
-//                        NSLog(@"没有安装CocosWallet。。。。。。");
-//                    }else{
-//                        NSLog(@"success");
-//                    }
-//                }];
-//            } else {
-//                // Fallback on earlier versions
-//                if ([[UIApplication sharedApplication] canOpenURL:url]) {
-//                    [[UIApplication sharedApplication] openURL:url];
-//                } else {
-//                    NSLog(@"没有安装CocosWallet。。。。。。");
-//                }
-//            }
 
 /**  处理TP的回调跳转 */
 + (BOOL)handleURL:(NSURL *)url
@@ -89,7 +59,6 @@ static NSString *callback_schema = nil;
             if (host && [host isEqualToString:kCocosSDKActionLogin]) {
                 // 登录的
                 CocosLoginObj *loginObj = [CocosLoginObj mj_objectWithKeyValues:dic];
-                callback_schema = loginObj.callbackSchema;
                 
                 CCWInvokerLoginViewController *invokerLoginVC = [[CCWInvokerLoginViewController alloc] init];
                 invokerLoginVC.loginModel = loginObj;
@@ -97,7 +66,6 @@ static NSString *callback_schema = nil;
             }else if (host && [host isEqualToString:kCocosSDKActionTransfer]) {
                 // 转账的
                 CocosTransferObj *transferObj = [CocosTransferObj mj_objectWithKeyValues:dic];
-                callback_schema = transferObj.callbackSchema;
                 
                 CCWInvokerTransferViewController *transferVC = [[CCWInvokerTransferViewController alloc] init];
                 [ViewController presentViewController:transferVC animated:YES completion:nil];
@@ -105,7 +73,6 @@ static NSString *callback_schema = nil;
             }else if (host && [host isEqualToString:kCocosSDKActionCallContract]) {
                 // 调用合约的
                 CocosCallContractObj *callContract = [CocosCallContractObj mj_objectWithKeyValues:dic];
-                callback_schema = callContract.callbackSchema;
                 CCWInvokerCallContractViewController *callContractVC = [[CCWInvokerCallContractViewController alloc] init];
                 [ViewController presentViewController:callContractVC animated:YES completion:nil];
             }else{
@@ -122,14 +89,26 @@ static NSString *callback_schema = nil;
 /**  跳转 CocosWallet App */
 + (BOOL)openURLWithString:(NSString *)URLString {
     
-    callback_schema = nil;
     URLString = [URLString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     NSURL *url = [NSURL URLWithString:URLString];
     
-    if ([[UIApplication sharedApplication] canOpenURL:url]) {
-        return [[UIApplication sharedApplication] openURL:url];
+    // iOS 10 code
+    if (@available(iOS 10.0, *)) {
+        [[UIApplication sharedApplication] openURL:url options:@{UIApplicationOpenURLOptionsOpenInPlaceKey:@"1"}completionHandler:^(BOOL success) {
+            //回调
+            if(!success) {
+                NSLog(@"没有安装DApp 的App 有点扯淡....");
+            }else{
+                NSLog(@"success");
+            }
+        }];
     } else {
-        NSLog(@"没有安装DApp 的App 有点扯淡....");
+        // Fallback on earlier versions
+        if ([[UIApplication sharedApplication] canOpenURL:url]) {
+            [[UIApplication sharedApplication] openURL:url];
+        } else {
+            NSLog(@"没有安装DApp 的App 有点扯淡....");
+        }
     }
     
     return NO;

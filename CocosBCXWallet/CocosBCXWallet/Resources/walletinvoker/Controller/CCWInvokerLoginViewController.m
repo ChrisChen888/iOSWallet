@@ -7,6 +7,7 @@
 //
 
 #import "CCWInvokerLoginViewController.h"
+#import "CocosWalletApi.h"
 
 @interface CCWInvokerLoginViewController ()
 
@@ -40,11 +41,27 @@
 }
 
 - (IBAction)confirmButtonClick:(UIButton *)sender {
-    
+    CocosResponseObj *respons = [[CocosResponseObj alloc] init];
+    respons.callbackSchema = self.loginModel.callbackSchema;
+    respons.result = CocosRespResultSuccess;
+    respons.action = self.loginModel.action;
+    respons.data = @{
+                     @"account_id":CCWAccountId?:@"",
+                     @"account_name":CCWAccountName?:@""
+                     };
+    respons.message = @"success";
+    [CocosWalletApi sendObj:respons];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)cancelButtonClick:(UIButton *)sender {
-    
+    CocosResponseObj *respons = [[CocosResponseObj alloc] init];
+    respons.callbackSchema = self.loginModel.callbackSchema;
+    respons.result = CocosRespResultCanceled;
+    respons.action = self.loginModel.action;
+    respons.message = @"User rejected the Login request";
+    [CocosWalletApi sendObj:respons];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
