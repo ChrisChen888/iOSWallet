@@ -8,8 +8,9 @@
 
 #import "CCWInvokerLoginViewController.h"
 #import "CocosWalletApi.h"
+#import "CocosSwitchAccountView.h"
 
-@interface CCWInvokerLoginViewController ()
+@interface CCWInvokerLoginViewController ()<CocosSwitchAccountViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -18,9 +19,24 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *switchAccount;
 
+@property (nonatomic, strong) CocosSwitchAccountView *switchAccountView;
+
+
+@property(nonatomic,copy)NSString *accountName;
+@property(nonatomic,copy)NSString *accountID;
+
 @end
 
 @implementation CCWInvokerLoginViewController
+
+- (CocosSwitchAccountView *)switchAccountView
+{
+    if (!_switchAccountView) {
+        _switchAccountView = [CocosSwitchAccountView new];
+        _switchAccountView.delegate = self;
+    }
+    return _switchAccountView;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,12 +48,29 @@
     self.descLabel.text = self.loginModel.desc;
     [self.iconImageView CCW_SetImageWithURL:self.loginModel.dappIcon];
     
-    self.accountLabel.text = CCWAccountName;
+    
+    CCWSETInvokerAccountName(CCWAccountName);
+    CCWSETInvokerAccountId(CCWAccountId);
+    self.accountLabel.text = CCWInvokerAccountName;
 }
 
 // 切换账户
 - (IBAction)switchAccountClick:(UIButton *)sender {
+    // 获取账户列表
+    self.switchAccountView.dataSource = [CCWSDKRequest CCW_QueryAccountList];
+    if (self.switchAccountView.isShow) {
+        [self.switchAccountView Cocos_CloseCompletion:nil];
+    }else{
+        [self.switchAccountView Cocos_Show];
+    }
 
+}
+
+- (void)Cocos_SwitchAccountView:(CocosSwitchAccountView *)switchAccountView didSelectDBAccountModel:(CocosDBAccountModel *)dbAccountModel
+{
+    CCWSETInvokerAccountId(dbAccountModel.ID);
+    CCWSETInvokerAccountName(dbAccountModel.name);
+    self.accountLabel.text = dbAccountModel.name;
 }
 
 - (IBAction)confirmButtonClick:(UIButton *)sender {
@@ -46,8 +79,8 @@
     respons.result = CocosRespResultSuccess;
     respons.action = self.loginModel.action;
     respons.data = @{
-                     @"account_id":CCWAccountId?:@"",
-                     @"account_name":CCWAccountName?:@""
+                     @"account_id":CCWInvokerAccountName?:@"",
+                     @"account_name":CCWInvokerAccountId?:@""
                      };
     respons.message = @"success";
     [CocosWalletApi sendObj:respons];

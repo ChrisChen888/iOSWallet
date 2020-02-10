@@ -65,6 +65,14 @@
 #define CCWSETAccountId(object) [CCWSaveTool setObject:object forKey:@"account_id"]  // 写
 #define CCWAccountId [CCWSaveTool objectForKey:@"account_id"]
 
+// 跳转工具的存储，可优化
+#define CCWSETInvokerAccountName(object) [CCWSaveTool setObject:object forKey:@"invoker_account_name"]  // 写
+#define CCWInvokerAccountName [CCWSaveTool objectForKey:@"invoker_account_name"]
+
+#define CCWSETInvokerAccountId(object) [CCWSaveTool setObject:object forKey:@"invoker_account_id"]  // 写
+#define CCWInvokerAccountId [CCWSaveTool objectForKey:@"invoker_account_id"]
+// 跳转工具的存储，可优化
+
 #define CCWSETNodeInfo(object) [CCWSaveTool setObject:object forKey:@"node_info"]  // 写
 #define CCWNodeInfo [CCWSaveTool objectForKey:@"node_info"]
 

@@ -176,9 +176,19 @@
     [CSToastManager setDefaultPosition:CSToastPositionBottom];
 }
 
+
+- (void)applicationDidEnterBackground:(UIApplication *)application {
+    
+    if ([[[UIViewController topViewController] class] isSubclassOfClass:NSClassFromString(@"CCWInvokerLoginViewController")] || [[[UIViewController topViewController] class] isSubclassOfClass:NSClassFromString(@"CCWInvokerTransferViewController")] || [[[UIViewController topViewController] class] isSubclassOfClass:NSClassFromString(@"CCWInvokerCallContractViewController")]) {
+        
+        [[UIViewController topViewController] dismissViewControllerAnimated:YES completion:nil];
+    }
+}
+
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
 {
     return [CocosWalletApi handleURL:url options:options];   
 }
+
 
 @end

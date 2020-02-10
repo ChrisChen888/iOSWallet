@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="98" id="KGk-i7-Jjw" customClass="CocosSwitchAccountCell">
+            <rect key="frame" x="0.0" y="0.0" width="358" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="358" height="79.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GqC-s0-grx">
+                        <rect key="frame" x="15" y="5" width="328" height="69.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxJ-xD-ZQs">
+                                <rect key="frame" x="18" y="35" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <color key="textColor" red="0.14901960784313725" green="0.16470588235294117" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="eos2we…23ewfds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPv-3j-dGd">
+                                <rect key="frame" x="18" y="36" width="124" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.4823529411764706" green="0.50588235294117645" blue="0.56470588235294117" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selectAccount" translatesAutoresizingMaskIntoConstraints="NO" id="ZaB-Ue-S2U">
+                                <rect key="frame" x="288" y="27.5" width="22" height="15"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1f2-gk-esV">
+                                <rect key="frame" x="21" y="24" width="16" height="22"/>
+                                <state key="normal" image="tanster_copy"/>
+                                <connections>
+                                    <action selector="makeAccountCopy:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="eog-BT-fYh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96470588239999999" green="0.97254901959999995" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="LPv-3j-dGd" firstAttribute="top" secondItem="mxJ-xD-ZQs" secondAttribute="bottom" constant="1" id="0je-cE-LoH"/>
+                            <constraint firstItem="mxJ-xD-ZQs" firstAttribute="leading" secondItem="GqC-s0-grx" secondAttribute="leading" constant="18" id="359-JI-wpo"/>
+                            <constraint firstAttribute="centerX" relation="greaterThanOrEqual" secondItem="mxJ-xD-ZQs" secondAttribute="trailing" id="9dI-0g-R54"/>
+                            <constraint firstItem="1f2-gk-esV" firstAttribute="centerY" secondItem="mxJ-xD-ZQs" secondAttribute="centerY" id="UJa-mV-fg0"/>
+                            <constraint firstAttribute="trailing" secondItem="ZaB-Ue-S2U" secondAttribute="trailing" constant="18" id="UYz-Yw-zQv"/>
+                            <constraint firstItem="ZaB-Ue-S2U" firstAttribute="centerY" secondItem="mxJ-xD-ZQs" secondAttribute="centerY" id="gSO-Ti-6eX"/>
+                            <constraint firstItem="1f2-gk-esV" firstAttribute="leading" secondItem="mxJ-xD-ZQs" secondAttribute="trailing" constant="3" id="mD7-oq-qUz"/>
+                            <constraint firstItem="ZaB-Ue-S2U" firstAttribute="centerY" secondItem="GqC-s0-grx" secondAttribute="centerY" id="xfH-n7-KzG"/>
+                            <constraint firstItem="LPv-3j-dGd" firstAttribute="leading" secondItem="mxJ-xD-ZQs" secondAttribute="leading" id="zqj-dT-gcG"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="6"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="GqC-s0-grx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="0s2-xU-deb"/>
+                    <constraint firstAttribute="trailing" secondItem="GqC-s0-grx" secondAttribute="trailing" constant="15" id="B4t-kh-Xzf"/>
+                    <constraint firstItem="GqC-s0-grx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="cLi-AX-zZU"/>
+                    <constraint firstAttribute="bottom" secondItem="GqC-s0-grx" secondAttribute="bottom" constant="5" id="jG1-Rx-Ob2"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="accountNameLabel" destination="mxJ-xD-ZQs" id="86l-WQ-4pl"/>
+                <outlet property="publicKeyLabel" destination="LPv-3j-dGd" id="PtL-m3-f0g"/>
+                <outlet property="selectImageView" destination="ZaB-Ue-S2U" id="7go-xX-okg"/>
+            </connections>
+            <point key="canvasLocation" x="168" y="143.02848575712144"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="selectAccount" width="22" height="15"/>
+        <image name="tanster_copy" width="16" height="16"/>
+    </resources>
+</document>

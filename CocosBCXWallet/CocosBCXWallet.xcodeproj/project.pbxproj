@@ -309,6 +309,9 @@
 		31E4338922EAAB4C00CAFDCA /* CCWAddNodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31E4338422EAAB4C00CAFDCA /* CCWAddNodeViewController.xib */; };
 		31E4338A22EAAB4C00CAFDCA /* CCWSystemSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E4338622EAAB4C00CAFDCA /* CCWSystemSetViewController.m */; };
 		31E4338C22EAB05B00CAFDCA /* MJRefresh+Localize.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E4338B22EAB05B00CAFDCA /* MJRefresh+Localize.m */; };
+		31F9C7E223F17851007CE129 /* CocosSwitchAccountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F9C7DD23F17851007CE129 /* CocosSwitchAccountCell.m */; };
+		31F9C7E323F17851007CE129 /* CocosSwitchAccountView.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F9C7DE23F17851007CE129 /* CocosSwitchAccountView.m */; };
+		31F9C7E423F17851007CE129 /* CocosSwitchAccountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31F9C7E123F17851007CE129 /* CocosSwitchAccountCell.xib */; };
 		31FC8D2D2213C82B0036C8F8 /* CCWWalletHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FC8D2C2213C82B0036C8F8 /* CCWWalletHeaderView.m */; };
 		31FC8D312213C9320036C8F8 /* CCWWalletTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FC8D2F2213C9320036C8F8 /* CCWWalletTableViewCell.m */; };
 		31FC8D322213C9320036C8F8 /* CCWWalletTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31FC8D302213C9320036C8F8 /* CCWWalletTableViewCell.xib */; };
@@ -898,6 +901,11 @@
 		31E4338522EAAB4C00CAFDCA /* CCWAddNodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCWAddNodeViewController.h; sourceTree = "<group>"; };
 		31E4338622EAAB4C00CAFDCA /* CCWSystemSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCWSystemSetViewController.m; sourceTree = "<group>"; };
 		31E4338B22EAB05B00CAFDCA /* MJRefresh+Localize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MJRefresh+Localize.m"; sourceTree = "<group>"; };
+		31F9C7DD23F17851007CE129 /* CocosSwitchAccountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosSwitchAccountCell.m; sourceTree = "<group>"; };
+		31F9C7DE23F17851007CE129 /* CocosSwitchAccountView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosSwitchAccountView.m; sourceTree = "<group>"; };
+		31F9C7DF23F17851007CE129 /* CocosSwitchAccountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosSwitchAccountCell.h; sourceTree = "<group>"; };
+		31F9C7E023F17851007CE129 /* CocosSwitchAccountView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosSwitchAccountView.h; sourceTree = "<group>"; };
+		31F9C7E123F17851007CE129 /* CocosSwitchAccountCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CocosSwitchAccountCell.xib; sourceTree = "<group>"; };
 		31FC8D2B2213C82B0036C8F8 /* CCWWalletHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCWWalletHeaderView.h; sourceTree = "<group>"; };
 		31FC8D2C2213C82B0036C8F8 /* CCWWalletHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCWWalletHeaderView.m; sourceTree = "<group>"; };
 		31FC8D2E2213C9320036C8F8 /* CCWWalletTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCWWalletTableViewCell.h; sourceTree = "<group>"; };
@@ -1002,6 +1010,7 @@
 			children = (
 				3141229F23C5EDFF005BEB03 /* walletinvoker */,
 				3141229923C5ED1D005BEB03 /* Controller */,
+				31F9C7DB23F177FE007CE129 /* View */,
 			);
 			path = walletinvoker;
 			sourceTree = "<group>";
@@ -2217,6 +2226,26 @@
 			path = Set;
 			sourceTree = "<group>";
 		};
+		31F9C7DB23F177FE007CE129 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				31F9C7DC23F17850007CE129 /* SwitchAccountView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		31F9C7DC23F17850007CE129 /* SwitchAccountView */ = {
+			isa = PBXGroup;
+			children = (
+				31F9C7DF23F17851007CE129 /* CocosSwitchAccountCell.h */,
+				31F9C7DD23F17851007CE129 /* CocosSwitchAccountCell.m */,
+				31F9C7E123F17851007CE129 /* CocosSwitchAccountCell.xib */,
+				31F9C7E023F17851007CE129 /* CocosSwitchAccountView.h */,
+				31F9C7DE23F17851007CE129 /* CocosSwitchAccountView.m */,
+			);
+			path = SwitchAccountView;
+			sourceTree = "<group>";
+		};
 		31FC8D292213C7FE0036C8F8 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -2359,6 +2388,7 @@
 				3129ED3422E7FB660028A1CA /* CCWOrderDetailViewController.xib in Resources */,
 				318FF605221580D900AB5696 /* CCWImportViewController.xib in Resources */,
 				317784D52200429F00525237 /* Localizable.strings in Resources */,
+				31F9C7E423F17851007CE129 /* CocosSwitchAccountCell.xib in Resources */,
 				31CDB7EA222531DC00D377B2 /* confuse.sh in Resources */,
 				316739B7221AD952008D85C4 /* XRPlaceholder@3x.png in Resources */,
 				31E198A2221E90C00076A822 /* CCWTransferInfoTableViewCell.xib in Resources */,
@@ -2638,6 +2668,7 @@
 				3165861E22169CB70039B439 /* CCWTransferViewController.m in Sources */,
 				317D2D6122E06F4900559A7C /* CCWNHAssetOrderModel.m in Sources */,
 				3144D05722003BE700CDA62A /* NSData+AES128.m in Sources */,
+				31F9C7E323F17851007CE129 /* CocosSwitchAccountView.m in Sources */,
 				319D45E2221C0FFA00D1E6D2 /* CCWWalletAccountTool.m in Sources */,
 				3178D4502390C15900CFB83B /* CocosDBAccountModel.m in Sources */,
 				3178D47D2390C15900CFB83B /* KeystoneFile.m in Sources */,
@@ -2681,6 +2712,7 @@
 				31E1987D221E7A4E0076A822 /* CCWDecimalTool.m in Sources */,
 				3176CED322E58FE00022B408 /* CCWEditContactViewController.m in Sources */,
 				3186E8042293A08200A269C6 /* CCWBaseAlert.m in Sources */,
+				31F9C7E223F17851007CE129 /* CocosSwitchAccountCell.m in Sources */,
 				3178D48D2390C15900CFB83B /* CocosHTTPManager+CreateAccount.m in Sources */,
 				31881F4F221657B6006C31A2 /* UIView+Toast.m in Sources */,
 				3111277523A104330082DC21 /* CCWRegisterTableViewCell.m in Sources */,
