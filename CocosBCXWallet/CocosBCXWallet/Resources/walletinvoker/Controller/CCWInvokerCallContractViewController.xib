@@ -12,6 +12,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CCWInvokerCallContractViewController">
             <connections>
+                <outlet property="accountLabel" destination="JWA-0q-6td" id="Jcx-7J-mys"/>
+                <outlet property="actionLabel" destination="1E1-tn-jcD" id="OX1-iW-Caz"/>
+                <outlet property="descLabel" destination="m55-56-gIi" id="qv0-dW-rxn"/>
+                <outlet property="iconImageView" destination="0x0-5S-abL" id="9nR-Pq-NAG"/>
+                <outlet property="nameLabel" destination="tU8-vc-BhT" id="bvn-lX-Wxh"/>
                 <outlet property="view" destination="k4D-7G-u9w" id="iyJ-nq-wjQ"/>
             </connections>
         </placeholder>
@@ -67,7 +72,7 @@
                     <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="执行合约的备注信息执行合约的备注信息执行合约的备注信息执行合约的备注信息执行合约的备注信息执行合约的备注信息执行合约的备注信息执行合约的备注信息执行合约的备注信息执行合约的备注信息" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m55-56-gIi" customClass="CCWLabel">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="执行合约的备注信息执行合约的备注信息执行合约的备注信息执行合约的备注信息执行合约的备注信息执行合约的备注信息执行合约的备注信息执行合约的备注信息执行合约的备注信息执行合约的备注信息" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m55-56-gIi">
                     <rect key="frame" x="20" y="397.5" width="374" height="33.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -86,15 +91,14 @@
                         <constraint firstAttribute="height" constant="1" id="pgJ-GV-1qi"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1E1-tn-jcD" customClass="CCWButton">
-                    <rect key="frame" x="20" y="317.5" width="80" height="28"/>
+                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1E1-tn-jcD">
+                    <rect key="frame" x="20" y="317.5" width="40" height="28"/>
                     <color key="backgroundColor" red="0.95294117649999999" green="0.95686274510000002" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="28" id="38c-s7-Sw4"/>
-                        <constraint firstAttribute="width" constant="80" id="D52-Cw-OTt"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <state key="normal" title="登录">
+                    <state key="normal" title="action">
                         <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
                     <userDefinedRuntimeAttributes>
@@ -133,6 +137,16 @@
                         <action selector="cancelButtonClick:" destination="-1" eventType="touchUpInside" id="5Cp-ml-dhZ"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3a-ga-Jnt" customClass="CCWButton">
+                    <rect key="frame" x="324" y="284.5" width="70" height="29"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="查看详情 &gt;">
+                        <color key="titleColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="showDetailClick:" destination="-1" eventType="touchUpInside" id="IBo-dk-sas"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
@@ -147,6 +161,7 @@
                 <constraint firstItem="d9z-Vd-DjX" firstAttribute="leading" secondItem="Yl2-4X-Z7a" secondAttribute="leading" constant="20" id="IBN-of-yyA"/>
                 <constraint firstItem="JWA-0q-6td" firstAttribute="top" secondItem="d9z-Vd-DjX" secondAttribute="bottom" constant="8" id="IHs-0U-N41"/>
                 <constraint firstItem="PEc-li-cXl" firstAttribute="trailing" secondItem="lDy-IZ-mqn" secondAttribute="trailing" id="Kue-XU-4cY"/>
+                <constraint firstItem="z3a-ga-Jnt" firstAttribute="centerY" secondItem="tqC-SQ-ZyJ" secondAttribute="centerY" id="Ltd-CC-JZf"/>
                 <constraint firstItem="1E1-tn-jcD" firstAttribute="top" secondItem="tqC-SQ-ZyJ" secondAttribute="bottom" constant="10" id="N2E-QN-yE1"/>
                 <constraint firstItem="tqC-SQ-ZyJ" firstAttribute="leading" secondItem="d9z-Vd-DjX" secondAttribute="leading" id="NmQ-In-ubG"/>
                 <constraint firstItem="tU8-vc-BhT" firstAttribute="centerX" secondItem="0x0-5S-abL" secondAttribute="centerX" id="NvU-U6-Q2M"/>
@@ -157,6 +172,7 @@
                 <constraint firstAttribute="trailing" secondItem="PSk-6K-1PA" secondAttribute="trailing" id="ZwS-6e-5Q6"/>
                 <constraint firstItem="PEc-li-cXl" firstAttribute="top" secondItem="lDy-IZ-mqn" secondAttribute="bottom" constant="15" id="ama-eG-k4S"/>
                 <constraint firstItem="m55-56-gIi" firstAttribute="top" secondItem="yLv-LZ-P0B" secondAttribute="bottom" constant="10" id="dBz-U4-4Ui"/>
+                <constraint firstItem="z3a-ga-Jnt" firstAttribute="trailing" secondItem="ByC-5b-HR3" secondAttribute="trailing" id="dT2-JO-inK"/>
                 <constraint firstItem="PSk-6K-1PA" firstAttribute="leading" secondItem="k4D-7G-u9w" secondAttribute="leading" id="eyo-vY-bdi"/>
                 <constraint firstItem="tU8-vc-BhT" firstAttribute="bottom" secondItem="PSk-6K-1PA" secondAttribute="bottom" constant="-25" id="fC0-Xa-wYb"/>
                 <constraint firstItem="yMr-U5-Wu6" firstAttribute="centerX" secondItem="0x0-5S-abL" secondAttribute="centerX" id="ona-yq-i62"/>

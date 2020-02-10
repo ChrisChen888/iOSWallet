@@ -13,13 +13,29 @@
 
 @interface CCWInvokerCallContractViewController ()
 
+
+@property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *accountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descLabel;
+
+@property (weak, nonatomic) IBOutlet UIButton *actionLabel;
+
 @end
 
 @implementation CCWInvokerCallContractViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    self.nameLabel.text = self.callContractModel.dappName;
+    self.descLabel.text = self.callContractModel.desc;
+    [self.iconImageView CCW_SetImageWithURL:self.callContractModel.dappIcon];
+    
+    self.accountLabel.text = self.callContractModel.from;
+    
+    [self.actionLabel setTitle:[NSString stringWithFormat:@" %@->%@ ",self.callContractModel.contract,self.callContractModel.method] forState:UIControlStateNormal];
+    [self.actionLabel sizeToFit];
 }
 
 
@@ -75,6 +91,8 @@
     [alert show];
     
 }
+
+
 - (IBAction)cancelButtonClick:(UIButton *)sender {
     CocosResponseObj *respons = [[CocosResponseObj alloc] init];
     respons.callbackSchema = self.callContractModel.callbackSchema;
@@ -85,5 +103,8 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (IBAction)showDetailClick:(UIButton *)sender {
+    
+}
 
 @end
