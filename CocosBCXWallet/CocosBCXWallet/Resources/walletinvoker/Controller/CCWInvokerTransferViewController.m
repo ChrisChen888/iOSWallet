@@ -29,6 +29,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    NSArray *dbAccount = [CCWSDKRequest CCW_QueryAccountList];
+   
+    CCWWeakSelf
+    [dbAccount enumerateObjectsUsingBlock:^(CocosDBAccountModel *accountDB, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([accountDB.name isEqualToString:weakSelf.transferModel.from]) {
+            *stop = YES;
+            return;
+        }
+        if (idx + 1 == dbAccount.count) {
+            // 刷新
+            CocosResponseObj *respons = [[CocosResponseObj alloc] init];
+            respons.callbackSchema = weakSelf.transferModel.callbackSchema;
+            respons.result = CocosRespResultFailure;
+            respons.action = weakSelf.transferModel.action;
+            respons.message = @" Authorized account doesn‘t exist, please re-authorize";
+            [CocosWalletApi sendObj:respons];
+        }
+    }];
+    
+    
     self.nameLabel.text = self.transferModel.dappName;
     self.descLabel.text = self.transferModel.desc;
     [self.iconImageView CCW_SetImageWithURL:self.transferModel.dappIcon];

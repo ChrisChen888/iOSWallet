@@ -51,10 +51,24 @@ static NSString *callback_schema = nil;
             NSString *JSONString = [query substringFromIndex:begin.location + begin.length - 1];
             NSData *JSONData = [JSONString dataUsingEncoding:NSUTF8StringEncoding];
             NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:JSONData options:0 error:nil];
+
+            // 判断是否有有登录账户
+            if (!CCWAccountId) {
+                CocosRequestObj *requestObj = [CocosRequestObj mj_objectWithKeyValues:dic];
+                CocosResponseObj *respons = [[CocosResponseObj alloc] init];
+                respons.callbackSchema = requestObj.callbackSchema;
+                respons.result = CocosRespResultFailure;
+                respons.action = requestObj.action;
+                respons.message = @"Please log in or create an account first";
+                [CocosWalletApi sendObj:respons];
+                return YES;
+            }
+
             
             // 1.获取导航栏控制器
             UITabBarController *rootController = (UITabBarController *)CCWKeyWindow.rootViewController;
             UIViewController *ViewController = [rootController.childViewControllers firstObject];
+            
             // url 解析转 对象 -> 处理逻辑
             if (host && [host isEqualToString:kCocosSDKActionLogin]) {
                 // 登录的
