@@ -75,7 +75,7 @@
     if (!_closeBtn) {
         _closeBtn = [UIButton buttonWithType:UIButtonTypeSystem];
         [_closeBtn setImage:[UIImage imageNamed:@"closeSwitch"] forState:UIControlStateNormal];
-        [_closeBtn addTarget:self action:@selector(CCW_CloseCompletion:) forControlEvents:UIControlEventTouchUpInside];
+        [_closeBtn addTarget:self action:@selector(CCW_CloseView) forControlEvents:UIControlEventTouchUpInside];
     }
     return _closeBtn;
 }
@@ -144,6 +144,9 @@
     return hitView;
 }
 
+- (void)CCW_CloseView {
+    [self CCW_CloseCompletion:nil];
+}
 
 /** 显示 */
 - (void)CCW_Show

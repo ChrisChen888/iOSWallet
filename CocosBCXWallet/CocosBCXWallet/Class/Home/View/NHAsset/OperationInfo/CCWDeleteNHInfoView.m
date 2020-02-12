@@ -68,7 +68,7 @@
     if (!_closeBtn) {
         _closeBtn = [[UIButton alloc] initWithFrame:CGRectMake(14, 15, 30, 30)];
         [_closeBtn setImage:[UIImage imageNamed:@"closeInfoButton"] forState:UIControlStateNormal];
-        [_closeBtn addTarget:self action:@selector(CCW_CloseCompletion:) forControlEvents:UIControlEventTouchUpInside];
+        [_closeBtn addTarget:self action:@selector(CCW_CloseView) forControlEvents:UIControlEventTouchUpInside];
         [self.containerView addSubview:_closeBtn];
     }
     return _closeBtn;
@@ -135,6 +135,10 @@
 {
     _dataSource = dataSource;
     [self.tableView reloadData];
+}
+
+- (void)CCW_CloseView {
+    [self CCW_CloseCompletion:nil];
 }
 
 /** 显示 */
