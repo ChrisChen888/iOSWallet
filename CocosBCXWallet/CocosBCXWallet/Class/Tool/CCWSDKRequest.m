@@ -537,6 +537,16 @@
     }];
 }
 
+// 查询合约信息
++ (void)CCW_queryContractCreatInfo:(NSString *)current_version
+                           Success:(SuccessBlock)successBlock
+                             Error:(ErrorBlock)errorBlock
+{
+    [[CocosSDK shareInstance] Cocos_GetContractCreatInfo:current_version Success:successBlock Error:^(NSError *error) {
+        !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
+    }];
+}
+
 // dapp 查询账户信息queryAccountInfo
 + (void)CCW_queryFullAccountInfo:(NSString *)contractIdOrName
                  Success:(SuccessBlock)successBlock

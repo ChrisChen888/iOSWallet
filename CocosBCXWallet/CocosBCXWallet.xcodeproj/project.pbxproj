@@ -83,6 +83,7 @@
 		3144D0A02200401900CDA62A /* CCWLocalizableConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 3144D09F2200401900CDA62A /* CCWLocalizableConst.m */; };
 		3149E5FE2227AAE400EAF5B4 /* CCWSDKRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3149E5FD2227AAE400EAF5B4 /* CCWSDKRequest.m */; };
 		3149E6012227AC5800EAF5B4 /* CCWSDKErrorHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3149E6002227AC5800EAF5B4 /* CCWSDKErrorHandle.m */; };
+		314F0C8A23F3E8C300FC779F /* CocosCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 314F0C8923F3E8C200FC779F /* CocosCodeView.m */; };
 		31516B2F23CEB8F400E3ADED /* CCWNORememberContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 31516B2E23CEB8F400E3ADED /* CCWNORememberContent.m */; };
 		31516B3123CEB9E300E3ADED /* CCWNORememberContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31516B3023CEB9E300E3ADED /* CCWNORememberContent.xib */; };
 		31516B3523CEC11100E3ADED /* CCWPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31516B3323CEC11100E3ADED /* CCWPresentationController.m */; };
@@ -478,6 +479,8 @@
 		3149E5FD2227AAE400EAF5B4 /* CCWSDKRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCWSDKRequest.m; sourceTree = "<group>"; };
 		3149E5FF2227AC5800EAF5B4 /* CCWSDKErrorHandle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCWSDKErrorHandle.h; sourceTree = "<group>"; };
 		3149E6002227AC5800EAF5B4 /* CCWSDKErrorHandle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCWSDKErrorHandle.m; sourceTree = "<group>"; };
+		314F0C8823F3E8C200FC779F /* CocosCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosCodeView.h; sourceTree = "<group>"; };
+		314F0C8923F3E8C200FC779F /* CocosCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosCodeView.m; sourceTree = "<group>"; };
 		31516B2D23CEB8F400E3ADED /* CCWNORememberContent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCWNORememberContent.h; sourceTree = "<group>"; };
 		31516B2E23CEB8F400E3ADED /* CCWNORememberContent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCWNORememberContent.m; sourceTree = "<group>"; };
 		31516B3023CEB9E300E3ADED /* CCWNORememberContent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCWNORememberContent.xib; sourceTree = "<group>"; };
@@ -1306,6 +1309,15 @@
 				316739A1221ACBC7008D85C4 /* CCWMyViewController.xib */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		314F0C8723F3E89C00FC779F /* CodeDetail */ = {
+			isa = PBXGroup;
+			children = (
+				314F0C8823F3E8C200FC779F /* CocosCodeView.h */,
+				314F0C8923F3E8C200FC779F /* CocosCodeView.m */,
+			);
+			path = CodeDetail;
 			sourceTree = "<group>";
 		};
 		3154F3D52223CF2700511FA8 /* MBProgressHUD */ = {
@@ -2229,6 +2241,7 @@
 		31F9C7DB23F177FE007CE129 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				314F0C8723F3E89C00FC779F /* CodeDetail */,
 				31F9C7DC23F17850007CE129 /* SwitchAccountView */,
 			);
 			path = View;
@@ -2616,6 +2629,7 @@
 				31C35A49221E489E00E8B455 /* CCWDataBase+CCWContact.m in Sources */,
 				31B1D92823A7775100421A57 /* CocosBuyNHOrderOperation.m in Sources */,
 				313FD4B322A4D6CB0058A8A2 /* CCWNodeAlertTableViewCell.m in Sources */,
+				314F0C8A23F3E8C300FC779F /* CocosCodeView.m in Sources */,
 				3178D4602390C15900CFB83B /* NSData+HashData.m in Sources */,
 				314122A823C5EDFF005BEB03 /* CocosResponseObj.m in Sources */,
 				3178D4702390C15900CFB83B /* ChainContract.m in Sources */,

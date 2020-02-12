@@ -111,6 +111,7 @@ CCW_isExistTable
 CCW_multiplyTotalAssetsWithMultiplier
 CCW_nextBtnClick
 CCW_queryContra
+CCW_queryContractCreatInfo
 CCW_queryFullAccountInfo
 CCW_queryNHAssets
 CCW_shareDatabase

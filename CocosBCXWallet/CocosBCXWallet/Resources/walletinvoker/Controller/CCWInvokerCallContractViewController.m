@@ -10,6 +10,7 @@
 #import "CCWPwdAlertView.h"
 #import "CCWSDKRequest.h"
 #import "CocosWalletApi.h"
+#import "CocosCodeView.h"
 
 @interface CCWInvokerCallContractViewController ()
 
@@ -20,10 +21,19 @@
 @property (weak, nonatomic) IBOutlet UILabel *descLabel;
 
 @property (weak, nonatomic) IBOutlet UIButton *actionLabel;
+@property (nonatomic, strong) CocosCodeView *codeView;
 
 @end
 
 @implementation CCWInvokerCallContractViewController
+
+- (CocosCodeView *)codeView
+{
+    if (!_codeView) {
+        _codeView = [CocosCodeView new];
+    }
+    return _codeView;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -108,7 +118,6 @@
         }];
     }];
     [alert show];
-    
 }
 
 
@@ -123,7 +132,28 @@
 }
 
 - (IBAction)showDetailClick:(UIButton *)sender {
-    
+    CCWWeakSelf
+    [CCWSDKRequest CCW_queryContra:self.callContractModel.contract Success:^(id  _Nonnull responseObject) {
+        [CCWSDKRequest CCW_queryContractCreatInfo:responseObject[@"current_version"] Success:^(id  _Nonnull responseObject) {
+            NSArray *operationsArray = responseObject[@"operations"];
+            NSArray *dataArray = [operationsArray lastObject];
+            NSDictionary *codeDictionaray = [dataArray lastObject];
+            NSString *codeString = codeDictionaray[@"data"];
+            NSLog(@"%@",codeDictionaray[@"data"]);
+            
+            // 获取账户列表
+            weakSelf.codeView.codeString = codeString;
+            if (weakSelf.codeView.isShow) {
+                [weakSelf.codeView Cocos_CloseCompletion:nil];
+            }else{
+                [weakSelf.codeView Cocos_Show];
+            }
+        } Error:^(NSString * _Nonnull errorAlert, id  _Nonnull responseObject) {
+            [weakSelf.view makeToast:CCWLocalizable(@"网络繁忙，请检查您的网络连接")];
+        }];
+    } Error:^(NSString * _Nonnull errorAlert, id  _Nonnull responseObject) {
+        [weakSelf.view makeToast:CCWLocalizable(@"网络繁忙，请检查您的网络连接")];
+    }];
 }
 
 @end

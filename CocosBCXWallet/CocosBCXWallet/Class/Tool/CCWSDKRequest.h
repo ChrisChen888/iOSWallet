@@ -222,6 +222,10 @@ typedef void (^ErrorBlock)(NSString *errorAlert,id responseObject);// 失败回�
 + (void)CCW_queryContra:(NSString *)contractIdOrName
                 Success:(SuccessBlock)successBlock
                   Error:(ErrorBlock)errorBlock;
+// 查询合约信息
++ (void)CCW_queryContractCreatInfo:(NSString *)current_version
+                           Success:(SuccessBlock)successBlock
+                             Error:(ErrorBlock)errorBlock;
 
 // dapp 查询账户信息queryAccountInfo
 + (void)CCW_queryFullAccountInfo:(NSString *)contractIdOrName
