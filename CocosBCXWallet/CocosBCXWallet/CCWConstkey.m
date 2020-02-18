@@ -29,3 +29,6 @@ NSNumber *CCWAllAssetPrice;//!< 总资产
 #pragma mark - 第三方Key
 NSString * const UMengAppKey = @"5d006f774ca35713eb0007d0";// 友盟AppKey
 
+NSString * const WeChatAPPID = @"wx9e2b84f3fb522466";// 分享到微信
+NSString * const WeChatAPPSecret = @"8d769e483ab92fc2562aad91b79f386c";// 分享到微信
+

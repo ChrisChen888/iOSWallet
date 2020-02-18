@@ -531,6 +531,7 @@
 		316739B9221AD9C3008D85C4 /* CCWFindButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCWFindButton.h; sourceTree = "<group>"; };
 		316C57A622980D5500F8AE33 /* CCWLogOutAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCWLogOutAlert.h; sourceTree = "<group>"; };
 		316C57A722980D5500F8AE33 /* CCWLogOutAlert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCWLogOutAlert.m; sourceTree = "<group>"; };
+		316EF3F123FA746200897FDD /* CocosBCXWallet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CocosBCXWallet.entitlements; sourceTree = "<group>"; };
 		31725B8821FEB02A005962C6 /* CocosBCXWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocosBCXWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31725B8B21FEB02A005962C6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		31725B8C21FEB02A005962C6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -1430,6 +1431,7 @@
 		31725B8A21FEB02A005962C6 /* CocosBCXWallet */ = {
 			isa = PBXGroup;
 			children = (
+				316EF3F123FA746200897FDD /* CocosBCXWallet.entitlements */,
 				317784DA2200473800525237 /* CCWMediator */,
 				3144D07322003C1900CDA62A /* CCWBaseController */,
 				3144D00722003BE700CDA62A /* Toos */,
@@ -2352,6 +2354,11 @@
 				TargetAttributes = {
 					31725B8721FEB02A005962C6 = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.SafariKeychain = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};

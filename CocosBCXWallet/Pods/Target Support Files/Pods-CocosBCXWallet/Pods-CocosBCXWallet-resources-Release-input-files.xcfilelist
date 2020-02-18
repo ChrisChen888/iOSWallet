@@ -2,3 +2,4 @@ ${PODS_ROOT}/Target Support Files/Pods-CocosBCXWallet/Pods-CocosBCXWallet-resour
 ${PODS_ROOT}/IQKeyboardManager/IQKeyBoardManager/Resources/IQKeyboardManager.bundle
 ${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle
 ${PODS_ROOT}/SGQRCode/SGQRCode/SGQRCode.bundle
+${PODS_ROOT}/UMCShare/UMShare/UMSocialUI/UMSocialSDKResources.bundle

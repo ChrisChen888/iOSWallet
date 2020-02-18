@@ -13,6 +13,10 @@
 #import "CCWNodeInfoModel.h"
 #import "CCWPwdAlertView.h"
 #import "CCWFindMoreView.h"
+// U-Share核心SDK
+#import <UMShare/UMShare.h>
+// U-Share分享面板SDK，未添加分享面板SDK可将此行去掉
+#import <UShareUI/UShareUI.h>
 
 @interface CCWDappViewController ()<CCWFindMoreViewDelegate,WKUIDelegate,WKNavigationDelegate,WKScriptMessageHandler>
 @property (nonatomic, copy) NSString *dappTitle;
@@ -66,10 +70,46 @@
         [pasteboard setString:self.dappURLString];
         [self.view makeToast:CCWLocalizable(@"复制成功")];
     } else if (index == 3) {
-        [self.view makeToast:CCWLocalizable(@"敬请期待")];
+//        [self.view makeToast:CCWLocalizable(@"敬请期待")];
+        [self shareWithData:@{}];
     } else if (index == 4) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.dappURLString]];
     }
+}
+
+#pragma mark - share 分享
+// 定制分享面板显示的分享平台
+- (void)shareWithData:(NSDictionary *)shareData
+{
+    [UMSocialUIManager setPreDefinePlatforms:@[@(UMSocialPlatformType_WechatTimeLine),@(UMSocialPlatformType_WechatSession)]];
+    [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
+        // 根据获取的platformType确定所选平台进行下一步操作
+        [self shareTextToPlatformType:platformType addShareData:shareData];
+    }];
+}
+
+- (void)shareTextToPlatformType:(UMSocialPlatformType)platformType addShareData:(NSDictionary *)shareData
+{
+    
+    //创建分享消息对象
+    UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
+    
+    //创建网页内容对象
+    UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:self.dappTitle descr:self.dappTitle thumImage:[UIImage imageNamed:@"cocosIcon"]];
+    //设置网页地址
+    shareObject.webpageUrl = self.dappURLString;
+    
+    //分享消息对象设置分享内容对象
+    messageObject.shareObject = shareObject;
+    
+    //调用分享接口
+    [[UMSocialManager defaultManager] shareToPlatform:platformType messageObject:messageObject currentViewController:self completion:^(id data, NSError *error) {
+        if (error) {
+            CCWLog(@"************Share fail with error %@*********",error);
+        }else{
+            CCWLog(@"response data is %@",data);
+        }
+    }];
 }
 
 - (void)CCW_SetupView

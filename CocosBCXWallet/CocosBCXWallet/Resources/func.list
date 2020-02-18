@@ -96,6 +96,7 @@ CCW_TransferAsset
 CCW_TransferInfoViewNextButtonClick
 CCW_TransferInfoViewShowWithArray
 CCW_TransferNHAssetToAccount
+CCW_UMeng
 CCW_ValidateAccount
 CCW_WalletViewController
 CCW_actionWithTitle

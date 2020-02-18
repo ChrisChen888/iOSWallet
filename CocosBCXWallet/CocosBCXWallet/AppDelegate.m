@@ -14,7 +14,7 @@
 #import "CCWDataBase+CCWNodeINfo.h"
 
 #import <UMCommon/UMCommon.h>
-
+#import <UMShare/UMShare.h>
 #import "CocosWalletApi.h"
 
 @interface AppDelegate ()
@@ -46,13 +46,9 @@
     // 设置 Toast
     [self CCW_SetToast];
     
-#ifdef DEBUG
-    
-#else
     // 友盟配置
-    [UMConfigure setEncryptEnabled:YES];//打开加密传输
-    [UMConfigure initWithAppkey:UMengAppKey channel:nil];
-#endif
+    [self CCW_UMeng];
+
     // 设置主窗口,并设置根控制器
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     // 设置跟控制器
@@ -176,6 +172,25 @@
     [CSToastManager setDefaultPosition:CSToastPositionBottom];
 }
 
+// 友盟
+- (void)CCW_UMeng {
+    
+    // 友盟配置
+    [UMConfigure setEncryptEnabled:YES];//打开加密传输
+    [UMConfigure initWithAppkey:UMengAppKey channel:nil];
+    /* 设置微信的appKey和appSecret */
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:WeChatAPPID appSecret:WeChatAPPSecret redirectURL:@"www.cocosbcx.io"];
+    
+#ifdef DEBUG
+
+#else
+    // 友盟配置
+//    [UMConfigure setEncryptEnabled:YES];//打开加密传输
+//    [UMConfigure initWithAppkey:UMengAppKey channel:nil];
+//    /* 设置微信的appKey和appSecret */
+//    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:WeChatAPPID appSecret:WeChatAPPSecret redirectURL:@"www.cocosbcx.io"];
+#endif
+}
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     
@@ -186,9 +201,13 @@
 }
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
-{
-    return [CocosWalletApi handleURL:url options:options];   
+{ //6.3的新的API调用，是为了兼容国外平台(例如:新版facebookSDK,VK等)的调用[如果用6.2的api调用会没有回调],对国内平台没有影响
+    BOOL result = [[UMSocialManager defaultManager]  handleOpenURL:url options:options];
+    if (!result) {
+        // 其他如支付等SDK的回调
+        return [CocosWalletApi handleURL:url options:options];
+    }
+    return result;
 }
-
 
 @end

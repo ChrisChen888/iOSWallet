@@ -30,6 +30,17 @@ PODS:
   - UMCAnalytics (5.5.0):
     - UMCCommon
   - UMCCommon (1.5.2)
+  - UMCShare/Core (6.9.5):
+    - UMCCommon
+  - UMCShare/Social/ReducedQQ (6.9.5):
+    - UMCCommon
+    - UMCShare/Core
+  - UMCShare/Social/ReducedWeChat (6.9.5):
+    - UMCCommon
+    - UMCShare/Core
+  - UMCShare/UI (6.9.5):
+    - UMCCommon
+    - UMCShare/Core
 
 DEPENDENCIES:
   - AFNetworking
@@ -44,9 +55,12 @@ DEPENDENCIES:
   - SocketRocket (= 0.5.1)
   - UMCAnalytics (= 5.5.0)
   - UMCCommon (= 1.5.2)
+  - UMCShare/Social/ReducedQQ
+  - UMCShare/Social/ReducedWeChat
+  - UMCShare/UI (= 6.9.5)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - DZNEmptyDataSet
     - FMDB
@@ -59,6 +73,8 @@ SPEC REPOS:
     - SocketRocket
     - UMCAnalytics
     - UMCCommon
+  trunk:
+    - UMCShare
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -73,7 +89,8 @@ SPEC CHECKSUMS:
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
   UMCAnalytics: 4667788559a72f2fa5077117d1b8802a3b6eb6bb
   UMCCommon: 4392868ac47ff1b101663106bb114ba616fabbad
+  UMCShare: 552b29753f1b4da87b51d96545ed19e6263df397
 
-PODFILE CHECKSUM: c913565ab7f744ab0b4b04299973a360552fc075
+PODFILE CHECKSUM: 82f9e56ff9b15112dcf684d4e6725cf2441c2c77
 
-COCOAPODS: 1.7.0
+COCOAPODS: 1.8.4

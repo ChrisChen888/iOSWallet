@@ -28,3 +28,5 @@ UIKIT_EXTERN NSString * const CCWCurrencyCocosPrice;//!< 缓存COCOS价格
 UIKIT_EXTERN NSNumber *CCWAllAssetPrice;//!< 总资产
 #pragma mark - 第三方Key
 UIKIT_EXTERN NSString * const UMengAppKey;// 友盟AppKey
+UIKIT_EXTERN NSString * const WeChatAPPID;// 分享到微信
+UIKIT_EXTERN NSString * const WeChatAPPSecret;// 分享到微信

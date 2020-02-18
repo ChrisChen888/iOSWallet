@@ -20,6 +20,9 @@ target 'CocosBCXWallet' do
     
     pod 'UMCAnalytics' ,'5.5.0' #    统计 SDK
     pod 'UMCCommon' ,'1.5.2'    #    基础依赖库
-    
+    pod 'UMCShare/UI' , '6.9.5'# U-Share SDK UI模块（分享面板，建议添加）
+    pod 'UMCShare/Social/ReducedWeChat'#分享 集成微信(精简版0.2M)
+    pod 'UMCShare/Social/ReducedQQ'# 分享，集成QQ/QZone/TIM(精简版0.5M)
+
 #    pod 'MLeaksFinder' #循环引用
 end
