@@ -59,7 +59,7 @@
             button.tag = i+1;
             [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
             NSDictionary *data = self.dataSource[i];
-            [button setTitle:data[@"title"] forState:UIControlStateNormal];
+            [button setTitle:CCWLocalizable(data[@"title"]) forState:UIControlStateNormal];
             [button setImage:[UIImage imageNamed:data[@"image"]] forState:UIControlStateNormal];
             button.frame = CGRectMake(i * buttonW, 10, buttonW, buttonH);
             [_containerView addSubview:button];

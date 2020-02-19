@@ -90,7 +90,7 @@
     if ([urlStr isEqualToString:@""] || !urlStr) {
         return;
     }
-    CCWDappViewController *dappVC = [[CCWDappViewController alloc] initWithTitle:title loadDappURLString:urlStr];
+    CCWDappViewController *dappVC = [[CCWDappViewController alloc] initWithTitle:title loadDappURLString:urlStr dappDec:nil dappIcon:nil];
     [self.navigationController pushViewController:dappVC animated:YES];
 }
 

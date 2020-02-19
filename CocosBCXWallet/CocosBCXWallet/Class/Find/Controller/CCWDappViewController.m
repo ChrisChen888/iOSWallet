@@ -21,6 +21,8 @@
 @interface CCWDappViewController ()<CCWFindMoreViewDelegate,WKUIDelegate,WKNavigationDelegate,WKScriptMessageHandler>
 @property (nonatomic, copy) NSString *dappTitle;
 @property (nonatomic, copy) NSString *dappURLString;
+@property (nonatomic, copy) NSString *dappDec;
+@property (nonatomic, copy) NSString *dappIcon;
 @property (nonatomic, strong) WKWebView *wkWebView;
 /* 1.添加UIProgressView属性 */
 @property (nonatomic, strong) UIProgressView *progressView;
@@ -31,11 +33,13 @@
 
 @implementation CCWDappViewController
 
-- (instancetype)initWithTitle:(NSString *)dappTitle loadDappURLString:(NSString *)dappURLString
+- (instancetype)initWithTitle:(NSString *)dappTitle loadDappURLString:(NSString *)dappURLString dappDec:(NSString *)dappDec dappIcon:(NSString *)dappIcon
 {
     if (self = [super init]) {
         _dappTitle = dappTitle;
         _dappURLString = dappURLString;
+        _dappDec = dappDec;
+        _dappIcon = dappIcon;
     }
     return self;
 }
@@ -95,7 +99,7 @@
     UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
     
     //创建网页内容对象
-    UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:self.dappTitle descr:self.dappTitle thumImage:[UIImage imageNamed:@"cocosIcon"]];
+    UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:self.dappTitle descr:self.dappDec?self.dappDec:self.dappTitle thumImage:self.dappIcon?self.dappIcon:[UIImage imageNamed:@"cocosIcon"]];
     //设置网页地址
     shareObject.webpageUrl = self.dappURLString;
     

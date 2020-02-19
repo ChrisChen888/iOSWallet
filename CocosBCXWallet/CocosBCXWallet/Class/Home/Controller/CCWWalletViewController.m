@@ -293,14 +293,14 @@
         case 2:
         {
             id<CCWFindModuleProtocol> findModule = [[CCWMediator sharedInstance] moduleForProtocol:@protocol(CCWFindModuleProtocol)];
-            UIViewController *viewController = [findModule CCW_FindWebViewControllerWithTitle:CCWLocalizable(@"资源") loadDappURLString:@"https://gas.cocosbcx.net/"];
+            UIViewController *viewController = [findModule CCW_FindWebViewControllerWithTitle:CCWLocalizable(@"资源") loadDappURLString:@"https://gas.cocosbcx.net/" dappDec:CCWLocalizable(@"COCOS资源") dappIcon:nil];
             [self.navigationController pushViewController:viewController animated:YES];
         }
             break;
         case 3:
         {
             id<CCWFindModuleProtocol> findModule = [[CCWMediator sharedInstance] moduleForProtocol:@protocol(CCWFindModuleProtocol)];
-            UIViewController *viewController = [findModule CCW_FindWebViewControllerWithTitle:CCWLocalizable(@"投票") loadDappURLString:@"https://vote.cocosbcx.net/"];
+            UIViewController *viewController = [findModule CCW_FindWebViewControllerWithTitle:CCWLocalizable(@"投票") loadDappURLString:@"https://vote.cocosbcx.net/" dappDec:CCWLocalizable(@"COCOS投票") dappIcon:nil];
             [self.navigationController pushViewController:viewController animated:YES];
         }
             break;

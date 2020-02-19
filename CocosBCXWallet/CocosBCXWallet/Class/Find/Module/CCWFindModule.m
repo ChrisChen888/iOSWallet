@@ -19,9 +19,9 @@
 }
 
 // 发现跳转到网页浏览
-- (UIViewController *)CCW_FindWebViewControllerWithTitle:(NSString *)title loadDappURLString:(NSString *)url
+- (UIViewController *)CCW_FindWebViewControllerWithTitle:(NSString *)title loadDappURLString:(NSString *)url dappDec:(NSString *)dappDec dappIcon:(NSString *)dappIcon
 {
-    CCWDappViewController *dappVC = [[CCWDappViewController alloc] initWithTitle:title loadDappURLString:url];
+    CCWDappViewController *dappVC = [[CCWDappViewController alloc] initWithTitle:title loadDappURLString:url dappDec:dappDec dappIcon:dappIcon];
     return dappVC;
 }
 @end

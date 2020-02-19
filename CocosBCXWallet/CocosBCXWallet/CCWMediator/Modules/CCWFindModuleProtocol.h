@@ -14,5 +14,5 @@
 - (UIViewController *)CCW_FindViewController;
 
 // 发现跳转到网页浏览
-- (UIViewController *)CCW_FindWebViewControllerWithTitle:(NSString *)title loadDappURLString:(NSString *)url;
+- (UIViewController *)CCW_FindWebViewControllerWithTitle:(NSString *)title loadDappURLString:(NSString *)url dappDec:(NSString *)dappDec dappIcon:(NSString *)dappIcon;
 @end

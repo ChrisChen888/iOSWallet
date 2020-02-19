@@ -206,7 +206,7 @@
 
 - (void)CCW_PushDappViewControllerWithDapp:(CCWDappModel *)dappModel
 {
-    CCWDappViewController *dappVC = [[CCWDappViewController alloc] initWithTitle:CCWLocalizable(dappModel.title) loadDappURLString:dappModel.linkUrl];
+    CCWDappViewController *dappVC = [[CCWDappViewController alloc] initWithTitle:CCWLocalizable(dappModel.title) loadDappURLString:dappModel.linkUrl dappDec:CCWLocalizable(dappModel.dec) dappIcon:dappModel.imageUrl];
     [self.navigationController pushViewController:dappVC animated:YES];
 }
 @end
