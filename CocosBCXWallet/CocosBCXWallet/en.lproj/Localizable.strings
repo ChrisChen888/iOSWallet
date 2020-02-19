@@ -328,3 +328,53 @@
 "挂单成功" = "Order created";
 "转移成功" = "Transfered";
 "非同质资产" = "NH Assets";
+
+// DApp Tool
+"请求登录"  = "Request Iogin";
+"授权账号：" = "Authorized account:";
+"付款账号" = "Payer account";
+"切换" = "Switch";
+"请求执行操作：" = "Request action:";
+"登陆操作仅进行身份确认，此操作不会传输私钥" = "The login operation only confirms the identity, this operation does not transmit the private key";
+"确认登录" = "Confirm login";
+"收款账号" = "Deposit Account";
+"订单编号" = "Order number";
+"详情：" = "Details:";
+"合约详情" = "Contract Details";
+"操作已过时" = "Operation time out";
+"执行合约" = "Execute contract";
+"查看详情 >" = "Details >";
+"确认执行" = "Confirm execution";
+"合约" = "Contract";
+"刷新" = "Refresh";
+"复制URL" = "Copy URL";
+"分享" = "Share";
+"浏览器打开" = "Open browser";
+"温馨提示：" = "Tips:";
+"订单支付" = "Order payment";
+"付款方不能为空" = "Payer cannot be empty";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
