@@ -1042,6 +1042,75 @@
     
 }
 
+/**
+ SignedTransaction
+ sign string
+ */
+- (void)Cocos_SignStringWithAccount:(NSString *)accountIdOrName
+                           Password:(NSString *)password
+                         SignString:(NSString *)signString
+                            Success:(SuccessBlock)successBlock
+                              Error:(Error)errorBlock
+{
+    // 1. account info
+    [self Cocos_GetAccount:accountIdOrName Success:^(id responseObject) {
+        ChainAccountModel *accountModel =[ChainAccountModel generateFromObject:responseObject];
+        // 2. valida password
+        [self validateAccount:accountModel.name Password:password Success:^(NSDictionary *keyDic) {
+            if (keyDic[@"active_key"]) {
+                // 2. Generating Private Key Transfer
+                CocosPrivateKey *private = [[CocosPrivateKey alloc] initWithPrivateKey:keyDic[@"active_key"]];
+                
+                SignedTransaction *signedTran = [[SignedTransaction alloc] init];
+                NSString *signature = [signedTran signString:signString WithPrikey:private];
+                NSDictionary *result = @{
+                                         @"signature" : signature,
+                                         @"signString" : signString
+                                         };
+                !successBlock?:successBlock(result);
+            }else if (keyDic[@"owner_key"]){
+                NSError *error = [NSError errorWithDomain:@"Please import the active private key" code:SDKErrorCodePrivateisNull userInfo:nil];
+                !errorBlock?:errorBlock(error);
+            }else{
+                NSError *error = [NSError errorWithDomain:@"Please enter the correct original/temporary password" code:SDKErrorCodePasswordwrong userInfo:@{@"password":password}];
+                !errorBlock?:errorBlock(error);
+            }
+        } Error:errorBlock];
+    } Error:errorBlock];
+}
+
+/**
+ recover signature
+ 
+ @param Signature Signature
+ @param signString signString
+ */
+- (void)Cocos_RecoverSignature:(NSString *)Signature
+                        String:(NSString *)signString
+                       Success:(SuccessBlock)successBlock
+                         Error:(Error)errorBlock
+{
+    NSData *data = [CocosPackData packString:signString];
+    CocosPublicKey *active_public = [[CocosPublicKey alloc] initWithSignCompactSigntures:Signature sha256Data:[data sha256Data] checkCanonical:YES];
+    [self getKeyReferences:active_public.description Success:^(NSArray *responseObject) {
+        NSArray *result = responseObject.firstObject;
+        if (result.count) {
+            // 4. Authentication passes, encryption saves
+            [self Cocos_GetAccount:[result lastObject] Success:^(id responseObject) {
+                ChainAccountModel *accountModel =[ChainAccountModel generateFromObject:responseObject];
+                NSDictionary *result = @{
+                                         @"accountname" : accountModel.name,
+                                         @"accountid" : accountModel.identifier
+                                         };
+                !successBlock?:successBlock(result);
+            } Error:errorBlock];
+        }else{
+            NSError *error = [NSError errorWithDomain:@"The Signature without account" code:SDKErrorCodeAccountExists userInfo:nil];
+            !errorBlock?:errorBlock(error);
+        }
+    } Error:errorBlock];
+    
+}
 // Get Contract Info
 - (void)Cocos_GetContract:(NSString *)contractIdOrName
                   Success:(SuccessBlock)successBlock

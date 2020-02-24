@@ -614,6 +614,31 @@ Votes CommitteeMember , Witness
                            Success:(SuccessBlock)successBlock
                              Error:(Error)errorBlock;
 
+#pragma mark - SignedTransaction
+/**
+ SignedTransaction
+ sign string
+ 
+ @param accountIdOrName accountIdOrName
+ @param password password
+ @param signString Original String
+ */
+- (void)Cocos_SignStringWithAccount:(NSString *)accountIdOrName
+                           Password:(NSString *)password
+                         SignString:(NSString *)signString
+                            Success:(SuccessBlock)successBlock
+                              Error:(Error)errorBlock;
+/**
+ recover signature
+ 
+ @param Signature Signature
+ @param signString signString
+ */
+- (void)Cocos_RecoverSignature:(NSString *)Signature
+                        String:(NSString *)signString
+                       Success:(SuccessBlock)successBlock
+                         Error:(Error)errorBlock;
+
 #pragma mark - Expanding Method
 /**
  Expand custom api

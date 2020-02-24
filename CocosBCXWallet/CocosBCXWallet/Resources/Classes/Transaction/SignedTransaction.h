@@ -16,4 +16,6 @@
 
 - (NSArray <CocosPublicKey *>*)needSignedKeys;
 
+// 签名字符串
+- (NSString *)signString:(NSString *)string WithPrikey:(CocosPrivateKey *)prikey;
 @end
