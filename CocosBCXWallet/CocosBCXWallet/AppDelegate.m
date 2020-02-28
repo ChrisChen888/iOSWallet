@@ -175,20 +175,14 @@
 // 友盟
 - (void)CCW_UMeng {
     
+#ifdef DEBUG
+
+#else
     // 友盟配置
     [UMConfigure setEncryptEnabled:YES];//打开加密传输
     [UMConfigure initWithAppkey:UMengAppKey channel:nil];
     /* 设置微信的appKey和appSecret */
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:WeChatAPPID appSecret:WeChatAPPSecret redirectURL:@"www.cocosbcx.io"];
-    
-#ifdef DEBUG
-
-#else
-    // 友盟配置
-//    [UMConfigure setEncryptEnabled:YES];//打开加密传输
-//    [UMConfigure initWithAppkey:UMengAppKey channel:nil];
-//    /* 设置微信的appKey和appSecret */
-//    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:WeChatAPPID appSecret:WeChatAPPSecret redirectURL:@"www.cocosbcx.io"];
 #endif
 }
 

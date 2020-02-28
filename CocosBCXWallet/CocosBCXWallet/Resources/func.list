@@ -90,6 +90,7 @@ CCW_SetupTableView
 CCW_SetupView
 CCW_Show
 CCW_ShowWithDataArray
+CCW_SignString
 CCW_SwitchAccountView
 CCW_SwitchViewAddAccountClick
 CCW_TransferAsset

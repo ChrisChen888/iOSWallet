@@ -775,4 +775,16 @@
         !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
     }];
 }
+
+// 签名
++ (void)CCW_SignString:(NSString *)account
+              Password:(NSString *)password
+                string:(NSString *)string
+               Success:(SuccessBlock)successBlock
+                 Error:(ErrorBlock)errorBlock
+{
+    [[CocosSDK shareInstance] Cocos_SignStringWithAccount:account Password:password SignString:string Success:successBlock Error:^(NSError *error) {
+        !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
+    }];
+}
 @end

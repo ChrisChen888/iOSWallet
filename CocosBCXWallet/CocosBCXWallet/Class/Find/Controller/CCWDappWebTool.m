@@ -35,6 +35,8 @@
         [self JS_ClaimVestingBalance:body addPassword:password response:block];
     }else if([body[@"methodName"] isEqualToString:JS_METHOD_updateCollateralForGas]) {
         [self JS_updateCollateralForGas:body addPassword:password response:block];
+    }else if([body[@"methodName"] isEqualToString:JS_METHOD_signString]) {
+        [self JS_signString:body addPassword:password response:block];
     }else if([body[@"methodName"] isEqualToString:JS_METHOD_walletLanguage]) {
         if ([[CCWLocalizableTool userLanguage] isEqualToString:CCWLanzh]) {// 中文
             !block?:block(@{@"data":@"cn",@"code":@(1)} );
@@ -45,6 +47,16 @@
 }
 
 #pragma mark - Action
++ (void)JS_signString:(NSDictionary *)param addPassword:(NSString *)password response:(CallbackBlock)block {
+    NSDictionary *signStringParam = param[@"params"];
+    NSString *signString = signStringParam[@"string"];
+    [CCWSDKRequest CCW_SignString:CCWAccountName Password:password string:signString Success:^(id  _Nonnull responseObject) {
+        !block?:block(responseObject);
+    } Error:^(NSString * _Nonnull errorAlert, NSError *error) {
+        !block?:block([self errorBlockWithError:errorAlert ResponseObject:error]);
+    }];
+}
+
 + (void)JS_updateCollateralForGas:(NSDictionary *)param addPassword:(NSString *)password response:(CallbackBlock)block {
     NSDictionary *updateGasParam = param[@"params"];
     

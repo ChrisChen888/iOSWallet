@@ -327,6 +327,12 @@ typedef void (^ErrorBlock)(NSString *errorAlert,id responseObject);// 失败回�
                       VestingID:(NSString *)vesting_id
                         Success:(SuccessBlock)successBlock
                           Error:(ErrorBlock)errorBlock;
+// 签名
++ (void)CCW_SignString:(NSString *)account
+              Password:(NSString *)password
+                string:(NSString *)string
+               Success:(SuccessBlock)successBlock
+                 Error:(ErrorBlock)errorBlock;
 ///**
 // 升级成为终身会员账户
 // @param isOnlyGetFee 是否获取手续费

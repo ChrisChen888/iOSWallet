@@ -20,6 +20,7 @@
 #define JS_METHOD_publishVotes          @"publishVotes"
 #define JS_METHOD_claimVestingBalance   @"claimVestingBalance"
 #define JS_METHOD_updateCollateralForGas @"updateCollateralForGas"
+#define JS_METHOD_signString            @"signString"
 #define JS_METHOD_walletLanguage        @"walletLanguage"
 
 //#define JS_METHOD_getAccountBalances    @"getAccountBalances"

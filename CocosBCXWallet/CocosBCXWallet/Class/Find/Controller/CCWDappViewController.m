@@ -436,6 +436,8 @@
         return YES;
     }else if ([body[@"methodName"] isEqualToString:JS_METHOD_updateCollateralForGas]) {
         return YES;
+    }else if ([body[@"methodName"] isEqualToString:JS_METHOD_signString]) {
+        return YES;
     }
     return NO;
 }
