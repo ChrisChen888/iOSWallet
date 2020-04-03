@@ -669,7 +669,7 @@
                       Success:(SuccessBlock)successBlock
                         Error:(ErrorBlock)errorBlock
 {
-    [[CocosSDK shareInstance] Cocos_SellNHAssetSeller:CCWAccountName Password:password NHAssetId:nhAssetid Memo:memo SellPriceAmount:priceAmount PendingFeeAmount:@"0" OperationAsset:@"1.3.0" SellAsset:sellAsset Expiration:expiration Success:successBlock Error:^(NSError *error) {
+    [[CocosSDK shareInstance] Cocos_SellNHAssetSeller:CCWAccountName Password:password NHAssetId:nhAssetid Memo:memo SellPriceAmount:priceAmount PendingFeeAmount:[NSString stringWithFormat:@"%f",[priceAmount integerValue]*0.1] OperationAsset:@"1.3.0" SellAsset:sellAsset Expiration:expiration Success:successBlock Error:^(NSError *error) {
         !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
     }];
 }

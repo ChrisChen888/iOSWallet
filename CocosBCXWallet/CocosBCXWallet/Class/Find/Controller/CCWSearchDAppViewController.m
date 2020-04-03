@@ -73,7 +73,7 @@ static NSString * const collectionViewCell = @"CCWMyDappCollectionViewCell";
     [super viewWillAppear:animated];
     
     self.dataDAppSource = [[CCWDataBase CCW_shareDatabase] CCW_QueryMyOpenedDappArray].mutableCopy;
-    
+    [self.collectionView reloadData];
 }
 
 - (void)setCollectionView {
@@ -128,7 +128,14 @@ static NSString * const collectionViewCell = @"CCWMyDappCollectionViewCell";
     [self.collectionView reloadData];
 }
 
-
+- (void)dappCollectionViewCell:(CCWMyDappCollectionViewCell *)dappCell editToDelete:(UIButton *)editButton
+{
+    NSIndexPath *indexPath = [self.collectionView indexPathForCell:dappCell];
+    CCWDappModel *dappModel = self.dataDAppSource[indexPath.section];
+    [[CCWDataBase CCW_shareDatabase] CCW_DeleteMyOpenedDapp:dappModel];
+    self.dataDAppSource = [[CCWDataBase CCW_shareDatabase] CCW_QueryMyOpenedDappArray].mutableCopy;
+    [self.collectionView reloadData];
+}
 
 - (NSString *)getCompleteWebsite:(NSString *)urlStr{
     NSString *returnUrlStr = nil;
