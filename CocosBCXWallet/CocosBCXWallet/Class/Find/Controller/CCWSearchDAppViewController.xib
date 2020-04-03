@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CCWSearchDAppViewController">
             <connections>
+                <outlet property="collectionView" destination="CdG-oK-tXt" id="qJR-OB-ml8"/>
                 <outlet property="searchTextField" destination="Xw1-E5-1kp" id="smJ-Ep-q8s"/>
                 <outlet property="tipLabel" destination="H9L-hk-EF5" id="9Cq-m0-0jh"/>
                 <outlet property="view" destination="iN0-l3-epB" id="boF-Wy-Uxw"/>
@@ -23,28 +22,27 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入DApp网址" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Xw1-E5-1kp" customClass="CCWMenuTextField">
-                    <rect key="frame" x="16" y="30" width="263" height="36"/>
+                    <rect key="frame" x="16" y="10" width="263" height="36"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="36" id="Xpk-OX-5BL"/>
                     </constraints>
-                    <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="23e-lV-AWc"/>
                     </connections>
                 </textField>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noData" translatesAutoresizingMaskIntoConstraints="NO" id="AfD-Xq-ow0">
-                    <rect key="frame" x="179.5" y="285.5" width="16" height="16"/>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noData" translatesAutoresizingMaskIntoConstraints="NO" id="AfD-Xq-ow0">
+                    <rect key="frame" x="51.5" y="195.5" width="272" height="196"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="在地址栏输入你想玩的DApp网址  进入即可试玩" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H9L-hk-EF5" customClass="CCWLabel">
-                    <rect key="frame" x="82" y="311.5" width="211" height="33.5"/>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="在地址栏输入你想玩的DApp网址  进入即可试玩" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H9L-hk-EF5" customClass="CCWLabel">
+                    <rect key="frame" x="82" y="401.5" width="211" height="33.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" red="0.78823529410000004" green="0.78823529410000004" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ub-4b-W9o" customClass="CCWButton">
-                    <rect key="frame" x="289" y="30" width="70" height="36"/>
+                    <rect key="frame" x="289" y="10" width="70" height="36"/>
                     <color key="backgroundColor" red="0.1803921568627451" green="0.43137254901960786" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="70" id="yXF-Pn-PyY"/>
@@ -61,21 +59,44 @@
                         <action selector="searchUrl:" destination="-1" eventType="touchUpInside" id="6bH-j2-O0x"/>
                     </connections>
                 </button>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="CdG-oK-tXt">
+                    <rect key="frame" x="12" y="92" width="351" height="575"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="V2X-2S-d9x">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最近使用" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NB5-rA-chd" customClass="CCWLabel">
+                    <rect key="frame" x="16" y="56" width="70" height="21"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="CdG-oK-tXt" firstAttribute="top" secondItem="NB5-rA-chd" secondAttribute="bottom" constant="15" id="1BE-0F-lv4"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="0Ub-4b-W9o" secondAttribute="trailing" constant="16" id="91S-BH-5Qk"/>
                 <constraint firstItem="H9L-hk-EF5" firstAttribute="top" secondItem="AfD-Xq-ow0" secondAttribute="bottom" constant="10" id="MQz-Dc-dho"/>
+                <constraint firstItem="NB5-rA-chd" firstAttribute="leading" secondItem="Xw1-E5-1kp" secondAttribute="leading" id="ROK-FE-XC3"/>
                 <constraint firstItem="0Ub-4b-W9o" firstAttribute="leading" secondItem="Xw1-E5-1kp" secondAttribute="trailing" constant="10" id="SL4-lP-IGQ"/>
                 <constraint firstItem="0Ub-4b-W9o" firstAttribute="centerY" secondItem="Xw1-E5-1kp" secondAttribute="centerY" id="Umx-bJ-8xx"/>
                 <constraint firstItem="H9L-hk-EF5" firstAttribute="centerX" secondItem="AfD-Xq-ow0" secondAttribute="centerX" id="ZfL-nd-Wii"/>
                 <constraint firstItem="Xw1-E5-1kp" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="ccS-Nm-Q4I"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="CdG-oK-tXt" secondAttribute="trailing" constant="12" id="f5C-cr-hhg"/>
                 <constraint firstItem="Xw1-E5-1kp" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="hcR-Q4-VlB"/>
                 <constraint firstItem="AfD-Xq-ow0" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-40" id="hh9-Kw-bXi"/>
+                <constraint firstItem="NB5-rA-chd" firstAttribute="top" secondItem="Xw1-E5-1kp" secondAttribute="bottom" constant="10" id="jQN-ij-ENu"/>
+                <constraint firstItem="CdG-oK-tXt" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="12" id="kDZ-qi-yJq"/>
                 <constraint firstItem="0Ub-4b-W9o" firstAttribute="height" secondItem="Xw1-E5-1kp" secondAttribute="height" id="lIg-8G-2ys"/>
                 <constraint firstItem="AfD-Xq-ow0" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ngt-sr-vVH"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="CdG-oK-tXt" secondAttribute="bottom" id="v2W-nh-mgv"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="140" y="153.37331334332833"/>
         </view>
     </objects>
     <resources>

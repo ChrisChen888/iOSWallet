@@ -197,7 +197,7 @@
             _shareDappInfoModel.linkUrl = self.dappURLString;
             _shareDappInfoModel.logo = faviconUrl;
             _shareDappInfoModel.dec = self.dappDec;
-            _shareDappInfoModel.title = self.dappTitle;
+            _shareDappInfoModel.title = self.title;
             return _shareDappInfoModel;
         } @catch (NSException *exception) {
             [self.wkWebView makeToast:@"链接有误"];
@@ -246,9 +246,9 @@
     //防止progressView被网页挡住
     [self.view bringSubviewToFront:self.progressView];
     if ([self shareDappInfoModel]) {
+        // 加入浏览历史
+        [[CCWDataBase CCW_shareDatabase] CCW_SaveMyOpenedDapp:[self shareDappInfoModel]];
     }
-    // 加入浏览历史
-    [[CCWDataBase CCW_shareDatabase] CCW_SaveMyOpenedDapp:[self shareDappInfoModel]];
 }
 
 //加载完成

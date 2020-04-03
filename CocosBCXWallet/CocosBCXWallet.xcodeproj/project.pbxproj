@@ -92,6 +92,9 @@
 		3154F3DD2223CFB400511FA8 /* MBProgressHUD+YSAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 3154F3DB2223CFB400511FA8 /* MBProgressHUD+YSAdd.m */; };
 		315C9320237E85FA007E0E31 /* CCWCoinTypeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 315C931F237E85FA007E0E31 /* CCWCoinTypeLabel.m */; };
 		315ED8272436E7CC00072FA0 /* CCWDataBase+CCWFindDapp.m in Sources */ = {isa = PBXBuildFile; fileRef = 315ED8262436E7CC00072FA0 /* CCWDataBase+CCWFindDapp.m */; };
+		315ED82D2436F83900072FA0 /* CCWDappCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 315ED8292436F83800072FA0 /* CCWDappCollectionReusableView.m */; };
+		315ED82E2436F83900072FA0 /* CCWMyDappCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 315ED82A2436F83800072FA0 /* CCWMyDappCollectionViewCell.m */; };
+		315ED82F2436F83900072FA0 /* CCWMyDappCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 315ED82B2436F83800072FA0 /* CCWMyDappCollectionViewCell.xib */; };
 		3165106B22266BAA00F573F9 /* CCWDappViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3165106A22266BAA00F573F9 /* CCWDappViewController.m */; };
 		3165106E22266C9300F573F9 /* UIView+EmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3165106C22266C9300F573F9 /* UIView+EmptyView.m */; };
 		31658619221689190039B439 /* CCWReceiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31658617221689190039B439 /* CCWReceiveViewController.m */; };
@@ -496,6 +499,11 @@
 		315C931F237E85FA007E0E31 /* CCWCoinTypeLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCWCoinTypeLabel.m; sourceTree = "<group>"; };
 		315ED8252436E7CC00072FA0 /* CCWDataBase+CCWFindDapp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CCWDataBase+CCWFindDapp.h"; sourceTree = "<group>"; };
 		315ED8262436E7CC00072FA0 /* CCWDataBase+CCWFindDapp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CCWDataBase+CCWFindDapp.m"; sourceTree = "<group>"; };
+		315ED8282436F83800072FA0 /* CCWMyDappCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCWMyDappCollectionViewCell.h; sourceTree = "<group>"; };
+		315ED8292436F83800072FA0 /* CCWDappCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCWDappCollectionReusableView.m; sourceTree = "<group>"; };
+		315ED82A2436F83800072FA0 /* CCWMyDappCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCWMyDappCollectionViewCell.m; sourceTree = "<group>"; };
+		315ED82B2436F83800072FA0 /* CCWMyDappCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCWMyDappCollectionViewCell.xib; sourceTree = "<group>"; };
+		315ED82C2436F83800072FA0 /* CCWDappCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCWDappCollectionReusableView.h; sourceTree = "<group>"; };
 		3165106922266BAA00F573F9 /* CCWDappViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCWDappViewController.h; sourceTree = "<group>"; };
 		3165106A22266BAA00F573F9 /* CCWDappViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCWDappViewController.m; sourceTree = "<group>"; };
 		3165106C22266C9300F573F9 /* UIView+EmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+EmptyView.m"; sourceTree = "<group>"; };
@@ -1387,6 +1395,11 @@
 				316739A5221AD84B008D85C4 /* CCWFindFirstTableViewCell.m */,
 				316739A6221AD84B008D85C4 /* CCWFindTableViewCell.h */,
 				316739A4221AD84B008D85C4 /* CCWFindTableViewCell.m */,
+				315ED82C2436F83800072FA0 /* CCWDappCollectionReusableView.h */,
+				315ED8292436F83800072FA0 /* CCWDappCollectionReusableView.m */,
+				315ED8282436F83800072FA0 /* CCWMyDappCollectionViewCell.h */,
+				315ED82A2436F83800072FA0 /* CCWMyDappCollectionViewCell.m */,
+				315ED82B2436F83800072FA0 /* CCWMyDappCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2401,6 +2414,7 @@
 				318FF5ED22155F3200AB5696 /* CCWTransferDetailViewController.xib in Resources */,
 				313FD4B422A4D6CB0058A8A2 /* CCWNodeAlertTableViewCell.xib in Resources */,
 				313AAB1222EA95D7003E0B5B /* CCWTransferNhAssetViewController.xib in Resources */,
+				315ED82F2436F83900072FA0 /* CCWMyDappCollectionViewCell.xib in Resources */,
 				3176CEDB22E58FE00022B408 /* CCWAboutUsViewController.xib in Resources */,
 				3123E22322B0DD7500874CBF /* PRIVACY POLICY.html in Resources */,
 				318FF5FD2215757700AB5696 /* CCWLoginViewController.xib in Resources */,
@@ -2574,6 +2588,7 @@
 				3144D05E22003BE700CDA62A /* NSObject+YSAdd.m in Sources */,
 				31B1D93223A7775100421A57 /* CocosDeleteNHOperation.m in Sources */,
 				31B1D92623A7775100421A57 /* CocosCallContractOperation.m in Sources */,
+				315ED82D2436F83900072FA0 /* CCWDappCollectionReusableView.m in Sources */,
 				3178D46E2390C15900CFB83B /* ChainObjectId.m in Sources */,
 				3144D0A02200401900CDA62A /* CCWLocalizableConst.m in Sources */,
 				3178D4642390C15900CFB83B /* ChainDynamicGlobalProperties.m in Sources */,
@@ -2744,6 +2759,7 @@
 				3186E8042293A08200A269C6 /* CCWBaseAlert.m in Sources */,
 				31F9C7E223F17851007CE129 /* CocosSwitchAccountCell.m in Sources */,
 				3178D48D2390C15900CFB83B /* CocosHTTPManager+CreateAccount.m in Sources */,
+				315ED82E2436F83900072FA0 /* CCWMyDappCollectionViewCell.m in Sources */,
 				31881F4F221657B6006C31A2 /* UIView+Toast.m in Sources */,
 				3111277523A104330082DC21 /* CCWRegisterTableViewCell.m in Sources */,
 				317D2D5E22E0614B00559A7C /* CCWAllOrderViewController.m in Sources */,

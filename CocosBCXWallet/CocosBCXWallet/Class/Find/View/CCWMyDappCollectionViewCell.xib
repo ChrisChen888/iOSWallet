@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="TWFindCollectionViewCell" id="gTV-IL-0wX" customClass="CCWMyDappCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="92"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="92"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about_icon" translatesAutoresizingMaskIntoConstraints="NO" id="cH1-Oc-M9w">
+                        <rect key="frame" x="22.5" y="8" width="55" height="55"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="55" id="913-Rw-JTU"/>
+                            <constraint firstAttribute="height" constant="55" id="V7c-u2-m07"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="以太星际以太星际" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1PJ-HO-qst" customClass="CCLabel">
+                        <rect key="frame" x="0.0" y="72" width="100" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="edu-ku-awq"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="size6p">
+                                <real key="value" value="16"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YIb-q1-DjO">
+                        <rect key="frame" x="14.5" y="0.0" width="22" height="22"/>
+                        <state key="normal" image="FIndDelete"/>
+                        <connections>
+                            <action selector="deleteCellModel:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Bg9-xs-wcu"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="1PJ-HO-qst" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="0Eh-dz-45H"/>
+                <constraint firstAttribute="trailing" secondItem="1PJ-HO-qst" secondAttribute="trailing" id="Zrh-Mh-6ki"/>
+                <constraint firstItem="YIb-q1-DjO" firstAttribute="leading" secondItem="cH1-Oc-M9w" secondAttribute="leading" constant="-8" id="aq5-NT-hpK"/>
+                <constraint firstItem="YIb-q1-DjO" firstAttribute="top" secondItem="cH1-Oc-M9w" secondAttribute="top" constant="-8" id="ewM-iN-JTh"/>
+                <constraint firstItem="cH1-Oc-M9w" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="fe2-ig-arU"/>
+                <constraint firstItem="cH1-Oc-M9w" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="wUK-zU-1PX"/>
+                <constraint firstItem="1PJ-HO-qst" firstAttribute="top" secondItem="cH1-Oc-M9w" secondAttribute="bottom" constant="9" id="zE8-CO-4EA"/>
+                <constraint firstAttribute="bottom" secondItem="1PJ-HO-qst" secondAttribute="bottom" id="zbC-r9-l20"/>
+            </constraints>
+            <size key="customSize" width="100" height="98"/>
+            <connections>
+                <outlet property="editButton" destination="YIb-q1-DjO" id="DAs-Xe-y7t"/>
+                <outlet property="imageView" destination="cH1-Oc-M9w" id="qiw-9N-ApH"/>
+                <outlet property="labelTitle" destination="1PJ-HO-qst" id="U3M-5d-4ZN"/>
+            </connections>
+            <point key="canvasLocation" x="92.799999999999997" y="74.662668665667169"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="FIndDelete" width="22" height="22"/>
+        <image name="about_icon" width="38" height="38"/>
+    </resources>
+</document>
