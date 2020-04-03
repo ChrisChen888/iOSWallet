@@ -91,6 +91,7 @@
 		3154F3DA2223CF2700511FA8 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3154F3D82223CF2700511FA8 /* MBProgressHUD.m */; };
 		3154F3DD2223CFB400511FA8 /* MBProgressHUD+YSAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 3154F3DB2223CFB400511FA8 /* MBProgressHUD+YSAdd.m */; };
 		315C9320237E85FA007E0E31 /* CCWCoinTypeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 315C931F237E85FA007E0E31 /* CCWCoinTypeLabel.m */; };
+		315ED8272436E7CC00072FA0 /* CCWDataBase+CCWFindDapp.m in Sources */ = {isa = PBXBuildFile; fileRef = 315ED8262436E7CC00072FA0 /* CCWDataBase+CCWFindDapp.m */; };
 		3165106B22266BAA00F573F9 /* CCWDappViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3165106A22266BAA00F573F9 /* CCWDappViewController.m */; };
 		3165106E22266C9300F573F9 /* UIView+EmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3165106C22266C9300F573F9 /* UIView+EmptyView.m */; };
 		31658619221689190039B439 /* CCWReceiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31658617221689190039B439 /* CCWReceiveViewController.m */; };
@@ -493,6 +494,8 @@
 		3154F3DC2223CFB400511FA8 /* MBProgressHUD+YSAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+YSAdd.h"; sourceTree = "<group>"; };
 		315C931E237E85FA007E0E31 /* CCWCoinTypeLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCWCoinTypeLabel.h; sourceTree = "<group>"; };
 		315C931F237E85FA007E0E31 /* CCWCoinTypeLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCWCoinTypeLabel.m; sourceTree = "<group>"; };
+		315ED8252436E7CC00072FA0 /* CCWDataBase+CCWFindDapp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CCWDataBase+CCWFindDapp.h"; sourceTree = "<group>"; };
+		315ED8262436E7CC00072FA0 /* CCWDataBase+CCWFindDapp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CCWDataBase+CCWFindDapp.m"; sourceTree = "<group>"; };
 		3165106922266BAA00F573F9 /* CCWDappViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCWDappViewController.h; sourceTree = "<group>"; };
 		3165106A22266BAA00F573F9 /* CCWDappViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCWDappViewController.m; sourceTree = "<group>"; };
 		3165106C22266C9300F573F9 /* UIView+EmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+EmptyView.m"; sourceTree = "<group>"; };
@@ -532,7 +535,7 @@
 		316C57A622980D5500F8AE33 /* CCWLogOutAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCWLogOutAlert.h; sourceTree = "<group>"; };
 		316C57A722980D5500F8AE33 /* CCWLogOutAlert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCWLogOutAlert.m; sourceTree = "<group>"; };
 		316EF3F123FA746200897FDD /* CocosBCXWallet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CocosBCXWallet.entitlements; sourceTree = "<group>"; };
-		31725B8821FEB02A005962C6 /* CocosBCXWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocosBCXWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		31725B8821FEB02A005962C6 /* CocosWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocosWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31725B8B21FEB02A005962C6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		31725B8C21FEB02A005962C6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		31725B9421FEB02B005962C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -1342,6 +1345,8 @@
 				31C35A48221E489D00E8B455 /* CCWDataBase+CCWContact.m */,
 				313FD4AA22A4BE660058A8A2 /* CCWDataBase+CCWNodeINfo.h */,
 				313FD4AB22A4BE660058A8A2 /* CCWDataBase+CCWNodeINfo.m */,
+				315ED8252436E7CC00072FA0 /* CCWDataBase+CCWFindDapp.h */,
+				315ED8262436E7CC00072FA0 /* CCWDataBase+CCWFindDapp.m */,
 			);
 			path = DataBase;
 			sourceTree = "<group>";
@@ -1423,7 +1428,7 @@
 		31725B8921FEB02A005962C6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				31725B8821FEB02A005962C6 /* CocosBCXWallet.app */,
+				31725B8821FEB02A005962C6 /* CocosWallet.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2339,7 +2344,7 @@
 			);
 			name = CocosBCXWallet;
 			productName = CocosBCXWallet;
-			productReference = 31725B8821FEB02A005962C6 /* CocosBCXWallet.app */;
+			productReference = 31725B8821FEB02A005962C6 /* CocosWallet.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -2461,7 +2466,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = $PROJECT_DIR/CocosBCXWallet/Resources/confuse.sh;
+			shellScript = "$PROJECT_DIR/CocosBCXWallet/Resources/confuse.sh\n";
 		};
 		34A43CFB599D4D6E4B2D5B98 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2665,6 +2670,7 @@
 				3144D06422003BE700CDA62A /* YCNSDateFormatter.m in Sources */,
 				3191A0DA225E11F8003AB263 /* CCWSelectCoinViewController.m in Sources */,
 				3144D06322003BE700CDA62A /* NSTimer+CCWTimer.m in Sources */,
+				315ED8272436E7CC00072FA0 /* CCWDataBase+CCWFindDapp.m in Sources */,
 				3154F3DD2223CFB400511FA8 /* MBProgressHUD+YSAdd.m in Sources */,
 				3178D49C2390C15900CFB83B /* CocosSetting.m in Sources */,
 				31B540B6229FEC17002FA33B /* CCWNodeAlertSheetView.m in Sources */,
@@ -2893,9 +2899,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 8497T2NJ7P;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 835CGYZJP6;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2916,8 +2922,8 @@
 					"$(PROJECT_DIR)/CocosBCXWallet/Resources/Classes/secp256k1",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.io.cocosbcx.www;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = pp_cocos;
+				PRODUCT_NAME = CocosWallet;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 arm64e armv7s";
 			};
@@ -2929,9 +2935,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 8497T2NJ7P;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 835CGYZJP6;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2952,8 +2958,8 @@
 					"$(PROJECT_DIR)/CocosBCXWallet/Resources/Classes/secp256k1",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.io.cocosbcx.www;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = pp_cocos;
+				PRODUCT_NAME = CocosWallet;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 arm64e armv7s";
 			};

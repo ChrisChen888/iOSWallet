@@ -72,12 +72,13 @@
     
     UILabel *detaiDeslLabel = [[UILabel alloc] init];
     detaiDeslLabel.textColor = [UIColor getColor:@"626670"];
-    detaiDeslLabel.font = CCWFont(14);
+    detaiDeslLabel.font = CCWFont(13);
+    detaiDeslLabel.numberOfLines = 2;
     [self addSubview:detaiDeslLabel];
     self.detaiDeslLabel = detaiDeslLabel;
     
     UIImageView *rightImageView = [[UIImageView alloc] init];
-    rightImageView.image = [UIImage imageNamed:@"rightAccessory"];
+    rightImageView.image = [UIImage imageNamed:@"rightItem"];
     [self addSubview:rightImageView];
     self.rightImageView = rightImageView;
 
@@ -108,13 +109,15 @@
     [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(weakSelf.iconImageView.mas_right).offset(16);
         make.right.equalTo(weakSelf).offset(-50);
-        make.bottom.equalTo(weakSelf.iconImageView.mas_centerY).offset(-maginCenter);
+//        make.bottom.equalTo(weakSelf.iconImageView.mas_centerY).offset(-maginCenter);
+        make.top.equalTo(weakSelf.iconImageView);
     }];
     
     [self.detaiDeslLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf.nameLabel);
+//        make.left.equalTo(weakSelf.nameLabel);
         make.left.right.equalTo(weakSelf.nameLabel);
-        make.top.equalTo(weakSelf.iconImageView.mas_centerY).offset(maginCenter);
+//        make.top.equalTo(weakSelf.iconImageView.mas_centerY).offset(maginCenter);
+        make.top.equalTo(weakSelf.nameLabel.mas_bottom).offset(maginCenter);
     }];
     
     [self.lineView mas_makeConstraints:^(MASConstraintMaker *make) {

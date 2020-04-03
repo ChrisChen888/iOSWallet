@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "31725B8721FEB02A005962C6"
-               BuildableName = "CocosBCXWallet.app"
+               BuildableName = "CocosWallet.app"
                BlueprintName = "CocosBCXWallet"
                ReferencedContainer = "container:CocosBCXWallet.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "31725B8721FEB02A005962C6"
-            BuildableName = "CocosBCXWallet.app"
+            BuildableName = "CocosWallet.app"
             BlueprintName = "CocosBCXWallet"
             ReferencedContainer = "container:CocosBCXWallet.xcodeproj">
          </BuildableReference>
@@ -56,7 +56,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "31725B8721FEB02A005962C6"
-            BuildableName = "CocosBCXWallet.app"
+            BuildableName = "CocosWallet.app"
             BlueprintName = "CocosBCXWallet"
             ReferencedContainer = "container:CocosBCXWallet.xcodeproj">
          </BuildableReference>
@@ -75,7 +75,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "31725B8721FEB02A005962C6"
-            BuildableName = "CocosBCXWallet.app"
+            BuildableName = "CocosWallet.app"
             BlueprintName = "CocosBCXWallet"
             ReferencedContainer = "container:CocosBCXWallet.xcodeproj">
          </BuildableReference>
@@ -85,7 +85,7 @@
       buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

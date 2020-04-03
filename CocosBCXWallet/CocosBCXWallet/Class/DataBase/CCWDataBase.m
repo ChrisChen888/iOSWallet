@@ -8,6 +8,7 @@
 
 #import "CCWDataBase.h"
 #import "CCWDataBase+CCWNodeINfo.h"
+#import "CCWDataBase+CCWFindDapp.h"
 
 @implementation CCWDataBase
 
@@ -30,6 +31,9 @@ static CCWDataBase *ccwDataBase = nil;
         
         // 节点表
         [self CCW_CreateNodeInfoTable];
+        
+        // Dapp
+        [self CCW_CreateMyDappManageTable];
     }
     return self;
 }

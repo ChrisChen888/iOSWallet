@@ -17,6 +17,7 @@
 #import <UMShare/UMShare.h>
 // U-Share分享面板SDK，未添加分享面板SDK可将此行去掉
 #import <UShareUI/UShareUI.h>
+#import "CCWDataBase+CCWFindDapp.h"
 
 @interface CCWDappViewController ()<CCWFindMoreViewDelegate,WKUIDelegate,WKNavigationDelegate,WKScriptMessageHandler>
 @property (nonatomic, copy) NSString *dappTitle;
@@ -29,6 +30,9 @@
 
 // 临时密码
 @property (nonatomic, copy) NSString *viewpassword;
+
+/** 构造模型 */
+@property (nonatomic, strong) CCWDappModel *shareDappInfoModel;
 @end
 
 @implementation CCWDappViewController
@@ -175,7 +179,33 @@
         [self.navigationController popViewControllerAnimated:YES];
     }
 }
-
+// 需要收藏的模型
+- (CCWDappModel *)shareDappInfoModel
+{
+    if (self.dappURLString.length <= 0) {
+        return nil;
+    }
+    if (!_shareDappInfoModel) {
+        // 1.1 获取域名
+        NSString *regexString = @"https?://(www\\.)?[0-9a-zA-Z]+(\\.[0-9a-zA-Z]+)+";
+        NSRange range = [self.dappURLString rangeOfString:regexString options:NSRegularExpressionSearch];
+        @try {
+            NSString *urlHost = [self.dappURLString substringWithRange:range];
+            // 1.2 拼接图片
+            NSString *faviconUrl = [NSString stringWithFormat:@"%@/favicon.ico",urlHost];
+            _shareDappInfoModel = [[CCWDappModel alloc] init];
+            _shareDappInfoModel.linkUrl = self.dappURLString;
+            _shareDappInfoModel.logo = faviconUrl;
+            _shareDappInfoModel.dec = self.dappDec;
+            _shareDappInfoModel.title = self.dappTitle;
+            return _shareDappInfoModel;
+        } @catch (NSException *exception) {
+            [self.wkWebView makeToast:@"链接有误"];
+            return nil;
+        }
+    }
+    return _shareDappInfoModel;
+}
 #pragma mark - 监听
 /*
  *4.在监听方法中获取网页加载的进度，并将进度赋给progressView.progress
@@ -215,6 +245,10 @@
     self.progressView.transform = CGAffineTransformMakeScale(1.0f, 1.5f);
     //防止progressView被网页挡住
     [self.view bringSubviewToFront:self.progressView];
+    if ([self shareDappInfoModel]) {
+    }
+    // 加入浏览历史
+    [[CCWDataBase CCW_shareDatabase] CCW_SaveMyOpenedDapp:[self shareDappInfoModel]];
 }
 
 //加载完成

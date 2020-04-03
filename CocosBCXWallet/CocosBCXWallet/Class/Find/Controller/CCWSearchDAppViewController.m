@@ -9,6 +9,7 @@
 #import "CCWSearchDAppViewController.h"
 #import "CCWDappViewController.h"
 #import "CCWDappModel.h"
+#import "CCWDataBase+CCWFindDapp.h"
 
 @interface CCWSearchDAppViewController ()<UITextFieldDelegate>
 
@@ -28,6 +29,11 @@
     self.searchTextField.layer.cornerRadius = 2;
     self.searchTextField.layer.borderColor = [UIColor getColor:@"f0f2f3"].CGColor;
     self.searchTextField.layer.borderWidth = 0.5;
+    
+    NSArray *historyArray = [[CCWDataBase CCW_shareDatabase] CCW_QueryMyOpenedDappArray];
+    for (CCWDappModel *dappModel in historyArray) {
+        NSLog(@"%@",[dappModel mj_keyValues]);
+    }
 }
 
 - (NSString *)getCompleteWebsite:(NSString *)urlStr{

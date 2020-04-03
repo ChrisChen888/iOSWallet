@@ -15,12 +15,15 @@ CCW_CloseView
 CCW_CoinTypeSheetView
 CCW_CreateAccountWithWallet
 CCW_CreateContactTable
+CCW_CreateMyDappManageTable
 CCW_CreateNodeInfoTable
 CCW_CreateWalletAccountTable
 CCW_CreateWalletViewController
 CCW_DecodeMemo
 CCW_DeleteContact
 CCW_DeleteInfoViewNextButtonClick
+CCW_DeleteMyKeepDapp
+CCW_DeleteMyOpenedDapp
 CCW_DeleteNHAssetId
 CCW_DeleteNHAssetShowWithArray
 CCW_DeleteServerNodeInfo
@@ -64,6 +67,10 @@ CCW_QueryChainListLimit
 CCW_QueryCurrentChainID
 CCW_QueryFindDappListSuccess
 CCW_QueryMyContactComplete
+CCW_QueryMyKeepDappArray
+CCW_QueryMyKeepDappComplete
+CCW_QueryMyOpenedDappArray
+CCW_QueryMyOpenedDappComplete
 CCW_QueryUserOperations
 CCW_QueryVersionInfoSuccess
 CCW_ReImportAccount
@@ -74,6 +81,8 @@ CCW_RequestExchangeSuccess
 CCW_RequestNodeInfo
 CCW_RequestNodeSuccess
 CCW_SaveMyContactModel
+CCW_SaveMyKeepDapp
+CCW_SaveMyOpenedDapp
 CCW_SaveNodeInfo
 CCW_SaveSerVerNodeInfoArray
 CCW_SaveWalletAccount

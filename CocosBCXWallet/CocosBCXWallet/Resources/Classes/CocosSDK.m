@@ -1203,10 +1203,10 @@
                     NSMutableArray *tempArray = [NSMutableArray array];
                     
                     if (param.count == 0) {
-                        NSMutableArray *array = [NSMutableArray array];
-                        [array addObject:@(2)];
-                        [array addObject:@{@"v":@""}];
-                        [tempArray addObject:array];
+//                        NSMutableArray *array = [NSMutableArray array];
+//                        [array addObject:@(2)];
+//                        [array addObject:@{@"v":@""}];
+//                        [tempArray addObject:array];
                     }else{
                         for (NSString *paramStr in param) {
                             NSMutableArray *array = [NSMutableArray array];

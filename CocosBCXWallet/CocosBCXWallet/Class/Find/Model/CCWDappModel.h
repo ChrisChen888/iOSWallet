@@ -22,4 +22,8 @@
 /** 链接 */
 @property (nonatomic, copy) NSString *linkUrl;
 
+/*************************** 收藏 ***************************/
+/** 图片 */
+@property (nonatomic, copy) NSString *logo;
+
 @end
