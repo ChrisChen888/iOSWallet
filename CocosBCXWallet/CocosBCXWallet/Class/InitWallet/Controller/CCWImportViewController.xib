@@ -44,7 +44,7 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iOt-I6-8C0">
-                    <rect key="frame" x="15" y="58" width="345" height="156.5"/>
+                    <rect key="frame" x="15" y="58" width="345" height="173"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="私钥" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q9l-sr-jtf" customClass="CCWLabel">
                             <rect key="frame" x="15" y="24" width="31" height="18"/>
@@ -99,22 +99,31 @@
                                 <action selector="showOrHiddenClick:" destination="-1" eventType="touchUpInside" id="D8y-kW-dws"/>
                             </connections>
                         </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="至少12位必须含有数字、大小写字母、和特殊符号" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jpa-SC-JGr" customClass="CCWLabel">
+                            <rect key="frame" x="15" y="148.5" width="330" height="14.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" red="0.96078431369999995" green="0.3803921569" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="jpa-SC-JGr" firstAttribute="top" secondItem="2Fv-dO-aVF" secondAttribute="bottom" id="1WH-jj-OTW"/>
                         <constraint firstItem="kyQ-Vw-aKh" firstAttribute="top" secondItem="Q9l-sr-jtf" secondAttribute="top" constant="-8" id="1mv-zW-wZt"/>
-                        <constraint firstAttribute="bottom" secondItem="2Fv-dO-aVF" secondAttribute="bottom" constant="8" id="5jj-G8-uM7"/>
                         <constraint firstItem="2Fv-dO-aVF" firstAttribute="leading" secondItem="kyQ-Vw-aKh" secondAttribute="leading" id="6az-sd-Iuq"/>
                         <constraint firstItem="H5z-fi-8TH" firstAttribute="leading" secondItem="Q9l-sr-jtf" secondAttribute="leading" id="7cO-Fl-aXW"/>
                         <constraint firstItem="TMy-GN-EM6" firstAttribute="height" secondItem="2Fv-dO-aVF" secondAttribute="height" id="GAM-7i-HeE"/>
                         <constraint firstAttribute="trailing" secondItem="uO7-ks-fde" secondAttribute="trailing" id="GnC-pi-h8G"/>
                         <constraint firstItem="TMy-GN-EM6" firstAttribute="leading" secondItem="2Fv-dO-aVF" secondAttribute="trailing" id="IuI-OP-hkt"/>
                         <constraint firstItem="TMy-GN-EM6" firstAttribute="centerY" secondItem="2Fv-dO-aVF" secondAttribute="centerY" id="K9q-kT-PkC"/>
+                        <constraint firstItem="jpa-SC-JGr" firstAttribute="leading" secondItem="H5z-fi-8TH" secondAttribute="leading" id="KZc-US-tSa"/>
                         <constraint firstItem="Q9l-sr-jtf" firstAttribute="top" secondItem="iOt-I6-8C0" secondAttribute="top" constant="24" id="LfF-Vc-3wY"/>
                         <constraint firstItem="uO7-ks-fde" firstAttribute="top" secondItem="kyQ-Vw-aKh" secondAttribute="bottom" constant="3" id="Lkm-Xk-gEz"/>
+                        <constraint firstAttribute="bottom" secondItem="jpa-SC-JGr" secondAttribute="bottom" constant="10" id="NLc-8g-z9Z"/>
                         <constraint firstItem="2Fv-dO-aVF" firstAttribute="centerY" secondItem="H5z-fi-8TH" secondAttribute="centerY" id="UUK-jv-rxU"/>
                         <constraint firstItem="kyQ-Vw-aKh" firstAttribute="leading" secondItem="Q9l-sr-jtf" secondAttribute="trailing" constant="28" id="cca-LQ-9Nm"/>
                         <constraint firstItem="H5z-fi-8TH" firstAttribute="top" secondItem="uO7-ks-fde" secondAttribute="bottom" constant="21" id="kmc-XO-h5P"/>
+                        <constraint firstItem="jpa-SC-JGr" firstAttribute="trailing" secondItem="uO7-ks-fde" secondAttribute="trailing" id="lJr-Hy-6tR"/>
                         <constraint firstItem="TMy-GN-EM6" firstAttribute="trailing" secondItem="kyQ-Vw-aKh" secondAttribute="trailing" id="nPQ-oJ-sAY"/>
                         <constraint firstItem="Q9l-sr-jtf" firstAttribute="leading" secondItem="iOt-I6-8C0" secondAttribute="leading" constant="15" id="nRx-Rf-8l7"/>
                         <constraint firstItem="uO7-ks-fde" firstAttribute="leading" secondItem="Q9l-sr-jtf" secondAttribute="leading" id="sqc-88-iIB"/>

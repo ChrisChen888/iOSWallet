@@ -131,7 +131,7 @@
         return;
     }
 
-    if (![pwdStr ys_regexValidate:@"^(?!^\\d+$)(?!^[A-Za-z]+$)(?!^[^A-Za-z0-9]+$)(?!^.*[\\u4E00-\\u9FA5].*$)^\\S{8,12}$"]) {
+    if (![pwdStr ys_regexValidate:@"^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*.]).{12,}$"]) {
         [self.view makeToast:CCWLocalizable(@"密码设置不符合规则")];
         return;
     }

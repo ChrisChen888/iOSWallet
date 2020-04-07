@@ -38,7 +38,7 @@
 {
     if (self.walletMode == CocosWalletModeAccount) {
         self.pwdTipLabel.hidden = NO;
-        if ([textField.text ys_regexValidate:@"^(?!^\\d+$)(?!^[A-Za-z]+$)(?!^[^A-Za-z0-9]+$)(?!^.*[\\u4E00-\\u9FA5].*$)^\\S{8,12}$"]) {
+        if ([textField.text ys_regexValidate:@"^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*.]).{12,}$"]) {
             self.pwdTipLabel.hidden = YES;
         }
     }
@@ -106,6 +106,11 @@
         return;
     }
     
+    if (![nowPwdStr ys_regexValidate:@"^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*.]).{12,}$"]) {
+        [self.view makeToast:CCWLocalizable(@"密码设置不符合规则")];
+        return;
+    }
+    
     if (![nowPwdStr isEqualToString:confirmPwdStr]) {
         [self.view makeToast:CCWLocalizable(@"密码前后输入不一致，请重新输入")];
         return;
@@ -113,10 +118,6 @@
     
     CCWWeakSelf
     if (self.walletMode == CocosWalletModeAccount) {
-        if (![nowPwdStr ys_regexValidate:@"^(?!^\\d+$)(?!^[A-Za-z]+$)(?!^[^A-Za-z0-9]+$)(?!^.*[\\u4E00-\\u9FA5].*$)^\\S{8,12}$"]) {
-            [self.view makeToast:CCWLocalizable(@"密码设置不符合规则，请重新输入")];
-            return;
-        }
         [CCWSDKRequest CCW_ChangePassword:currentPwdStr newPassword:nowPwdStr Success:^(id  _Nonnull responseObject) {
             !weakSelf.setpwdSuccess?:weakSelf.setpwdSuccess();
             [weakSelf.navigationController popViewControllerAnimated:YES];

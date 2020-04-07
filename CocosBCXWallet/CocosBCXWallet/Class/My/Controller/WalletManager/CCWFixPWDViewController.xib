@@ -119,8 +119,8 @@
                         <action selector="compleBtnClick:" destination="-1" eventType="touchUpInside" id="y9p-w3-kmd"/>
                     </connections>
                 </button>
-                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8-12位数字、字母、和特殊符号任两种" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THP-Bq-Dtr" customClass="CCWLabel">
-                    <rect key="frame" x="20" y="172" width="210" height="14.5"/>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="至少12位必须含有数字、大小写字母、和特殊符号" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THP-Bq-Dtr" customClass="CCWLabel">
+                    <rect key="frame" x="20" y="172" width="335" height="14.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" red="0.96078431372549022" green="0.38039215686274508" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -188,6 +188,7 @@
                 <constraint firstItem="NCM-jp-YRv" firstAttribute="top" secondItem="ZFy-fY-bOS" secondAttribute="bottom" constant="72" id="gzK-oV-Ypd"/>
                 <constraint firstItem="vBV-gU-XUW" firstAttribute="trailing" secondItem="X4U-u0-5t7" secondAttribute="trailing" id="hQz-Re-0hY"/>
                 <constraint firstItem="CDC-jo-Esx" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="jBf-jM-EKj"/>
+                <constraint firstItem="THP-Bq-Dtr" firstAttribute="trailing" secondItem="9FM-5C-9s4" secondAttribute="trailing" id="jog-pb-QVb"/>
                 <constraint firstItem="9FM-5C-9s4" firstAttribute="leading" secondItem="Iqe-WJ-nHO" secondAttribute="leading" id="kNU-vZ-3st"/>
                 <constraint firstItem="1vU-7R-vHR" firstAttribute="trailing" secondItem="42d-m3-KQ2" secondAttribute="trailing" id="kkM-g3-jra"/>
                 <constraint firstItem="WaH-E7-yw5" firstAttribute="leading" secondItem="CDC-jo-Esx" secondAttribute="leading" id="mwk-s3-Pxb"/>

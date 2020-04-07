@@ -47,6 +47,7 @@ typedef NS_ENUM(NSInteger,SDKErrorCode) {
     SDKErrorCodeKeyImportError = 150,
     // Account exists
     SDKErrorCodeAccountExists = 159,
+    SDKErrorCodePasswordError = 178,
     SDKErrorCodeCreateAccountSuccess = 200,
     SDKErrorCodeCreateAccountExists = 400,
     SDKErrorCodeBroadcastInsufficientBalance = 100000,//余额不足

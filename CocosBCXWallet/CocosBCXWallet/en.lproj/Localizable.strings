@@ -25,7 +25,7 @@
 "账户名称" = "Account Name";
 "5-63位小写字母开头" = "Begin with 5-63 lowercase letters";
 "账户密码" = "Account Passcode";
-"8-12位数字、字母、和特殊符号任两种" = "8-12 digits from two of number/letter/special character";
+"至少12位必须含有数字、大小写字母、和特殊符号" = "At least 12 digits must contain numbers, uppercase and lowercase letters, and special symbols";
 "登录钱包" = "Log in to wallet";
 "已有钱包 , 去导入" = "Already have a wallet, import it";
 "设置密码" = "Set Passcode";

@@ -245,10 +245,7 @@
     self.progressView.transform = CGAffineTransformMakeScale(1.0f, 1.5f);
     //防止progressView被网页挡住
     [self.view bringSubviewToFront:self.progressView];
-    if ([self shareDappInfoModel]) {
-        // 加入浏览历史
-        [[CCWDataBase CCW_shareDatabase] CCW_SaveMyOpenedDapp:[self shareDappInfoModel]];
-    }
+    
 }
 
 //加载完成
@@ -264,6 +261,11 @@
     //    self.progressView.hidden = YES;
     [self.view configWithHasData:YES noDataImage:nil noDataTitle:nil hasError:NO reloadBlock:^(id sender) {
     }];
+    
+    if ([self shareDappInfoModel]) {
+        // 加入浏览历史
+        [[CCWDataBase CCW_shareDatabase] CCW_SaveMyOpenedDapp:[self shareDappInfoModel]];
+    }
 }
 
 //加载失败

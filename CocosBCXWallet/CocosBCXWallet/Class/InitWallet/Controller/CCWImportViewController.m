@@ -70,6 +70,13 @@
         [self.view makeToast:CCWLocalizable(@"请设置临时密码")];
         return;
     }
+    
+    
+    if (![pwdStr ys_regexValidate:@"^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*.]).{12,}$"]) {
+        [self.view makeToast:CCWLocalizable(@"密码设置不符合规则")];
+        return;
+    }
+    
     CCWWeakSelf
     [MBProgressHUD showLoadingMessage:nil];
     // 网络失败，3秒消失
