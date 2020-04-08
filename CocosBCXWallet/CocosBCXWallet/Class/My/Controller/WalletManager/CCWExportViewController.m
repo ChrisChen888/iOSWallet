@@ -14,6 +14,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *assetsPrivateKey;
 @property (weak, nonatomic) IBOutlet UILabel *accountPrivateKey;
 
+@property (weak, nonatomic) IBOutlet UIView *activeView;
+
+@property (weak, nonatomic) IBOutlet UIView *ownerView;
+
 @end
 
 @implementation CCWExportViewController
@@ -27,6 +31,15 @@
     
     self.assetsPrivateKey.text = _keys[@"active_key"];
     self.accountPrivateKey.text = _keys[@"owner_key"];
+    
+    if ([self.assetsPrivateKey.text isEqualToString:@""] || !self.assetsPrivateKey.text) {
+        self.activeView.hidden = YES;
+    }
+    
+    if ([self.accountPrivateKey.text isEqualToString:@""] || !self.accountPrivateKey.text) {
+        self.ownerView.hidden = YES;
+    }
+    
 }
 
 - (IBAction)makeActivePrivateKey:(UIButton *)sender {

@@ -106,6 +106,14 @@
         return;
     }
     
+    // 不能含有空格
+    NSRange pwdRange = [nowPwdStr rangeOfString:@" "];
+    if (pwdRange.location != NSNotFound) {
+        //有空格
+        [self.view makeToast:CCWLocalizable(@"密码不能含有空格")];
+        return;
+    }
+    
     if (![nowPwdStr ys_regexValidate:@"^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*.]).{12,}$"]) {
         [self.view makeToast:CCWLocalizable(@"密码设置不符合规则")];
         return;

@@ -26,6 +26,7 @@
 "5-63位小写字母开头" = "Begin with 5-63 lowercase letters";
 "账户密码" = "Account Passcode";
 "至少12位必须含有数字、大小写字母、和特殊符号" = "At least 12 digits must contain numbers, uppercase and lowercase letters, and special symbols";
+"密码不能含有空格" = "Password cannot contain spaces";
 "登录钱包" = "Log in to wallet";
 "已有钱包 , 去导入" = "Already have a wallet, import it";
 "设置密码" = "Set Passcode";

@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="accountLabel" destination="ZyR-kE-Jsd" id="0qQ-SX-1Sx"/>
                 <outlet property="accountNameLabel" destination="04Y-mh-tfv" id="11D-S1-WL6"/>
+                <outlet property="changePwdButton" destination="sQt-E6-brF" id="TuL-he-63t"/>
                 <outlet property="changePwdTitleLabel" destination="k6o-Qa-8Oy" id="cZd-ro-FTJ"/>
                 <outlet property="coinCountLabel" destination="zrM-eV-ZYD" id="Me6-t7-Xf5"/>
                 <outlet property="headerBackView" destination="NfI-Pm-kzu" id="Zoc-gW-Msb"/>
@@ -217,7 +218,8 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sQt-E6-brF">
-                    <rect key="frame" x="0.0" y="318" width="375" height="44"/>
+                    <rect key="frame" x="0.0" y="319" width="375" height="44"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="zqU-cb-NHg"/>
                     </constraints>
@@ -265,7 +267,7 @@
                 <constraint firstItem="QcT-E1-Tfs" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="15" id="izv-Ql-3Ie"/>
                 <constraint firstItem="k6o-Qa-8Oy" firstAttribute="leading" secondItem="lih-Cf-4SI" secondAttribute="leading" id="jft-Q1-tCq"/>
                 <constraint firstItem="edh-3M-tXT" firstAttribute="trailing" secondItem="QcT-E1-Tfs" secondAttribute="trailing" id="mvE-02-pfp"/>
-                <constraint firstItem="HDP-tY-QLy" firstAttribute="top" secondItem="sQt-E6-brF" secondAttribute="bottom" id="oC6-ug-YtD"/>
+                <constraint firstItem="HDP-tY-QLy" firstAttribute="top" secondItem="sQt-E6-brF" secondAttribute="bottom" constant="-1" id="oC6-ug-YtD"/>
                 <constraint firstItem="QcT-E1-Tfs" firstAttribute="top" secondItem="lih-Cf-4SI" secondAttribute="bottom" constant="14" id="rIp-oT-oMp"/>
                 <constraint firstItem="8RX-GZ-04c" firstAttribute="top" secondItem="HDP-tY-QLy" secondAttribute="bottom" constant="15" id="t4B-EH-c6Z"/>
                 <constraint firstItem="HPw-OX-znb" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="t8Y-3z-850"/>
