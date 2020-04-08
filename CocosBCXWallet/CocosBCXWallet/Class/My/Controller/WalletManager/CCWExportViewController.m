@@ -18,6 +18,9 @@
 
 @property (weak, nonatomic) IBOutlet UIView *ownerView;
 
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *accountTopConstraint;
+
 @end
 
 @implementation CCWExportViewController
@@ -34,9 +37,12 @@
     
     if ([self.assetsPrivateKey.text isEqualToString:@""] || !self.assetsPrivateKey.text) {
         self.activeView.hidden = YES;
+        
+        self.accountTopConstraint.constant = - 200;
     }
     
     if ([self.accountPrivateKey.text isEqualToString:@""] || !self.accountPrivateKey.text) {
+        
         self.ownerView.hidden = YES;
     }
     

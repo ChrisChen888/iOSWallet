@@ -20,6 +20,7 @@
                 <outlet property="headerBackView" destination="NfI-Pm-kzu" id="Zoc-gW-Msb"/>
                 <outlet property="headerView" destination="Ybw-xY-6IG" id="wkA-kO-W7Z"/>
                 <outlet property="logoutButton" destination="aby-JP-eqT" id="CVF-tu-g0H"/>
+                <outlet property="priTopConstraint" destination="t4B-EH-c6Z" id="9yc-sR-huY"/>
                 <outlet property="publicKeyLabel" destination="otu-Ds-sa2" id="Fzd-rv-Jgj"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -150,11 +151,14 @@
                         <action selector="makeOwnerPublicKey:" destination="-1" eventType="touchUpInside" id="hsg-Cn-dxz"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="edh-3M-tXT">
-                    <rect key="frame" x="15" y="293.5" width="360" height="0.5"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rightItem" translatesAutoresizingMaskIntoConstraints="NO" id="gVG-D9-I5K">
+                    <rect key="frame" x="352" y="332.5" width="8" height="14"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HDP-tY-QLy">
+                    <rect key="frame" x="15" y="362" width="360" height="0.5"/>
                     <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="0.5" id="l38-Cm-o5b"/>
+                        <constraint firstAttribute="height" constant="0.5" id="1a3-Zy-u4U"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="修改密码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6o-Qa-8Oy" customClass="CCWLabel">
@@ -163,11 +167,21 @@
                     <color key="textColor" red="0.14901960780000001" green="0.1647058824" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HDP-tY-QLy">
-                    <rect key="frame" x="15" y="362" width="360" height="0.5"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sQt-E6-brF" userLabel="改变密码按钮">
+                    <rect key="frame" x="0.0" y="319" width="375" height="44"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="zqU-cb-NHg"/>
+                    </constraints>
+                    <connections>
+                        <action selector="fixPwdClick:" destination="-1" eventType="touchUpInside" id="KrR-1q-Yux"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="edh-3M-tXT">
+                    <rect key="frame" x="15" y="293.5" width="360" height="0.5"/>
                     <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="0.5" id="1a3-Zy-u4U"/>
+                        <constraint firstAttribute="height" constant="0.5" id="l38-Cm-o5b"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="导出私钥" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8RX-GZ-04c" customClass="CCWLabel">
@@ -183,21 +197,9 @@
                         <constraint firstAttribute="height" constant="0.5" id="fow-fS-MVJ"/>
                     </constraints>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rightItem" translatesAutoresizingMaskIntoConstraints="NO" id="gVG-D9-I5K">
-                    <rect key="frame" x="352" y="332.5" width="8" height="14"/>
-                </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rightItem" translatesAutoresizingMaskIntoConstraints="NO" id="ItR-3j-rb6">
                     <rect key="frame" x="352" y="379" width="8" height="14"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPw-OX-znb">
-                    <rect key="frame" x="0.0" y="364.5" width="375" height="44"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="44" id="R7R-l5-koQ"/>
-                    </constraints>
-                    <connections>
-                        <action selector="exportPrivitKeyClick:" destination="-1" eventType="touchUpInside" id="Bam-PQ-6kd"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aby-JP-eqT" customClass="CCWButton">
                     <rect key="frame" x="15" y="551" width="345" height="50"/>
                     <color key="backgroundColor" red="0.28235294119999998" green="0.41960784309999999" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -217,14 +219,13 @@
                         <action selector="loginPutClick:" destination="-1" eventType="touchUpInside" id="Sgg-PC-0Pe"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sQt-E6-brF">
-                    <rect key="frame" x="0.0" y="319" width="375" height="44"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPw-OX-znb" userLabel="导出私钥按钮">
+                    <rect key="frame" x="0.0" y="364.5" width="375" height="44"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="44" id="zqU-cb-NHg"/>
+                        <constraint firstAttribute="height" constant="44" id="R7R-l5-koQ"/>
                     </constraints>
                     <connections>
-                        <action selector="fixPwdClick:" destination="-1" eventType="touchUpInside" id="KrR-1q-Yux"/>
+                        <action selector="exportPrivitKeyClick:" destination="-1" eventType="touchUpInside" id="Bam-PQ-6kd"/>
                     </connections>
                 </button>
             </subviews>

@@ -24,6 +24,10 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *logoutButton;
 
+// 顶部距离
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *priTopConstraint;
+
+// 改变密码按钮
 @property (weak, nonatomic) IBOutlet UIButton *changePwdButton;
 
 // 修改密码
@@ -57,9 +61,10 @@
         self.changePwdButton.enabled = YES;
     }else{
         // 干掉
+        self.priTopConstraint.constant = -34;
         self.changePwdButton.backgroundColor = [UIColor whiteColor];
         self.changePwdButton.enabled = NO;
-//        self.changePwdTitleLabel.text = CCWLocalizable(@"重置密码");
+        self.changePwdTitleLabel.text = CCWLocalizable(@"重置密码");
     }
     
     [self.headerView shadowWithColor:[UIColor getColor:@"EBEEF4"] offset:CGSizeMake(0, 4) opacity:1 radius:6];

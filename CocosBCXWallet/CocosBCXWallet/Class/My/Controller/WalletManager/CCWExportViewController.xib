@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CCWExportViewController">
             <connections>
                 <outlet property="accountPrivateKey" destination="PYi-Mb-ttc" id="CDA-HO-cyq"/>
+                <outlet property="accountTopConstraint" destination="LtC-f0-6KV" id="Gga-WY-eGr"/>
                 <outlet property="activeView" destination="sc3-LE-oZG" id="JZf-cm-jl9"/>
                 <outlet property="assetsPrivateKey" destination="wmU-I7-Yh4" id="fzD-mq-n5n"/>
                 <outlet property="makeAccountBtn" destination="WuI-nD-GLa" id="6gb-j6-guB"/>
