@@ -81,6 +81,8 @@
 		3144D09222003CBD00CDA62A /* CCWFindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3144D09122003CBD00CDA62A /* CCWFindViewController.m */; };
 		3144D09622003E5300CDA62A /* CCWLocalizableTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3144D09522003E5300CDA62A /* CCWLocalizableTool.m */; };
 		3144D0A02200401900CDA62A /* CCWLocalizableConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 3144D09F2200401900CDA62A /* CCWLocalizableConst.m */; };
+		31458F4724441B2A00F362CD /* CCWSignStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31458F4524441B2A00F362CD /* CCWSignStringViewController.m */; };
+		31458F4824441B2A00F362CD /* CCWSignStringViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31458F4624441B2A00F362CD /* CCWSignStringViewController.xib */; };
 		3149E5FE2227AAE400EAF5B4 /* CCWSDKRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3149E5FD2227AAE400EAF5B4 /* CCWSDKRequest.m */; };
 		3149E6012227AC5800EAF5B4 /* CCWSDKErrorHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3149E6002227AC5800EAF5B4 /* CCWSDKErrorHandle.m */; };
 		314F0C8A23F3E8C300FC779F /* CocosCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 314F0C8923F3E8C200FC779F /* CocosCodeView.m */; };
@@ -479,6 +481,9 @@
 		3144D09522003E5300CDA62A /* CCWLocalizableTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCWLocalizableTool.m; sourceTree = "<group>"; };
 		3144D09E2200401900CDA62A /* CCWLocalizableConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCWLocalizableConst.h; sourceTree = "<group>"; };
 		3144D09F2200401900CDA62A /* CCWLocalizableConst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCWLocalizableConst.m; sourceTree = "<group>"; };
+		31458F4424441B2A00F362CD /* CCWSignStringViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCWSignStringViewController.h; sourceTree = "<group>"; };
+		31458F4524441B2A00F362CD /* CCWSignStringViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCWSignStringViewController.m; sourceTree = "<group>"; };
+		31458F4624441B2A00F362CD /* CCWSignStringViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCWSignStringViewController.xib; sourceTree = "<group>"; };
 		3149E5FC2227AAE400EAF5B4 /* CCWSDKRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCWSDKRequest.h; sourceTree = "<group>"; };
 		3149E5FD2227AAE400EAF5B4 /* CCWSDKRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCWSDKRequest.m; sourceTree = "<group>"; };
 		3149E5FF2227AC5800EAF5B4 /* CCWSDKErrorHandle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCWSDKErrorHandle.h; sourceTree = "<group>"; };
@@ -1042,6 +1047,9 @@
 				31C5321D23C89E2B003E9362 /* CCWInvokerCallContractViewController.h */,
 				31C5321E23C89E2B003E9362 /* CCWInvokerCallContractViewController.m */,
 				31C5321F23C89E2B003E9362 /* CCWInvokerCallContractViewController.xib */,
+				31458F4424441B2A00F362CD /* CCWSignStringViewController.h */,
+				31458F4524441B2A00F362CD /* CCWSignStringViewController.m */,
+				31458F4624441B2A00F362CD /* CCWSignStringViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2449,6 +2457,7 @@
 				3176CECA22E58FE00022B408 /* CCWWalletManagerViewController.xib in Resources */,
 				31881F542216593D006C31A2 /* CCWTipScreenShotViewController.xib in Resources */,
 				31516B3123CEB9E300E3ADED /* CCWNORememberContent.xib in Resources */,
+				31458F4824441B2A00F362CD /* CCWSignStringViewController.xib in Resources */,
 				3176CED822E58FE00022B408 /* CCWJoinUsViewController.xib in Resources */,
 				31881F5922165EB7006C31A2 /* CCWBackupsPrivateController.xib in Resources */,
 				317D2D5222E0428E00559A7C /* CCWPropAssetsTableViewCell.xib in Resources */,
@@ -2531,6 +2540,7 @@
 				3144D05F22003BE700CDA62A /* NSString+CCWHash.m in Sources */,
 				3144D05322003BE700CDA62A /* CCWAES.m in Sources */,
 				31E198CC221FFAA80076A822 /* CCWTransferRecordTableView.m in Sources */,
+				31458F4724441B2A00F362CD /* CCWSignStringViewController.m in Sources */,
 				318FF5F02215654E00AB5696 /* CCWLabel.m in Sources */,
 				3144D07022003BE700CDA62A /* CCWPassWordUtil.m in Sources */,
 				3149E6012227AC5800EAF5B4 /* CCWSDKErrorHandle.m in Sources */,
@@ -2915,9 +2925,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 8497T2NJ7P;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 835CGYZJP6;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2937,10 +2947,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/CocosBCXWallet/Resources/Classes/secp256k1",
 				);
-				MARKETING_VERSION = 2.1.8;
+				MARKETING_VERSION = 2.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.io.cocosbcx.www;
 				PRODUCT_NAME = CocosWallet;
-				PROVISIONING_PROFILE_SPECIFIER = pp_cocos;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 arm64e armv7s";
 			};
@@ -2952,9 +2962,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 8497T2NJ7P;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 835CGYZJP6;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2974,10 +2984,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/CocosBCXWallet/Resources/Classes/secp256k1",
 				);
-				MARKETING_VERSION = 2.1.8;
+				MARKETING_VERSION = 2.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.io.cocosbcx.www;
 				PRODUCT_NAME = CocosWallet;
-				PROVISIONING_PROFILE_SPECIFIER = pp_cocos;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 arm64e armv7s";
 			};

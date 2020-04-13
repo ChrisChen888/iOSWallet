@@ -38,7 +38,7 @@
 {
     if (self.walletMode == CocosWalletModeAccount) {
         self.pwdTipLabel.hidden = NO;
-        if ([textField.text ys_regexValidate:@"^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*.]).{12,}$"]) {
+        if ([textField.text ys_regexValidate:@"^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*.-]).{12,}$"]) {
             self.pwdTipLabel.hidden = YES;
         }
     }
@@ -114,7 +114,7 @@
         return;
     }
     
-    if (![nowPwdStr ys_regexValidate:@"^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*.]).{12,}$"]) {
+    if (![nowPwdStr ys_regexValidate:@"^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*.-]).{12,}$"]) {
         [self.view makeToast:CCWLocalizable(@"密码设置不符合规则")];
         return;
     }

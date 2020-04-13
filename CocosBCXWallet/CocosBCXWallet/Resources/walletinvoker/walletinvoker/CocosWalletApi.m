@@ -10,6 +10,7 @@
 #import "CCWInvokerLoginViewController.h"
 #import "CCWInvokerTransferViewController.h"
 #import "CCWInvokerCallContractViewController.h"
+#import "CCWSignStringViewController.h"
 
 static const NSString *kReqRespParam  = @"param";
 
@@ -91,6 +92,12 @@ static NSString *callback_schema = nil;
                 CCWInvokerCallContractViewController *callContractVC = [[CCWInvokerCallContractViewController alloc] init];
                 callContractVC.callContractModel = callContract;
                 [ViewController presentViewController:callContractVC animated:YES completion:nil];
+            }else if (host && [host isEqualToString:kCocosSDKActionSignString]) {
+                // 调用合约的
+                CocosSignStringObj *signString = [CocosSignStringObj mj_objectWithKeyValues:dic];
+                CCWSignStringViewController *signStringVC = [[CCWSignStringViewController alloc] init];
+                signStringVC.signStringObj = signString;
+                [ViewController presentViewController:signStringVC animated:YES completion:nil];
             }else{
                 return NO;
             }

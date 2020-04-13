@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 UIKIT_EXTERN NSString * const kCocosSDKActionLogin;
 UIKIT_EXTERN NSString * const kCocosSDKActionTransfer;
 UIKIT_EXTERN NSString * const kCocosSDKActionCallContract;
+UIKIT_EXTERN NSString * const kCocosSDKActionSignString;
 
 #pragma mark - CocosRequestObj
 /*! @class   CocosRequestObj
@@ -78,6 +79,19 @@ UIKIT_EXTERN NSString * const kCocosSDKActionCallContract;
 @property (nonatomic, copy) NSString *contract;             //!< 合约名称或者ID        <required>
 @property (nonatomic, copy) NSString *method;               //!< 合约方法名称        <required>
 @property (nonatomic, strong) NSArray *param;               //!< 调用参数       <required>
+@end
+
+
+#pragma mark - CocosSignStringObj -
+
+/*!
+ * @class CocosSignStringObj
+ * @brief 调用合约
+ */
+@interface CocosSignStringObj : CocosRequestObj
+
+@property (nonatomic, copy) NSString *from;                 //!< 调用者的COCOS账号        <optional>
+@property (nonatomic, copy) NSString *signContent;               //!< 签名内容        <required>
 @end
 
 

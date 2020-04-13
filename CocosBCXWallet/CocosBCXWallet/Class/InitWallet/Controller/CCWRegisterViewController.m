@@ -140,7 +140,7 @@
     }
     
     // 密码规则
-    if (![pwdStr ys_regexValidate:@"^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*.]).{12,}$"]) {
+    if (![pwdStr ys_regexValidate:@"^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*.-]).{12,}$"]) {
         [self.view makeToast:CCWLocalizable(@"密码设置不符合规则")];
         return;
     }

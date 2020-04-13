@@ -11,6 +11,7 @@
 NSString *const kCocosSDKActionLogin = @"login";
 NSString *const kCocosSDKActionTransfer = @"transfer";
 NSString *const kCocosSDKActionCallContract = @"callcontract";
+NSString *const kCocosSDKActionSignString = @"sign";
 
 @implementation CocosRequestObj
 
@@ -24,6 +25,8 @@ NSString *const kCocosSDKActionCallContract = @"callcontract";
             _action = kCocosSDKActionTransfer;
         }else if ([self isKindOfClass:CocosCallContractObj.class]) {
             _action = kCocosSDKActionCallContract;
+        }else if ([self isKindOfClass:CocosSignStringObj.class]) {
+            _action = kCocosSDKActionSignString;
         }
     }
     return self;
@@ -45,5 +48,11 @@ NSString *const kCocosSDKActionCallContract = @"callcontract";
 #pragma mark - CocosCallContractObj -
 
 @implementation CocosCallContractObj
+
+@end
+
+#pragma mark - CocosSignStringObj -
+
+@implementation CocosSignStringObj
 
 @end

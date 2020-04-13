@@ -49,9 +49,9 @@
 #pragma mark - Action
 + (void)JS_signString:(NSDictionary *)param addPassword:(NSString *)password response:(CallbackBlock)block {
     NSDictionary *signStringParam = param[@"params"];
-    NSString *signString = signStringParam[@"string"];
-    [CCWSDKRequest CCW_SignString:CCWAccountName Password:password string:signString Success:^(id  _Nonnull responseObject) {
-        !block?:block(responseObject);
+    NSString *signString = signStringParam[@"signContent"];
+    [CCWSDKRequest CCW_SignString:CCWAccountName Password:password string:signString Success:^(id _Nonnull responseObject) {
+        !block?:block(@{@"data":responseObject,@"code":@1});
     } Error:^(NSString * _Nonnull errorAlert, NSError *error) {
         !block?:block([self errorBlockWithError:errorAlert ResponseObject:error]);
     }];
