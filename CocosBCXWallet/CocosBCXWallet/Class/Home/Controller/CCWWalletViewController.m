@@ -93,20 +93,18 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self connectSuccess];
+    [self CCW_LoadAccountBalance];
 
 }
 
-- (void)connectSuccess
-{
+// 加载资产
+- (void)CCW_LoadAccountBalance {
     CCWWeakSelf
     if (!CCWAccountId) {
         self.headerView.account = @"";
         self.headerView.assetsNum = @(0);
-        
         // 缓存总资产
         CCWAllAssetPrice = @(0);
-        
         [self.tableView reloadData];
     }else{
         NSString *accountName = CCWAccountName;
@@ -135,6 +133,14 @@
             // [weakSelf.view makeToast:CCWLocalizable(@"网络繁忙，请检查您的网络连接")];
         }];
     }
+}
+
+- (void)connectSuccess
+{
+    CCWWeakSelf
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [weakSelf CCW_LoadAccountBalance];
+    });
 }
 
 // 刷新所有数据
@@ -314,7 +320,7 @@
 {
     CCWSETAccountId(dbAccountModel.ID);
     CCWSETAccountName(dbAccountModel.name);
-    [self connectSuccess];
+    [self CCW_LoadAccountBalance];
     NSString *accountName = CCWAccountName;
     if (accountName.length > 13) {
         accountName = [accountName substringToIndex:13];//截取掉13位

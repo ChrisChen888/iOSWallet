@@ -55,10 +55,11 @@
                   Error:(ErrorBlock)errorBlock
 {
 //    [[CocosSDK shareInstance] Cocos_OpenLog:YES];
-    [[CocosSDK shareInstance] Cocos_ConnectWithNodeUrl:url Fauceturl:faucetUrl TimeOut:10 CoreAsset:core_asset ChainId:chainId ConnectedStatus:^(WebsocketConnectStatus connectStatus) {
+    [[CocosSDK shareInstance] Cocos_ConnectWithNodeUrl:url Fauceturl:faucetUrl TimeOut:5 CoreAsset:core_asset ChainId:chainId ConnectedStatus:^(WebsocketConnectStatus connectStatus) {
         if (connectStatus == WebsocketConnectStatusConnected) {
             !successBlock?:successBlock(@"connect success");
         }else{
+            [self CCW_InitWithUrl:url Core_Asset:core_asset Faucet_url:faucetUrl ChainId:chainId Success:successBlock Error:errorBlock];
             !errorBlock?:errorBlock(@"connect error",[NSError new]);
         }
     }];

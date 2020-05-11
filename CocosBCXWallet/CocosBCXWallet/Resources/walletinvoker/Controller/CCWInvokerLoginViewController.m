@@ -79,8 +79,8 @@
     respons.result = CocosRespResultSuccess;
     respons.action = self.loginModel.action;
     respons.data = @{
-                     @"account_id":CCWInvokerAccountName?:@"",
-                     @"account_name":CCWInvokerAccountId?:@""
+                     @"account_id":CCWInvokerAccountId?:@"",
+                     @"account_name":CCWInvokerAccountName?:@""
                      };
     respons.message = @"success";
     [CocosWalletApi sendObj:respons];

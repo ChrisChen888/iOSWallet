@@ -53,11 +53,7 @@
     if (self = [super init]) {
         self.callDictionary = [NSMutableDictionary dictionaryWithCapacity:100];
         self.noticeDictionary = [NSMutableDictionary dictionaryWithCapacity:100];
-        
-        NSArray *apiPropertyNames = @[@"dataBaseApi",@"networkBroadCastApi",@"historyApi"];
-        for (NSString *api in apiPropertyNames) {
-            [self addObserver:self forKeyPath:api options:(NSKeyValueObservingOptionNew) context:nil];
-        }
+        [self addObserver:self forKeyPath:@"normalApi" options:(NSKeyValueObservingOptionNew) context:nil];
         _normalApi = 1;
         _dataBaseApi = -1;
         _networkBroadCastApi = -1;
@@ -95,8 +91,10 @@
 
 - (void)sendWithChainApi:(WebsocketBlockChainApi)chainApi method:(WebsocketBlockChainMethodApi)method params:(UploadParams *)uploadParams callBack:(CallBackModel *)callBack {
     if (self.websocket.readyState != SR_OPEN) {
-//        NSError *error = [NSError errorWithDomain:@"RPC connection failed. Please check your network" code:SDKErrorCodeNotConnected userInfo:@{@"Error domain":self.connectedUrl}];
-//        if (callBack.errorResult) callBack.errorResult(error);
+        NSError *error = [NSError errorWithDomain:@"RPC connection failed. Please check your network" code:SDKErrorCodeNotConnected userInfo:@{@"Error domain":self.connectedUrl}];
+        if (callBack.errorResult) {
+            callBack.errorResult(error);
+        }
         if (self.connectedUrl) {
             NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.connectedUrl] cachePolicy:0 timeoutInterval:2];
             self.websocket = [[SRWebSocket alloc] initWithURLRequest:
@@ -194,29 +192,29 @@
 }
 
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket {
-    _connectStatus = WebsocketConnectStatusConnecting;
+    _connectStatus = WebsocketConnectStatusConnected;
     
     NSArray *apiNames = @[@"database",@"network_broadcast",@"history"];
-    
+
     NSArray *apiPropertyNames = @[@"dataBaseApi",@"networkBroadCastApi",@"historyApi"];
-    
+
     __weak typeof(self) weakSelf = self;
-    
+
     [apiNames enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         UploadParams *uploadParams = [[UploadParams alloc] init];
         uploadParams.methodName = obj;
         uploadParams.totalParams = @[];
-        
+
         CallBackModel *callBack = [CallBackModel new];
-        
+
         [callBack setSuccessResult:^(id result) {
             __strong typeof(self) self = weakSelf;
-            
             [self setValue:result forKey:apiPropertyNames[idx]];
         }];
-        
+
         [self sendWithChainApi:WebsocketBlockChainApiNormal method:(WebsocketBlockChainMethodApiCall) params:uploadParams callBack:callBack];
     }];
+    [self setValue:@(1) forKey:@"normalApi"];
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error {
@@ -240,22 +238,13 @@
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
-    NSArray *apiPropertyNames = @[@"dataBaseApi",@"networkBroadCastApi",@"historyApi"];
-    BOOL already = YES;
-    for (NSString *api in apiPropertyNames) {
-        if ([[self valueForKey:api] intValue] == -1) {
-            
-            already = NO;
-            break;
-        }
-    }
     
-    if (already) {
-        self.connectStatus = WebsocketConnectStatusConnected;
-    }else {
+    if ([[self valueForKey:@"normalApi"] intValue] == -1) {
         if (self.connectStatus == WebsocketConnectStatusConnected) {
             self.connectStatus = WebsocketConnectStatusClosed;
         }
+    }else{
+        self.connectStatus = WebsocketConnectStatusConnected;
     }
 }
 
@@ -265,10 +254,7 @@
 }
 
 - (void)dealloc {
-    NSArray *apiPropertyNames = @[@"dataBaseApi",@"networkBroadCastApi",@"historyApi"];
-    for (NSString *api in apiPropertyNames) {
-        [self removeObserver:self forKeyPath:api];
-    }
+    [self removeObserver:self forKeyPath:@"normalApi"];
 }
 
 @end
