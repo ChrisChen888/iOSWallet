@@ -18,7 +18,7 @@
 /** 查询汇率 */
 + (void)CCW_RequestExchangeSuccess:(SuccessBlock)successBlock Error:(ErrorBlock)errorBlock
 {
-    [[CocosHTTPManager CCW_shareHTTPManager] CCW_GET:@"https://api-cocosbcx.cocosbcx.net/backend/currencyRate" Param:nil Success:successBlock Error:^(NSError *error) {
+    [[CocosHTTPManager CCW_shareHTTPManager] CCW_GET:@"https://api.cocosbcx.net/backend/currencyRate" Param:nil Success:successBlock Error:^(NSError *error) {
         !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
     }];
 }
@@ -34,7 +34,7 @@
 /** 查询后台配置节点信息 */
 + (void)CCW_RequestNodeSuccess:(SuccessBlock)successBlock Error:(ErrorBlock)errorBlock
 {
-    [[CocosHTTPManager CCW_shareHTTPManager] CCW_GET:@"https://api-cocosbcx.cocosbcx.net/backend/getParams" Param:nil Success:successBlock Error:^(NSError *error) {
+    [[CocosHTTPManager CCW_shareHTTPManager] CCW_GET:@"https://api.cocosbcx.net/backend/getParams" Param:nil Success:successBlock Error:^(NSError *error) {
         !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
     }];
 }
@@ -57,7 +57,9 @@
 //    [[CocosSDK shareInstance] Cocos_OpenLog:YES];
     [[CocosSDK shareInstance] Cocos_ConnectWithNodeUrl:url Fauceturl:faucetUrl TimeOut:5 CoreAsset:core_asset ChainId:chainId ConnectedStatus:^(WebsocketConnectStatus connectStatus) {
         if (connectStatus == WebsocketConnectStatusConnected) {
-            !successBlock?:successBlock(@"connect success");
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                !successBlock?:successBlock(@"connect success");        
+            });
         }else{
             [self CCW_InitWithUrl:url Core_Asset:core_asset Faucet_url:faucetUrl ChainId:chainId Success:successBlock Error:errorBlock];
             !errorBlock?:errorBlock(@"connect error",[NSError new]);
@@ -77,7 +79,7 @@
 /** 查询版本信息 */
 + (void)CCW_QueryVersionInfoSuccess:(SuccessBlock)successBlock Error:(ErrorBlock)errorBlock;
 {
-    [[CocosHTTPManager CCW_shareHTTPManager] CCW_GET:@"https://api-cocosbcx.cocosbcx.net/backend/getPolicyUrl?channel=1001&platform=iOS" Param:nil Success:successBlock Error:^(NSError *error) {
+    [[CocosHTTPManager CCW_shareHTTPManager] CCW_GET:@"https://api.cocosbcx.net/backend/getPolicyUrl?channel=1001&platform=iOS" Param:nil Success:successBlock Error:^(NSError *error) {
         !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
     }];
 }
@@ -85,7 +87,7 @@
 /** 查询发现页 */
 + (void)CCW_QueryFindDappListSuccess:(SuccessBlock)successBlock Error:(ErrorBlock)errorBlock
 {
-    [[CocosHTTPManager CCW_shareHTTPManager] CCW_GET:@"https://api-cocosbcx.cocosbcx.net/backend/getBanInfo" Param:nil Success:successBlock Error:^(NSError *error) {
+    [[CocosHTTPManager CCW_shareHTTPManager] CCW_GET:@"https://api.cocosbcx.net/backend/getBanInfo" Param:nil Success:successBlock Error:^(NSError *error) {
         !errorBlock ?:errorBlock([CCWSDKErrorHandle httpErrorStatusWithCode:@{@"code":@(error.code)}],error);
     }];
 }

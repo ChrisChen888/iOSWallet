@@ -80,9 +80,9 @@
                 [CCWSDKRequest CCW_CallContract:self.callContractModel.contract ContractMethodParam:self.callContractModel.param ContractMethod:self.callContractModel.method CallerAccount:self.callContractModel.from Password:pwd CallContractSuccess:^(id  _Nonnull responseObject) {
                    
                     CocosResponseObj *respons = [[CocosResponseObj alloc] init];
-                    respons.callbackSchema = self.callContractModel.callbackSchema;
+                    respons.callbackSchema = weakSelf.callContractModel.callbackSchema;
                     respons.result = CocosRespResultSuccess;
-                    respons.action = self.callContractModel.action;
+                    respons.action = weakSelf.callContractModel.action;
                     respons.data = @{
                                      @"trx_id":responseObject,
                                      };
@@ -97,7 +97,14 @@
                     }else if (error.code == 105){
                         [weakSelf.view makeToast:CCWLocalizable(@"密码错误，请重新输入")];
                     }else{
-                        [weakSelf.view makeToast:CCWLocalizable(@"网络繁忙，请检查您的网络连接")];
+                        CocosResponseObj *respons = [[CocosResponseObj alloc] init];
+                        respons.callbackSchema = weakSelf.callContractModel.callbackSchema;
+                        respons.result = CocosRespResultFailure;
+                        respons.action = weakSelf.callContractModel.action;
+                        respons.data = error.userInfo;
+                        respons.message = @"error";
+                        [CocosWalletApi sendObj:respons];
+                        [weakSelf dismissViewControllerAnimated:YES completion:nil];
                     }
                 }];
             }else if (responseObject[@"owner_key"]) {

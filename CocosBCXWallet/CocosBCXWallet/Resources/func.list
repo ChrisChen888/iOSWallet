@@ -41,7 +41,6 @@ CCW_HomeNavbuttonClick
 CCW_InitWithUrl
 CCW_KeyBoardSetting
 CCW_ListAccountNHAssetOrder
-CCW_LoadAccountBalance
 CCW_LoginRegisterWalletViewController
 CCW_LogoutAccount
 CCW_MyAlertSheetView

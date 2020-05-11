@@ -93,12 +93,13 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self CCW_LoadAccountBalance];
+    [self connectSuccess];
 
 }
 
 // 加载资产
-- (void)CCW_LoadAccountBalance {
+- (void)connectSuccess
+{
     CCWWeakSelf
     if (!CCWAccountId) {
         self.headerView.account = @"";
@@ -125,7 +126,7 @@
                 [CCWSaveTool setObject:cocosPrice[@"price_usd"] forKey:CCWCurrencyCocosPrice];
                 // 刷新数据
                 [weakSelf reloadAllDataWithResponseObject:responseObject];
-
+                
             } Error:^(NSString * _Nonnull errorAlert, id  _Nonnull responseObject) {
                 
             }];
@@ -133,14 +134,6 @@
             // [weakSelf.view makeToast:CCWLocalizable(@"网络繁忙，请检查您的网络连接")];
         }];
     }
-}
-
-- (void)connectSuccess
-{
-    CCWWeakSelf
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [weakSelf CCW_LoadAccountBalance];
-    });
 }
 
 // 刷新所有数据
@@ -320,7 +313,7 @@
 {
     CCWSETAccountId(dbAccountModel.ID);
     CCWSETAccountName(dbAccountModel.name);
-    [self CCW_LoadAccountBalance];
+    [self connectSuccess];
     NSString *accountName = CCWAccountName;
     if (accountName.length > 13) {
         accountName = [accountName substringToIndex:13];//截取掉13位
